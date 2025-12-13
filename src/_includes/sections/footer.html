@@ -1,0 +1,83 @@
+<footer id="footer">
+    <div class="cs-container">
+
+        <div class="cs-logo-group">
+            <a href="/" class="cs-logo" aria-label="grįžti į pradinį puslapį"><img alt="AutoVerus logotipas" decoding="async" height="32" src="/assets/images/logo.svg" width="240" loading="lazy" aria-hidden="true" class="cs-logo-img"></a>
+            <span class="cs-header">Pasiekiamumas</span>
+            <table class="cs-table">
+                <tbody>
+                <tr>
+                    <th scope="row" class="row">Darbo valandos</th>
+                    <th scope="row" class="row short">Darbo valandos</th>
+                    <td>8:00 - 17:00 (I-V)</td>
+                </tr>
+                <tr>
+                    <th scope="row" class="row">Užklausos</th>
+                    <th scope="row" class="row short">Užklausos</th>
+                    <td>Atsakome per 1 d.d.</td>
+                </tr>
+                </tbody>
+            </table>
+        </div>
+
+        <!-- Services Column (mirrors header Paslaugos) -->
+        <div class="cs-ul-wrapper">
+            <span class="cs-header">Paslaugos</span>
+            <ul class="cs-ul">
+                <li class="cs-li"><a href="/mikroautobusu-nuoma-kaune/" class="cs-link">Mikroautobusų nuoma Kaune</a></li>
+                <li class="cs-li"><a href="/mikroautobusu-pristatymas-nuomai-lietuvoje/" class="cs-link">Mikroautobusų pristatymas nuomai Lietuvoje</a></li>
+                <li class="cs-li"><a href="/automobiliu-nuoma-kaune/" class="cs-link">Automobilių nuoma Kaune</a></li>
+                <li class="cs-li"><a href="/ilgalaike-automobiliu-nuoma/" class="cs-link">Ilgalaikė automobilių nuoma</a></li>
+                <li class="cs-li"><a href="/automobilio-nuoma-su-vairuotoju/" class="cs-link">Automobilio nuoma su vairuotoju</a></li>
+            </ul>
+        </div>
+
+        <!-- Information Column (mirrors header company links) -->
+        <div class="cs-ul-wrapper">
+            <span class="cs-header">Info</span>
+            <ul class="cs-ul">
+                <li class="cs-li"><a href="/apie-mus/" class="cs-link">Apie mus</a></li>
+                <li class="cs-li"><a href="/atsiliepimai/" class="cs-link">Atsiliepimai</a></li>
+                <li class="cs-li"><a href="/tinklarastis/" class="cs-link">Įžvalgos</a></li>
+                <li class="cs-li"><a href="/salygos/" class="cs-link">Sąlygos</a></li>
+                <li class="cs-li"><a href="/kontaktai/" class="cs-link">Kontaktai</a></li>
+            </ul>
+        </div>
+
+        <!-- Contact and Socials Column -->
+        <div class="cs-ul-wrapper">
+            <span class="cs-header">Susisiekite</span>
+            <ul class="cs-ul">
+                <li class="cs-li"><a href="{{ client.socials.facebook }}" class="cs-link" target="_blank" rel="noopener">Facebook
+                    <img alt="Facebook icon" decoding="async" height="24" src="/assets/svgs/facebook.svg" width="24" loading="lazy" class="sv-icon"></a></li>
+<!--                <li class="cs-li"><a href="https://www.linkedin.com/" class="cs-link" target="_blank" rel="noopener">LinkedIn-->
+<!--                    <img alt="LinkedIn icon" decoding="async" height="24" src="/assets/svgs/linkedin-h2.svg" width="24" loading="lazy" class="sv-icon"></a></li>-->
+<!--                <li class="cs-li"><a href="https://www.instagram.com/" class="cs-link" target="_blank" rel="noopener">Instagram-->
+<!--                    <img alt="Instagram icon" decoding="async" height="24" src="/assets/svgs/instagram-h2.svg" width="24" loading="lazy" class="sv-icon">-->
+<!--                </a></li>-->
+                <li class="cs-li"><a href="tel:{{ client.phoneForTel }}" class="cs-link">{{ client.phoneFormatted }} (Kaunas)</a></li>
+                <li class="cs-li"><a href="tel:{{ client.phone2ForTel }}" class="cs-link">{{ client.phone2Formatted }} (Vilnius)</a></li>
+                <li class="cs-li"><a href="mailto:{{ client.email }}" class="cs-link">Susisiekti el. paštu</a></li>
+            </ul>
+        </div>
+
+    </div>
+    <div class="cs-bottom">
+        <div class="cs-credit">
+            <span>© <span class="copyright">{% year %}</span> Visos teisės saugomos</span>
+            <a href="/" target="_blank" rel="noopener">AutoVerus</a>
+        </div>
+        <div class="cs-bottom-links">
+            <a href="https://www.svetainesvisiems.lt/" target="_blank" rel="noopener"
+               class="cs-bottom-link"
+               style="display:flex;align-items:center"
+               title="SEO Paslaugos">
+                <img src="/assets/svgs/svetainesvisiems.svg"
+                     alt="SEO Paslaugos"
+                     height="20"
+                     title="SEO Paslaugos">
+            </a>
+            <a href="/privatumo-politika" class="cs-bottom-link">Privatumo politika</a>
+        </div>
+    </div>
+</footer>

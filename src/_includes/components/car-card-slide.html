@@ -1,0 +1,75 @@
+<div class="keen-slider__slide">
+    <div class="cs-item">
+        <a href="{{ car.url }}" class="cs-link">
+            <div class="cs-picture">
+                <h3 class="cs-h3">{{ car.data.title }}</h3>
+                <picture>
+                    <!--Mobile Image-->
+                    <source media="(max-width: 600px)" srcset="{% getUrl car.data.image | resize({ width: 1000 }) | avif %}" type="image/avif">
+                    <source media="(max-width: 600px)" srcset="{% getUrl car.data.image | resize({ width: 1000 }) | webp %}" type="image/webp">
+                    <source media="(max-width: 600px)" srcset="{% getUrl car.data.image | resize({ width: 1000 }) | jpeg %}" type="image/jpeg">
+                    <!--Tablet Image-->
+                    <source media="(max-width: 1024px)" srcset="{% getUrl car.data.image | resize({ width: 1000 }) | avif %}" type="image/avif">
+                    <source media="(max-width: 1024px)" srcset="{% getUrl car.data.image | resize({ width: 1000 }) | webp %}" type="image/webp">
+                    <source media="(max-width: 1024px)" srcset="{% getUrl car.data.image | resize({ width: 1000 }) | jpeg %}" type="image/jpeg">
+                    <!--Desktop Image-->
+                    <source media="(min-width: 1024px)" srcset="{% getUrl car.data.image | resize({ width: 1000 }) | avif %}" type="image/avif">
+                    <source media="(min-width: 1024px)" srcset="{% getUrl car.data.image | resize({ width: 1000 }) | webp %}" type="image/webp">
+                    <source media="(min-width: 1024px)" srcset="{% getUrl car.data.image | resize({ width: 1000 }) | jpeg %}" type="image/jpeg">
+                    <img src="{% getUrl car.data.image | resize({ width: 1000 }) | jpeg %}" alt="{{ car.data.imageAlt or car.data.title }}" width="824" height="400" decoding="async" loading="lazy">
+                </picture>
+                {% if car.data.price %}
+                <div class="cs-price-overlay">
+                    <span class="cs-price-label">NUO</span>
+                    <div class="cs-price-group">
+                        <span class="cs-price-amount">{{ car.data.price }}</span>
+                        <span class="cs-price-unit">€ / D.</span>
+                    </div>
+                </div>
+                {% endif %}
+                <span class="cs-link-text-overlay"><span class="cs-link-text-label">Peržiūrėti</span> <img class="cs-arrow" loading="lazy" decoding="async" src="/assets/svgs/arrow-right.svg" alt="icon" width="20" height="20" aria-hidden="true"></span>
+            </div>
+            <div class="cs-flex">
+                <div class="cs-specs">
+                    {% if car.data.year %}
+                    <div class="cs-spec-item">
+                        <img class="cs-spec-icon" src="/assets/svgs/cars/calendar.svg" alt="Metai" width="24" height="24" loading="lazy" decoding="async">
+                        <span class="cs-spec-value">{{ car.data.year }}</span>
+                    </div>
+                    {% endif %}
+                    {% if car.data.transmission %}
+                    <div class="cs-spec-item">
+                        <img class="cs-spec-icon" src="/assets/svgs/cars/transmission.svg" alt="Pavarų dėžė" width="24" height="24" loading="lazy" decoding="async">
+                        <span class="cs-spec-value">{{ car.data.transmission }}</span>
+                    </div>
+                    {% endif %}
+                    {% if car.data.seats %}
+                    <div class="cs-spec-item">
+                        <img class="cs-spec-icon" src="/assets/svgs/cars/carseat.svg" alt="Vietų skaičius" width="24" height="24" loading="lazy" decoding="async">
+                        <span class="cs-spec-value">{{ car.data.seats }}</span>
+                    </div>
+                    {% endif %}
+                    {% if car.data.fuelType %}
+                    <div class="cs-spec-item">
+                        <img class="cs-spec-icon" src="/assets/svgs/cars/fuel.svg" alt="Kuro tipas" width="24" height="24" loading="lazy" decoding="async">
+                        <span class="cs-spec-value">{{ car.data.fuelType }}</span>
+                    </div>
+                    {% endif %}
+                    {% if car.data.power %}
+                    <div class="cs-spec-item">
+                        <img class="cs-spec-icon" src="/assets/svgs/cars/gouge.svg" alt="Galia (kW)" width="24" height="24" loading="lazy" decoding="async">
+                        <span class="cs-spec-value">{{ car.data.power }} kw</span>
+                    </div>
+                    {% endif %}
+                    {% if car.data.engine %}
+                    <div class="cs-spec-item">
+                        <img class="cs-spec-icon" src="/assets/svgs/cars/engine.svg" alt="Variklis (cm³)" width="24" height="24" loading="lazy" decoding="async">
+                        <span class="cs-spec-value">{{ car.data.engine }} cm3</span>
+                    </div>
+                    {% endif %}
+                </div>
+            </div>
+        </a>
+    </div>
+</div>
+

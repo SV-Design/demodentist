@@ -1,0 +1,1651 @@
+---
+title: 'Mikroautobusų nuoma | AutoVerus'
+description: 'Automobilių ir mikroautobusų nuoma jūsų kelionėms ar darbams. Siūlome techniškai tvarkingus lengvuosius, krovininius ir keleivinius automobilius su aiškia kaina.'
+permalink: '/'
+tags: "sitemap" # content/content.json will make sure that all pages in content/ are marked with a "sitemap" tag, for automatic sitemap generation. As index.html is not in content/, we need to add it here to ensure the root page is included in the sitemap generation
+---
+
+{% extends "layouts/base.html" %}
+
+{% block head %}
+<!-- Critical styles are loaded first -->
+<!--<link rel="stylesheet" href="/assets/css/critical.css"/>-->
+
+<style>
+    @media only screen and (min-width: 0rem) {
+
+        #hero-1467 {
+            padding:var(--sectionPadding);
+            padding-bottom: 0;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            gap: clamp(3rem,7vw,4rem);
+            position: relative;
+            z-index: 1;
+            min-height: 100vh;
+        }
+
+        #hero-1467 .cs-container {
+            width: 100%;
+            max-width: 80rem;
+            margin: auto;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            gap: clamp(3rem,7vw,4rem)
+        }
+
+        #hero-1467 .cs-container2 {
+            max-width: 80rem
+        }
+
+        #hero-1467 .cs-content {
+            text-align: center;
+            width: 100%;
+            max-width: 39.375rem;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            position: relative;
+            z-index: 10
+        }
+
+        #hero-1467 .cs-topper {
+            font-size: var(--topperFontSize);
+            line-height: 1.2em;
+            text-transform: uppercase;
+            text-align: center;
+            letter-spacing: .1em;
+            font-weight: 700;
+            color: var(--primary);
+            margin-bottom: .25rem;
+            display: block
+        }
+
+        #hero-1467 .cs-title {
+            font-size: clamp(2.4375rem, 6.4vw, 3.6125rem);
+            font-weight: 900;
+            line-height: 1.2em;
+            width: 100%;
+            max-width: 17ch;
+            margin: 0 0 1rem;
+            color: var(--headerColor);
+            position: relative
+        }
+
+        #hero-1467 .cs-text {
+            font-size: clamp(.875rem, 2.5vw, 1.25rem);
+            line-height: 1.5em;
+            width: 100%;
+            max-width: 43.75rem;
+            margin: 0 0 clamp(1.75rem,4vw,2.5rem);
+            color: var(--headerColor);
+        }
+
+        #hero-1467 .cs-button-group {
+            display: flex;
+            gap: 1.2rem;
+            flex-wrap: wrap;
+            justify-content: center;
+            align-items: center;
+            width: 100%;
+        }
+
+        #hero-1467 .cs-button-solid:not(.second) {
+            color: #fff;
+        }
+
+        #hero-1467 .cs-button-solid:not(.second):hover {
+            color: #fff;
+        }
+
+        #hero-1467 .cs-button-solid:not(.second)::before {
+            background: #000;
+        }
+
+        #hero-1467 .cs-button-solid.second {
+            background: transparent;
+            border: 1px solid #1a1a1a;
+            color: #1a1a1a;
+            transition: color 0.3s;
+        }
+
+        #hero-1467 .cs-button-solid.second::before {
+            background: #1a1a1a;
+        }
+
+        #hero-1467 .cs-button-solid.second:hover {
+            color: #fff;
+        }
+
+        #hero-1467 .cs-picture {
+            width: 100%;
+            max-width: clamp(26.6875rem,50vw,29.25rem);
+            height: auto;
+            display: flex;
+            align-items: flex-end;
+            position: relative;
+            z-index: 7
+        }
+
+        #hero-1467 .cs-picture img {
+            width: 100%;
+            height: auto
+        }
+
+        #hero-1467 .cs-card-group {
+            width: 100%;
+            margin: 0;
+            padding: 0 1rem;
+            background-color: #fff;
+            box-shadow: 0 4px 25px 0 rgba(0,0,0,.1);
+            box-sizing: border-box;
+            display: grid;
+            grid-template-columns: repeat(12,1fr);
+            position: relative;
+            z-index: 15
+        }
+
+        #hero-1467 .cs-item {
+            text-align: left;
+            list-style: none;
+            width: 100%;
+            border-bottom: 1px solid #e8e8e8;
+            box-sizing: border-box;
+            grid-column: span 12;
+            transition: background-color .3s,border-color .3s
+        }
+
+        #hero-1467 .cs-item:last-of-type {
+            border-bottom: none
+        }
+
+        #hero-1467 .cs-link {
+            text-decoration: none;
+            padding: clamp(1.5rem,5.3vw,3.75rem) clamp(1rem,2.7vw,2.5rem);
+            display: flex;
+            justify-content: center;
+            align-items: flex-start;
+            flex-direction: column
+        }
+
+        #hero-1467 .cs-icon {
+            height: clamp(2rem,4vw,2.5rem);
+            width: clamp(2rem,4vw,2.5rem);
+            margin: 0 0 1rem 0;
+            background-color: var(--primary);
+            mask-size: contain;
+            mask-repeat: no-repeat;
+            mask-position: center;
+            -webkit-mask-size: contain;
+            -webkit-mask-repeat: no-repeat;
+            -webkit-mask-position: center;
+            -o-object-fit: none;
+            object-fit: none
+        }
+
+        #hero-1467 .cs-link[href="/standard-house-cleaning-cheltenham/"] .cs-icon {
+            mask-image: url("/assets/svgs/services/house.svg");
+            -webkit-mask-image: url("/assets/svgs/services/house.svg")
+        }
+
+        #hero-1467 .cs-link[href="/end-of-tenancy-cleaning-cheltenham/"] .cs-icon {
+            mask-image: url("/assets/svgs/services/cleaning.svg");
+            -webkit-mask-image: url("/assets/svgs/services/cleaning.svg")
+        }
+
+        #hero-1467 .cs-link[href="/holiday-let-cleaning-cheltenham/"] .cs-icon {
+            mask-image: url("/assets/svgs/services/holiday.svg");
+            -webkit-mask-image: url("/assets/svgs/services/holiday.svg")
+        }
+
+        #hero-1467 .cs-link[href="/roof-cleaning-moss-removal-cheltenham/"] .cs-icon {
+            mask-image: url("/assets/svgs/services/roof.svg");
+            -webkit-mask-image: url("/assets/svgs/services/roof.svg");
+            min-width: 48px;
+            margin-left: -7px
+        }
+
+        #hero-1467 .cs-link[href="/office-cleaning-cheltenham/"] .cs-icon {
+            mask-image: url("/assets/svgs/services/office.svg");
+            -webkit-mask-image: url("/assets/svgs/services/office.svg")
+        }
+
+        #hero-1467 .cs-link[href="/driveway-patio-cleaning-cheltenham/"] .cs-icon {
+            mask-image: url("/assets/svgs/services/driveway.svg");
+            -webkit-mask-image: url("/assets/svgs/services/driveway.svg")
+        }
+
+        #hero-1467 .cs-link[href="/gutter-cleaning-cheltenham/"] .cs-icon {
+            mask-image: url("/assets/svgs/services/gutter.svg");
+            -webkit-mask-image: url("/assets/svgs/services/gutter.svg")
+        }
+
+        #hero-1467 .cs-link[href="/window-cleaning-cheltenham/"] .cs-icon {
+            mask-image: url("/assets/svgs/services/window.svg");
+            -webkit-mask-image: url("/assets/svgs/services/window.svg")
+        }
+
+        #hero-1467 .cs-link[href="/rubish-removal-cleaning-cheltenham/"] .cs-icon {
+            mask-image: url("/assets/svgs/services/rubbish.svg");
+            -webkit-mask-image: url("/assets/svgs/services/rubbish.svg")
+        }
+
+        #hero-1467 .cs-link[href="/end-of-tenancy-cleaning-cheltenham/"] .cs-icon,#hero-1467 .cs-link[href="/holiday-let-cleaning-cheltenham/"] .cs-icon,#hero-1467 .cs-link[href="/roof-cleaning-moss-removal-cheltenham/"] .cs-icon,#hero-1467 .cs-link[href="/standard-house-cleaning-cheltenham/"] .cs-icon {
+            height: clamp(2.4rem,4.8vw,3rem)
+        }
+
+        #hero-1467 .cs-h3 {
+            font-size: clamp(1.25rem, 2vw, 1.5625rem);
+            font-weight: 700;
+            text-align: inherit;
+            line-height: 1.2em;
+            margin: 0 0 .75rem 0;
+            color: var(--headerColor);
+            transition: color .3s
+        }
+
+        #hero-1467 .cs-item-text {
+            font-size: clamp(.875rem, 1.5vw, 1rem);
+            text-align: inherit;
+            line-height: 1.5em;
+            margin: 0;
+            color: var(--bodyTextColor);
+            transition: color .3s,opacity .3s
+        }
+
+        #hero-1467 .cs-fake-link {
+            font-size: 1rem;
+            text-decoration: none;
+            line-height: 1.2em;
+            font-weight: 700;
+            margin: 1rem 0 0 0;
+            color: var(--headerColor);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: .25rem
+        }
+
+        #hero-1467 .cs-arrow {
+            width: 1.5rem;
+            height: auto
+        }
+
+        #hero-1467 .cs-floater-wrapper {
+            width: 100%;
+            height: 100%;
+            overflow: hidden;
+            position: absolute;
+            top: 0;
+            left: 0;
+            z-index: -1
+        }
+
+        #hero-1467 .cs-floater {
+            width: 68.125rem;
+            height: auto;
+            opacity: .1;
+            display: block;
+            position: absolute;
+            left: 0;
+            bottom: 0
+        }
+
+        #hero-1467 .cs-background {
+            width: 100%;
+            height: 100%;
+            display: block;
+            position: absolute;
+            top: 0;
+            left: 0;
+            z-index: -1
+        }
+    }
+
+    /*@media only screen and (min-width: 0rem) and (max-width:47.9375rem) {*/
+    /*    #hero-1467 .cs-background {*/
+    /*        top:-100px*/
+    /*    }*/
+    /*}*/
+
+    @media only screen and (min-width: 0rem) {
+        #hero-1467 .cs-background:before {
+            content:"";
+            position: absolute;
+            display: block;
+            height: 100%;
+            width: 100%;
+            background: #fff;
+            opacity: .84;
+            top: 0;
+            left: 0;
+            z-index: 1
+        }
+
+        #hero-1467 .cs-background img {
+            position: absolute;
+            top: 0;
+            left: 0;
+            height: 100%;
+            width: 100%;
+            -o-object-fit: cover;
+            object-fit: cover
+        }
+
+        #cta-697 .cs-button-solid {
+            background-color: #fff;
+            color: var(--primary)
+        }
+
+        #cta-697 .cs-button-solid:hover {
+            color: #fff
+        }
+    }
+
+    @media only screen and (min-width: 48rem) {
+        #hero-1467 {
+            display:flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            gap: clamp(3.125rem,10vw,5.625rem)
+        }
+
+        #hero-1467 .cs-container {
+            justify-content: flex-start;
+            flex-direction: row
+        }
+
+        #hero-1467 .cs-content {
+            text-align: left;
+            width: 60%;
+            align-items: flex-start
+        }
+
+        #hero-1467 .cs-button-group {
+            justify-content: flex-start;
+        }
+
+        #hero-1467 .cs-picture-wrapper {
+            width: 100%;
+            max-width: 80rem;
+            height: 100%;
+            overflow: hidden;
+            position: absolute;
+            top: 0;
+            left: 50%;
+            transform: translateX(-50%)
+        }
+
+        #hero-1467 .cs-picture {
+            width: 56%;
+            margin-right: clamp(3.125rem,12vw,10.625rem);
+            position: absolute;
+            bottom: 0;
+            right: 50%;
+            z-index: 10
+        }
+
+        #hero-1467 .cs-item {
+            grid-column: span 6
+        }
+
+        #hero-1467 .cs-item:nth-of-type(6) {
+            border-bottom: none
+        }
+
+        #hero-1467 .cs-floater-wrapper {
+            display: block
+        }
+
+        #hero-1467 .cs-background {
+            overflow: hidden;
+            height: 100%;
+        }
+
+        #hero-1467 .cs-background:before {
+            opacity: 1;
+            background: linear-gradient(270deg,rgba(255,255,255,.96) 47.66%,rgba(255,255,255,0) 71.43%);
+            transform: scaleX(-1)
+        }
+    }
+
+    @media only screen and (min-width: 64rem) {
+        #hero-1467 .cs-card-group {
+            padding:0
+        }
+
+        #hero-1467 .cs-item {
+            grid-column: span 4;
+            border-bottom: 1px solid #e8e8e8;
+            border-right: 1px solid #e8e8e8
+        }
+
+        #hero-1467 .cs-item:hover {
+            background-color: var(--primary);
+            border-color: var(--primary)
+        }
+
+        #hero-1467 .cs-item:hover .cs-fake-link,#hero-1467 .cs-item:hover .cs-h3,#hero-1467 .cs-item:hover .cs-item-text {
+            color: var(--bodyTextColorWhite)
+        }
+
+        #hero-1467 .cs-item:hover .cs-icon {
+            filter: brightness(100)
+        }
+
+        #hero-1467 .cs-item:hover .cs-arrow {
+            filter: grayscale(1) brightness(1000%)
+        }
+
+        #hero-1467 .cs-item:hover .cs-item-text {
+            opacity: .8
+        }
+
+        #hero-1467 .cs-item:nth-of-type(5),#hero-1467 .cs-item:nth-of-type(6) {
+            border-bottom: 1px solid #e8e8e8
+        }
+
+        #hero-1467 .cs-item:nth-of-type(7),#hero-1467 .cs-item:nth-of-type(8),#hero-1467 .cs-item:nth-of-type(9) {
+            border-bottom: none
+        }
+
+        #hero-1467 .cs-item:last-of-type {
+            border-right: none
+        }
+
+        #hero-1467 .cs-floater {
+            left: 40%;
+            right: auto;
+            top: auto;
+            bottom: 0
+        }
+    }
+
+    @media only screen and (min-width: 81.25rem) {
+        #hero-1467 .cs-picture {
+            bottom:6.25rem
+        }
+    }
+
+    @media only screen and (min-width: 100rem) {
+        #hero-1467 .cs-background {
+            background:url("/assets/images/main3.jpg");
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            background-attachment: fixed
+        }
+
+        #hero-1467 .cs-background img {
+            display: none
+        }
+    }
+
+    /* Home category section*/
+    .home-category-section {
+        padding: var(--sectionPadding);
+        background-color: #fff;
+        overflow: hidden;
+    }
+
+    #home-krovininiai-keleiviniai-section {
+        padding-bottom: 2rem;
+    }
+
+    #home-lengvieji-section {
+        padding-top: 0;
+    }
+
+    /* Category Buttons */
+    .cs-category-buttons {
+        display: flex;
+        gap: 1rem;
+        margin-top: 1.5rem;
+        flex-wrap: wrap;
+        justify-content: flex-start;
+    }
+
+    .cs-category-btn {
+        padding: 0.75rem 1.5rem;
+        font-size: 1rem;
+        font-weight: 600;
+        color: var(--headerColor);
+        background-color: #fff;
+        border: 2px solid rgba(0, 0, 0, 0.1);
+        border-radius: 0.5rem;
+        cursor: pointer;
+        transition: all 0.3s ease;
+        font-family: inherit;
+    }
+
+    .cs-category-btn:hover {
+        border-color: var(--primary);
+        color: var(--primary);
+        background-color: rgba(217, 11, 11, 0.05);
+    }
+
+    .cs-category-btn.active {
+        background-color: var(--primary);
+        color: #fff;
+        border-color: var(--primary);
+    }
+
+    .cs-category-btn.active:hover {
+        background-color: var(--primary);
+        color: #fff;
+        opacity: 0.9;
+    }
+
+    /* Category Slider Container */
+    .cs-category-slider {
+        position: relative;
+        transition: opacity 0.3s ease, height 0.3s ease;
+        min-height: 300px;
+        background-color: #fff;
+    }
+
+    .cs-category-slider[style*="display: none"] {
+        display: none !important;
+    }
+
+    .cs-category-slider .cs-slider-wrapper {
+        background-color: #fff;
+    }
+
+    .home-category-section .cs-content {
+        text-align: left;
+        margin-bottom: 2rem;
+        max-width: 80rem;
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    .home-category-section .cs-content:has(.cs-topper) {
+        text-align: center;
+    }
+
+    .home-category-section .cs-topper {
+        text-align: center;
+        margin-bottom: 2rem;
+    }
+
+    .home-category-section .cs-title {
+        font-size: clamp(1.6rem, 3vw, 2.5rem);
+        font-weight: 700;
+        color: var(--headerColor);
+        margin: 0;
+    }
+
+    .home-category-section .cs-slider-container {
+        position: relative;
+        max-width: 80rem;
+        margin: 0 auto;
+    }
+
+    .home-category-section .cs-slider-wrapper {
+        overflow: hidden;
+        position: relative;
+    }
+
+    .home-category-section .cs-slider-overlay {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-color: #fff;
+        z-index: 100;
+        min-height: 300px;
+    }
+
+    .home-category-section .keen-slider {
+        overflow: visible;
+    }
+
+    .home-category-section .keen-slider__slide {
+        min-width: 0;
+    }
+
+    .home-category-section .cs-item {
+        list-style: none;
+        height: 100%;
+        display: flex;
+        flex-direction: column;
+        /*border: 1px solid rgba(0, 0, 0, 0.08);*/
+        border-radius: 0.75rem;
+        background-color: #fff;
+        transition: border-color 0.3s;
+        overflow: hidden;
+        border: 1px solid rgba(0, 0, 0, 0.2);
+    }
+
+    .home-category-section .cs-item:hover {
+        border-color: rgba(0, 0, 0, 0.12);
+    }
+
+    .home-category-section .cs-link {
+        display: flex;
+        flex-direction: column;
+        height: 100%;
+        flex-grow: 1;
+        text-decoration: none;
+        color: inherit;
+    }
+
+    .home-category-section .cs-picture {
+        position: relative;
+        width: 100%;
+        aspect-ratio: 300 / 220;
+        overflow: hidden;
+        background-color: #fff;
+    }
+
+    .home-category-section .cs-picture img {
+        width: 100%;
+        height: 100%;
+        object-fit: contain;
+        display: block;
+        transition: transform 0.3s ease;
+    }
+
+    .home-category-section .cs-item:hover .cs-picture img {
+        transform: scale(1.05);
+    }
+
+    .home-category-section .cs-h3 {
+        position: absolute;
+        top: 0.75rem;
+        left: 0.75rem;
+        margin: 0;
+        padding: 0.5rem 0.75rem;
+        font-size: clamp(1.125rem, 1.6vw, 1.375rem);
+        font-weight: 600;
+        text-align: left;
+        color: #1a1a1a;
+        background-color: rgba(255, 255, 255, 0.9);
+        border-radius: 0.375rem;
+        z-index: 2;
+        transition: color 0.3s;
+    }
+
+    .home-category-section .cs-price-overlay {
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        padding: 1rem 1.25rem;
+        background: linear-gradient(to top, rgba(0, 0, 0, 0.7) 0%, rgba(0, 0, 0, 0.4) 50%, transparent 100%);
+        display: flex;
+        flex-direction: column;
+        gap: 0.25rem;
+        z-index: 2;
+        width: 100%;
+    }
+
+    .home-category-section .cs-price-label {
+        font-size: 0.75rem;
+        font-weight: 600;
+        color: #fff;
+        text-transform: uppercase;
+        letter-spacing: 0.05em;
+    }
+
+    .home-category-section .cs-price-group {
+        display: flex;
+        align-items: baseline;
+        gap: 0.25rem;
+    }
+
+    .home-category-section .cs-price-amount {
+        font-size: 1.5rem;
+        font-weight: 700;
+        color: #fff;
+        line-height: 1;
+    }
+
+    .home-category-section .cs-price-unit {
+        font-size: 0.875rem;
+        font-weight: 500;
+        color: rgba(255, 255, 255, 0.9);
+    }
+
+    .home-category-section .cs-link-text-overlay {
+        position: absolute;
+        bottom: 1rem;
+        right: 1rem;
+        z-index: 3;
+        background: rgba(0, 0, 0, 0.3);
+        padding: 0.5rem 0.75rem;
+        border-radius: 0.375rem;
+        backdrop-filter: blur(4px);
+        font-size: 0.9375rem;
+        font-weight: 700;
+        color: #fff;
+        text-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
+        line-height: 1;
+        justify-content: center;
+        align-items: center;
+        display: flex;
+        gap: 0.5rem;
+    }
+
+    .home-category-section .cs-link-text-label {
+        white-space: nowrap;
+    }
+
+    .home-category-section .cs-arrow {
+        display: inline;
+        vertical-align: baseline;
+        margin-left: 0.25rem;
+        transition: transform 0.3s;
+        filter: brightness(1000);
+    }
+
+    .home-category-section .cs-item:hover .cs-h3 {
+        color: var(--primary);
+    }
+
+    .home-category-section .cs-link:hover .cs-arrow {
+        transform: translateX(5px);
+    }
+
+    .home-category-section .cs-flex {
+        padding: 1rem;
+        border-radius: 0 0 6px 6px;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        flex-grow: 1;
+        background-color: #fff;
+    }
+
+    .home-category-section .cs-specs {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 0.5rem;
+    }
+
+    .home-category-section .cs-spec-item {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 0.25rem;
+        padding: 0;
+    }
+
+    .home-category-section .cs-spec-icon {
+        width: 1.5rem;
+        height: 1.5rem;
+        color: #D90B0B;
+        flex-shrink: 0;
+    }
+
+    .home-category-section .cs-spec-icon[src*="transmission.svg"] {
+        width: 1.1rem;
+    }
+
+    .home-category-section .cs-spec-value {
+        font-size: 0.75rem;
+        font-weight: 500;
+        color: var(--bodyTextColor);
+        text-align: center;
+        line-height: 1.2;
+    }
+
+    .home-category-section .cs-slider-arrow {
+        position: absolute;
+        top: 50%;
+        transform: translateY(-50%);
+        background-color: #fff;
+        border: 1px solid rgba(0, 0, 0, 0.1);
+        border-radius: 50%;
+        width: 3rem;
+        height: 3rem;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        cursor: pointer;
+        z-index: 10;
+        transition: all 0.3s;
+        box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    }
+
+    .home-category-section .cs-slider-arrow:hover {
+        background-color: var(--primary);
+        border-color: var(--primary);
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+        color: #fff;
+        transition: none;
+    }
+
+    .home-category-section .cs-slider-arrow:hover svg {
+        stroke: #fff;
+        fill: var(--primary);
+    }
+
+    .home-category-section .cs-slider-arrow:hover svg path {
+        stroke: #fff;
+    }
+
+    .home-category-section .cs-slider-arrow svg {
+        stroke: var(--headerColor);
+    }
+
+    .home-category-section .cs-slider-container .cs-slider-prev {
+        left: -1.5rem;
+    }
+
+    .home-category-section .cs-slider-container .cs-slider-next {
+        right: -1.5rem;
+    }
+
+    /* Mobile - hide arrows when showing 1.2 items */
+    @media only screen and (max-width: 47.9375rem) {
+        .home-category-section .cs-slider-arrow {
+            display: none;
+        }
+
+        .home-category-section .cs-slider-wrapper {
+            overflow: visible;
+        }
+
+        .home-category-section {
+            overflow: visible;
+            padding-right: 0 !important;
+        }
+
+        .home-category-section .cs-title {
+            padding-right: 1rem;
+        }
+    }
+</style>
+
+<!-- If we're in production, defer the rest of the home page styles. In development, always load it. Otherwise the site will break when hot-reload is used. -->
+{% if kit.isProduction %}
+<link rel="preload" href="/assets/css/local.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+<noscript>
+    <link rel="stylesheet" href="/assets/css/local.css">
+</noscript>
+
+{% else %}
+<link rel="stylesheet" href="/assets/css/local.css"/>
+{% endif %}
+
+
+
+<!-- Hero Car Search Script -->
+<!-- <script defer src="/assets/js/hero-car-search.js"></script> -->
+
+<!-- Keen Slider JS - Load before other scripts that depend on it -->
+<script defer src="/assets/js/keen-slider.min.js"></script>
+
+<!-- Home Related Cars Script -->
+<script defer src="/assets/js/home-related-cars.js"></script>
+<!-- Reviews Slider Script -->
+<script defer src="/assets/js/reviews-slider.js"></script>
+<!-- Blog Slider Script -->
+<script defer src="/assets/js/blog-slider.js"></script>
+
+<!-- To ensure proper validation, prevent errors, and encourage developers to check, schema's are an opt-in feature. They're very bespoke and requires some customising  -->
+<!-- Uncomment the code below to enable Structured Data, and test it when you deploy to Netlify - https://developers.google.com/search/docs/appearance/structured-data -->
+<!-- {% include "components/home-schema.html" %} -->
+{% endblock %}
+
+{% block body %}
+
+<section id="hero-1467">
+    <div class="cs-container">
+        <div class="cs-content">
+            <span class="cs-topper">Jūsų patikimas partneris AutoVerus</span>
+            <h1 class="cs-title">Mikroautobusų ir automobilių nuoma</h1>
+            <p class="cs-text">Patogūs keleiviniai ir talpūs krovininiai mikroautobusai jūsų darbams ar kelionėms. Dirbame Kaune ir Vilniuje, siūlome tvarkingus automobilius ir aiškias sąlygas be paslėptų mokesčių.</p>
+            <div class="cs-button-group">
+                <a href="/nuoma/automobiliai/" class="cs-button-solid">Visi automobiliai</a>
+                <a href="/kontaktai/" class="cs-button-solid second">Susisiekti</a>
+            </div>
+        </div>
+    </div>
+    <picture class="cs-background">
+        <!--Mobile Image-->
+        <source media="(max-width: 600px)" srcset="{% getUrl "/assets/images/main_mobile.jpg" | resize({ width: 640 }) | avif %}" type="image/avif">
+        <source media="(max-width: 600px)" srcset="{% getUrl "/assets/images/main_mobile.jpg" | resize({ width: 640 }) | webp %}" type="image/webp">
+        <source media="(max-width: 600px)" srcset="{% getUrl "/assets/images/main_mobile.jpg" | resize({ width: 640 }) | jpeg %}" type="image/jpeg">
+        <!--Tablet Image-->
+        <source media="(max-width: 1024px)" srcset="{% getUrl "/assets/images/main3.jpg" | resize({ width: 1280 }) | avif %}" type="image/avif">
+        <source media="(max-width: 1024px)" srcset="{% getUrl "/assets/images/main3.jpg" | resize({ width: 1280 }) | webp %}" type="image/webp">
+        <source media="(max-width: 1024px)" srcset="{% getUrl "/assets/images/main3.jpg" | resize({ width: 1280 }) | jpeg %}" type="image/jpeg">
+        <!--Large Tablet Image-->
+        <source media="(min-width: 1024px) and (max-width: 1300px)" srcset="{% getUrl "/assets/images/main3.jpg" | resize({ width: 1920 }) | avif %}" type="image/avif">
+        <source media="(min-width: 1024px) and (max-width: 1300px)" srcset="{% getUrl "/assets/images/main3.jpg" | resize({ width: 1920 }) | webp %}" type="image/webp">
+        <source media="(min-width: 1024px) and (max-width: 1300px)" srcset="{% getUrl "/assets/images/main3.jpg" | resize({ width: 1920 }) | jpeg %}" type="image/jpeg">
+        <!--Desktop Image-->
+        <source media="(min-width: 1300px)" srcset="{% getUrl "/assets/images/main3.jpg" | resize({ width: 3000 }) | avif %}" type="image/avif">
+        <source media="(min-width: 1300px)" srcset="{% getUrl "/assets/images/main3.jpg" | resize({ width: 3000 }) | webp %}" type="image/webp">
+        <source media="(min-width: 1300px)" srcset="{% getUrl "/assets/images/main3.jpg" | resize({ width: 3000 }) | jpeg %}" type="image/jpeg">
+        <img src="{% getUrl "/assets/images/main3.jpg" | resize({ width: 2000 }) | jpeg %}" alt="A clean and tidy living room in a Cheltenham home" loading="eager" decoding="async">
+    </picture>
+</section>
+<!-- ============================================ -->
+<!--           Home Category Cars Sections        -->
+<!-- ============================================ -->
+{% set index = true %}
+{% include 'components/home-category-sliders.html' %}
+<!-- Category Sliders Section -->
+
+<!-- ============================================ -->
+<!--           Logo Carousel Section              -->
+<!-- ============================================ -->
+
+<section class="cs-logos-section">
+    <div class="cs-container">
+        <div class="cs-logos-content">
+            <div class="cs-logos-text-left">
+                <h2 class="cs-logos-title">Patikimas transportas <span style="color: var(--primary);">darbui</span> ir <span style="color: var(--primary);">kelionėms</span></h2>
+            </div>
+            <div class="cs-logos-text-right">
+                <p class="cs-logos-description">Statybos, gamybos ir prekybos įmonėms siūlome talpius krovininius mikroautobusus įrangai bei produkcijai. Transporto sektoriui ir keliautojams paruošėme keleivinius modelius, tinkančius vilkikų vairuotojų rotacijai, komandiruotėms ar tolimoms išvykoms į kalnus bei žvejybą.</p>
+            </div>
+        </div>
+    </div>
+    <div class="cs-logos">
+        <div class="cs-logos-slide">
+            <img src="/assets/images/brands/opel.svg" alt="Opel logotipas" />
+            <img src="/assets/images/brands/mercedes-benz.svg" alt="Mercedes Benz logotipas" />
+            <img src="/assets/images/brands/citroen-1.svg" alt="Citroen logotipas" />
+            <img src="/assets/images/brands/peugeot-10.svg" alt="Peugeot logotipas" />
+            <img src="/assets/images/brands/renault-2.svg" alt="Renault logotipas" />
+            <img src="/assets/images/brands/ford-7.svg" alt="Ford logotipas" />
+            <img src="/assets/images/brands/volkswagen-white.svg" alt="Volkswagen logotipas" />
+            <img src="/assets/images/brands/logo-novo-fiat.svg" alt="Fiat logotipas" />
+            <img src="/assets/images/brands/toyota-1.svg" alt="Toyota logotipas" />
+        </div>
+    </div>
+</section>
+
+<!-- ============================================ -->
+<!--           Hero Journey Section               -->
+<!-- ============================================ -->
+
+<section id="hero-journey-section">
+    <div class="cs-hero-container">
+        <div class="cs-hero-image-block">
+            <picture class="cs-hero-background">
+                <!--Mobile Image-->
+                <source media="(max-width: 600px)" srcset="{% getUrl "/assets/images/vanredsummer.jpg" | resize({ width: 640 }) | avif %}" type="image/avif">
+                <source media="(max-width: 600px)" srcset="{% getUrl "/assets/images/vanredsummer.jpg" | resize({ width: 640 }) | webp %}" type="image/webp">
+                <source media="(max-width: 600px)" srcset="{% getUrl "/assets/images/vanredsummer.jpg" | resize({ width: 640 }) | jpeg %}" type="image/jpeg">
+                <!--Tablet Image-->
+                <source media="(max-width: 1024px)" srcset="{% getUrl "/assets/images/vanredsummer.jpg" | resize({ width: 1280 }) | avif %}" type="image/avif">
+                <source media="(max-width: 1024px)" srcset="{% getUrl "/assets/images/vanredsummer.jpg" | resize({ width: 1280 }) | webp %}" type="image/webp">
+                <source media="(max-width: 1024px)" srcset="{% getUrl "/assets/images/vanredsummer.jpg" | resize({ width: 1280 }) | jpeg %}" type="image/jpeg">
+                <!--Desktop Image-->
+                <source media="(min-width: 1024px)" srcset="{% getUrl "/assets/images/vanredsummer.jpg" | resize({ width: 1920 }) | avif %}" type="image/avif">
+                <source media="(min-width: 1024px)" srcset="{% getUrl "/assets/images/vanredsummer.jpg" | resize({ width: 1920 }) | webp %}" type="image/webp">
+                <source media="(min-width: 1024px)" srcset="{% getUrl "/assets/images/vanredsummer.jpg" | resize({ width: 1920 }) | jpeg %}" type="image/jpeg">
+                <img src="{% getUrl "/assets/images/vanredsummer.jpg" | resize({ width: 2000 }) | jpeg %}" alt="Happy family journey" loading="lazy" decoding="async">
+            </picture>
+            <div class="cs-hero-overlay"></div>
+            <h2 class="cs-hero-heading">
+                Jūsų kelionė,<br>
+                mūsų automobilis
+            </h2>
+            <div class="cs-hero-badge">
+                <div class="cs-badge-content">
+                    <h3 class="cs-badge-heading">
+                        Krovininiai ir keleiviniai<br>
+                        automobiliai darbui ir kelionėms
+                    </h3>
+                </div>
+                <div class="cs-badge-image">
+                    <img src="/assets/images/redcar.png" alt="Car" loading="lazy" decoding="async">
+                </div>
+            </div>
+        </div>
+        <div class="cs-feature-cards">
+            <div class="cs-feature-card">
+                <div class="cs-feature-icon">
+                    <img src="/assets/svgs/cars/grouptravel.svg" alt="Group travel icon" width="48" height="48" loading="lazy" decoding="async" style="transform: scaleX(-1);">
+                </div>
+                <div class="cs-feature-text">
+                    <h3 class="cs-feature-title">Erdvūs ir patogūs</h3>
+                    <p class="cs-feature-description">Pritaikyti krovinių gabenimui, darbo komandoms ar keliautojų grupėms</p>
+                </div>
+            </div>
+            <div class="cs-feature-card">
+                <div class="cs-feature-icon">
+                    <img src="/assets/svgs/cars/carseat.svg" alt="Comfortable seats icon" width="48" height="48" loading="lazy" decoding="async">
+                </div>
+                <div class="cs-feature-text">
+                    <h3 class="cs-feature-title">Ilgoms kelionėms</h3>
+                    <p class="cs-feature-description">Patogios atlenkiamos sėdynės ir kita komforto įranga</p>
+                </div>
+            </div>
+            <div class="cs-feature-card">
+                <div class="cs-feature-icon">
+                    <img src="/assets/svgs/cars/safety.svg" alt="Safety icon" width="48" height="48" loading="lazy" decoding="async">
+                </div>
+                <div class="cs-feature-text">
+                    <h3 class="cs-feature-title">Saugumas kelyje</h3>
+                    <p class="cs-feature-description">Nuolat tikrinami ir techniškai tvarkingi mikroautobusai</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- ============================================ -->
+<!--           Reviews Slider Section             -->
+<!-- ============================================ -->
+
+<section id="reviews-slider-section" class="reviews-slider-section">
+    <div class="cs-container">
+        <div class="reviews-slider-content">
+            <div class="reviews-content-flex">
+                <span class="cs-topper">Atsiliepimai</span>
+                <h2 class="cs-title">Ką apie mus sako klientai</h2>
+            </div>
+            <a href="/atsiliepimai/" class="cs-button-solid reviews-button-desktop">Daugiau atsiliepimų</a>
+        </div>
+
+        <div class="cs-slider-container">
+            <button class="cs-slider-arrow cs-slider-prev" aria-label="Previous slide">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M15 18L9 12L15 6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+            </button>
+            <div class="cs-slider-wrapper">
+                <div id="reviews-slider-overlay" class="cs-slider-overlay"></div>
+                <div id="reviews-slider" class="keen-slider">
+                    <!-- TOP TIER - 1. Itella Logistics Lietuva -->
+                    <div class="keen-slider__slide">
+                        <div class="review-card">
+                            <div class="review-header">
+                                <div class="review-avatar-wrapper">
+                                    <div class="review-avatar">
+                                        <span>I</span>
+                                    </div>
+                                    <div class="review-name-wrapper">
+                                        <span class="review-name">Itella Logistics Lietuva</span>
+                                    </div>
+                                </div>
+                                <img class="review-google-logo" src="/assets/svgs/quote.svg" alt="Quote" width="24" height="24" aria-hidden="true">
+                            </div>
+                            <div class="review-stars">
+                                <svg width="20" height="20" viewBox="0 0 24 24" fill="var(--primary)" xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M12 2L15.09 8.26L22 9.27L17 14.14L18.18 21.02L12 17.77L5.82 21.02L7 14.14L2 9.27L8.91 8.26L12 2Z"/>
+                                </svg>
+                                <svg width="20" height="20" viewBox="0 0 24 24" fill="var(--primary)" xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M12 2L15.09 8.26L22 9.27L17 14.14L18.18 21.02L12 17.77L5.82 21.02L7 14.14L2 9.27L8.91 8.26L12 2Z"/>
+                                </svg>
+                                <svg width="20" height="20" viewBox="0 0 24 24" fill="var(--primary)" xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M12 2L15.09 8.26L22 9.27L17 14.14L18.18 21.02L12 17.77L5.82 21.02L7 14.14L2 9.27L8.91 8.26L12 2Z"/>
+                                </svg>
+                                <svg width="20" height="20" viewBox="0 0 24 24" fill="var(--primary)" xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M12 2L15.09 8.26L22 9.27L17 14.14L18.18 21.02L12 17.77L5.82 21.02L7 14.14L2 9.27L8.91 8.26L12 2Z"/>
+                                </svg>
+                                <svg width="20" height="20" viewBox="0 0 24 24" fill="var(--primary)" xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M12 2L15.09 8.26L22 9.27L17 14.14L18.18 21.02L12 17.77L5.82 21.02L7 14.14L2 9.27L8.91 8.26L12 2Z"/>
+                                </svg>
+                            </div>
+                            <p class="review-text">Norint užtikrinti kokybišką siuntų pristatymą reikalingas patikimas partneris. Todėl mes renkamės AutoVerus. Patikimas, greitas ir labai kokybiškas aptarnavimas. Rekomenduoju!</p>
+                        </div>
+                    </div>
+                    <!-- TOP TIER - 2. UAB Doriteksas / ibis Kaunas Centre -->
+                    <div class="keen-slider__slide">
+                        <div class="review-card">
+                            <div class="review-header">
+                                <div class="review-avatar-wrapper">
+                                    <div class="review-avatar">
+                                        <span>U</span>
+                                    </div>
+                                    <div class="review-name-wrapper">
+                                        <span class="review-name">UAB Doriteksas, ibis Kaunas Centre</span>
+                                    </div>
+                                </div>
+                                <img class="review-google-logo" src="/assets/svgs/quote.svg" alt="Quote" width="24" height="24" aria-hidden="true">
+                            </div>
+                            <div class="review-stars">
+                                <svg width="20" height="20" viewBox="0 0 24 24" fill="var(--primary)" xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M12 2L15.09 8.26L22 9.27L17 14.14L18.18 21.02L12 17.77L5.82 21.02L7 14.14L2 9.27L8.91 8.26L12 2Z"/>
+                                </svg>
+                                <svg width="20" height="20" viewBox="0 0 24 24" fill="var(--primary)" xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M12 2L15.09 8.26L22 9.27L17 14.14L18.18 21.02L12 17.77L5.82 21.02L7 14.14L2 9.27L8.91 8.26L12 2Z"/>
+                                </svg>
+                                <svg width="20" height="20" viewBox="0 0 24 24" fill="var(--primary)" xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M12 2L15.09 8.26L22 9.27L17 14.14L18.18 21.02L12 17.77L5.82 21.02L7 14.14L2 9.27L8.91 8.26L12 2Z"/>
+                                </svg>
+                                <svg width="20" height="20" viewBox="0 0 24 24" fill="var(--primary)" xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M12 2L15.09 8.26L22 9.27L17 14.14L18.18 21.02L12 17.77L5.82 21.02L7 14.14L2 9.27L8.91 8.26L12 2Z"/>
+                                </svg>
+                                <svg width="20" height="20" viewBox="0 0 24 24" fill="var(--primary)" xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M12 2L15.09 8.26L22 9.27L17 14.14L18.18 21.02L12 17.77L5.82 21.02L7 14.14L2 9.27L8.91 8.26L12 2Z"/>
+                                </svg>
+                            </div>
+                            <p class="review-text">Norime padėkoti įmonei UAB "AutoVerus" už operatyvų, profesionalų, draugišką bendradarbiavimą. Iškilus nesklandumui - sureaguojama ir išsprendžiama iš karto. Esame labai patenkinti ir jaučiamės saugūs, kad bus išpildyti visi mūsų lūkesčiai. Rekomenduojame.</p>
+                        </div>
+                    </div>
+                    <!-- TOP TIER - 3. UAB "Viržis" -->
+                    <div class="keen-slider__slide">
+                        <div class="review-card">
+                            <div class="review-header">
+                                <div class="review-avatar-wrapper">
+                                    <div class="review-avatar">
+                                        <span>U</span>
+                                    </div>
+                                    <div class="review-name-wrapper">
+                                        <span class="review-name">UAB "Viržis"</span>
+                                    </div>
+                                </div>
+                                <img class="review-google-logo" src="/assets/svgs/quote.svg" alt="Quote" width="24" height="24" aria-hidden="true">
+                            </div>
+                            <div class="review-stars">
+                                <svg width="20" height="20" viewBox="0 0 24 24" fill="var(--primary)" xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M12 2L15.09 8.26L22 9.27L17 14.14L18.18 21.02L12 17.77L5.82 21.02L7 14.14L2 9.27L8.91 8.26L12 2Z"/>
+                                </svg>
+                                <svg width="20" height="20" viewBox="0 0 24 24" fill="var(--primary)" xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M12 2L15.09 8.26L22 9.27L17 14.14L18.18 21.02L12 17.77L5.82 21.02L7 14.14L2 9.27L8.91 8.26L12 2Z"/>
+                                </svg>
+                                <svg width="20" height="20" viewBox="0 0 24 24" fill="var(--primary)" xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M12 2L15.09 8.26L22 9.27L17 14.14L18.18 21.02L12 17.77L5.82 21.02L7 14.14L2 9.27L8.91 8.26L12 2Z"/>
+                                </svg>
+                                <svg width="20" height="20" viewBox="0 0 24 24" fill="var(--primary)" xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M12 2L15.09 8.26L22 9.27L17 14.14L18.18 21.02L12 17.77L5.82 21.02L7 14.14L2 9.27L8.91 8.26L12 2Z"/>
+                                </svg>
+                                <svg width="20" height="20" viewBox="0 0 24 24" fill="var(--primary)" xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M12 2L15.09 8.26L22 9.27L17 14.14L18.18 21.02L12 17.77L5.82 21.02L7 14.14L2 9.27L8.91 8.26L12 2Z"/>
+                                </svg>
+                            </div>
+                            <p class="review-text">Penkis metus dirbame su "AutoVerus". Džiaugiamės Jūsų paslaugų kokybe, lankstumu, noru visada padėti ir siekiu tobulėti. Profesionalus požiūris į klientą, greitas prisitaikymas prie poreikių ir atsakingumas yra kokybės ir patikimumo garantas.</p>
+                        </div>
+                    </div>
+                    <!-- TOP TIER - 4. HAB "Daigelis" -->
+                    <div class="keen-slider__slide">
+                        <div class="review-card">
+                            <div class="review-header">
+                                <div class="review-avatar-wrapper">
+                                    <div class="review-avatar">
+                                        <span>H</span>
+                                    </div>
+                                    <div class="review-name-wrapper">
+                                        <span class="review-name">HAB "Daigelis"</span>
+                                    </div>
+                                </div>
+                                <img class="review-google-logo" src="/assets/svgs/quote.svg" alt="Quote" width="24" height="24" aria-hidden="true">
+                            </div>
+                            <div class="review-stars">
+                                <svg width="20" height="20" viewBox="0 0 24 24" fill="var(--primary)" xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M12 2L15.09 8.26L22 9.27L17 14.14L18.18 21.02L12 17.77L5.82 21.02L7 14.14L2 9.27L8.91 8.26L12 2Z"/>
+                                </svg>
+                                <svg width="20" height="20" viewBox="0 0 24 24" fill="var(--primary)" xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M12 2L15.09 8.26L22 9.27L17 14.14L18.18 21.02L12 17.77L5.82 21.02L7 14.14L2 9.27L8.91 8.26L12 2Z"/>
+                                </svg>
+                                <svg width="20" height="20" viewBox="0 0 24 24" fill="var(--primary)" xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M12 2L15.09 8.26L22 9.27L17 14.14L18.18 21.02L12 17.77L5.82 21.02L7 14.14L2 9.27L8.91 8.26L12 2Z"/>
+                                </svg>
+                                <svg width="20" height="20" viewBox="0 0 24 24" fill="var(--primary)" xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M12 2L15.09 8.26L22 9.27L17 14.14L18.18 21.02L12 17.77L5.82 21.02L7 14.14L2 9.27L8.91 8.26L12 2Z"/>
+                                </svg>
+                                <svg width="20" height="20" viewBox="0 0 24 24" fill="var(--primary)" xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M12 2L15.09 8.26L22 9.27L17 14.14L18.18 21.02L12 17.77L5.82 21.02L7 14.14L2 9.27L8.91 8.26L12 2Z"/>
+                                </svg>
+                            </div>
+                            <p class="review-text">Keletą metų dirbame su "AutoVerus". Padėjo išspręsti transportavimo problemas. Patinka požiūris į klientą, lankstumas ir žodžio laikymasis. Daug nekalbant-patikima įmonė.</p>
+                        </div>
+                    </div>
+                    <!-- TOP TIER - 5. Adomas / Baltic Transline -->
+                    <div class="keen-slider__slide">
+                        <div class="review-card">
+                            <div class="review-header">
+                                <div class="review-avatar-wrapper">
+                                    <div class="review-avatar">
+                                        <span>A</span>
+                                    </div>
+                                    <div class="review-name-wrapper">
+                                        <span class="review-name">Adomas Baltic Transline</span>
+                                    </div>
+                                </div>
+                                <img class="review-google-logo" src="/assets/svgs/quote.svg" alt="Quote" width="24" height="24" aria-hidden="true">
+                            </div>
+                            <div class="review-stars">
+                                <svg width="20" height="20" viewBox="0 0 24 24" fill="var(--primary)" xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M12 2L15.09 8.26L22 9.27L17 14.14L18.18 21.02L12 17.77L5.82 21.02L7 14.14L2 9.27L8.91 8.26L12 2Z"/>
+                                </svg>
+                                <svg width="20" height="20" viewBox="0 0 24 24" fill="var(--primary)" xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M12 2L15.09 8.26L22 9.27L17 14.14L18.18 21.02L12 17.77L5.82 21.02L7 14.14L2 9.27L8.91 8.26L12 2Z"/>
+                                </svg>
+                                <svg width="20" height="20" viewBox="0 0 24 24" fill="var(--primary)" xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M12 2L15.09 8.26L22 9.27L17 14.14L18.18 21.02L12 17.77L5.82 21.02L7 14.14L2 9.27L8.91 8.26L12 2Z"/>
+                                </svg>
+                                <svg width="20" height="20" viewBox="0 0 24 24" fill="var(--primary)" xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M12 2L15.09 8.26L22 9.27L17 14.14L18.18 21.02L12 17.77L5.82 21.02L7 14.14L2 9.27L8.91 8.26L12 2Z"/>
+                                </svg>
+                                <svg width="20" height="20" viewBox="0 0 24 24" fill="var(--primary)" xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M12 2L15.09 8.26L22 9.27L17 14.14L18.18 21.02L12 17.77L5.82 21.02L7 14.14L2 9.27L8.91 8.26L12 2Z"/>
+                                </svg>
+                            </div>
+                            <p class="review-text">Su šia kompanija jau dirbam keletą metų, visada randam bendram kalbą, problemas sprendžia čia ir dabar. Esame labai patenkinti turėdami tokį partnerį.</p>
+                        </div>
+                    </div>
+                    <!-- SECOND TIER - 6. Kauno kolegijos studentų atstovybė -->
+                    <div class="keen-slider__slide">
+                        <div class="review-card">
+                            <div class="review-header">
+                                <div class="review-avatar-wrapper">
+                                    <div class="review-avatar">
+                                        <span>K</span>
+                                    </div>
+                                    <div class="review-name-wrapper">
+                                        <span class="review-name">Kauno kolegijos studentų atstovybė</span>
+                                    </div>
+                                </div>
+                                <img class="review-google-logo" src="/assets/svgs/quote.svg" alt="Quote" width="24" height="24" aria-hidden="true">
+                            </div>
+                            <div class="review-stars">
+                                <svg width="20" height="20" viewBox="0 0 24 24" fill="var(--primary)" xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M12 2L15.09 8.26L22 9.27L17 14.14L18.18 21.02L12 17.77L5.82 21.02L7 14.14L2 9.27L8.91 8.26L12 2Z"/>
+                                </svg>
+                                <svg width="20" height="20" viewBox="0 0 24 24" fill="var(--primary)" xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M12 2L15.09 8.26L22 9.27L17 14.14L18.18 21.02L12 17.77L5.82 21.02L7 14.14L2 9.27L8.91 8.26L12 2Z"/>
+                                </svg>
+                                <svg width="20" height="20" viewBox="0 0 24 24" fill="var(--primary)" xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M12 2L15.09 8.26L22 9.27L17 14.14L18.18 21.02L12 17.77L5.82 21.02L7 14.14L2 9.27L8.91 8.26L12 2Z"/>
+                                </svg>
+                                <svg width="20" height="20" viewBox="0 0 24 24" fill="var(--primary)" xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M12 2L15.09 8.26L22 9.27L17 14.14L18.18 21.02L12 17.77L5.82 21.02L7 14.14L2 9.27L8.91 8.26L12 2Z"/>
+                                </svg>
+                                <svg width="20" height="20" viewBox="0 0 24 24" fill="var(--primary)" xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M12 2L15.09 8.26L22 9.27L17 14.14L18.18 21.02L12 17.77L5.82 21.02L7 14.14L2 9.27L8.91 8.26L12 2Z"/>
+                                </svg>
+                            </div>
+                            <p class="review-text">Malonus bendradarbiavimas, lengva surasti bendrą kalbą ir labai puikus aptarnavimas! Padėjo išspręsti transportavimo problemas. Labai džiaugiamės turėję bendrų reikalų ir tikimės tolimesnio malonaus bendradarbiavimo.</p>
+                        </div>
+                    </div>
+                    <!-- SECOND TIER - 7. O DURYS -->
+                    <div class="keen-slider__slide">
+                        <div class="review-card">
+                            <div class="review-header">
+                                <div class="review-avatar-wrapper">
+                                    <div class="review-avatar">
+                                        <span>O</span>
+                                    </div>
+                                    <div class="review-name-wrapper">
+                                        <span class="review-name">O DURYS</span>
+                                    </div>
+                                </div>
+                                <img class="review-google-logo" src="/assets/svgs/quote.svg" alt="Quote" width="24" height="24" aria-hidden="true">
+                            </div>
+                            <div class="review-stars">
+                                <svg width="20" height="20" viewBox="0 0 24 24" fill="var(--primary)" xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M12 2L15.09 8.26L22 9.27L17 14.14L18.18 21.02L12 17.77L5.82 21.02L7 14.14L2 9.27L8.91 8.26L12 2Z"/>
+                                </svg>
+                                <svg width="20" height="20" viewBox="0 0 24 24" fill="var(--primary)" xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M12 2L15.09 8.26L22 9.27L17 14.14L18.18 21.02L12 17.77L5.82 21.02L7 14.14L2 9.27L8.91 8.26L12 2Z"/>
+                                </svg>
+                                <svg width="20" height="20" viewBox="0 0 24 24" fill="var(--primary)" xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M12 2L15.09 8.26L22 9.27L17 14.14L18.18 21.02L12 17.77L5.82 21.02L7 14.14L2 9.27L8.91 8.26L12 2Z"/>
+                                </svg>
+                                <svg width="20" height="20" viewBox="0 0 24 24" fill="var(--primary)" xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M12 2L15.09 8.26L22 9.27L17 14.14L18.18 21.02L12 17.77L5.82 21.02L7 14.14L2 9.27L8.91 8.26L12 2Z"/>
+                                </svg>
+                                <svg width="20" height="20" viewBox="0 0 24 24" fill="var(--primary)" xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M12 2L15.09 8.26L22 9.27L17 14.14L18.18 21.02L12 17.77L5.82 21.02L7 14.14L2 9.27L8.91 8.26L12 2Z"/>
+                                </svg>
+                            </div>
+                            <p class="review-text">Ačiū vadybininkui Mantui, už supratingumą ir greita komunikaciją. Rekomenduoju šią įmonę, dėl kainų, tvarkingo transporto ir orientacija į klientą.</p>
+                        </div>
+                    </div>
+                    <!-- SECOND TIER - 8. RMI muzikos servisas -->
+                    <div class="keen-slider__slide">
+                        <div class="review-card">
+                            <div class="review-header">
+                                <div class="review-avatar-wrapper">
+                                    <div class="review-avatar">
+                                        <span>R</span>
+                                    </div>
+                                    <div class="review-name-wrapper">
+                                        <span class="review-name">RMI muzikos servisas</span>
+                                    </div>
+                                </div>
+                                <img class="review-google-logo" src="/assets/svgs/quote.svg" alt="Quote" width="24" height="24" aria-hidden="true">
+                            </div>
+                            <div class="review-stars">
+                                <svg width="20" height="20" viewBox="0 0 24 24" fill="var(--primary)" xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M12 2L15.09 8.26L22 9.27L17 14.14L18.18 21.02L12 17.77L5.82 21.02L7 14.14L2 9.27L8.91 8.26L12 2Z"/>
+                                </svg>
+                                <svg width="20" height="20" viewBox="0 0 24 24" fill="var(--primary)" xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M12 2L15.09 8.26L22 9.27L17 14.14L18.18 21.02L12 17.77L5.82 21.02L7 14.14L2 9.27L8.91 8.26L12 2Z"/>
+                                </svg>
+                                <svg width="20" height="20" viewBox="0 0 24 24" fill="var(--primary)" xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M12 2L15.09 8.26L22 9.27L17 14.14L18.18 21.02L12 17.77L5.82 21.02L7 14.14L2 9.27L8.91 8.26L12 2Z"/>
+                                </svg>
+                                <svg width="20" height="20" viewBox="0 0 24 24" fill="var(--primary)" xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M12 2L15.09 8.26L22 9.27L17 14.14L18.18 21.02L12 17.77L5.82 21.02L7 14.14L2 9.27L8.91 8.26L12 2Z"/>
+                                </svg>
+                                <svg width="20" height="20" viewBox="0 0 24 24" fill="var(--primary)" xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M12 2L15.09 8.26L22 9.27L17 14.14L18.18 21.02L12 17.77L5.82 21.02L7 14.14L2 9.27L8.91 8.26L12 2Z"/>
+                                </svg>
+                            </div>
+                            <p class="review-text">Tik geri atsiliepimai apie šią įmonę, šiltas bendravimas, lanksčios sąlygos ir greitas problemų sprendimas. Rekomenduojame.</p>
+                        </div>
+                    </div>
+                    <!-- SECOND TIER - 9. MB Žiedų planeta -->
+                    <div class="keen-slider__slide">
+                        <div class="review-card">
+                            <div class="review-header">
+                                <div class="review-avatar-wrapper">
+                                    <div class="review-avatar">
+                                        <span>M</span>
+                                    </div>
+                                    <div class="review-name-wrapper">
+                                        <span class="review-name">MB Žiedų planeta</span>
+                                    </div>
+                                </div>
+                                <img class="review-google-logo" src="/assets/svgs/quote.svg" alt="Quote" width="24" height="24" aria-hidden="true">
+                            </div>
+                            <div class="review-stars">
+                                <svg width="20" height="20" viewBox="0 0 24 24" fill="var(--primary)" xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M12 2L15.09 8.26L22 9.27L17 14.14L18.18 21.02L12 17.77L5.82 21.02L7 14.14L2 9.27L8.91 8.26L12 2Z"/>
+                                </svg>
+                                <svg width="20" height="20" viewBox="0 0 24 24" fill="var(--primary)" xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M12 2L15.09 8.26L22 9.27L17 14.14L18.18 21.02L12 17.77L5.82 21.02L7 14.14L2 9.27L8.91 8.26L12 2Z"/>
+                                </svg>
+                                <svg width="20" height="20" viewBox="0 0 24 24" fill="var(--primary)" xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M12 2L15.09 8.26L22 9.27L17 14.14L18.18 21.02L12 17.77L5.82 21.02L7 14.14L2 9.27L8.91 8.26L12 2Z"/>
+                                </svg>
+                                <svg width="20" height="20" viewBox="0 0 24 24" fill="var(--primary)" xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M12 2L15.09 8.26L22 9.27L17 14.14L18.18 21.02L12 17.77L5.82 21.02L7 14.14L2 9.27L8.91 8.26L12 2Z"/>
+                                </svg>
+                                <svg width="20" height="20" viewBox="0 0 24 24" fill="var(--primary)" xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M12 2L15.09 8.26L22 9.27L17 14.14L18.18 21.02L12 17.77L5.82 21.02L7 14.14L2 9.27L8.91 8.26L12 2Z"/>
+                                </svg>
+                            </div>
+                            <p class="review-text">Jau keletą metų jau metų AutoVerus įmonė išvežioja mūsų produkciją klientams, esame labai patenkinti šios įmonės teikiamomis paslaugomis ! Ačiū už bendradarbiavimą !!!</p>
+                        </div>
+                    </div>
+                    <!-- SECOND TIER - 10. Andrius -->
+                    <div class="keen-slider__slide">
+                        <div class="review-card">
+                            <div class="review-header">
+                                <div class="review-avatar-wrapper">
+                                    <div class="review-avatar">
+                                        <span>A</span>
+                                    </div>
+                                    <div class="review-name-wrapper">
+                                        <span class="review-name">Andrius</span>
+                                    </div>
+                                </div>
+                                <img class="review-google-logo" src="/assets/svgs/quote.svg" alt="Quote" width="24" height="24" aria-hidden="true">
+                            </div>
+                            <div class="review-stars">
+                                <svg width="20" height="20" viewBox="0 0 24 24" fill="var(--primary)" xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M12 2L15.09 8.26L22 9.27L17 14.14L18.18 21.02L12 17.77L5.82 21.02L7 14.14L2 9.27L8.91 8.26L12 2Z"/>
+                                </svg>
+                                <svg width="20" height="20" viewBox="0 0 24 24" fill="var(--primary)" xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M12 2L15.09 8.26L22 9.27L17 14.14L18.18 21.02L12 17.77L5.82 21.02L7 14.14L2 9.27L8.91 8.26L12 2Z"/>
+                                </svg>
+                                <svg width="20" height="20" viewBox="0 0 24 24" fill="var(--primary)" xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M12 2L15.09 8.26L22 9.27L17 14.14L18.18 21.02L12 17.77L5.82 21.02L7 14.14L2 9.27L8.91 8.26L12 2Z"/>
+                                </svg>
+                                <svg width="20" height="20" viewBox="0 0 24 24" fill="var(--primary)" xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M12 2L15.09 8.26L22 9.27L17 14.14L18.18 21.02L12 17.77L5.82 21.02L7 14.14L2 9.27L8.91 8.26L12 2Z"/>
+                                </svg>
+                                <svg width="20" height="20" viewBox="0 0 24 24" fill="var(--primary)" xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M12 2L15.09 8.26L22 9.27L17 14.14L18.18 21.02L12 17.77L5.82 21.02L7 14.14L2 9.27L8.91 8.26L12 2Z"/>
+                                </svg>
+                            </div>
+                            <p class="review-text">Kelis metus draugaujame su AutoVerus. Naudojamės auto paslaugomis, nuomojamės automobilius, važiuojame į žygius kalnuose visoje europoje. Esame labai patenkinti ir toliau tęsime bendradarbiavimą. Jokių nesklandumų. Ačiū įmonės vadovui.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <button class="cs-slider-arrow cs-slider-next" aria-label="Next slide">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M9 18L15 12L9 6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+            </button>
+        </div>
+        <a href="/atsiliepimai/" class="cs-button-solid reviews-button-mobile">
+            Daugiau atsiliepimų
+        </a>
+    </div>
+</section>
+
+
+
+<!-- ============================================ -->
+<!--           How We Work Section                -->
+<!-- ============================================ -->
+
+<section id="steps-1209">
+    <div class="cs-container">
+        <div class="cs-content">
+            <span class="cs-topper">Nuomos eiga</span>
+            <h2 class="cs-title">Kaip išsinuomoti automobilį</h2>
+            <p class="cs-text">Taupome jūsų laiką, todėl nuomos procesas pas mus yra konkretus. Jokių sudėtingų procedūrų ar eilių. Tiesiog išsirenkate, suderiname laiką ir dirbate savo darbus.</p>
+        </div>
+        <ul class="cs-card-group">
+            <li class="cs-item">
+                <span class="cs-number">01</span>
+                <h3 class="cs-h3">Išsirinkite</h3>
+                <p class="cs-item-text">Peržiūrėkite automobilius svetainėje. Pasirinkite modelį, kuris tinka jūsų krovinių gabaritams ar planuojamai kelionei.</p>
+            </li>
+            <li class="cs-item">
+                <span class="cs-number">02</span>
+                <h3 class="cs-h3">Rezervuokite</h3>
+                <p class="cs-item-text">Paskambinkite mums arba užpildykite užklausą. Patikrinsime užimtumą, suderinsime terminus ir paruošime dokumentus.</p>
+            </li>
+            <li class="cs-item">
+                <span class="cs-number">03</span>
+                <h3 class="cs-h3">Atsiimkite</h3>
+                <p class="cs-item-text">Atvykite į aikštelę Kaune (Pramonės pr. 103) arba užsakykite pristatymą tiesiai į savo objektą. Pasirašome sutartį ir perduodame raktelius.</p>
+            </li>
+        </ul>
+    </div>
+</section>
+
+<!-- ============================================ -->
+<!--                  Services                    -->
+<!-- ============================================ -->
+
+
+
+
+
+
+
+
+
+<script>
+    (function() {
+        function initFAQ() {
+            const faqSection = document.querySelector("#map-faq-2251");
+            if (!faqSection || faqSection.dataset.faqInit === "true") return;
+            faqSection.dataset.faqInit = "true";
+
+            const faqGroup = faqSection.querySelector(".cs-faq-group");
+            if (faqGroup) {
+                faqGroup.addEventListener("click", function(e) {
+                    const button = e.target.closest(".cs-faq-item .cs-button");
+                    if (!button) return;
+                    const faqItem = button.closest(".cs-faq-item");
+                    if (faqItem) {
+                        // Close other items
+                        const allItems = faqGroup.querySelectorAll(".cs-faq-item");
+                        allItems.forEach(item => {
+                            if (item !== faqItem) {
+                                item.classList.remove("active");
+                            }
+                        });
+                        // Toggle current item
+                        faqItem.classList.toggle("active");
+                    }
+                });
+            }
+        }
+
+        if (document.readyState === "loading") {
+            document.addEventListener("DOMContentLoaded", initFAQ, { once: true });
+        } else {
+            initFAQ();
+        }
+        document.addEventListener("astro:page-load", initFAQ);
+    })();
+</script>
+
+
+<section id="blog-986">
+    <div class="cs-container">
+        <div class="cs-content">
+            <div class="cs-flex">
+                <span class="cs-topper">Naudingi patarimai</span>
+                <h2 class="cs-title">Patarimai ir įžvalgos</h2>
+            </div>
+            <a href="/tinklarastis/" class="cs-button-solid blog-button-desktop">Peržiūrėti visus</a>
+        </div>
+        {% if collections.post | length == 0 %}
+        <h3 class="cs-title">Naujų įrašų nėra</h3>
+        {% else %}
+        <div class="cs-slider-container">
+            <button class="cs-slider-arrow cs-slider-prev" aria-label="Previous slide">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M15 18L9 12L15 6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+            </button>
+            <div class="cs-slider-wrapper">
+                <div id="blog-slider-overlay" class="cs-slider-overlay"></div>
+                <div id="blog-slider" class="keen-slider">
+                    {% for post in collections.post | reverse %}
+                    {% if loop.index <= 6 %}
+                    <div class="keen-slider__slide">
+                        <div class="cs-item">
+                            <picture class="cs-picture">
+                                <!--Mobile Image-->
+                                <source media="(max-width: 600px)" srcset="{% getUrl post.data.image | resize({ width: 1000 }) | avif %}" type="image/avif">
+                                <source media="(max-width: 600px)" srcset="{% getUrl post.data.image | resize({ width: 1000 }) | webp %}" type="image/webp">
+                                <source media="(max-width: 600px)" srcset="{% getUrl post.data.image | resize({ width: 1000 }) | jpeg %}" type="image/jpeg">
+                                <!--Tablet and above Image-->
+                                <source media="(min-width: 601px)" srcset="{% getUrl post.data.image | resize({ width: 1000 }) | avif %}" type="image/avif">
+                                <source media="(min-width: 601px)" srcset="{% getUrl post.data.image | resize({ width: 1000 }) | webp %}" type="image/webp">
+                                <source media="(min-width: 601px)" srcset="{% getUrl post.data.image | resize({ width: 1000 }) | jpeg %}" type="image/jpeg">
+                                <img loading="lazy" decoding="async" src="{% getUrl post.data.image | resize({ width: 1000 }) | jpeg %}" alt="{{ post.data.imageAlt | default(post.data.title) }}" width="413" height="480">
+                            </picture>
+                            <div class="cs-info">
+                                <span class="cs-date">
+                                    <img class="cs-icon" loading="lazy" decoding="async" src="/assets/svgs/calendar.svg" alt="calendar" width="20" height="20">
+                                    {{ post.date | postDate }}
+                                </span>
+                                <h3 class="cs-h3">{{ post.data.title }}</h3>
+                                <a href="{{ post.url }}" class="cs-link">Skaityti daugiau</a>
+                            </div>
+                        </div>
+                    </div>
+                    {% endif %}
+                    {% endfor %}
+                </div>
+            </div>
+            <button class="cs-slider-arrow cs-slider-next" aria-label="Next slide">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M9 18L15 12L9 6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+            </button>
+        </div>
+        <a href="/tinklarastis/" class="cs-button-solid blog-button-mobile">Peržiūrėti visus</a>
+        {% endif %}
+    </div>
+</section>
+
+<section id="map-faq-2251">
+    <div class="cs-container">
+        <!-- FAQ Content - Left Side -->
+        <div class="cs-content">
+            <span class="cs-topper">Klausimai ir atsakymai</span>
+            <h2 class="cs-title">Dažniausiai užduodami klausimai</h2>
+            <ul class="cs-faq-group">
+                <li class="cs-faq-item">
+                    <button class="cs-button">
+                        <span class="cs-button-text">
+                            Kokie yra ridos apribojimai ir mokesčiai?
+                        </span>
+                    </button>
+                    <p class="cs-item-p">
+                        Nuomojantis mikroautobusą taikomas 500 kilometrų paros limitas. Jei viršijate šį atstumą, už kiekvieną papildomai nuvažiuotą kilometrą skaičiuojamas nuo 0,12 euro plius PVM mokestis.
+                    </p>
+                </li>
+                <li class="cs-faq-item">
+                    <button class="cs-button">
+                        <span class="cs-button-text">
+                            Koks užstatas ir kada jis grąžinamas?
+                        </span>
+                    </button>
+                    <p class="cs-item-p">
+                        Užstatas lengviesiems automobiliams yra 150 eurų, o keleiviniams bei krovininiams mikroautobusams 300 eurų. Užstatą grąžiname apžiūrėję automobilį. Jei grąžinate transporto priemonę tamsiu paros metu, užstatą grąžinsime tik kitą dieną po apžiūros šviesiu metu. Jei automobilis grąžinamas neplautas ar nepilnu baku, išlaidos išskaičiuojamos iš užstato.
+                    </p>
+                </li>
+                <li class="cs-faq-item">
+                    <button class="cs-button">
+                        <span class="cs-button-text">
+                            Kaip veikia draudimas ir kokia yra franšizė?
+                        </span>
+                    </button>
+                    <p class="cs-item-p">
+                        Visi automobiliai turi privalomąjį civilinį draudimą. Dėl Kasko draudimo konkrečiam modeliui reikia teirautis rezervacijos metu. Įvykus avarijai ar vagystei taikoma besąlyginė franšizė. Lengviesiems automobiliams ji siekia 150 eurų, o mikroautobusams 300 eurų. Vagystės atveju draudimas galioja tik pristačius dokumentus ir raktelius.
+                    </p>
+                </li>
+                <li class="cs-faq-item">
+                    <button class="cs-button">
+                        <span class="cs-button-text">
+                            Ar galima vykti į užsienį?
+                        </span>
+                    </button>
+                    <p class="cs-item-p">
+                        Išvykti iš Lietuvos galima tik gavus raštišką mūsų leidimą. Už savavališką išvykimą be leidimo taikoma 1200 eurų bauda. Planuojant kelionę į užsienį gali keistis ir nuomos kaina.
+                    </p>
+                </li>
+                <li class="cs-faq-item">
+                    <button class="cs-button">
+                        <span class="cs-button-text">
+                            Kokie reikalavimai vairuotojams?
+                        </span>
+                    </button>
+                    <p class="cs-item-p">
+                        Minimalus vairavimo stažas turi būti vieneri metai. Vairuotojams nuo 18 iki 23 metų taikomas papildomas 5 eurų paros mokestis. Sutarčiai būtina pateikti asmens dokumentą ir galiojantį vairuotojo pažymėjimą.
+                    </p>
+                </li>
+                <li class="cs-faq-item">
+                    <button class="cs-button">
+                        <span class="cs-button-text">
+                            Kaip skaičiuojamas nuomos laikas?
+                        </span>
+                    </button>
+                    <p class="cs-item-p">
+                        Minimalus terminas yra 24 valandos. Laikas skaičiuojamas nuo 08.00 iki 08.00 valandos arba nuo 20.00 iki 20.00 valandos, o ne nuo faktinio pasiėmimo momento. Grąžinus automobilį anksčiau laiko pinigai už nepanaudotas dienas nėra grąžinami.
+                    </p>
+                </li>
+            </ul>
+        </div>
+        <!-- Image - Right Side -->
+        <picture class="cs-faq-image">
+            <!--Mobile Image-->
+            <source media="(max-width: 600px)" srcset="{% getUrl "/assets/images/faqvan.jpg" | resize({ width: 600 }) | avif %}" type="image/avif">
+            <source media="(max-width: 600px)" srcset="{% getUrl "/assets/images/faqvan.jpg" | resize({ width: 600 }) | webp %}" type="image/webp">
+            <source media="(max-width: 600px)" srcset="{% getUrl "/assets/images/faqvan.jpg" | resize({ width: 600 }) | jpeg %}" type="image/jpeg">
+            <!--Tablet Image-->
+            <source media="(max-width: 1024px)" srcset="{% getUrl "/assets/images/faqvan.jpg" | resize({ width: 1280 }) | avif %}" type="image/avif">
+            <source media="(max-width: 1024px)" srcset="{% getUrl "/assets/images/faqvan.jpg" | resize({ width: 1280 }) | webp %}" type="image/webp">
+            <source media="(max-width: 1024px)" srcset="{% getUrl "/assets/images/faqvan.jpg" | resize({ width: 1280 }) | jpeg %}" type="image/jpeg">
+            <!--Desktop Image-->
+            <source media="(min-width: 1024px)" srcset="{% getUrl "/assets/images/faqvan.jpg" | resize({ width: 1920 }) | avif %}" type="image/avif">
+            <source media="(min-width: 1024px)" srcset="{% getUrl "/assets/images/faqvan.jpg" | resize({ width: 1920 }) | webp %}" type="image/webp">
+            <source media="(min-width: 1024px)" srcset="{% getUrl "/assets/images/faqvan.jpg" | resize({ width: 1920 }) | jpeg %}" type="image/jpeg">
+            <img src="{% getUrl "/assets/images/faqvan.jpg" | resize({ width: 2000 }) | jpeg %}" alt="Automobilių nuomos paslaugos" decoding="async" loading="lazy">
+        </picture>
+    </div>
+</section>
+{% include 'sections/cta.html' %}
+
+
+{% endblock %}

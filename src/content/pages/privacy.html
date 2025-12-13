@@ -1,0 +1,298 @@
+---
+title: 'Privatumo politika | AutoVerus'
+description: 'Informacija apie tai, kaip renkame, naudojame ir saugome jūsų asmeninius duomenis naudojantis mūsų paslaugomis.'
+permalink: '/privatumo-politika/'
+---
+
+{% extends "layouts/base.html" %}
+
+{% block head %}
+    <style>
+        #conpg {
+            z-index: 1;
+            position: relative;
+            background-color: var(--bodyTextColorWhite);
+            padding: var(--sectionPadding);
+        }
+
+        #conpg .sv-container {
+            position: relative;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            margin: auto;
+            max-width: 80rem;
+            width: 100%;
+            gap: clamp(2.5rem, 4vw, 4rem);
+        }
+
+        #conpg .sv-content {
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+            width: 100%;
+            text-align: left;
+        }
+
+        #conpg h1 {
+            position: relative;
+            margin: 0 0 1rem;
+            max-width: 43.75rem;
+            font-family: var(--headerFontFamily);
+            font-size: var(--headerFontSize);
+            line-height: 1.2em;
+            font-weight: 700;
+            color: var(--headerColor);
+            text-align: inherit;
+        }
+
+        #conpg h2,
+        #conpg h3 {
+            margin: 0 0 1rem;
+            font-weight: 700;
+            color: var(--headerColor);
+            text-align: inherit;
+        }
+
+        #conpg h2 {
+            margin-top: 2rem;
+            font-size: 2rem;
+        }
+
+        #conpg h3 {
+            font-size: 1.5rem;
+            color: var(--primary);
+        }
+
+        #conpg .sv-color {
+            color: var(--primary);
+            color: var(--primary);
+        }
+
+        #conpg p {
+            margin: 0 0 1rem;
+            width: 100%;
+            font-size: var(--bodyFontSize);
+            line-height: 1.5em;
+            color: var(--bodyTextColor);
+            text-align: inherit;
+        }
+
+        #conpg p:last-of-type {
+            margin-bottom: 2rem;
+        }
+
+        #conpg ul {
+            display: flex;
+            flex-direction: column;
+            margin: 0 0 2rem;
+            padding-left: 1.5rem;
+            color: var(--bodyTextColor);
+            gap: 1rem;
+        }
+
+        #conpg ul li {
+            position: relative;
+            list-style: none;
+            color: inherit;
+        }
+
+        #conpg ul li:before {
+            position: absolute;
+            top: 0.625rem;
+            left: -0.75rem;
+            content: "";
+            opacity: 1;
+            display: block;
+            border-radius: 50%;
+            background: currentColor;
+            height: 3px;
+            width: 3px;
+        }
+
+        #conpg img {
+            display: block;
+            height: auto;
+            width: 100%;
+        }
+
+        #conpg .sv-image-group {
+            position: relative;
+            display: none;
+            flex-direction: column;
+            width: 100%;
+            gap: clamp(1rem, 2.6vw, 1.25rem);
+        }
+
+        #conpg .sv-flex {
+            position: relative;
+        }
+
+        #conpg .sv-background {
+            display: block;
+            height: 100%;
+            width: 100%;
+            overflow: hidden;
+            object-fit: cover;
+        }
+
+        #conpg .sv-background img {
+            display: block;
+            height: 100%;
+            width: 100%;
+            object-fit: cover;
+            max-height: 536px;
+        }
+
+        /* Table styling for cookies table */
+        #conpg .wp-block-table {
+            width: 100%;
+            overflow-x: auto;
+            -webkit-overflow-scrolling: touch;
+            display: block;
+        }
+
+        #conpg table {
+            width: 100%;
+            min-width: 600px;
+            border-collapse: collapse;
+            margin: 1.5rem 0 2rem;
+            font-size: 0.9375rem;
+        }
+
+        #conpg table tr:nth-child(even) {
+            background-color: #f5f5f5;
+        }
+
+        #conpg table tr:first-child td {
+            font-weight: 700;
+            background-color: #f0f0f5;
+        }
+
+        #conpg table td {
+            border: 1px solid #e0e0e0;
+            padding: 0.75rem 0.75rem;
+            vertical-align: top;
+        }
+
+        #conpg table td strong {
+            color: var(--headerColor);
+        }
+
+        /* Link wrapping for long URLs */
+        #conpg a {
+            word-wrap: break-word;
+            word-break: break-all;
+            overflow-wrap: break-word;
+            display: inline-block;
+            max-width: 100%;
+        }
+
+        @media only screen and (min-width: 48rem) {
+            #conpg .sv-container {
+                flex-direction: row;
+                justify-content: space-between;
+                align-items: flex-start;
+            }
+
+            #conpg .sv-content {
+                flex: none;
+            }
+
+            #conpg .sv-image-group {
+                order: 2;
+                position: sticky;
+                top: 12.5rem;
+                display: flex;
+                max-width: 33.875rem;
+                width: 44%;
+            }
+        }
+    </style>
+{% endblock %}
+
+{% block body %}
+
+
+    <!-- ============================================ -->
+    <!--                   Banner                     -->
+    <!-- ============================================ -->
+    {% set bannerTitle = "Privatumo politika" %}
+    {% set breadcrumbsHome = "Pradžia" %}
+    {% set breadcrumbsCurrent = "Privatumo politika" %}
+    {% include "components/banner.html" %}
+
+
+<section id="conpg">
+    <div class="sv-container">
+        <div class="sv-content">
+                <p>Mes UAB AutoVerus labai atsakingai žiūrime į Jūsų asmens duomenų apsaugą todėl visi Jūsų asmens duomenys tvarkomi laikantis aktualių duomenų apsaugos įstatymų, reglamentuojančių šių duomenų tvarkymą bei apsaugą.<br>
+                <br>
+                Tvarkome ir naudojame Jūsų laisva valia pateiktus asmens duomenis, siekdami palaikyti santykius su klientais, taip pat vykdydami užsakymą. Prireikus reikiami duomenys perduodami paslaugų teikėjui. Neprekiaujame Jūsų duomenimis ir kitaip neperleidžiame jų tretiesiems asmenims.</p>
+
+                <h1>Apie slapukus</h1>
+
+                <p>Slapukai yra nedideli informacijos failai, atsiųsti į Jūsų įrenginį iš Jūsų lankomų svetainių. Slapukai nekelia jokios grėsmės įrenginiams. Lankant svetainę Jūsų interneto naršyklė nuskaito slapuką, kuris nustato ar asmenys iš Jūsų įrenginio jau lankėsi mūsų svetainėje, įsimena atliktus veiksmus, renka apibendrintą svetainės lankomumo statistiką.</p>
+
+                <h1>Naudojami slapukai</h1>
+
+                <p>Mūsų interneto svetainėje naudojami slapukai padeda Jus atpažinti kaip lankytoją ir pagal Jūsų poreikius pritaikyti interneto svetainės turinį. Siekdami pagerinti svetainės funkcionalumą ir palengvinti naudojimąsi ja, naudojame tokius slapukus:</p>
+
+                <figure class="wp-block-table">
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td><strong>Slapuko pavadinimas</strong></td>
+                                <td><strong>Slapuko paskirtis</strong></td>
+                                <td><strong>Galiojimo laikas</strong></td>
+                                <td><strong>Naudojami duomenys</strong></td>
+                            </tr>
+                            <tr>
+                                <td>_gcl_au</td>
+                                <td>Tikslinės auditorijos atrinkimas ir reklama</td>
+                                <td>2 mėn.</td>
+                                <td>„Google AdSense“ šiuo slapuku eksperimentuoja su reklamos efektyvumu visose interneto svetainėse, kurios naudojasi jų paslaugomis</td>
+                            </tr>
+                            <tr>
+                                <td>_gid</td>
+                                <td>Naudojama atskirti svetainės lankytojus.</td>
+                                <td>24 val.</td>
+                                <td>Atsitiktinai sugeneruotas ID</td>
+                            </tr>
+                            <tr>
+                                <td>_ga</td>
+                                <td>Naudojama atskirti svetainės lankytojus.</td>
+                                <td>2 m.</td>
+                                <td>Šis slapukas naudojamas norint atskirti unikalius vartotojus, klientui priskiriant atsitiktinai sugeneruotą numerį</td>
+                            </tr>
+                            <tr>
+                                <td>_gat_UA-70762833-1</td>
+                                <td>„Google Cookie NID“ – unikalus identifikatorius, naudojamas „Google“ programų, skirtų saugoti pirmenybinę informaciją.</td>
+                                <td>1 min.</td>
+                                <td>Unikalus identifikatorius</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </figure>
+
+                <h1>Slapukų valdymas</h1>
+
+                <p>Jei norite apriboti slapukus arba juos ištrinti, tai galite padaryti interneto naršyklės nustatymuose. Informaciją, kaip tai padaryti, galite rasti naršyklių pagalbos puslapiuose.</p>
+
+                <p>Jeigu naudojate mobilųjį telefoną, išsamesnės informacijos rasite savo telefono vadove.<br>
+                „Firefox“<br>
+                <a href="https://support.mozilla.org/en-US/kb/cookies-information-websites-store-on-your-computer">https://support.mozilla.org/en-US/kb/cookies-information-websites-store-on-your-computer</a><br>
+                „Chrome“<br>
+                <a href="https://support.google.com/chrome/bin/answer.py?hl=en&amp;answer=95647&amp;topic=14666&amp;ctx=topic">https://support.google.com/chrome/bin/answer.py?hl=en&amp;answer=95647&amp;topic=14666&amp;ctx=topic</a><br>
+                „Internet Explorer 8–11“<br>
+                <a href="http://windows.microsoft.com/en-US/internet-explorer/delete-manage-cookies">http://windows.microsoft.com/en-US/internet-explorer/delete-manage-cookies</a></p>
+
+                <p>Šios taisyklės gali būti keičiamos, laikantis slapukų naudojimą reglamentuojančių teisės aktų.<br>
+                Jei turite klausimų ar pastabų kreipkitės el.paštu <a href="mailto:info@autoverus.lt">info@autoverus.lt</a></p>
+        </div>
+    </div>
+</section>
+{% include 'sections/cta2.html' %}
+
+
+    {% endblock %}

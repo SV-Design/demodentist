@@ -1,0 +1,183 @@
+<section id="registruotis">
+
+    <div class="cs-container">
+
+        <div class="cs-content">
+            <h2 class="cs-title">Turite klausimų? Susisiekite</h2>
+            <p class="cs-text">Bendradarbiaujame tiek su įvairių sektorių įmonėmis, tiek su privačiais klientais. Nesvarbu, ar ieškote transporto statybos objektams aptarnauti, ar planuojate tolimą kelionę su kompanija – padėsime išsirinkti tinkamiausią mikroautobusą. Tiesiog susisiekite su mumis, o mes atsakysime į visus klausimus ir rezervuosime jums reikalingą automobilį.</p>
+            <div class="cs-contact-sections">
+                <!-- Kaunas Section -->
+                <div class="cs-contact-section">
+                    <h3 class="cs-city-title">Kaunas</h3>
+                    <ul class="cs-ul">
+                        <li class="cs-li">
+                            <picture class="cs-icon-wrapper">
+                                <img alt="Phone icon" decoding="async" height="40" src="/assets/svgs/icon-phone.svg" width="40" class="cs-icon" aria-hidden="true">
+                            </picture>
+                            <div class="cs-flex-group">
+                                <span class="cs-header">Telefonas</span>
+                                <a class="cs-link" href="tel:{{ client.phoneForTel }}">{{ client.phoneFormatted }}</a>
+                            </div>
+                        </li>
+                        <li class="cs-li">
+                            <picture class="cs-icon-wrapper">
+                                <img alt="Email icon" decoding="async" height="40" src="/assets/svgs/icon-mail.svg" width="40" class="cs-icon" aria-hidden="true">
+                            </picture>
+                            <div class="cs-flex-group">
+                                <span class="cs-header">El. paštas</span>
+                                <a class="cs-link" href="mailto:{{ client.email }}">{{ client.email }}</a>
+                            </div>
+                        </li>
+                        <li class="cs-li">
+                            <picture class="cs-icon-wrapper">
+                                <img alt="Location pin icon" decoding="async" height="40" src="/assets/svgs/icon-pin.svg" width="40" class="cs-icon" aria-hidden="true">
+                            </picture>
+                            <div class="cs-flex-group">
+                                <span class="cs-header">Adresas</span>
+                                <div class="cs-link">{{ client.address.lineOne }}, {{ client.address.city }}</div>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+
+                <!-- Vilnius Section -->
+                <div class="cs-contact-section">
+                    <h3 class="cs-city-title">Vilnius</h3>
+                    <ul class="cs-ul">
+                        <li class="cs-li">
+                            <picture class="cs-icon-wrapper">
+                                <img alt="Phone icon" decoding="async" height="40" src="/assets/svgs/icon-phone.svg" width="40" class="cs-icon" aria-hidden="true">
+                            </picture>
+                            <div class="cs-flex-group">
+                                <span class="cs-header">Telefonas</span>
+                                <a class="cs-link" href="tel:{{ client.phone2ForTel }}">{{ client.phone2Formatted }}</a>
+                            </div>
+                        </li>
+                        <li class="cs-li">
+                            <picture class="cs-icon-wrapper">
+                                <img alt="Email icon" decoding="async" height="40" src="/assets/svgs/icon-mail.svg" width="40" class="cs-icon" aria-hidden="true">
+                            </picture>
+                            <div class="cs-flex-group">
+                                <span class="cs-header">El. paštas</span>
+                                <a class="cs-link" href="mailto:{{ client.email2 }}">{{ client.email2 }}</a>
+                            </div>
+                        </li>
+                        <li class="cs-li">
+                            <picture class="cs-icon-wrapper">
+                                <img alt="Location pin icon" decoding="async" height="40" src="/assets/svgs/icon-pin.svg" width="40" class="cs-icon" aria-hidden="true">
+                            </picture>
+                            <div class="cs-flex-group">
+                                <span class="cs-header">Adresas</span>
+                                <div class="cs-link">{{ client.address2.lineOne }}, {{ client.address2.city }}</div>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- Vadybininkas and Buhalterija Sections -->
+            <div class="cs-contact-sections" style="border-top: 1px solid rgba(0, 0, 0, 0.1); padding-top: 2rem;">
+                <!-- Vadybininkas Section -->
+                <div class="cs-contact-section">
+                    <ul class="cs-ul">
+                        <li class="cs-li">
+                            <picture class="cs-icon-wrapper">
+                                <img alt="Phone icon" decoding="async" height="40" src="/assets/svgs/icon-phone.svg" width="40" class="cs-icon" aria-hidden="true">
+                            </picture>
+                            <div class="cs-flex-group">
+                                <span class="cs-header">Pagr. Vadybininkas</span>
+                                <a class="cs-link" href="tel:+37067253339">+370 672 53339</a>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+
+                <!-- Buhalterija Section -->
+                <div class="cs-contact-section">
+                    <ul class="cs-ul">
+                        <li class="cs-li">
+                            <picture class="cs-icon-wrapper">
+                                <img alt="Phone icon" decoding="async" height="40" src="/assets/svgs/icon-phone.svg" width="40" class="cs-icon" aria-hidden="true">
+                            </picture>
+                            <div class="cs-flex-group">
+                                <span class="cs-header">Buhalterija</span>
+                                <a class="cs-link" href="tel:+37037260659">+370 37 260659</a>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- Business Hours Section (Full Width) -->
+<!--            <ul class="cs-ul cs-business-hours">-->
+<!--                <li class="cs-li">-->
+<!--                    <picture class="cs-icon-wrapper">-->
+<!--                        <img alt="Clock icon" decoding="async" height="40" src="/assets/svgs/business-hours.svg" width="40" class="cs-icon" aria-hidden="true">-->
+<!--                    </picture>-->
+<!--                    <div class="cs-flex-group">-->
+<!--                        <span class="cs-header">Darbo laikas</span>-->
+<!--                        <a href="/kontaktai/" class="cs-link">Pagal susitarimą</a>-->
+<!--                    </div>-->
+<!--                </li>-->
+<!--            </ul>-->
+        </div>
+
+        <!-- Success Message -->
+        <div class="container-email cs-form" id="success-message" style="display: none;">
+            <h1>Dėkojame!</h1>
+            <p>Jūsų užklausa gauta.</p>
+            <p>Susisieksime su jumis artimiausiu metu ir suderinsime nuomos detales.</p>
+        </div>
+
+        <!-- Contact Form -->
+        <form class="cs-form contact-page" id="cs-form-1392" method="POST" data-netlify="true" netlify-honeypot="bot-field" name="Contact Form">
+            <input type="hidden" name="form-name" value="Contact Form">
+            <h3 class="cs-h3">Parašykite mums</h3>
+
+            <label class="cs-label" for="name-1392">
+                Jūsų vardas*
+            </label>
+            <input autocomplete="given-name" class="cs-input" id="name-1392" name="Vardas" required placeholder="Vardas, Pavardė" type="text" pattern=".{2,}">
+            <div class="error-message" id="name-error-cta"></div>
+
+            <label class="cs-label cs-email" for="email-1392">
+                Jūsų el. pašto adresas*
+            </label>
+            <input autocomplete="email" class="cs-input" id="email-1392" name="El. paštas" required placeholder="El. pašto adresas" type="email" pattern="[^\s@]+@[^\s@]+\.[^\s@]+">
+            <div class="error-message" id="email-error-cta"></div>
+
+            <label class="cs-label cs-phone" for="phone-1392">
+                Jūsų telefono numeris*
+            </label>
+            <input autocomplete="tel" class="cs-input" id="phone-1392" name="Telefono numeris" required placeholder="Telefono numeris" type="tel" pattern="^[\d\s+]{8,20}$">
+            <div class="error-message" id="phone-error-cta"></div>
+
+            <label class="cs-label" for="message-1392">
+                Jūsų žinutė*
+            </label>
+            <textarea autocomplete="off" class="cs-input cs-textarea" id="message-1392" name="Žinutė" required placeholder="Nurodykite, koks automobilis domina (krovininis, keleivinis, lengvasis), planuojamas datas ir kitus svarbius klausimus." minlength="10"></textarea>
+            <div class="error-message" id="message-error-cta"></div>
+
+            <div class="hidden-form">
+                <input type="text" name="bot-field">
+            </div>
+
+            <div class="custom-labeled-checkbox">
+                <input type="checkbox" id="gdpr-consent" name="Privatumo politika" value="agreed" required>
+                <label for="gdpr-consent">
+                    <span class="checkbox-icon"></span>
+                    <p class="row">Sutinku su <a href="/privatumo-politika/" target="_blank">Privatumo politikos</a> sąlygomis*</p>
+                    <p class="row short">Sutinku su <a href="/privatumo-politika/" target="_blank">Privatumo politika</a>*</p>
+                </label>
+                <div class="error-message" id="gdpr-error-cta"></div>
+            </div>
+
+            <div class="recaptcha-container">
+                <div class="g-recaptcha" data-sitekey="6LdJXRgsAAAAAAlt5MAIgrU8-7rRW-WXAqjqee93"></div>
+            </div>
+
+            <button class="cs-button-solid cs-submit" type="submit">Siųsti žinutę</button>
+        </form>
+
+    </div>
+</section>

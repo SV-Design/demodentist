@@ -1,0 +1,557 @@
+@media only screen and (min-width: 0rem) {
+    /* Form Validation Styles - Using shared variables from root.scss */
+    #manufacturer .error-message {
+        color: var(--error-color);
+        font-size: var(--error-font-size);
+        display: none;
+        margin-top: 5px;
+        text-align: left;
+    }
+
+    #manufacturer .input-error {
+        border: 2px solid var(--error-color) !important;
+    }
+
+    #manufacturer .shake {
+        animation: shake 0.5s;
+    }
+
+    #manufacturer .cs-form {
+        border-top: 4px solid var(--primary);
+    }
+
+
+    #manufacturer {
+        padding: var(--sectionPadding);
+        background-color: #fff;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .cs-submit {
+        border: none;
+    }
+
+    #manufacturer .cs-container {
+        width: 100%;
+        max-width: 1200px;
+        margin: auto;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: clamp(2rem, 3vw, 3rem);
+    }
+
+    #manufacturer .cs-header {
+        text-align: center;
+        width: 100%;
+        max-width: 800px;
+        margin: 0 auto;
+    }
+
+    #manufacturer .cs-title {
+        font-size: clamp(2rem, 4vw, 3rem);
+        font-weight: 700;
+        text-align: center;
+        margin-bottom: 1.5rem;
+        color: var(--headerColor);
+    }
+
+    #manufacturer .cs-intro {
+        font-size: clamp(1rem, 1.5vw, 1.125rem);
+        text-align: center;
+        margin-bottom: 1rem;
+        color: var(--bodyTextColor);
+    }
+
+    #manufacturer .cs-secondary {
+        font-size: clamp(0.875rem, 1.2vw, 1rem);
+        text-align: center;
+        margin-bottom: 2rem;
+        color: var(--bodyTextColor);
+    }
+
+    #manufacturer .cs-secondary a {
+        color: var(--primary);
+        text-decoration: none;
+    }
+
+    #manufacturer .cs-secondary a:hover {
+        text-decoration: underline;
+    }
+
+    #manufacturer .cs-ul {
+        text-align: center;
+        width: 100%;
+        margin: 0 auto 2rem auto;
+        padding: 0;
+        box-sizing: border-box;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 1.5rem;
+        position: relative;
+        list-style: none;
+        max-width: 1200px;
+    }
+
+    #manufacturer .cs-li {
+        list-style: none;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        gap: 1rem;
+    }
+
+    #manufacturer .cs-li:hover .cs-icon-wrapper {
+        transform: scale(1.1);
+    }
+
+    #manufacturer .cs-icon-wrapper {
+        width: 3.75rem;
+        height: 3.75rem;
+        margin: 0;
+        border-radius: 50%;
+        border: 1px solid #bababa;
+        background-color: #fff;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex: none;
+        transition: transform 0.3s;
+    }
+
+    #manufacturer .cs-icon {
+        width: 1.5rem;
+        height: auto;
+        display: block;
+    }
+
+    #manufacturer .cs-flex-group {
+        display: flex;
+        flex-direction: column;
+        gap: 0.25rem;
+        align-items: center;
+        text-align: center;
+    }
+
+    #manufacturer .cs-li .cs-header {
+        font-size: 1.25rem;
+        font-weight: 700;
+        line-height: 1.2em;
+        margin-bottom: 0.5rem;
+        color: var(--headerColor);
+        display: block;
+    }
+
+    #manufacturer .cs-link {
+        font-size: 1rem;
+        line-height: 1.5em;
+        text-decoration: none;
+        color: var(--headerColor);
+        display: block;
+        position: relative;
+        text-align: center;
+    }
+
+    #manufacturer .cs-link:hover {
+        text-decoration: underline;
+    }
+
+    #manufacturer .cs-content {
+        text-align: left;
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    #manufacturer .cs-text {
+        margin-bottom: 1rem;
+    }
+
+    #manufacturer .cs-text:last-of-type {
+        margin-bottom: 2rem;
+    }
+
+    #manufacturer .cs-form {
+        width: 100%;
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: clamp(2rem, 4vw, 3rem);
+        box-sizing: border-box;
+        background-color: #fff;
+        display: flex;
+        flex-direction: column;
+        gap: 1rem;
+    }
+
+    #manufacturer .manufacturer-form-row {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 1rem;
+        margin-bottom: 1rem;
+        width: 100%;
+    }
+
+    #manufacturer .manufacturer-form-col-quarter {
+        flex: 1 1 calc(25% - 0.75rem);
+        min-width: 200px;
+    }
+
+    #manufacturer .manufacturer-form-col-full {
+        flex: 1 1 100%;
+        width: 100%;
+    }
+
+    #manufacturer .cs-h3 {
+        display: none;
+    }
+
+    #manufacturer .cs-label {
+        display: none;
+    }
+
+    #manufacturer .cs-input {
+        font-family: "DM Sans", Arial, sans-serif;
+        font-size: 1rem;
+        width: 100%;
+        height: 3.5rem;
+        padding: 0;
+        padding-left: 1.5rem;
+        color: var(--headerColor);
+        background-color: #f5f5f5;
+        border: none;
+        border-radius: 6px;
+        box-sizing: border-box;
+    }
+
+    #manufacturer .cs-input::placeholder {
+        color: #4e4b66;
+        opacity: 1;
+    }
+
+    #manufacturer select.cs-input {
+        padding-left: 1.5rem;
+        appearance: none;
+        background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 12 12'%3E%3Cpath fill='%23333' d='M6 9L1 4h10z'/%3E%3C/svg%3E");
+        background-repeat: no-repeat;
+        background-position: right 1rem center;
+        padding-right: 2.5rem;
+        cursor: pointer;
+    }
+
+    #manufacturer .cs-textarea {
+        min-height: 7.5rem;
+        padding-top: 1.5rem;
+        margin-bottom: 0.75rem;
+        border-radius: 6px;
+        font-family: inherit;
+        max-width: 100%;
+        min-width: 100%;
+        max-height: 500px;
+    }
+
+    #manufacturer .cs-submit {
+        width: 100%;
+        min-width: 100%;
+        height: 3.5rem;
+        font-size: 1rem;
+        font-weight: 700;
+        text-transform: uppercase;
+        border-radius: 6px;
+    }
+
+    #manufacturer .cs-submit:hover {
+        color: #fff;
+    }
+
+    #manufacturer .file-upload-wrapper {
+        border-bottom: 1px solid #d3d3d3;
+        padding-bottom: 1.25rem;
+        position: relative;
+        width: 100%;
+        max-width: 100%;
+        box-sizing: border-box;
+        margin-bottom: 0;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: flex-start;
+    }
+
+    #manufacturer .file-upload-label {
+        cursor: pointer;
+        display: block;
+        width: 100%;
+        box-sizing: border-box;
+        position: relative;
+    }
+
+    #manufacturer .file-upload-button {
+        align-items: center;
+        background-color: #f8f9fa;
+        border: 2px dashed #ddd;
+        border-radius: 6px;
+        color: #4e4b66;
+        display: flex;
+        filter: grayscale(1);
+        font-size: 0.8rem;
+        letter-spacing: 1px;
+        line-height: 1.6rem;
+        padding: 0.625rem 0.9375rem;
+        transition: all 0.3s ease;
+        width: 100%;
+        box-sizing: border-box;
+        justify-content: center;
+        height: 3.5rem;
+        min-height: 3.5rem;
+    }
+
+    #manufacturer .file-upload-button:hover {
+        background-color: #e9ecef;
+        border-color: var(--primary);
+        color: var(--primary);
+    }
+
+    #manufacturer .file-upload-input {
+        cursor: pointer;
+        height: 3.5rem;
+        left: 0;
+        opacity: 0;
+        position: absolute;
+        top: 0;
+        width: 100%;
+    }
+
+    #manufacturer .file-upload-text {
+        font-size: 0.8rem;
+        font-style: italic;
+        margin-top: 0.5rem;
+        color: #6c757d;
+        display: none;
+        letter-spacing: 1px;
+        line-height: 1.6rem;
+    }
+
+    #manufacturer .dnd-upload-counter {
+        display: none;
+    }
+
+    #manufacturer .form-text-muted {
+        color: #6c757d;
+        display: block;
+        letter-spacing: 1px;
+        line-height: 1.6rem;
+        font-size: 0.6rem;
+        margin-top: 0.25rem;
+    }
+
+    #manufacturer .file-list {
+        margin-top: 1rem;
+        margin-bottom: 0.5rem;
+        width: 100%;
+    }
+
+    #manufacturer .file-list-title {
+        font-size: 0.875rem;
+        font-weight: 600;
+        color: var(--headerColor);
+        margin-bottom: 0.5rem;
+    }
+
+    #manufacturer .file-item {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        padding: 0.5rem;
+        background-color: #f8f9fa;
+        border: 1px solid #e9ecef;
+        border-radius: 4px;
+        margin-bottom: 0.5rem;
+        gap: 0.5rem;
+    }
+
+    #manufacturer .file-name {
+        flex: 1;
+        font-size: 0.8rem;
+        color: var(--bodyTextColor);
+        word-break: break-word;
+    }
+
+    #manufacturer .file-remove-btn {
+        background-color: var(--primary);
+        color: white;
+        border: none;
+        border-radius: 50%;
+        width: 24px;
+        height: 24px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        cursor: pointer;
+        font-size: 1.2rem;
+        line-height: 1;
+        flex-shrink: 0;
+        transition: background-color 0.3s, transform 0.2s;
+    }
+
+    #manufacturer .file-remove-btn:hover {
+        background-color: #c00;
+        transform: scale(1.1);
+    }
+
+    #manufacturer .file-remove-btn:active {
+        transform: scale(0.95);
+    }
+
+    #manufacturer .custom-labeled-checkbox {
+        width: 100%;
+    }
+
+    #manufacturer .custom-labeled-checkbox a {
+        margin-left: 0.25rem;
+        margin-right: 0.25rem;
+        color: var(--primary);
+    }
+
+    #manufacturer .custom-labeled-checkbox .row.short {
+        display: none;
+        text-align: left;
+    }
+
+    #manufacturer .custom-labeled-checkbox .row {
+        text-align: left;
+    }
+
+    @media (max-width: 400px) {
+        #manufacturer .custom-labeled-checkbox .row {
+            display: none;
+        }
+        
+        #manufacturer .custom-labeled-checkbox .row.short {
+            display: block;
+            text-align: left;
+        }
+    }
+
+    @media only screen and (max-width: 47.9375rem) {
+        #manufacturer .cs-ul {
+            flex-direction: row;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 1.5rem;
+        }
+
+        #manufacturer .cs-li {
+            flex: 1 1 calc(50% - 0.75rem);
+            min-width: 0;
+            max-width: none;
+        }
+
+        #manufacturer .cs-li .cs-header {
+            font-size: 1rem;
+        }
+
+        #manufacturer .cs-link {
+            font-size: 0.875rem;
+        }
+    }
+
+    @media only screen and (min-width: 48rem) {
+        #manufacturer .cs-ul {
+            flex-direction: row;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 2rem;
+        }
+
+        #manufacturer .cs-li {
+            flex: 1 1 calc(25% - 2rem);
+            min-width: 200px;
+            max-width: 250px;
+        }
+    }
+
+    @media (max-width: 1024px) {
+        #manufacturer .manufacturer-form-col-quarter {
+            flex: 1 1 calc(50% - 0.5rem);
+        }
+    }
+
+    @media (max-width: 768px) {
+        #manufacturer .manufacturer-form-col-quarter {
+            flex: 1 1 calc(50% - 0.5rem);
+        }
+    }
+
+    @media (max-width: 480px) {
+        #manufacturer .manufacturer-form-col-quarter {
+            flex: 1 1 100%;
+        }
+    }
+}
+
+    @media only screen and (min-width: 48rem) {
+        #manufacturer .cs-container {
+            max-width: 1200px;
+        }
+
+        #manufacturer .cs-form {
+            max-width: 1200px;
+        }
+
+        #manufacturer .cs-submit {
+            width: 100%;
+        }
+    }
+
+@media only screen and (min-width: 64rem) {
+    #manufacturer .cs-form {
+        width: 100%;
+        max-width: 1200px;
+        border: 1px solid lightgray;
+        border-top: 4px solid var(--primary);
+    }
+
+    #manufacturer .cs-submit {
+        width: 100%;
+    }
+}
+
+@media only screen and (min-width: 93.75rem) {
+    #manufacturer .cs-graphic {
+        display: block;
+    }
+}
+
+
+#manufacturer #success-message {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    justify-content: center;
+    align-items: center;
+}
+
+#manufacturer .cs-form {
+    z-index: 1;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    border-top: 8px solid var(--primary);
+    border-radius: 1.5rem;
+    background-color: #fff;
+    width: 100%;
+    box-sizing: border-box;
+    padding: clamp(2rem, 5vw, 3rem) clamp(1rem, 4vw, 3rem);
+    text-align: center;
+}
+
+#manufacturer #success-message p {
+    text-align: center;
+}

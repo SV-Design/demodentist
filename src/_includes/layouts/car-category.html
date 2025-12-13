@@ -1,0 +1,490 @@
+{% extends "layouts/base.html" %}
+
+{% block head %}
+<link rel="stylesheet" href="/assets/css/cars.css">
+<script defer src="/assets/js/car-filters.js"></script>
+{% endblock %}
+
+{% block body %}
+<!-- ============================================ -->
+<!--                   Banner                     -->
+<!-- ============================================ -->
+{% if bannerText %}
+    {% set bannerTitle = bannerText %}
+{% else %}
+    {% set bannerTitle = title %}
+{% endif %}
+{% set breadcrumbsHome = "Pradžia" %}
+{% set breadcrumbsCurrent = title %}
+{% include "components/banner.html" %}
+
+<!-- ============================================ -->
+<!--              Category Content                 -->
+<!-- ============================================ -->
+<section id="car-category-1144">
+    <div class="cs-container">
+        {% set hasCars = false %}
+        {%- if showAllCategories -%}
+        {%- set hasCars = true -%}
+        {%- else -%}
+        {%- for car in collections.car -%}
+        {%- if car.data.category | hasCategory(title) -%}
+        {%- set hasCars = true -%}
+        {%- endif -%}
+        {%- endfor -%}
+        {%- endif -%}
+        {% if not hasCars %}
+        <h3 class="cs-title">Šioje kategorijoje automobilių nėra</h3>
+        {% else %}
+        <!-- Filters Section -->
+        <div id="car-filters-section">
+            <div class="cs-filters-header">
+                <div class="cs-controls-wrapper">
+                    <span class="cs-button-solid" id="filter-toggle-btn" aria-expanded="false" role="button"
+                        tabindex="0">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                            stroke-width="2" width="20" height="20" style="margin-right: 0.5rem;">
+                            <polygon points="22 3 2 3 10 12.46 10 19 14 21 14 12.46 22 3"></polygon>
+                        </svg>
+                        <span>Filtruoti</span>
+                    </span>
+                    <div class="cs-dropdown-wrapper">
+                        <button type="button" class="cs-dropdown-trigger" id="sort-trigger"
+                            data-dropdown="sort-dropdown">
+                            <span class="cs-dropdown-text">Rikiavimas</span>
+                            <svg class="cs-dropdown-arrow" width="12" height="12" viewBox="0 0 12 12" fill="none">
+                                <path d="M6 9L1 4h10z" fill="currentColor" />
+                            </svg>
+                        </button>
+                        <div class="cs-dropdown-panel" id="sort-dropdown">
+                            <div class="cs-dropdown-checkboxes">
+                                <label class="cs-dropdown-checkbox-label" data-sort-value="default">
+                                    <span>Numatytasis</span>
+                                </label>
+                                <label class="cs-dropdown-checkbox-label" data-sort-value="price-asc">
+                                    <span>Kaina: nuo mažiausios</span>
+                                </label>
+                                <label class="cs-dropdown-checkbox-label" data-sort-value="price-desc">
+                                    <span>Kaina: nuo didžiausios</span>
+                                </label>
+                                <label class="cs-dropdown-checkbox-label" data-sort-value="year-desc">
+                                    <span>Metai: naujausi</span>
+                                </label>
+                                <label class="cs-dropdown-checkbox-label" data-sort-value="year-asc">
+                                    <span>Metai: seniausi</span>
+                                </label>
+                                <label class="cs-dropdown-checkbox-label" data-sort-value="power-desc">
+                                    <span>Galia: didžiausia</span>
+                                </label>
+                                <label class="cs-dropdown-checkbox-label" data-sort-value="power-asc">
+                                    <span>Galia: mažiausia</span>
+                                </label>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="cs-filters-panel" id="filters-panel">
+                <div class="cs-filters-scroll">
+                    {% if showAllCategories %}
+                    <!-- Category Filter -->
+                    <div class="cs-filter-group">
+                        <span class="cs-filter-label">Kategorija:</span>
+                        <div class="cs-dropdown-wrapper">
+                            <button type="button" class="cs-dropdown-trigger" data-dropdown="category-dropdown">
+                                <span class="cs-dropdown-text">Visos</span>
+                                <svg class="cs-dropdown-arrow" width="12" height="12" viewBox="0 0 12 12" fill="none">
+                                    <path d="M6 9L1 4h10z" fill="currentColor" />
+                                </svg>
+                            </button>
+                            <div class="cs-dropdown-panel" id="category-dropdown">
+                                <div class="cs-dropdown-checkboxes">
+                                    <!-- Options will be populated by JavaScript -->
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    {% endif %}
+                    <!-- Brand Filter -->
+                    <div class="cs-filter-group">
+                        <span class="cs-filter-label">Markė:</span>
+                        <div class="cs-dropdown-wrapper">
+                            <button type="button" class="cs-dropdown-trigger" data-dropdown="brand-dropdown">
+                                <span class="cs-dropdown-text">Visos</span>
+                                <svg class="cs-dropdown-arrow" width="12" height="12" viewBox="0 0 12 12" fill="none">
+                                    <path d="M6 9L1 4h10z" fill="currentColor" />
+                                </svg>
+                            </button>
+                            <div class="cs-dropdown-panel" id="brand-dropdown">
+                                <div class="cs-dropdown-checkboxes">
+                                    <!-- Options will be populated by JavaScript -->
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Transmission Filter -->
+                    <div class="cs-filter-group">
+                        <span class="cs-filter-label">Pavarų dėžė:</span>
+                        <div class="cs-dropdown-wrapper">
+                            <button type="button" class="cs-dropdown-trigger" data-dropdown="transmission-dropdown">
+                                <span class="cs-dropdown-text">Visos</span>
+                                <svg class="cs-dropdown-arrow" width="12" height="12" viewBox="0 0 12 12" fill="none">
+                                    <path d="M6 9L1 4h10z" fill="currentColor" />
+                                </svg>
+                            </button>
+                            <div class="cs-dropdown-panel" id="transmission-dropdown">
+                                <div class="cs-dropdown-checkboxes">
+                                    <!-- Options will be populated by JavaScript -->
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Fuel Type Filter -->
+                    <div class="cs-filter-group">
+                        <span class="cs-filter-label">Kuro tipas:</span>
+                        <div class="cs-dropdown-wrapper">
+                            <button type="button" class="cs-dropdown-trigger" data-dropdown="fuel-dropdown">
+                                <span class="cs-dropdown-text">Visi</span>
+                                <svg class="cs-dropdown-arrow" width="12" height="12" viewBox="0 0 12 12" fill="none">
+                                    <path d="M6 9L1 4h10z" fill="currentColor" />
+                                </svg>
+                            </button>
+                            <div class="cs-dropdown-panel" id="fuel-dropdown">
+                                <div class="cs-dropdown-checkboxes">
+                                    <!-- Options will be populated by JavaScript -->
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Seats Filter -->
+                    <div class="cs-filter-group">
+                        <span class="cs-filter-label">Vietos:</span>
+                        <div class="cs-dropdown-wrapper">
+                            <button type="button" class="cs-dropdown-trigger" data-dropdown="seats-dropdown">
+                                <span class="cs-dropdown-text">Visos</span>
+                                <svg class="cs-dropdown-arrow" width="12" height="12" viewBox="0 0 12 12" fill="none">
+                                    <path d="M6 9L1 4h10z" fill="currentColor" />
+                                </svg>
+                            </button>
+                            <div class="cs-dropdown-panel" id="seats-dropdown">
+                                <div class="cs-dropdown-checkboxes">
+                                    <!-- Options will be populated by JavaScript -->
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <button class="cs-button-clear-compact" id="clear-filters" title="Išvalyti filtrus">
+                        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M18 6L6 18M6 6L18 18" stroke="currentColor" stroke-width="2"
+                                stroke-linecap="round" />
+                        </svg>
+                    </button>
+                </div>
+            </div>
+
+            <!-- Active Filters Display -->
+            <div class="cs-active-filters" id="active-filters"></div>
+
+            <div class="cs-results-count">
+                Rodoma <span id="results-count">0</span> iš <span id="total-count">0</span> automobilių
+            </div>
+        </div>
+
+        <ul class="cs-card-group" id="cars-list">
+            {%- if showAllCategories -%}
+            {%- set categoryOrder = ['Krovininiai', 'Keleiviniai', 'Lengvieji'] -%}
+            {%- for categoryName in categoryOrder -%}
+            {%- for car in collections.car -%}
+            {%- if car.data.category | hasCategory(categoryName) -%}
+            {%- set carCategory = categoryName -%}
+            <li class="cs-item" data-brand="{{ car.data.brand or '' }}" data-price="{{ car.data.price or '0' }}"
+                data-transmission="{{ car.data.transmission or '' }}" data-fuel-type="{{ car.data.fuelType or '' }}"
+                data-year="{{ car.data.year or '' }}" data-seats="{{ car.data.seats or '' }}"
+                data-power="{{ car.data.power or '0' }}" data-engine="{{ car.data.engine or '0' }}"
+                data-body-type="{{ car.data.bodyType or '' }}" data-drive-type="{{ car.data.driveType or '' }}"
+                data-color="{{ car.data.color or '' }}" data-mileage="{{ car.data.mileage or '0' }}"
+                data-deposit="{{ car.data.deposit or '0' }}" data-min-rental-days="{{ car.data.minRentalDays or '1' }}"
+                data-air-conditioning="{{ car.data.airConditioning or 'false' }}"
+                data-navigation="{{ car.data.navigation or 'false' }}"
+                data-bluetooth="{{ car.data.bluetooth or 'false' }}"
+                data-category="{{ carCategory }}">
+                <a href="{{ car.url }}" class="cs-link">
+                    <div class="cs-picture">
+                        <h3 class="cs-h3">{{ car.data.title }}</h3>
+                        <picture>
+                            <!--Mobile Image-->
+                            <source media="(max-width: 600px)"
+                                srcset="{% getUrl car.data.image | resize({ width: 1000 }) | avif %}" type="image/avif">
+                            <source media="(max-width: 600px)"
+                                srcset="{% getUrl car.data.image | resize({ width: 1000 }) | webp %}" type="image/webp">
+                            <source media="(max-width: 600px)"
+                                srcset="{% getUrl car.data.image | resize({ width: 1000 }) | jpeg %}" type="image/jpeg">
+                            <!--Tablet Image-->
+                            <source media="(max-width: 1024px)"
+                                srcset="{% getUrl car.data.image | resize({ width: 1000 }) | avif %}" type="image/avif">
+                            <source media="(max-width: 1024px)"
+                                srcset="{% getUrl car.data.image | resize({ width: 1000 }) | webp %}" type="image/webp">
+                            <source media="(max-width: 1024px)"
+                                srcset="{% getUrl car.data.image | resize({ width: 1000 }) | jpeg %}" type="image/jpeg">
+                            <!--Desktop Image-->
+                            <source media="(min-width: 1024px)"
+                                srcset="{% getUrl car.data.image | resize({ width: 1000 }) | avif %}" type="image/avif">
+                            <source media="(min-width: 1024px)"
+                                srcset="{% getUrl car.data.image | resize({ width: 1000 }) | webp %}" type="image/webp">
+                            <source media="(min-width: 1024px)"
+                                srcset="{% getUrl car.data.image | resize({ width: 1000 }) | jpeg %}" type="image/jpeg">
+                            <img src="{% getUrl car.data.image | resize({ width: 1000 }) | jpeg %}"
+                                alt="{{ car.data.imageAlt or car.data.title }}" width="824" height="400"
+                                decoding="async" loading="lazy">
+                        </picture>
+                        {% if car.data.price %}
+                        <div class="cs-price-overlay">
+                            <span class="cs-price-label">NUO</span>
+                            <div class="cs-price-group">
+                                <span class="cs-price-amount">{{ car.data.price }}</span>
+                                <span class="cs-price-unit">€ / D.</span>
+                            </div>
+                        </div>
+                        {% endif %}
+                        <span class="cs-link-text-overlay"><span class="cs-link-text-label">Peržiūrėti</span> <img
+                                class="cs-arrow" loading="lazy" decoding="async" src="/assets/svgs/arrow-right.svg"
+                                alt="icon" width="20" height="20" aria-hidden="true"></span>
+                    </div>
+                    <div class="cs-flex">
+                        <div class="cs-specs">
+                            {% if car.data.year %}
+                            <div class="cs-spec-item">
+                                <img class="cs-spec-icon" src="/assets/svgs/cars/calendar.svg" alt="Metai" width="24"
+                                    height="24" loading="lazy" decoding="async">
+                                <span class="cs-spec-value">{{ car.data.year }}</span>
+                            </div>
+                            {% endif %}
+                            {% if car.data.transmission %}
+                            <div class="cs-spec-item">
+                                <img class="cs-spec-icon" src="/assets/svgs/cars/transmission.svg"
+                                    alt="Pavarų dėžė" width="24" height="24" loading="lazy" decoding="async">
+                                <span class="cs-spec-value">{{ car.data.transmission }}</span>
+                            </div>
+                            {% endif %}
+                            {% if car.data.seats %}
+                            <div class="cs-spec-item">
+                                <img class="cs-spec-icon" src="/assets/svgs/cars/carseat.svg" alt="Vietų skaičius"
+                                    width="24" height="24" loading="lazy" decoding="async">
+                                <span class="cs-spec-value">{{ car.data.seats }}</span>
+                            </div>
+                            {% endif %}
+                            {% if car.data.fuelType %}
+                            <div class="cs-spec-item">
+                                <img class="cs-spec-icon" src="/assets/svgs/cars/fuel.svg" alt="Kuro tipas" width="24"
+                                    height="24" loading="lazy" decoding="async">
+                                <span class="cs-spec-value">{{ car.data.fuelType }}</span>
+                            </div>
+                            {% endif %}
+                            {% if car.data.power %}
+                            <div class="cs-spec-item">
+                                <img class="cs-spec-icon" src="/assets/svgs/cars/gouge.svg" alt="Galia (kW)" width="24"
+                                    height="24" loading="lazy" decoding="async">
+                                <span class="cs-spec-value">{{ car.data.power }} kw</span>
+                            </div>
+                            {% endif %}
+                            {% if car.data.engine %}
+                            <div class="cs-spec-item">
+                                <img class="cs-spec-icon" src="/assets/svgs/cars/engine.svg" alt="Variklis (cm³)"
+                                    width="24" height="24" loading="lazy" decoding="async">
+                                <span class="cs-spec-value">{{ car.data.engine }} cm3</span>
+                            </div>
+                            {% endif %}
+                            {% if car.data.height %}
+                            <div class="cs-spec-item">
+                                <svg class="cs-spec-icon" width="24" height="24" viewBox="0 0 24 24" fill="none"
+                                    xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M12 2V22M12 2L8 6M12 2L16 6M12 22L8 18M12 22L16 18" stroke="currentColor"
+                                        stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+                                </svg>
+                                <span class="cs-spec-value">{{ car.data.height }}</span>
+                            </div>
+                            {% endif %}
+                            {% if car.data.width %}
+                            <div class="cs-spec-item">
+                                <svg class="cs-spec-icon" width="24" height="24" viewBox="0 0 24 24" fill="none"
+                                    xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M2 12H22M2 12L6 8M2 12L6 16M22 12L18 8M22 12L18 16" stroke="currentColor"
+                                        stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+                                </svg>
+                                <span class="cs-spec-value">{{ car.data.width }}</span>
+                            </div>
+                            {% endif %}
+                            {% if car.data.length %}
+                            <div class="cs-spec-item">
+                                <svg class="cs-spec-icon" width="24" height="24" viewBox="0 0 24 24" fill="none"
+                                    xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M5 19L19 5" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                        stroke-linejoin="round" />
+                                    <path d="M11 5H19V13" stroke="currentColor" stroke-width="2"
+                                        stroke-linecap="round" stroke-linejoin="round" />
+                                </svg>
+                                <span class="cs-spec-value">{{ car.data.length }}</span>
+                            </div>
+                            {% endif %}
+                        </div>
+                    </div>
+                </a>
+            </li>
+            {%- endif -%}
+            {%- endfor -%}
+            {%- endfor -%}
+            {%- else -%}
+            {%- for car in collections.car -%}
+            {%- if car.data.category | hasCategory(title) -%}
+            <li class="cs-item" data-brand="{{ car.data.brand or '' }}" data-price="{{ car.data.price or '0' }}"
+                data-transmission="{{ car.data.transmission or '' }}" data-fuel-type="{{ car.data.fuelType or '' }}"
+                data-year="{{ car.data.year or '' }}" data-seats="{{ car.data.seats or '' }}"
+                data-power="{{ car.data.power or '0' }}" data-engine="{{ car.data.engine or '0' }}"
+                data-body-type="{{ car.data.bodyType or '' }}" data-drive-type="{{ car.data.driveType or '' }}"
+                data-color="{{ car.data.color or '' }}" data-mileage="{{ car.data.mileage or '0' }}"
+                data-deposit="{{ car.data.deposit or '0' }}" data-min-rental-days="{{ car.data.minRentalDays or '1' }}"
+                data-air-conditioning="{{ car.data.airConditioning or 'false' }}"
+                data-navigation="{{ car.data.navigation or 'false' }}"
+                data-bluetooth="{{ car.data.bluetooth or 'false' }}">
+                <a href="{{ car.url }}" class="cs-link">
+                    <div class="cs-picture">
+                        <h3 class="cs-h3">{{ car.data.title }}</h3>
+                        <picture>
+                            <!--Mobile Image-->
+                            <source media="(max-width: 600px)"
+                                srcset="{% getUrl car.data.image | resize({ width: 1000 }) | avif %}" type="image/avif">
+                            <source media="(max-width: 600px)"
+                                srcset="{% getUrl car.data.image | resize({ width: 1000 }) | webp %}" type="image/webp">
+                            <source media="(max-width: 600px)"
+                                srcset="{% getUrl car.data.image | resize({ width: 1000 }) | jpeg %}" type="image/jpeg">
+                            <!--Tablet Image-->
+                            <source media="(max-width: 1024px)"
+                                srcset="{% getUrl car.data.image | resize({ width: 1000 }) | avif %}" type="image/avif">
+                            <source media="(max-width: 1024px)"
+                                srcset="{% getUrl car.data.image | resize({ width: 1000 }) | webp %}" type="image/webp">
+                            <source media="(max-width: 1024px)"
+                                srcset="{% getUrl car.data.image | resize({ width: 1000 }) | jpeg %}" type="image/jpeg">
+                            <!--Desktop Image-->
+                            <source media="(min-width: 1024px)"
+                                srcset="{% getUrl car.data.image | resize({ width: 1000 }) | avif %}" type="image/avif">
+                            <source media="(min-width: 1024px)"
+                                srcset="{% getUrl car.data.image | resize({ width: 1000 }) | webp %}" type="image/webp">
+                            <source media="(min-width: 1024px)"
+                                srcset="{% getUrl car.data.image | resize({ width: 1000 }) | jpeg %}" type="image/jpeg">
+                            <img src="{% getUrl car.data.image | resize({ width: 1000 }) | jpeg %}"
+                                alt="{{ car.data.imageAlt or car.data.title }}" width="824" height="400"
+                                decoding="async" loading="lazy">
+                        </picture>
+                        {% if car.data.price %}
+                        <div class="cs-price-overlay">
+                            <span class="cs-price-label">NUO</span>
+                            <div class="cs-price-group">
+                                <span class="cs-price-amount">{{ car.data.price }}</span>
+                                <span class="cs-price-unit">€ / D.</span>
+                            </div>
+                        </div>
+                        {% endif %}
+                        <span class="cs-link-text-overlay"><span class="cs-link-text-label">Peržiūrėti</span> <img
+                                class="cs-arrow" loading="lazy" decoding="async" src="/assets/svgs/arrow-right.svg"
+                                alt="icon" width="20" height="20" aria-hidden="true"></span>
+                    </div>
+                    <div class="cs-flex">
+                        <div class="cs-specs">
+                            {% if car.data.year %}
+                            <div class="cs-spec-item">
+                                <img class="cs-spec-icon" src="/assets/svgs/cars/calendar.svg" alt="Metai" width="24"
+                                    height="24" loading="lazy" decoding="async">
+                                <span class="cs-spec-value">{{ car.data.year }}</span>
+                            </div>
+                            {% endif %}
+                            {% if car.data.transmission %}
+                            <div class="cs-spec-item">
+                                <img class="cs-spec-icon" src="/assets/svgs/cars/transmission.svg"
+                                    alt="Pavarų dėžė" width="24" height="24" loading="lazy" decoding="async">
+                                <span class="cs-spec-value">{{ car.data.transmission }}</span>
+                            </div>
+                            {% endif %}
+                            {% if car.data.seats %}
+                            <div class="cs-spec-item">
+                                <img class="cs-spec-icon" src="/assets/svgs/cars/carseat.svg" alt="Vietų skaičius"
+                                    width="24" height="24" loading="lazy" decoding="async">
+                                <span class="cs-spec-value">{{ car.data.seats }}</span>
+                            </div>
+                            {% endif %}
+                            {% if car.data.fuelType %}
+                            <div class="cs-spec-item">
+                                <img class="cs-spec-icon" src="/assets/svgs/cars/fuel.svg" alt="Kuro tipas" width="24"
+                                    height="24" loading="lazy" decoding="async">
+                                <span class="cs-spec-value">{{ car.data.fuelType }}</span>
+                            </div>
+                            {% endif %}
+                            {% if car.data.power %}
+                            <div class="cs-spec-item">
+                                <img class="cs-spec-icon" src="/assets/svgs/cars/gouge.svg" alt="Galia (kW)" width="24"
+                                    height="24" loading="lazy" decoding="async">
+                                <span class="cs-spec-value">{{ car.data.power }} kw</span>
+                            </div>
+                            {% endif %}
+                            {% if car.data.engine %}
+                            <div class="cs-spec-item">
+                                <img class="cs-spec-icon" src="/assets/svgs/cars/engine.svg" alt="Variklis (cm³)"
+                                    width="24" height="24" loading="lazy" decoding="async">
+                                <span class="cs-spec-value">{{ car.data.engine }} cm3</span>
+                            </div>
+                            {% endif %}
+                            {% if car.data.height %}
+                            <div class="cs-spec-item">
+                                <svg class="cs-spec-icon" width="24" height="24" viewBox="0 0 24 24" fill="none"
+                                    xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M12 2V22M12 2L8 6M12 2L16 6M12 22L8 18M12 22L16 18" stroke="currentColor"
+                                        stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+                                </svg>
+                                <span class="cs-spec-value">{{ car.data.height }}</span>
+                            </div>
+                            {% endif %}
+                            {% if car.data.width %}
+                            <div class="cs-spec-item">
+                                <svg class="cs-spec-icon" width="24" height="24" viewBox="0 0 24 24" fill="none"
+                                    xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M2 12H22M2 12L6 8M2 12L6 16M22 12L18 8M22 12L18 16" stroke="currentColor"
+                                        stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+                                </svg>
+                                <span class="cs-spec-value">{{ car.data.width }}</span>
+                            </div>
+                            {% endif %}
+                            {% if car.data.length %}
+                            <div class="cs-spec-item">
+                                <svg class="cs-spec-icon" width="24" height="24" viewBox="0 0 24 24" fill="none"
+                                    xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M5 19L19 5" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                        stroke-linejoin="round" />
+                                    <path d="M11 5H19V13" stroke="currentColor" stroke-width="2"
+                                        stroke-linecap="round" stroke-linejoin="round" />
+                                </svg>
+                                <span class="cs-spec-value">{{ car.data.length }}</span>
+                            </div>
+                            {% endif %}
+                        </div>
+                    </div>
+                </a>
+            </li>
+            {%- endif -%}
+            {%- endfor -%}
+            {%- endif -%}
+        </ul>
+
+        {% if longDescription %}
+        <div class="cs-long-description">
+            {{ longDescription | markdown | safe }}
+        </div>
+        {% endif %}
+        {% endif %}
+    </div>
+</section>
+
+{% include 'sections/cta2.html' %}
+{% endblock %}

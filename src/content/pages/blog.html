@@ -1,0 +1,69 @@
+---
+title: 'Naudingi patarimai vairuotojams | AutoVerus Blogas'
+description: 'Praktiški patarimai apie automobilių nuomą, keliones ir priežiūrą. Sužinokite, kaip sutaupyti, saugiai pakuoti krovinius ir planuoti maršrutus.'
+permalink: "/tinklarastis/"
+---
+
+{% extends "layouts/base.html" %}
+
+{% block head %}
+    <link rel="stylesheet" href="/assets/css/blog.css">
+<link rel="stylesheet" href="/assets/css/reviews.css">
+{% endblock %}
+
+{% block body %}
+    <!-- ============================================ -->
+    <!--                   Banner                     -->
+    <!-- ============================================ -->
+    {% set bannerTitle = "Įžvalgos" %}
+    {% set breadcrumbsHome = "Pradžia" %}
+    {% set breadcrumbsCurrent = "Įžvalgos" %}
+    {% include "components/banner.html" %}
+
+    <section id="blog-1144">
+        <div class="cs-container">
+            <div class="cs-content">
+                <div class="cs-content-flex">
+                    <span class="cs-topper">Naujausios temos ir analizės</span>
+                    <h2 class="cs-title">Straipsniai ir įžvalgos</h2>
+                </div>
+            </div>
+            {% if collections.post | length == 0 %}
+            <h1 class="cs-title">Naujų įrašų nėra</h1>
+            {% else %}
+            <ul class="cs-card-group">
+                {%- for post in collections.post | reverse -%}
+                <li class="cs-item">
+                    <div class="cs-picture">
+                        <picture>
+                            <!--Mobile Image-->
+                            <source media="(max-width: 600px)" srcset="{% getUrl post.data.image | resize({ width: 1000 }) | avif %}" type="image/avif">
+                            <source media="(max-width: 600px)" srcset="{% getUrl post.data.image | resize({ width: 1000 }) | webp %}" type="image/webp">
+                            <source media="(max-width: 600px)" srcset="{% getUrl post.data.image | resize({ width: 1000 }) | jpeg %}" type="image/jpeg">
+                            <!--Tablet Image-->
+                            <source media="(max-width: 1024px)" srcset="{% getUrl post.data.image | resize({ width: 1000 }) | avif %}" type="image/avif">
+                            <source media="(max-width: 1024px)" srcset="{% getUrl post.data.image | resize({ width: 1000 }) | webp %}" type="image/webp">
+                            <source media="(max-width: 1024px)" srcset="{% getUrl post.data.image | resize({ width: 1000 }) | jpeg %}" type="image/jpeg">
+                            <!--Desktop Image-->
+                            <source media="(min-width: 1024px)" srcset="{% getUrl post.data.image | resize({ width: 1000 }) | avif %}" type="image/avif">
+                            <source media="(min-width: 1024px)" srcset="{% getUrl post.data.image | resize({ width: 1000 }) | webp %}" type="image/webp">
+                            <source media="(min-width: 1024px)" srcset="{% getUrl post.data.image | resize({ width: 1000 }) | jpeg %}" type="image/jpeg">
+                            <img src="{% getUrl post.data.image | resize({ width: 1000 }) | jpeg %}" alt="{{ post.data.alt }}" width="824" height="400" decoding="async" loading="lazy">
+                        </picture>
+                    </div>
+                    <div class="cs-flex">
+                        <span class="cs-date">{{ post.date | postDate }}</span>
+                        <h3 class="cs-h3">{{ post.data.title }}</h3>
+                        <p class="cs-item-text">{{ post.data.description }}</p>
+                        <a href="{{ post.url }}" class="cs-link">Peržiūrėti <img class="cs-arrow" loading="lazy" decoding="async" src="/assets/svgs/arrow-right.svg" alt="icon" width="20" height="20" aria-hidden="true"></a>
+                    </div>
+                </li>
+                {%- endfor -%}
+            </ul>
+            {% endif %}
+        </div>
+    </section>
+
+{% include 'sections/cta2.html' %}
+
+{% endblock %}

@@ -1,0 +1,964 @@
+{% extends "layouts/base.html" %}
+
+{%- if metaTitle -%}
+    {%- set pageTitle = metaTitle -%}
+{%- elif category -%}
+    {%- if category is iterable and category is not string -%}
+        {%- set categoryList = category -%}
+    {%- else -%}
+        {%- set categoryList = [category] -%}
+    {%- endif -%}
+    {%- set isMicrobus = false -%}
+    {%- for cat in categoryList -%}
+        {%- if cat == "Keleiviniai" or cat == "Kroviniai" -%}
+            {%- set isMicrobus = true -%}
+        {%- endif -%}
+    {%- endfor -%}
+    {%- if isMicrobus -%}
+        {%- set pageTitle = title ~ " - mikroautobuso nuoma" -%}
+    {%- else -%}
+        {%- set pageTitle = title ~ " - Automobilio Nuoma" -%}
+    {%- endif -%}
+{%- else -%}
+    {%- set pageTitle = title ~ " - Automobilio Nuoma" -%}
+{%- endif -%}
+
+{% block head %}
+<link rel="stylesheet" href="/assets/css/cars.css">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/keen-slider@6.8.6/keen-slider.min.css">
+{% endblock %}
+
+{% block body %}
+<!-- ============================================ -->
+<!--                   Banner                     -->
+<!-- ============================================ -->
+{% set bannerTitle = title %}
+{% set breadcrumbsHome = "Pradžia" %}
+{% if category %}
+    {% if category is iterable and category is not string %}
+        {% set categoryDisplay = category | first %}
+    {% else %}
+        {% set categoryDisplay = category %}
+    {% endif %}
+    {# We can't easily pass an array of breadcrumbs to the component yet, so we'll stick to the current page as the active breadcrumb and maybe manually add the category link if we modify the component later or just skip it for now to match the component's simple structure. 
+       However, the component supports `breadcrumbsCurrent`. 
+       The original code had: Home > Automobiliai > Category > Title.
+       The component only supports Home > Current.
+       Let's adapt the component call or just use Home > Title for now, or consider updating the component to support a middle breadcrumb.
+       Given the prompt "use component banner of ours", I will use the component. The component currently supports `breadcrumbsHome` and `breadcrumbsCurrent`. 
+       I will set `breadcrumbsCurrent` to the title.
+    #}
+    {% set breadcrumbsCurrent = title %}
+{% else %}
+    {% set breadcrumbsCurrent = title %}
+{% endif %}
+
+{# 
+   The original banner had:
+   <a href="/" class="cs-link">Pradžia</a>
+   <a href="/automobiliu-nuoma/" class="cs-link">Automobiliai</a>
+   {% if category %}... <a href="...">Category</a> ...{% endif %}
+   <a href="{{ page.url }}" class="cs-link cs-active">{{ title }}</a>
+
+   The component has:
+   <a href="/" class="cs-link">{{ breadcrumbsHome | default("Home") }}</a>
+   <a href="" class="cs-link cs-active">{{ breadcrumbsCurrent | default(bannerTitle) | default("Contact us") }}</a>
+
+   It seems I cannot perfectly replicate the intermediate breadcrumbs with the CURRENT component without modifying it.
+   However, I will use the component as is for consistency as requested.
+#}
+
+{% include "components/banner.html" %}
+
+<!-- ============================================ -->
+<!--                Car Content                    -->
+<!-- ============================================ -->
+<div id="single-car">
+    <div class="cs-container">
+        <div class="cs-car-layout">
+            <!-- Left Column: Image and Gallery -->
+            <div class="cs-car-left">
+                <picture class="cs-car-main-image">
+                    <!--Mobile Image-->
+                    <source media="(max-width: 600px)" srcset="{% getUrl image | resize({ width: 576 }) | avif %}"
+                        type="image/avif">
+                    <source media="(max-width: 600px)" srcset="{% getUrl image | resize({ width: 576 }) | webp %}"
+                        type="image/webp">
+                    <source media="(max-width: 600px)" srcset="{% getUrl image | resize({ width: 576 }) | jpeg %}"
+                        type="image/jpeg">
+                    <!--Tablet Image-->
+                    <source media="(max-width: 1024px)" srcset="{% getUrl image | resize({ width: 1600 }) | avif %}"
+                        type="image/avif">
+                    <source media="(max-width: 1024px)" srcset="{% getUrl image | resize({ width: 1600 }) | webp %}"
+                        type="image/webp">
+                    <source media="(max-width: 1024px)" srcset="{% getUrl image | resize({ width: 1600 }) | jpeg %}"
+                        type="image/jpeg">
+                    <!--Desktop Image-->
+                    <source media="(min-width: 1024px)" srcset="{% getUrl image | resize({ width: 1600 }) | avif %}"
+                        type="image/avif">
+                    <source media="(min-width: 1024px)" srcset="{% getUrl image | resize({ width: 1600 }) | webp %}"
+                        type="image/webp">
+                    <source media="(min-width: 1024px)" srcset="{% getUrl image | resize({ width: 1600 }) | jpeg %}"
+                        type="image/jpeg">
+                    <img src="{% getUrl image | resize({ width: 1600 }) | jpeg %}" alt="Automobilio nuoma {{ title }}"
+                        decoding="async" aria-hidden="true">
+                </picture>
+
+                <!-- Mobile-only Title and Price -->
+                <div class="cs-car-mobile-header">
+                    {% if category %}
+                    <p class="cs-car-category">{{ category }} automobiliai</p>
+                    {% endif %}
+
+                    {% if price %}
+                    <div class="cs-car-price-section">
+                        <h2 class="cs-price-title"><span class="cs-price-text">Nuo</span> <span
+                                class="cs-price-amount">{{ price }} €</span> <span class="cs-price-text cs-price-pvm">be
+                                PVM</span></h2>
+                    </div>
+                    {% endif %}
+                    <a href="#cs-reservation-title" class="cs-button-solid">Rezervuoti</a>
+                </div>
+
+                <div class="cs-car-specifications">
+                    <h2 class="cs-spec-title">Automobilio specifikacija</h2>
+                    <div class="cs-spec-list">
+                        {% if brand %}
+                        <div class="cs-spec-row">
+                            <div class="cs-spec-label-wrapper">
+                                <img class="cs-spec-icon" src="/assets/svgs/cars/carbrand.svg" alt="Markė" width="20"
+                                    height="20" loading="lazy" decoding="async">
+                                <span class="cs-spec-label">Markė:</span>
+                            </div>
+                            <span class="cs-spec-value">{{ brand }}</span>
+                        </div>
+                        {% endif %}
+                        {% if model %}
+                        <div class="cs-spec-row">
+                            <div class="cs-spec-label-wrapper">
+                                <img class="cs-spec-icon" src="/assets/svgs/cars/carbrand.svg" alt="Modelis" width="20"
+                                    height="20" loading="lazy" decoding="async">
+                                <span class="cs-spec-label">Modelis:</span>
+                            </div>
+                            <span class="cs-spec-value">{{ model }}</span>
+                        </div>
+                        {% endif %}
+                        {% if year %}
+                        <div class="cs-spec-row">
+                            <div class="cs-spec-label-wrapper">
+                                <img class="cs-spec-icon" src="/assets/svgs/cars/calendar.svg" alt="Metai" width="20"
+                                    height="20" loading="lazy" decoding="async">
+                                <span class="cs-spec-label">Metai:</span>
+                            </div>
+                            <span class="cs-spec-value">{{ year }}</span>
+                        </div>
+                        {% endif %}
+                        {% if fuelType %}
+                        <div class="cs-spec-row">
+                            <div class="cs-spec-label-wrapper">
+                                <img class="cs-spec-icon" src="/assets/svgs/cars/fuel.svg" alt="Kuro tipas" width="20"
+                                    height="20" loading="lazy" decoding="async">
+                                <span class="cs-spec-label">Kuro tipas:</span>
+                            </div>
+                            <span class="cs-spec-value">{{ fuelType }}</span>
+                        </div>
+                        {% endif %}
+                        {% if engine %}
+                        <div class="cs-spec-row">
+                            <div class="cs-spec-label-wrapper">
+                                <img class="cs-spec-icon" src="/assets/svgs/cars/engine.svg" alt="Variklis (cm³)"
+                                    width="20" height="20" loading="lazy" decoding="async">
+                                <span class="cs-spec-label">Variklis, cm3:</span>
+                            </div>
+                            <span class="cs-spec-value">{{ engine }}</span>
+                        </div>
+                        {% endif %}
+                        {% if power %}
+                        <div class="cs-spec-row">
+                            <div class="cs-spec-label-wrapper">
+                                <img class="cs-spec-icon" src="/assets/svgs/cars/gouge.svg" alt="Galia (kW)"
+                                    width="20" height="20" loading="lazy" decoding="async">
+                                <span class="cs-spec-label">Galia (kw):</span>
+                            </div>
+                            <span class="cs-spec-value">{{ power }}</span>
+                        </div>
+                        {% endif %}
+                        {% if transmission %}
+                        <div class="cs-spec-row">
+                            <div class="cs-spec-label-wrapper">
+                                <img class="cs-spec-icon" src="/assets/svgs/cars/transmission.svg"
+                                    alt="Pavarų dėžė" width="20" height="20" loading="lazy" decoding="async">
+                                <span class="cs-spec-label">Pavarų dėžė:</span>
+                            </div>
+                            <span class="cs-spec-value">{{ transmission }}</span>
+                        </div>
+                        {% endif %}
+                        {% if seats %}
+                        <div class="cs-spec-row">
+                            <div class="cs-spec-label-wrapper">
+                                <img class="cs-spec-icon" src="/assets/svgs/cars/carseat.svg"
+                                    alt="Sėdimų vietų skaičius" width="20" height="20" loading="lazy"
+                                    decoding="async">
+                                <span class="cs-spec-label">Sėdimos vietos:</span>
+                            </div>
+                            <span class="cs-spec-value">{{ seats }}</span>
+                        </div>
+                        {% endif %}
+                    </div>
+                </div>
+
+                <!-- Tabs Section -->
+                {% if description or features or technicalData %}
+                <div class="cs-car-tabs">
+                    <div class="cs-tab-buttons">
+                        {% if description %}
+                        <button class="cs-tab-button cs-active" data-tab="description">Automobilio aprašymas</button>
+                        {% endif %}
+                        {% if features %}
+                        <button class="cs-tab-button {% if not description %}cs-active{% endif %}"
+                            data-tab="features">Ypatumai</button>
+                        {% endif %}
+                        {% if technicalData %}
+                        <button class="cs-tab-button {% if not description and not features %}cs-active{% endif %}"
+                            data-tab="technical">Techniniai duomenys</button>
+                        {% endif %}
+                    </div>
+
+                    <div class="cs-tab-content">
+                        {% if description %}
+                        <div class="cs-tab-panel cs-active" id="tab-description">
+                            <div class="cs-tab-text">
+                                {{ description | safe }}
+                            </div>
+                        </div>
+                        {% endif %}
+                        {% if features %}
+                        <div class="cs-tab-panel {% if not description %}cs-active{% endif %}" id="tab-features">
+                            <div class="cs-tab-text cs-features-content">
+                                {{ features | safe }}
+                            </div>
+                        </div>
+                        {% endif %}
+                        {% if technicalData %}
+                        <div class="cs-tab-panel {% if not description and not features %}cs-active{% endif %}"
+                            id="tab-technical">
+                            <div class="cs-tab-text cs-technical-content">
+                                {{ technicalData | safe }}
+                            </div>
+                        </div>
+                        {% endif %}
+                    </div>
+                </div>
+                {% endif %}
+            </div>
+
+            <!-- Right Column: Title, Price, Description, Form -->
+            <div class="cs-car-right">
+                {% if category %}
+                {% if category is iterable and category is not string %}
+                {% set categoryDisplay = category | first %}
+                {% else %}
+                {% set categoryDisplay = category %}
+                {% endif %}
+                <p class="cs-car-category">{{ categoryDisplay }} automobiliai</p>
+                {% endif %}
+
+                {% if price %}
+                <div class="cs-car-price-section">
+                    <h2 class="cs-price-title"><span class="cs-price-text">Nuo</span> <span class="cs-price-amount">{{
+                            price }} €</span> <span class="cs-price-text cs-price-pvm">be PVM</span></h2>
+                </div>
+                {% endif %}
+
+                <h2 id="cs-reservation-title" class="cs-reservation-title">Rezervuokite dabar</h2>
+
+                <div class="cs-car-phones">
+                    <a href="tel:{{ client.phoneForTel }}" class="cs-car-phone-link">
+                        <div class="cs-link-wrapper">
+                            <img alt="Phone icon" decoding="async" height="16" src="/assets/svgs/icon-phone.svg"
+                                width="16" aria-hidden="true" class="cs-link-icon">
+                        </div>
+                        <div class="cs-phone-content">
+                            <span class="cs-phone-label">Kaunas:</span>
+                            <span class="cs-phone-number">{{ client.phoneFormatted }}</span>
+                        </div>
+                    </a>
+                    <a href="tel:{{ client.phone2ForTel }}" class="cs-car-phone-link">
+                        <div class="cs-link-wrapper">
+                            <img alt="Phone icon" decoding="async" height="16" src="/assets/svgs/icon-phone.svg"
+                                width="16" aria-hidden="true" class="cs-link-icon">
+                        </div>
+                        <div class="cs-phone-content">
+                            <span class="cs-phone-label">Vilnius:</span>
+                            <span class="cs-phone-number">{{ client.phone2Formatted }}</span>
+                        </div>
+                    </a>
+                </div>
+
+                <div class="cs-form-wrapper">
+                    <h2 class="cs-form-title">Susisiekti</h2>
+
+                    <form class="cs-form cs-rental-form" id="cs-rental-form" method="post" name="Rental Form"
+                        data-netlify="true">
+                        <input type="hidden" name="form-name" value="Rental Form">
+
+                        <div class="cs-input-wrapper" style="display: none;">
+                            <label class="cs-label sr-only" for="automobilis-rental">Automobilis</label>
+                            <input class="cs-input" id="automobilis-rental" name="Automobilis" type="text" 
+                                value="{% if brand %}{{ brand }}{% endif %}{% if brand and model %} - {% endif %}{% if model %}{{ model }}{% endif %}{% if (brand or model) and year %} - {% endif %}{% if year %}{{ year }}{% endif %}{% if (brand or model or year) and transmission %} - {% endif %}{% if transmission %}{{ transmission }}{% endif %}" 
+                                readonly>
+                        </div>
+
+                        <div class="cs-input-wrapper">
+                            <label class="cs-label sr-only" for="name-rental">Vardas</label>
+                            <input class="cs-input" id="name-rental" name="Vardas" type="text" placeholder="Vardas"
+                                required>
+                            <div class="error-message" id="name-error-rental"></div>
+                        </div>
+
+                        <div class="cs-input-wrapper">
+                            <label class="cs-label sr-only" for="lastname-rental">Pavardė</label>
+                            <input class="cs-input" id="lastname-rental" name="Pavardė" type="text" placeholder="Pavardė"
+                                required>
+                            <div class="error-message" id="lastname-error-rental"></div>
+                        </div>
+
+                        <div class="cs-input-wrapper">
+                            <label class="cs-label sr-only" for="email-rental">El. paštas</label>
+                            <input class="cs-input" id="email-rental" name="El. paštas" type="email" placeholder="El. paštas"
+                                required>
+                            <div class="error-message" id="email-error-rental"></div>
+                        </div>
+
+                        <div class="cs-input-wrapper">
+                            <label class="cs-label sr-only" for="phone-rental">Telefono numeris</label>
+                            <input class="cs-input" id="phone-rental" name="Telefono numeris" type="tel"
+                                placeholder="Telefono numeris" value="+370" required>
+                            <div class="error-message" id="phone-error-rental"></div>
+                        </div>
+
+                        <div class="cs-input-wrapper cs-message">
+                            <label class="cs-label sr-only" for="message-rental">Žinutė</label>
+                            <textarea class="cs-input cs-textarea" id="message-rental" name="Žinutė"
+                                placeholder="Žinutė" required></textarea>
+                            <div class="error-message" id="message-error-rental"></div>
+                        </div>
+
+                        <div class="custom-labeled-checkbox">
+                            <input type="checkbox" id="gdpr-consent-rental" name="Privatumo politika" value="agreed" required>
+                            <label for="gdpr-consent-rental">
+                                <span class="checkbox-icon"></span>
+                                <p>Sutinku su <a href="/privatumo-politika/" target="_blank">Privatumo politikos</a>
+                                    sąlygomis*</p>
+                            </label>
+                            <div class="error-message" id="gdpr-error-rental"></div>
+                        </div>
+
+                        <div class="recaptcha-container" id="recaptcha-container-rental" style="display: none;">
+                            <div class="g-recaptcha" data-sitekey="6LdJXRgsAAAAAAlt5MAIgrU8-7rRW-WXAqjqee93"></div>
+                        </div>
+
+                        <button class="cs-button-solid cs-submit" type="submit">Siųsti užklausą</button>
+                    </form>
+
+                    <!-- Success Message -->
+                    <div class="cs-form" id="rental-success-message" style="display: none;">
+                        <h2>Dėkojame!</h2>
+                        <p>Jūsų užklausa gauta.</p>
+                        <p>Susisieksime su jumis artimiausiu metu ir suderinsime nuomos detales.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- ============================================ -->
+<!--           Related Cars Section                -->
+<!-- ============================================ -->
+{% set hasRelatedCars = false %}
+{% if relatedCars and relatedCars.length > 0 %}
+{%- for relatedUrl in relatedCars -%}
+{%- for car in collections.car -%}
+{%- if car.data.url == relatedUrl and category | shareCategory(car.data.category) -%}
+{%- set hasRelatedCars = true -%}
+{%- endif -%}
+{%- endfor -%}
+{%- endfor -%}
+{% else %}
+{%- for car in collections.car -%}
+{%- if category | shareCategory(car.data.category) and car.data.url != url -%}
+{%- set hasRelatedCars = true -%}
+{%- endif -%}
+{%- endfor -%}
+{% endif %}
+
+{% if hasRelatedCars %}
+<section id="related-cars-section">
+    <div class="cs-container">
+        <div class="cs-content">
+            <h2 class="cs-title">Panašūs automobiliai</h2>
+        </div>
+        <div class="cs-slider-container">
+            <button class="cs-slider-arrow cs-slider-prev" aria-label="Previous slide">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M15 18L9 12L15 6" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                        stroke-linejoin="round" />
+                </svg>
+            </button>
+            <div class="cs-slider-wrapper">
+                <div id="related-cars-slider-overlay" class="cs-slider-overlay"></div>
+                <div id="related-cars-slider" class="keen-slider">
+                    {% if relatedCars and relatedCars.length > 0 %}
+                    {%- for relatedUrl in relatedCars -%}
+                    {%- for car in collections.car -%}
+                    {%- if car.data.url == relatedUrl and category | shareCategory(car.data.category) -%}
+                    <div class="keen-slider__slide">
+                        <div class="cs-item">
+                            <a href="{{ car.url }}" class="cs-link">
+                                <div class="cs-picture">
+                                    <h3 class="cs-h3">{{ car.data.title }}</h3>
+                                    <picture>
+                                        <!--Mobile Image-->
+                                        <source media="(max-width: 600px)"
+                                            srcset="{% getUrl car.data.image | resize({ width: 1000 }) | avif %}"
+                                            type="image/avif">
+                                        <source media="(max-width: 600px)"
+                                            srcset="{% getUrl car.data.image | resize({ width: 1000 }) | webp %}"
+                                            type="image/webp">
+                                        <source media="(max-width: 600px)"
+                                            srcset="{% getUrl car.data.image | resize({ width: 1000 }) | jpeg %}"
+                                            type="image/jpeg">
+                                        <!--Tablet Image-->
+                                        <source media="(max-width: 1024px)"
+                                            srcset="{% getUrl car.data.image | resize({ width: 1000 }) | avif %}"
+                                            type="image/avif">
+                                        <source media="(max-width: 1024px)"
+                                            srcset="{% getUrl car.data.image | resize({ width: 1000 }) | webp %}"
+                                            type="image/webp">
+                                        <source media="(max-width: 1024px)"
+                                            srcset="{% getUrl car.data.image | resize({ width: 1000 }) | jpeg %}"
+                                            type="image/jpeg">
+                                        <!--Desktop Image-->
+                                        <source media="(min-width: 1024px)"
+                                            srcset="{% getUrl car.data.image | resize({ width: 1000 }) | avif %}"
+                                            type="image/avif">
+                                        <source media="(min-width: 1024px)"
+                                            srcset="{% getUrl car.data.image | resize({ width: 1000 }) | webp %}"
+                                            type="image/webp">
+                                        <source media="(min-width: 1024px)"
+                                            srcset="{% getUrl car.data.image | resize({ width: 1000 }) | jpeg %}"
+                                            type="image/jpeg">
+                                        <img src="{% getUrl car.data.image | resize({ width: 1000 }) | jpeg %}"
+                                            alt="{{ car.data.imageAlt or car.data.title }}" width="824" height="400"
+                                            decoding="async" loading="lazy">
+                                    </picture>
+                                    {% if car.data.price %}
+                                    <div class="cs-price-overlay">
+                                        <span class="cs-price-label">NUO</span>
+                                        <div class="cs-price-group">
+                                            <span class="cs-price-amount">{{ car.data.price }}</span>
+                                            <span class="cs-price-unit">€ / D.</span>
+                                        </div>
+                                    </div>
+                                    {% endif %}
+                                    <span class="cs-link-text-overlay"><span
+                                            class="cs-link-text-label">Peržiūrėti</span> <img class="cs-arrow"
+                                            loading="lazy" decoding="async" src="/assets/svgs/arrow-right.svg"
+                                            alt="icon" width="20" height="20" aria-hidden="true"></span>
+                                </div>
+                                <div class="cs-flex">
+                                    <div class="cs-specs">
+                                        {% if car.data.year %}
+                                        <div class="cs-spec-item">
+                                            <img class="cs-spec-icon" src="/assets/svgs/cars/calendar.svg" alt="Metai"
+                                                width="24" height="24" loading="lazy" decoding="async">
+                                            <span class="cs-spec-value">{{ car.data.year }}</span>
+                                        </div>
+                                        {% endif %}
+                                        {% if car.data.transmission %}
+                                        <div class="cs-spec-item">
+                                            <img class="cs-spec-icon" src="/assets/svgs/cars/transmission.svg"
+                                                alt="Pavarų dėžė" width="24" height="24" loading="lazy"
+                                                decoding="async">
+                                            <span class="cs-spec-value">{{ car.data.transmission }}</span>
+                                        </div>
+                                        {% endif %}
+                                        {% if car.data.seats %}
+                                        <div class="cs-spec-item">
+                                            <img class="cs-spec-icon" src="/assets/svgs/cars/carseat.svg"
+                                                alt="Vietų skaičius" width="24" height="24" loading="lazy"
+                                                decoding="async">
+                                            <span class="cs-spec-value">{{ car.data.seats }}</span>
+                                        </div>
+                                        {% endif %}
+                                        {% if car.data.fuelType %}
+                                        <div class="cs-spec-item">
+                                            <img class="cs-spec-icon" src="/assets/svgs/cars/fuel.svg"
+                                                alt="Kuro tipas" width="24" height="24" loading="lazy"
+                                                decoding="async">
+                                            <span class="cs-spec-value">{{ car.data.fuelType }}</span>
+                                        </div>
+                                        {% endif %}
+                                        {% if car.data.power %}
+                                        <div class="cs-spec-item">
+                                            <img class="cs-spec-icon" src="/assets/svgs/cars/gouge.svg"
+                                                alt="Galia (kW)" width="24" height="24" loading="lazy"
+                                                decoding="async">
+                                            <span class="cs-spec-value">{{ car.data.power }} kw</span>
+                                        </div>
+                                        {% endif %}
+                                        {% if car.data.engine %}
+                                        <div class="cs-spec-item">
+                                            <img class="cs-spec-icon" src="/assets/svgs/cars/engine.svg"
+                                                alt="Variklis (cm³)" width="24" height="24" loading="lazy"
+                                                decoding="async">
+                                            <span class="cs-spec-value">{{ car.data.engine }} cm3</span>
+                                        </div>
+                                        {% endif %}
+                                        {% if car.data.height %}
+                                        <div class="cs-spec-item">
+                                            <svg class="cs-spec-icon" width="24" height="24" viewBox="0 0 24 24"
+                                                fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                <path d="M12 2V22M12 2L8 6M12 2L16 6M12 22L8 18M12 22L16 18"
+                                                    stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                                    stroke-linejoin="round" />
+                                            </svg>
+                                            <span class="cs-spec-value">{{ car.data.height }}</span>
+                                        </div>
+                                        {% endif %}
+                                        {% if car.data.width %}
+                                        <div class="cs-spec-item">
+                                            <svg class="cs-spec-icon" width="24" height="24" viewBox="0 0 24 24"
+                                                fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                <path d="M2 12H22M2 12L6 8M2 12L6 16M22 12L18 8M22 12L18 16"
+                                                    stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                                    stroke-linejoin="round" />
+                                            </svg>
+                                            <span class="cs-spec-value">{{ car.data.width }}</span>
+                                        </div>
+                                        {% endif %}
+                                        {% if car.data.length %}
+                                        <div class="cs-spec-item">
+                                            <svg class="cs-spec-icon" width="24" height="24" viewBox="0 0 24 24"
+                                                fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                <path d="M5 19L19 5" stroke="currentColor" stroke-width="2"
+                                                    stroke-linecap="round" stroke-linejoin="round" />
+                                                <path d="M11 5H19V13" stroke="currentColor" stroke-width="2"
+                                                    stroke-linecap="round" stroke-linejoin="round" />
+                                            </svg>
+                                            <span class="cs-spec-value">{{ car.data.length }}</span>
+                                        </div>
+                                        {% endif %}
+                                    </div>
+                                </div>
+                            </a>
+                        </div>
+                    </div>
+                    {%- endif -%}
+                    {%- endfor -%}
+                    {%- endfor -%}
+                    {% else %}
+                    {%- set count = 0 -%}
+                    {%- for car in collections.car | sort(attribute="data.year", reverse=true) -%}
+                    {%- if category | shareCategory(car.data.category) and car.data.url != url and count < 6 -%} {%- set
+                        count=count + 1 -%} <div class="keen-slider__slide">
+                        <div class="cs-item">
+                            <a href="{{ car.url }}" class="cs-link">
+                                <div class="cs-picture">
+                                    <h3 class="cs-h3">{{ car.data.title }}</h3>
+                                    <picture>
+                                        <!--Mobile Image-->
+                                        <source media="(max-width: 600px)"
+                                            srcset="{% getUrl car.data.image | resize({ width: 1000 }) | avif %}"
+                                            type="image/avif">
+                                        <source media="(max-width: 600px)"
+                                            srcset="{% getUrl car.data.image | resize({ width: 1000 }) | webp %}"
+                                            type="image/webp">
+                                        <source media="(max-width: 600px)"
+                                            srcset="{% getUrl car.data.image | resize({ width: 1000 }) | jpeg %}"
+                                            type="image/jpeg">
+                                        <!--Tablet Image-->
+                                        <source media="(max-width: 1024px)"
+                                            srcset="{% getUrl car.data.image | resize({ width: 1000 }) | avif %}"
+                                            type="image/avif">
+                                        <source media="(max-width: 1024px)"
+                                            srcset="{% getUrl car.data.image | resize({ width: 1000 }) | webp %}"
+                                            type="image/webp">
+                                        <source media="(max-width: 1024px)"
+                                            srcset="{% getUrl car.data.image | resize({ width: 1000 }) | jpeg %}"
+                                            type="image/jpeg">
+                                        <!--Desktop Image-->
+                                        <source media="(min-width: 1024px)"
+                                            srcset="{% getUrl car.data.image | resize({ width: 1000 }) | avif %}"
+                                            type="image/avif">
+                                        <source media="(min-width: 1024px)"
+                                            srcset="{% getUrl car.data.image | resize({ width: 1000 }) | webp %}"
+                                            type="image/webp">
+                                        <source media="(min-width: 1024px)"
+                                            srcset="{% getUrl car.data.image | resize({ width: 1000 }) | jpeg %}"
+                                            type="image/jpeg">
+                                        <img src="{% getUrl car.data.image | resize({ width: 1000 }) | jpeg %}"
+                                            alt="{{ car.data.imageAlt or car.data.title }}" width="824" height="400"
+                                            decoding="async" loading="lazy">
+                                    </picture>
+                                    {% if car.data.price %}
+                                    <div class="cs-price-overlay">
+                                        <span class="cs-price-label">NUO</span>
+                                        <div class="cs-price-group">
+                                            <span class="cs-price-amount">{{ car.data.price }}</span>
+                                            <span class="cs-price-unit">€ / D.</span>
+                                        </div>
+                                    </div>
+                                    {% endif %}
+                                    <span class="cs-link-text-overlay"><span
+                                            class="cs-link-text-label">Peržiūrėti</span> <img class="cs-arrow"
+                                            loading="lazy" decoding="async" src="/assets/svgs/arrow-right.svg"
+                                            alt="icon" width="20" height="20" aria-hidden="true"></span>
+                                </div>
+                                <div class="cs-flex">
+                                    <div class="cs-specs">
+                                        {% if car.data.year %}
+                                        <div class="cs-spec-item">
+                                            <img class="cs-spec-icon" src="/assets/svgs/cars/calendar.svg" alt="Metai"
+                                                width="24" height="24" loading="lazy" decoding="async">
+                                            <span class="cs-spec-value">{{ car.data.year }}</span>
+                                        </div>
+                                        {% endif %}
+                                        {% if car.data.transmission %}
+                                        <div class="cs-spec-item">
+                                            <img class="cs-spec-icon" src="/assets/svgs/cars/transmission.svg"
+                                                alt="Pavarų dėžė" width="24" height="24" loading="lazy"
+                                                decoding="async">
+                                            <span class="cs-spec-value">{{ car.data.transmission }}</span>
+                                        </div>
+                                        {% endif %}
+                                        {% if car.data.seats %}
+                                        <div class="cs-spec-item">
+                                            <img class="cs-spec-icon" src="/assets/svgs/cars/carseat.svg"
+                                                alt="Vietų skaičius" width="24" height="24" loading="lazy"
+                                                decoding="async">
+                                            <span class="cs-spec-value">{{ car.data.seats }}</span>
+                                        </div>
+                                        {% endif %}
+                                        {% if car.data.fuelType %}
+                                        <div class="cs-spec-item">
+                                            <img class="cs-spec-icon" src="/assets/svgs/cars/fuel.svg"
+                                                alt="Kuro tipas" width="24" height="24" loading="lazy"
+                                                decoding="async">
+                                            <span class="cs-spec-value">{{ car.data.fuelType }}</span>
+                                        </div>
+                                        {% endif %}
+                                        {% if car.data.power %}
+                                        <div class="cs-spec-item">
+                                            <img class="cs-spec-icon" src="/assets/svgs/cars/gouge.svg"
+                                                alt="Galia (kW)" width="24" height="24" loading="lazy"
+                                                decoding="async">
+                                            <span class="cs-spec-value">{{ car.data.power }} kw</span>
+                                        </div>
+                                        {% endif %}
+                                        {% if car.data.engine %}
+                                        <div class="cs-spec-item">
+                                            <img class="cs-spec-icon" src="/assets/svgs/cars/engine.svg"
+                                                alt="Variklis (cm³)" width="24" height="24" loading="lazy"
+                                                decoding="async">
+                                            <span class="cs-spec-value">{{ car.data.engine }} cm3</span>
+                                        </div>
+                                        {% endif %}
+                                        {% if car.data.height %}
+                                        <div class="cs-spec-item">
+                                            <svg class="cs-spec-icon" width="24" height="24" viewBox="0 0 24 24"
+                                                fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                <path d="M12 2V22M12 2L8 6M12 2L16 6M12 22L8 18M12 22L16 18"
+                                                    stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                                    stroke-linejoin="round" />
+                                            </svg>
+                                            <span class="cs-spec-value">{{ car.data.height }}</span>
+                                        </div>
+                                        {% endif %}
+                                        {% if car.data.width %}
+                                        <div class="cs-spec-item">
+                                            <svg class="cs-spec-icon" width="24" height="24" viewBox="0 0 24 24"
+                                                fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                <path d="M2 12H22M2 12L6 8M2 12L6 16M22 12L18 8M22 12L18 16"
+                                                    stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                                    stroke-linejoin="round" />
+                                            </svg>
+                                            <span class="cs-spec-value">{{ car.data.width }}</span>
+                                        </div>
+                                        {% endif %}
+                                        {% if car.data.length %}
+                                        <div class="cs-spec-item">
+                                            <svg class="cs-spec-icon" width="24" height="24" viewBox="0 0 24 24"
+                                                fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                <path d="M5 19L19 5" stroke="currentColor" stroke-width="2"
+                                                    stroke-linecap="round" stroke-linejoin="round" />
+                                                <path d="M11 5H19V13" stroke="currentColor" stroke-width="2"
+                                                    stroke-linecap="round" stroke-linejoin="round" />
+                                            </svg>
+                                            <span class="cs-spec-value">{{ car.data.length }}</span>
+                                        </div>
+                                        {% endif %}
+                                    </div>
+                                </div>
+                            </a>
+                        </div>
+                </div>
+                {%- endif -%}
+                {%- endfor -%}
+                {% endif %}
+            </div>
+        </div>
+        <button class="cs-slider-arrow cs-slider-next" aria-label="Next slide">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M9 18L15 12L9 6" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                    stroke-linejoin="round" />
+            </svg>
+        </button>
+    </div>
+    </div>
+</section>
+{% endif %}
+
+{% include 'sections/cta2.html' %}
+
+<script>
+    // Tab functionality for car page
+    document.addEventListener('DOMContentLoaded', function () {
+        const tabButtons = document.querySelectorAll('#single-car .cs-tab-button');
+        const tabPanels = document.querySelectorAll('#single-car .cs-tab-panel');
+
+        tabButtons.forEach(button => {
+            button.addEventListener('click', function () {
+                const targetTab = this.getAttribute('data-tab');
+
+                // Remove active class from all buttons and panels
+                tabButtons.forEach(btn => btn.classList.remove('cs-active'));
+                tabPanels.forEach(panel => panel.classList.remove('cs-active'));
+
+                // Add active class to clicked button
+                this.classList.add('cs-active');
+
+                // Show corresponding panel
+                const targetPanel = document.getElementById('tab-' + targetTab);
+                if (targetPanel) {
+                    targetPanel.classList.add('cs-active');
+                }
+            });
+        });
+
+        // Convert plain text with dashes to styled list items for Features
+        const featuresContent = document.querySelector('#tab-features .cs-features-content');
+        if (featuresContent) {
+            // First, check if there are already rendered divs with multiple features separated by " - "
+            const existingItems = featuresContent.querySelectorAll('.cs-feature-item');
+            if (existingItems.length > 0) {
+                let needsUpdate = false;
+                const newItems = [];
+                existingItems.forEach(item => {
+                    const text = item.textContent || item.innerText;
+                    // Check if item contains " - " separator
+                    if (text.includes(' - ')) {
+                        needsUpdate = true;
+                        // Split by " - " and create separate items
+                        const features = text.split(' - ').map(f => f.trim()).filter(f => f);
+                        features.forEach(feature => {
+                            newItems.push(`<div class="cs-feature-item">${feature}</div>`);
+                        });
+                    } else {
+                        newItems.push(item.outerHTML);
+                    }
+                });
+                if (needsUpdate) {
+                    featuresContent.innerHTML = newItems.join('');
+                }
+            } else {
+                // Check for HTML elements (p, li, div, etc.) that might contain " - " separators
+                const htmlElements = featuresContent.querySelectorAll('p, li, div');
+                if (htmlElements.length > 0) {
+                    let needsUpdate = false;
+                    const allFeatures = [];
+                    htmlElements.forEach(element => {
+                        const text = element.textContent || element.innerText;
+                        // Check if element contains " - " separator
+                        if (text.includes(' - ')) {
+                            needsUpdate = true;
+                            // Split by " - " and create separate items
+                            const features = text.split(' - ').map(f => f.trim()).filter(f => f);
+                            features.forEach(feature => {
+                                allFeatures.push(`<div class="cs-feature-item">${feature}</div>`);
+                            });
+                        } else {
+                            const cleanText = text.trim();
+                            if (cleanText) {
+                                needsUpdate = true; // Need to convert HTML to styled format
+                                // Remove leading "- " if present
+                                const item = cleanText.replace(/^-\s*/, '');
+                                if (item) {
+                                    allFeatures.push(`<div class="cs-feature-item">${item}</div>`);
+                                }
+                            }
+                        }
+                    });
+                    if (needsUpdate && allFeatures.length > 0) {
+                        featuresContent.innerHTML = allFeatures.join('');
+                    }
+                } else {
+                    // Process plain text content
+                    const text = featuresContent.textContent || featuresContent.innerText;
+                    const lines = text.split('\n').filter(line => line.trim().startsWith('-'));
+                    if (lines.length > 0) {
+                        const allFeatures = [];
+                        lines.forEach(line => {
+                            const item = line.trim().replace(/^-\s*/, '');
+                            // Check if item contains " - " separator
+                            if (item.includes(' - ')) {
+                                // Split by " - " and create separate items
+                                const features = item.split(' - ').map(f => f.trim()).filter(f => f);
+                                features.forEach(feature => {
+                                    allFeatures.push(`<div class="cs-feature-item">${feature}</div>`);
+                                });
+                            } else {
+                                allFeatures.push(`<div class="cs-feature-item">${item}</div>`);
+                            }
+                        });
+                        if (allFeatures.length > 0) {
+                            featuresContent.innerHTML = allFeatures.join('');
+                        }
+                    }
+                }
+            }
+        }
+
+        // Convert plain text with dashes to styled list items for Technical Data
+        const technicalContent = document.querySelector('#tab-technical .cs-technical-content');
+        if (technicalContent) {
+            // First, check if there are already rendered divs
+            const existingItems = technicalContent.querySelectorAll('.cs-technical-item');
+            if (existingItems.length > 0) {
+                const newItems = [];
+                existingItems.forEach(item => {
+                    let text = item.textContent || item.innerText;
+                    // Fix spacing after colons (e.g., "Label:Value" -> "Label: Value")
+                    text = text.replace(/:\s*([^\s])/g, ': $1');
+                    // Check if item contains " - " separator and split it
+                    if (text.includes(' - ')) {
+                        const technicalItems = text.split(' - ').map(t => t.trim()).filter(t => t);
+                        technicalItems.forEach(technicalItem => {
+                            newItems.push(`<div class="cs-technical-item">${technicalItem}</div>`);
+                        });
+                    } else {
+                        newItems.push(`<div class="cs-technical-item">${text}</div>`);
+                    }
+                });
+                technicalContent.innerHTML = newItems.join('');
+            } else {
+                // Check for HTML elements (p, li, div, etc.)
+                const htmlElements = technicalContent.querySelectorAll('p, li, div');
+                if (htmlElements.length > 0) {
+                    const allItems = [];
+                    htmlElements.forEach(element => {
+                        let text = element.textContent || element.innerText;
+                        const cleanText = text.trim();
+                        if (cleanText) {
+                            // Remove leading "- " if present
+                            let item = cleanText.replace(/^-\s*/, '');
+                            // Fix spacing after colons (e.g., "Label:Value" -> "Label: Value")
+                            item = item.replace(/:\s*([^\s])/g, ': $1');
+                            if (item) {
+                                // Check if item contains " - " separator and split it
+                                if (item.includes(' - ')) {
+                                    const technicalItems = item.split(' - ').map(t => t.trim()).filter(t => t);
+                                    technicalItems.forEach(technicalItem => {
+                                        allItems.push(`<div class="cs-technical-item">${technicalItem}</div>`);
+                                    });
+                                } else {
+                                    allItems.push(`<div class="cs-technical-item">${item}</div>`);
+                                }
+                            }
+                        }
+                    });
+                    if (allItems.length > 0) {
+                        technicalContent.innerHTML = allItems.join('');
+                    }
+                } else {
+                    // Process plain text content
+                    const text = technicalContent.textContent || technicalContent.innerText;
+                    const lines = text.split('\n').filter(line => line.trim().startsWith('-'));
+                    if (lines.length > 0) {
+                        const allItems = [];
+                        lines.forEach(line => {
+                            let item = line.trim().replace(/^-\s*/, '');
+                            // Fix spacing after colons (e.g., "Label:Value" -> "Label: Value")
+                            item = item.replace(/:\s*([^\s])/g, ': $1');
+                            // Check if item contains " - " separator and split it
+                            if (item.includes(' - ')) {
+                                const technicalItems = item.split(' - ').map(t => t.trim()).filter(t => t);
+                                technicalItems.forEach(technicalItem => {
+                                    allItems.push(`<div class="cs-technical-item">${technicalItem}</div>`);
+                                });
+                            } else {
+                                allItems.push(`<div class="cs-technical-item">${item}</div>`);
+                            }
+                        });
+                        technicalContent.innerHTML = allItems.join('');
+                    }
+                }
+            }
+        }
+    });
+
+    // Keen Slider for Related Cars
+    {% if hasRelatedCars %}
+    (function () {
+        const sliderElement = document.getElementById('related-cars-slider');
+        if (!sliderElement) return;
+
+        // Load Keen Slider script dynamically
+        const script = document.createElement('script');
+        script.src = 'https://cdn.jsdelivr.net/npm/keen-slider@6.8.6/keen-slider.min.js';
+        script.onload = function () {
+            const slider = new KeenSlider(sliderElement, {
+                loop: true,
+                slides: {
+                    perView: 1.2,
+                    spacing: 16,
+                },
+                breakpoints: {
+                    '(min-width: 48rem)': {
+                        slides: {
+                            perView: 2,
+                            spacing: 16,
+                        },
+                    },
+                    '(min-width: 64rem)': {
+                        slides: {
+                            perView: 3,
+                            spacing: 16,
+                        },
+                    },
+                },
+            });
+
+            // Hide overlay once slider is initialized
+            const overlay = document.getElementById('related-cars-slider-overlay');
+            if (overlay) {
+                overlay.style.display = 'none';
+            }
+
+            const prevButton = document.querySelector('#related-cars-section .cs-slider-prev');
+            const nextButton = document.querySelector('#related-cars-section .cs-slider-next');
+
+            if (prevButton) {
+                prevButton.addEventListener('click', () => slider.prev());
+            }
+            if (nextButton) {
+                nextButton.addEventListener('click', () => slider.next());
+            }
+        };
+        document.head.appendChild(script);
+    })();
+    {% endif %}
+</script>
+<script defer src="/assets/js/car-form-validation.js"></script>
+{% endblock %}

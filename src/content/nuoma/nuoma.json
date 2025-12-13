@@ -1,0 +1,8 @@
+{
+    "layout": "layouts/car.html",
+    "tags": "car",
+    "eleventyComputed": {
+        "preloadImg": "{{ image }}",
+        "permalink": "/nuoma/{{ url | slugify }}/index.html"
+    }
+}

@@ -1,0 +1,185 @@
+<section id="registruotis">
+    <div class="cs-container">
+
+        <div class="cs-content">
+            <h2 class="cs-title">Start Your Next Chapter</h2>
+            <p class="cs-text">Submit your application to join our talent network. Even if you don't see a perfect fit right now, we connect with our network first for new and unlisted opportunities. We look forward to learning about your career goals.</p>
+            <ul class="cs-ul">
+                <li class="cs-li">
+                    <picture class="cs-icon-wrapper">
+                        <img alt="Shield icon for confidentiality" decoding="async" height="40" src="/assets/svgs/icon-shield.svg" width="40" class="cs-icon" aria-hidden="true">
+                    </picture>
+                    <div class="cs-flex-group">
+                        <span class="cs-header">Confidential Process</span>
+                        <p class="cs-link-p">Your application is handled with complete discretion.</p>
+                    </div>
+                </li>
+                <li class="cs-li">
+                    <picture class="cs-icon-wrapper">
+                        <img alt="Network icon" decoding="async" height="40" src="/assets/svgs/icon-network.svg" width="40" class="cs-icon" aria-hidden="true">
+                    </picture>
+                    <div class="cs-flex-group">
+                        <span class="cs-header">Access to Top Companies</span>
+                        <p class="cs-link-p">We partner with leading businesses looking for talent like you.</p>
+                    </div>
+                </li>
+                <li class="cs-li">
+                    <picture class="cs-icon-wrapper">
+                        <img alt="Email icon" decoding="async" height="40" src="/assets/svgs/icon-mail-primary.svg" width="40" class="cs-icon" aria-hidden="true">
+                    </picture>
+                    <div class="cs-flex-group">
+                        <span class="cs-header">We're Here to Help</span>
+                        <a class="cs-link" href="mailto:{{ client.email }}">Questions? Email us.</a>
+                    </div>
+                </li>
+            </ul>
+        </div>
+
+        <!-- Success Message -->
+        <div class="container-email cs-form" id="success-message" style="display: none;">
+            <h1>Thank You!</h1>
+            <p>Your application has been successfully submitted.</p>
+            <p>Our team will review your profile and be in touch if a suitable opportunity arises.</p>
+        </div>
+
+        <!-- Job Application Form -->
+        <form class="cs-form contact-page" id="cs-form-1392" method="POST" data-netlify="true" netlify-honeypot="bot-field" name="Job Application Form" enctype="multipart/form-data">
+            <input type="hidden" name="form-name" value="Job Application Form">
+            <h3 class="cs-h3">Submit Your Application</h3>
+
+            <label class="cs-label" for="name-1392">
+                Your Name*
+            </label>
+            <input autocomplete="given-name" class="cs-input" id="name-1392" name="Name" required placeholder="Full Name" type="text">
+            <div class="error-message" id="name-error"></div>
+
+            <label class="cs-label cs-email" for="email-1392">
+                Your Email Address*
+            </label>
+            <input autocomplete="email" class="cs-input" id="email-1392" name="Email" required placeholder="Email Address" type="email">
+            <div class="error-message" id="email-error"></div>
+
+            <label class="cs-label cs-phone" for="phone-1392">
+                Your Phone Number*
+            </label>
+            <input autocomplete="tel" class="cs-input" id="phone-1392" name="Phone" required placeholder="Phone Number" type="tel">
+            <div class="error-message" id="phone-error"></div>
+
+            <!-- NEW: Resume Upload Field -->
+            <label class="cs-label" for="resume-1392">
+                Upload Your Résumé (PDF only)*
+            </label>
+            <div class="file-upload-wrapper">
+                <label class="file-upload-label" for="resume-1392">
+                    <span class="file-upload-button">
+                        <img src="/assets/svgs/icon-upload.svg" alt="upload icon" width="20" height="20" style="margin-right: 8px;">
+                        Choose PDF File
+                    </span>
+                    <span class="file-upload-text">No file chosen</span>
+                </label>
+                <input type="file" id="resume-1392" name="resume" accept=".pdf" required class="cs-input file-upload-input">
+                <small class="form-text-muted">Maximum size: 3MB</small>
+            </div>
+            <div class="error-message" id="resume-error"></div>
+
+
+            <label class="cs-label" for="message-1392">
+                Cover Letter / Message (Optional)
+            </label>
+            <textarea autocomplete="off" class="cs-input cs-textarea" id="message-1392" name="Message" placeholder="Tell us about your career goals, the type of role you're looking for, or paste a brief cover letter here."></textarea>
+            <div class="error-message" id="message-error"></div>
+
+            <div class="hidden-form">
+                <input type="text" name="bot-field">
+            </div>
+
+            <div class="custom-labeled-checkbox">
+                <input type="checkbox" id="gdpr-consent" value="agreed" required>
+                <label for="gdpr-consent">
+                    <span class="checkbox-icon"></span>
+                    <p class="row">By applying, I agree to the <a href="/privatumo-politika/" target="_blank">Privacy Policy</a> terms*</p>
+                    <p class="row short">I agree to the <a href="/privatumo-politika/" target="_blank">Privacy Policy</a>*</p>
+                </label>
+                <div class="error-message" id="gdpr-error"></div>
+            </div>
+
+            <div class="recaptcha-container">
+                <div class="g-recaptcha" data-sitekey="6LdJXRgsAAAAAAlt5MAIgrU8-7rRW-WXAqjqee93"></div>
+            </div>
+
+            <button class="cs-button-solid cs-submit" type="submit"><span></span><p>Submit Application</p></button>
+        </form>
+
+    </div>
+</section>
+
+<!--<script>-->
+<!--    const validators = {-->
+<!--        name: (value) => {-->
+<!--            if (!value.trim()) return 'Name is required';-->
+<!--            if (value.length < 2) return 'Name must be at least 2 characters long';-->
+<!--            return '';-->
+<!--        },-->
+<!--        email: (value) => {-->
+<!--            if (!value.trim()) return 'Email is required';-->
+<!--            const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;-->
+<!--            if (!emailRegex.test(value)) return 'Please enter a valid email address';-->
+<!--            return '';-->
+<!--        },-->
+<!--        phone: (value) => {-->
+<!--            if (!value.trim()) return 'Phone number is required';-->
+<!--            const phoneRegex = /^[\d\s+]{8,20}$/; // Simple regex for international-->
+<!--            if (!phoneRegex.test(value)) return 'Please enter a valid phone number';-->
+<!--            return '';-->
+<!--        },-->
+<!--        // NEW: Validator for the resume file upload-->
+<!--        resume: (files) => {-->
+<!--            if (!files || files.length === 0) {-->
+<!--                return 'A résumé (PDF) is required';-->
+<!--            }-->
+<!--            const file = files[0];-->
+<!--            const maxSize = 3 * 1024 * 1024; // 3MB in bytes-->
+
+<!--            if (file.type !== 'application/pdf') {-->
+<!--                return 'Invalid file type. Please upload a PDF.';-->
+<!--            }-->
+<!--            if (file.size > maxSize) {-->
+<!--                return 'File is too large. Maximum size is 3MB.';-->
+<!--            }-->
+<!--            return '';-->
+<!--        },-->
+<!--        // Note: Message is now optional, so validation is simplified or removed-->
+<!--        message: (value) => {-->
+<!--            // No validation needed if optional, or add length check if it becomes required-->
+<!--            return '';-->
+<!--        },-->
+<!--        gdpr: (checked) => {-->
+<!--            if (!checked) return 'You must agree to the Privacy Policy terms';-->
+<!--            return '';-->
+<!--        }-->
+<!--    };-->
+
+<!--    // -&#45;&#45; UI Script for File Uploader -&#45;&#45;-->
+<!--    // Add this script to your site's JS file, preferably inside a DOMContentLoaded listener-->
+<!--    document.addEventListener('DOMContentLoaded', function() {-->
+<!--        const fileInput = document.getElementById('resume-1392');-->
+<!--        if (fileInput) {-->
+<!--            const fileUploadText = document.querySelector('.file-upload-text');-->
+
+<!--            fileInput.addEventListener('change', function(e) {-->
+<!--                const file = e.target.files[0];-->
+
+<!--                // Reset classes-->
+<!--                fileUploadText.classList.remove('text-success', 'text-danger');-->
+
+<!--                if (file) {-->
+<!--                    fileUploadText.textContent = file.name;-->
+<!--                    // You can add a success class if you want immediate visual feedback-->
+<!--                    // For now, validation will handle error display-->
+<!--                } else {-->
+<!--                    fileUploadText.textContent = 'No file chosen';-->
+<!--                }-->
+<!--            });-->
+<!--        }-->
+<!--    });-->
+<!--</script>-->

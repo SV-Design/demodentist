@@ -1,0 +1,690 @@
+---
+title: 'Apie mus | AutoVerus – Jūsų partneris automobilių rinkoje'
+description: 'Esame automobilių entuziastų komanda, teikianti nuomos ir transporto sprendimus. Mūsų tikslas – pasiūlyti aiškų, paprastą ir patikimumu grįstą aptarnavimą.'
+permalink: '/apie-mus/'
+---
+
+{% extends "layouts/base.html" %}
+
+{% block head %}
+<!--<link rel="stylesheet" href="/assets/css/services.css"/>-->
+
+<style>
+    @media only screen and (min-width: 0rem) {
+        #sbsr-298 {
+            padding:var(--sectionPadding);
+            padding-bottom: 0;
+        }
+
+        #sbsr-298 .cs-container {
+            width: 100%;
+            max-width: 34.375rem;
+            margin: auto;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column
+        }
+
+        #sbsr-298 .cs-content {
+            text-align: left;
+            width: 100%;
+            max-width: 39.625rem;
+            display: flex;
+            flex-direction: column
+        }
+
+        #sbsr-298 .cs-text {
+            margin-bottom: 1rem
+        }
+
+        #sbsr-298 .cs-text:last-of-type {
+            margin-bottom: 2rem
+        }
+
+        #sbsr-298 .cs-link {
+            font-size: 1.25rem;
+            font-weight: 700;
+            text-decoration: none;
+            color: var(--primary)
+        }
+
+        #sbsr-298 .cs-button-solid {
+            font-size: 1rem;
+            line-height: clamp(2.875rem,5.5vw,3.5rem);
+            text-decoration: none;
+            font-weight: 700;
+            text-align: center;
+            margin: 0;
+            color: #fff;
+            min-width: 9.375rem;
+            padding: 0 1.5rem;
+            background-color: var(--primary);
+            border-radius: 6px;
+            display: inline-block;
+            position: relative;
+            z-index: 1;
+            box-sizing: border-box
+        }
+
+        #sbsr-298 .cs-button-solid:before {
+            content: "";
+            position: absolute;
+            height: 100%;
+            width: 0%;
+            background: #000;
+            opacity: 1;
+            top: 0;
+            left: 0;
+            z-index: -1;
+            border-radius: 6px;
+            transition: width .3s
+        }
+
+        #sbsr-298 .cs-button-solid:hover:before {
+            width: 100%
+        }
+
+        #sbsr-298 .cs-image-group {
+            width: 100%;
+            max-width: 34.375rem;
+            margin: 0 auto clamp(4.875rem,16.5vw,6.75rem);
+            position: relative;
+            display: block;
+            aspect-ratio: .90358127;
+            border-radius: 6px;
+            overflow: visible
+        }
+
+        #sbsr-298 .cs-picture {
+            width: 100%;
+            height: 100%;
+            position: absolute;
+            top: 0;
+            left: 0;
+            display: block;
+            border-radius: 6px;
+            overflow: hidden
+        }
+
+        #sbsr-298 .cs-picture img {
+            position: absolute;
+            top: 0;
+            left: 0;
+            height: 100%;
+            width: 100%;
+            object-fit: cover;
+            border-radius: 6px
+        }
+
+        #sbsr-298 .cs-box {
+            width: clamp(12.75rem,50vw,20.375rem);
+            height: clamp(12.75rem,50vw,20.375rem);
+            overflow: hidden;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+            position: absolute;
+            left: 50%;
+            bottom: calc(clamp(2.375rem,7.9vw,3.75rem) * -1);
+            transform: translateX(-50%);
+            z-index: 10;
+            border-radius: 6px
+        }
+
+        #sbsr-298 .cs-box-picture {
+            width: 100%;
+            height: 100%;
+            background-color: #000;
+            overflow: hidden;
+            position: absolute;
+            top: 0;
+            left: 0;
+            display: block;
+            z-index: -1;
+            border-radius: 6px
+        }
+
+        #sbsr-298 .cs-box-picture img {
+            position: absolute;
+            top: 0;
+            left: 0;
+            opacity: .65;
+            height: 100%;
+            width: 100%;
+            object-fit: cover;
+            border-radius: 6px
+        }
+
+        #sbsr-298 .cs-number {
+            font-size: 5rem;
+            line-height: 1em;
+            font-weight: 700;
+            margin-bottom: .5rem;
+            color: var(--headerColor);
+            mix-blend-mode: screen;
+            display: block;
+            z-index: 10
+        }
+
+        #sbsr-298 .cs-number:before {
+            content: "";
+            width: clamp(11.5rem,45vw,18.375rem);
+            height: clamp(11.5rem,45vw,18.375rem);
+            opacity: 1;
+            background-color: #fff;
+            position: absolute;
+            display: block;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%,-50%);
+            z-index: -1;
+            border-radius: 6px
+        }
+
+        #sbsr-298 .cs-desc {
+            font-size: clamp(1rem,4vw,1.5625rem);
+            font-weight: 700;
+            line-height: 1.2em;
+            text-transform: lowercase;
+            text-align: center;
+            width: 80%;
+            color: var(--headerColor);
+            position: relative;
+            z-index: 10
+        }
+    }
+
+    @media only screen and (min-width: 64rem) {
+        #sbsr-298 {
+            text-align:left;
+            padding-bottom: 0;
+        }
+
+        #sbsr-298 .cs-container {
+            max-width: 80rem;
+            flex-direction: row;
+            justify-content: space-between;
+            gap: 8rem;
+            align-items: flex-start
+        }
+
+        #sbsr-298 .cs-content {
+            text-align: left;
+            align-items: flex-start
+        }
+
+        #sbsr-298 .cs-image-group {
+            width: 40vw;
+            max-width: 32.5625rem;
+            height: clamp(32.5rem,51.9vw,42rem);
+            margin: 0;
+            order: 2;
+            position: sticky;
+            top: 136px;
+            overflow: visible
+        }
+
+        #sbsr-298 .cs-box {
+            width: clamp(15.6875rem,24.5vw,20.3125rem);
+            height: clamp(15.6875rem,24.5vw,20.3125rem);
+            left: auto;
+            transform: none;
+            left: calc(clamp(3.25rem,5.5vw + 1.6rem,6.375rem) * -1);
+            bottom: clamp(3.875rem,6.2vw,5rem)
+        }
+
+        #sbsr-298 .cs-number:before {
+            width: clamp(14.125rem,22.7vw,18.3125rem);
+            height: clamp(14.125rem,22.7vw,18.3125rem);
+            border-radius: 6px
+        }
+    }
+
+    @media only screen and (min-width: 0rem) {
+    }
+
+    @media only screen and (min-width: 0rem) {
+        #stats-1229 {
+            padding:var(--sectionPadding);
+            position: relative;
+            z-index: 1
+        }
+
+        #stats-1229:before {
+            content: "";
+            position: absolute;
+            display: block;
+            height: 100%;
+            width: 100%;
+            background: url(/assets/svgs/chevron-pattern-light3.svg);
+            background-position: center;
+            background-size: auto;
+            background-repeat: repeat;
+            opacity: .3;
+            top: 0;
+            left: 0;
+            z-index: -1
+        }
+
+        #stats-1229 .cs-container {
+            max-width: 36.5rem;
+            width: 100%;
+            margin: auto;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: clamp(3rem,6vw,4rem)
+        }
+
+        #stats-1229 .cs-content {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 2rem
+        }
+
+        #stats-1229 .cs-flex {
+            text-align: center;
+            width: 100%;
+            display: flex;
+            flex-direction: column;
+            align-items: center
+        }
+
+        #stats-1229 .cs-title {
+            max-width: 20ch
+        }
+
+        #stats-1229 .cs-stat-group {
+            width: 100%;
+            margin: auto;
+            padding: 0;
+            display: grid;
+            justify-content: center;
+            align-items: center;
+            grid-template-columns: repeat(6,1fr)
+        }
+
+        #stats-1229 .cs-stat {
+            list-style: none;
+            margin: 0;
+            padding: clamp(1rem,3vw,2.5rem) 1rem;
+            box-sizing: border-box;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            position: relative;
+            grid-column: span 2;
+            border-radius: 6px
+        }
+
+        #stats-1229 .cs-stat:before {
+            content: "";
+            width: 2px;
+            height: 100%;
+            background: linear-gradient(0deg,rgba(72,72,72,0) 0,#484848 50%,rgba(72,72,72,0) 100%);
+            position: absolute;
+            top: 0;
+            right: 0
+        }
+
+        #stats-1229 .cs-stat:nth-of-type(3):before,#stats-1229 .cs-stat:nth-of-type(5):before {
+            content: none
+        }
+
+        #stats-1229 .cs-stat:nth-of-type(4),#stats-1229 .cs-stat:nth-of-type(5) {
+            grid-column: span 3
+        }
+
+        #stats-1229 .cs-desc {
+            font-size: var(--bodyFontSize);
+            line-height: 1.5em;
+            text-align: center;
+            width: clamp(5.5rem,20vw,11rem);
+            margin-bottom: .5rem;
+            color: #858585;
+            display: block
+        }
+
+        #stats-1229 .cs-number {
+            font-size: clamp(1.5625rem,3vw,3.0625rem);
+            line-height: 1.2em;
+            font-weight: 700;
+            margin: 0;
+            color: var(--headerColor);
+            display: block
+        }
+    }
+
+    @media only screen and (min-width: 40.625rem) {
+        #stats-1229 .cs-container {
+            flex-direction:row;
+            flex-wrap: wrap
+        }
+
+
+        #stats-1229 .cs-stat-group {
+            flex-direction: row;
+            flex-wrap: wrap
+        }
+    }
+
+    @media only screen and (min-width: 64rem) {
+        #stats-1229 .cs-container {
+            max-width:80rem;
+            flex-direction: row;
+            justify-content: space-between;
+            align-items: center
+        }
+
+        #stats-1229 .cs-content {
+            flex-direction: column;
+            align-items: center
+        }
+
+        #stats-1229 .cs-text,#stats-1229 .cs-title {
+            max-width: none
+        }
+
+        #stats-1229 .cs-stat-group {
+            max-width: 80rem;
+            grid-template-columns: repeat(5,1fr)
+        }
+
+        #stats-1229 .cs-stat {
+            grid-column: span 1
+        }
+
+        #stats-1229 .cs-stat:nth-of-type(4),#stats-1229 .cs-stat:nth-of-type(5) {
+            grid-column: span 1
+        }
+
+        #stats-1229 .cs-stat:nth-of-type(3):before {
+            content: ""
+        }
+    }
+
+    @media only screen and (min-width: 0rem) {
+    }
+
+    .cs-content ul {
+        margin-left: 20px;
+        margin-bottom: 20px
+    }
+
+    @media only screen and (min-width: 0rem) {
+        .cs-logos-section {
+            padding: 0;
+            background-color: #fff;
+        }
+
+        .cs-logos-section .cs-container {
+            max-width: 80rem;
+            margin: 0 auto;
+            padding: clamp(3rem, 5vw, 4rem) 1rem clamp(2rem, 3vw, 3rem);
+        }
+
+        .cs-logos-content {
+            display: flex;
+            flex-direction: column;
+            gap: 1.5rem;
+            align-items: flex-start;
+        }
+
+        .cs-logos-text-left {
+            width: 100%;
+        }
+
+        .cs-logos-title {
+            font-size: clamp(1.75rem, 3vw, 2.5rem);
+            font-weight: 700;
+            color: var(--headerColor);
+            margin: 0;
+            line-height: 1.2em;
+        }
+
+        .cs-logos-text-right {
+            width: 100%;
+        }
+
+        .cs-logos-description {
+            font-size: clamp(1rem, 1.5vw, 1.125rem);
+            line-height: 1.6em;
+            color: var(--bodyTextColor);
+            margin: 0;
+        }
+
+        .cs-logos {
+            overflow: hidden;
+            padding: 60px 0;
+            background: white;
+            white-space: nowrap;
+            position: relative;
+        }
+
+        .cs-logos:before,
+        .cs-logos:after {
+            content: "";
+            position: absolute;
+            top: 0;
+            width: 250px;
+            height: 100%;
+            z-index: 2;
+            pointer-events: none;
+        }
+
+        .cs-logos:before {
+            left: 0;
+            background: linear-gradient(to left, rgba(255, 255, 255, 0), white);
+        }
+
+        .cs-logos:after {
+            right: 0;
+            background: linear-gradient(to right, rgba(255, 255, 255, 0), white);
+        }
+
+        .cs-logos:hover .cs-logos-slide {
+            animation-play-state: paused;
+        }
+
+        .cs-logos-slide {
+            display: inline-block;
+            animation: 35s slide infinite linear;
+        }
+
+        .cs-logos-slide img {
+            height: 75px;
+            margin: 0 40px;
+            object-fit: contain;
+            filter: grayscale(100%);
+            opacity: 0.6;
+            transition: filter 0.3s ease, opacity 0.3s ease;
+        }
+
+        .cs-logos-slide img:hover {
+            filter: grayscale(0%);
+            opacity: 1;
+        }
+
+        @keyframes slide {
+            from {
+                transform: translateX(0);
+            }
+            to {
+                transform: translateX(-100%);
+            }
+        }
+    }
+
+    @media only screen and (min-width: 48rem) {
+        .cs-logos-content {
+            flex-direction: row;
+            align-items: center;
+            gap: 3rem;
+        }
+
+        .cs-logos-text-left {
+            width: 45%;
+            flex-shrink: 0;
+            order: 1;
+        }
+
+        .cs-logos-text-right {
+            width: 55%;
+            order: 2;
+        }
+    }
+
+    @media only screen and (min-width: 64rem) {
+        .cs-logos-content {
+            gap: 4rem;
+        }
+    }
+
+    .bni-link {
+        color: var(--primary);
+        text-decoration: none;
+    }
+
+    .bni-link:hover {
+        color: var(--primary);
+        text-decoration: underline;
+    }
+
+    .cs-partneriai {
+        color: var(--primary);
+    }
+
+    .cs-keyword {
+        color: var(--primary);
+    }
+
+</style>
+    {% endblock %}
+
+    {% block body %}
+
+
+    <!-- ============================================ -->
+    <!--                   Banner                     -->
+    <!-- ============================================ -->
+    {% set bannerTitle = "Apie mus" %}
+    {% set breadcrumbsHome = "Pradžia" %}
+    {% set breadcrumbsCurrent = "Apie mus" %}
+    {% include "components/banner.html" %}
+
+
+<section id="sbsr-298">
+    <div class="cs-container">
+        <div class="cs-image-group">
+            <div class="cs-box">
+                <span class="cs-number">12+</span> <span class="cs-desc">Metų rinkoje</span>
+                <picture class="cs-box-picture">
+                    <source media="(max-width: 600px)" srcset="/assets/images/service-image.jpg">
+                    <source media="(min-width: 601px)" srcset="/assets/images/service-image.jpg">
+                    <img alt="AutoVerus mikroautobusas" height="672" src="/assets/images/service-image.jpg" width="521" aria-hidden="true" decoding="async" loading="lazy">
+                </picture>
+            </div>
+            <picture class="cs-picture">
+                <source media="(max-width: 600px)" srcset="/assets/images/service-image.jpg">
+                <source media="(min-width: 601px)" srcset="/assets/images/service-image.jpg">
+                <img src="/assets/images/service-image.jpg" alt="AutoVerus parkas" loading="eager" decoding="async" aria-hidden="true">
+            </picture>
+        </div>
+        <div class="cs-content">
+            <span class="cs-topper">Apie mus</span>
+            <h2 class="cs-title">Viena didžiausių <span class="cs-keyword">mikroautobusų nuomos</span> įmonių <span class="cs-keyword">Kaune</span></h2>
+            <p class="cs-text">
+                Esame šiuolaikiška, subrendusi, devynių metų patirtį turinti įmonė. Šiuo metu esame viena didžiausių mikroautobusų nuomos paslaugas teikiančių įmonių Kaune. „AutoVerus“ parke turime virš 40 įvairios paskirties mikroautobusų.
+            </p>
+            <p class="cs-text">
+                Mes siūlome komfortiškus keleivinius mikroautobusus kelionėms po Lietuvą ar Europą. Verslo klientams, darbui po Lietuvą ir Europą siūlome didelius, talpius ir patogius krovininius mikroautobusus. Įmonės parkas nuolat atnaujinamas, todėl jums galime pasiūlyti įvairios paskirties ir komplektacijos transportą.
+            </p>
+            <h3>Patikimumas ir papildomos paslaugos</h3>
+            <p class="cs-text">Mūsų tikslas – užtikrinti, kad į kelionę vyktumėte be rūpesčių, o suplanuotus darbus atliktumėte sklandžiai.</p>
+            <ul>
+                <li><strong>Techninė priežiūra.</strong> Mūsų mikroautobusai yra prižiūrimi „Bosch Car Service“ autocentruose. Tai garantuoja techninį saugumą kiekvienos kelionės metu.</li>
+                <li><strong>Paslaugos su vairuotoju.</strong> Jūsų patogumui galite išsinuomoti mikroautobusą su vairuotoju. Vairuotojas galės jus nuvežti ar pasiimti iš oro uosto, taip pat galite užsakyti vairuotoją ekskursijai. Teikiame ir skubias krovinių pristatymo paslaugas – visa tai atliekame greitai ir saugiai.</li>
+                <li><strong>Patikimas verslas.</strong> „AutoVerus" yra patikimų verslų klubo nariai – <a href="http://www.bnizalgiris.lt/" target="_blank" rel="noopener" class="bni-link">BNI Žalgiris</a>.</li>
+            </ul>
+        </div>
+    </div>
+</section>
+
+<!-- ============================================ -->
+<!--           Logo Carousel Section              -->
+<!-- ============================================ -->
+
+<section class="cs-logos-section">
+    <div class="cs-container">
+        <div class="cs-logos-content">
+            <div class="cs-logos-text-left">
+                <h2 class="cs-logos-title">Mūsų <span class="cs-partneriai">partneriai</span></h2>
+            </div>
+        </div>
+    </div>
+    <div class="cs-logos">
+        <div class="cs-logos-slide">
+            <img src="/assets/images/partners/autokraitis.png" alt="Autokraitis partneris" />
+            <img src="/assets/images/partners/Bonus-draudimas.jpg" alt="Bonus draudimas partneris" />
+            <img src="/assets/images/partners/Detalita.png" alt="Detalita partneris" />
+            <img src="/assets/images/partners/Fin-glass.jpg" alt="Fin glass partneris" />
+            <img src="/assets/images/partners/Hovus.jpg" alt="Hovus partneris" />
+            <img src="/assets/images/partners/Inschcape.jpg" alt="Inschcape partneris" />
+            <img src="/assets/images/partners/itab.jpg" alt="Itab partneris" />
+            <img src="/assets/images/partners/itella.jpg" alt="Itella partneris" />
+            <img src="/assets/images/partners/Krasta-auto-1.jpg" alt="Krasta auto partneris" />
+            <img src="/assets/images/partners/ML-Auto-logo-mazas.jpg" alt="ML Auto partneris" />
+            <img src="/assets/images/partners/omniva.jpg" alt="Omniva partneris" />
+            <img src="/assets/images/partners/Ratai-visiems.jpg" alt="Ratai visiems partneris" />
+            <img src="/assets/images/partners/TVG.png" alt="TVG partneris" />
+        </div>
+    </div>
+</section>
+
+<script>
+    // Initialize logo carousel infinite scroll
+    (function() {
+        function initLogoCarousel() {
+            const logosSlide = document.querySelector('.cs-logos-slide');
+            if (logosSlide) {
+                const copy = logosSlide.cloneNode(true);
+                const logosContainer = document.querySelector('.cs-logos');
+                if (logosContainer) {
+                    logosContainer.appendChild(copy);
+                }
+            }
+        }
+
+        // Initialize logo carousel when DOM is ready
+        if (document.readyState === 'loading') {
+            document.addEventListener('DOMContentLoaded', initLogoCarousel);
+        } else {
+            initLogoCarousel();
+        }
+    })();
+</script>
+
+<section id="stats-1229">
+    <div class="cs-container">
+        <div class="cs-content">
+            <div class="cs-flex">
+                <span class="cs-topper">Kodėl verta?</span>
+                <h2 class="cs-title">Sklandi nuoma be rūpesčių</h2>
+                <p class="cs-text">Siūlome techniškai tvarkingus automobilius ir aiškias sąlygas. Mūsų tikslas yra užtikrinti, kad jūsų kelionė ar darbas vyktų sklandžiai, be jokių techninių nesklandumų ar paslėptų mokesčių.</p>
+            </div>
+        </div>
+        <ul class="cs-stat-group">
+            <li class="cs-stat"><span class="cs-desc">Metų rinkoje</span> <span class="cs-number">12+</span></li>
+            <li class="cs-stat"><span class="cs-desc">Automobilių parke</span><span class="cs-number">40+</span></li>
+            <li class="cs-stat"><span class="cs-desc">Pristatymas</span> <span class="cs-number">Visa LT</span></li>
+            <li class="cs-stat"><span class="cs-desc">Ridos limitas</span> <span class="cs-number">500 km</span></li>
+            <li class="cs-stat"><span class="cs-desc">Padaliniai</span> <span class="cs-number">2</span></li>
+        </ul>
+    </div>
+</section>
+{% include 'sections/cta2.html' %}
+
+{% endblock %}

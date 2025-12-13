@@ -1,0 +1,312 @@
+<!-- Category Sliders Section CSS -->
+{% if not index %}
+<link rel="stylesheet" href="/assets/css/home-category-sliders.css">
+{% endif %}
+
+<!-- Category Sliders Section -->
+<section id="home-category-sliders-section" class="home-category-section">
+    <div class="cs-container">
+        <div class="cs-content">
+            <h2 class="cs-title">Populiariausi <span style="color: var(--primary);">automobiliai</span></h2>
+
+            <!-- Category Buttons -->
+            <div class="cs-category-buttons">
+                <button class="cs-category-btn active" data-category="krovininiai" data-category-name="Krovininiai" data-category-url="/nuoma/krovininiai/">
+                    Krovininiai
+                </button>
+                <button class="cs-category-btn" data-category="keleiviniai" data-category-name="Keleiviniai" data-category-url="/nuoma/keleiviniai/">
+                    Keleiviniai
+                </button>
+                <button class="cs-category-btn" data-category="lengvieji" data-category-name="Lengvieji" data-category-url="/nuoma/lengvieji/">
+                    Lengvieji
+                </button>
+            </div>
+        </div>
+
+        <!-- Krovininiai Slider -->
+        <div class="cs-category-slider" data-category="krovininiai">
+            <div class="cs-slider-container">
+                <button class="cs-slider-arrow cs-slider-prev" aria-label="Previous slide">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M15 18L9 12L15 6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                    </svg>
+                </button>
+                <div class="cs-slider-wrapper">
+                    <div id="home-krovininiai-slider-overlay" class="cs-slider-overlay"></div>
+                    <div id="home-krovininiai-slider" class="keen-slider">
+                        {%- set count = 0 -%}
+                        {%- for car in collections.car | sort(attribute="data.year", reverse=true) -%}
+                        {%- if car.data.category | hasCategory("Krovininiai") and count < 6 -%}
+                        {%- set count = count + 1 -%}
+                        {% include 'components/car-card-slide.html' %}
+                        {%- endif -%}
+                        {%- endfor -%}
+                    </div>
+                </div>
+                <button class="cs-slider-arrow cs-slider-next" aria-label="Next slide">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M9 18L15 12L9 6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                    </svg>
+                </button>
+            </div>
+        </div>
+
+        <!-- Keleiviniai Slider -->
+        <div class="cs-category-slider" data-category="keleiviniai" style="display: none;">
+            <div class="cs-slider-container">
+                <button class="cs-slider-arrow cs-slider-prev" aria-label="Previous slide">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M15 18L9 12L15 6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                    </svg>
+                </button>
+                <div class="cs-slider-wrapper">
+                    <div id="home-keleiviniai-slider-overlay" class="cs-slider-overlay"></div>
+                    <div id="home-keleiviniai-slider" class="keen-slider">
+                        {%- set count = 0 -%}
+                        {%- for car in collections.car | sort(attribute="data.year", reverse=true) -%}
+                        {%- if car.data.category | hasCategory("Keleiviniai") and count < 6 -%}
+                        {%- set count = count + 1 -%}
+                        {% include 'components/car-card-slide.html' %}
+                        {%- endif -%}
+                        {%- endfor -%}
+                    </div>
+                </div>
+                <button class="cs-slider-arrow cs-slider-next" aria-label="Next slide">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M9 18L15 12L9 6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                    </svg>
+                </button>
+            </div>
+        </div>
+
+        <!-- Lengvieji Slider -->
+        <div class="cs-category-slider" data-category="lengvieji" style="display: none;">
+            <div class="cs-slider-container">
+                <button class="cs-slider-arrow cs-slider-prev" aria-label="Previous slide">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M15 18L9 12L15 6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                    </svg>
+                </button>
+                <div class="cs-slider-wrapper">
+                    <div id="home-lengvieji-slider-overlay" class="cs-slider-overlay"></div>
+                    <div id="home-lengvieji-slider" class="keen-slider">
+                        {%- set count = 0 -%}
+                        {%- for car in collections.car | sort(attribute="data.year", reverse=true) -%}
+                        {%- if car.data.category | hasCategory("Lengvieji") and count < 6 -%}
+                        {%- set count = count + 1 -%}
+                        {% include 'components/car-card-slide.html' %}
+                        {%- endif -%}
+                        {%- endfor -%}
+                    </div>
+                </div>
+                <button class="cs-slider-arrow cs-slider-next" aria-label="Next slide">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M9 18L15 12L9 6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                    </svg>
+                </button>
+            </div>
+        </div>
+
+        <!-- View All Button -->
+        <div style="margin-top: 2rem; text-align: center;">
+            <a href="/nuoma/krovininiai/" class="cs-button-solid" id="view-all-category-btn">Peržiūrėti visus</a>
+        </div>
+    </div>
+</section>
+
+<!-- Keen Slider CSS -->
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/keen-slider@6.8.6/keen-slider.min.css">
+
+<!-- Inline JavaScript -->
+<script>
+// Home Page Category Cars Sliders
+(function() {
+    let KeenSlider = null;
+    const sliderInstances = {};
+    let currentCategory = 'krovininiai';
+    let sliderHeight = null;
+
+    // Function to initialize a slider
+    function initSlider(sliderId, overlayId, containerSelector) {
+        const sliderElement = document.getElementById(sliderId);
+        if (!sliderElement || !KeenSlider) return null;
+
+        // Destroy existing slider if it exists
+        if (sliderInstances[sliderId]) {
+            try {
+                sliderInstances[sliderId].destroy();
+            } catch (e) {
+                // Slider might already be destroyed
+            }
+        }
+
+        const slider = new KeenSlider(sliderElement, {
+            loop: true,
+            slides: {
+                perView: 1.2,
+                spacing: 16,
+            },
+            breakpoints: {
+                '(min-width: 48rem)': {
+                    slides: {
+                        perView: 2,
+                        spacing: 16,
+                    },
+                },
+                '(min-width: 64rem)': {
+                    slides: {
+                        perView: 3,
+                        spacing: 16,
+                    },
+                },
+            },
+        });
+
+        sliderInstances[sliderId] = slider;
+
+        // Hide overlay once slider is initialized
+        const overlay = document.getElementById(overlayId);
+        if (overlay) {
+            overlay.style.opacity = '0';
+            overlay.style.transition = 'opacity 0.3s ease';
+            setTimeout(() => {
+                overlay.style.display = 'none';
+            }, 300);
+        }
+
+        const container = document.querySelector(containerSelector);
+        if (container) {
+            const prevButton = container.querySelector('.cs-slider-prev');
+            const nextButton = container.querySelector('.cs-slider-next');
+
+            if (prevButton) {
+                // Store slider reference on button to avoid duplicate listeners
+                if (prevButton._sliderHandler) {
+                    prevButton.removeEventListener('click', prevButton._sliderHandler);
+                }
+                prevButton._sliderHandler = () => slider.prev();
+                prevButton.addEventListener('click', prevButton._sliderHandler);
+            }
+            if (nextButton) {
+                // Store slider reference on button to avoid duplicate listeners
+                if (nextButton._sliderHandler) {
+                    nextButton.removeEventListener('click', nextButton._sliderHandler);
+                }
+                nextButton._sliderHandler = () => slider.next();
+                nextButton.addEventListener('click', nextButton._sliderHandler);
+            }
+        }
+
+        return slider;
+    }
+
+    // Function to switch between category sliders
+    function switchCategory(category) {
+        if (category === currentCategory) return;
+
+        const categoryButtons = document.querySelectorAll('#home-category-sliders-section .cs-category-btn');
+        const categorySliders = document.querySelectorAll('#home-category-sliders-section .cs-category-slider');
+        const viewAllBtn = document.getElementById('view-all-category-btn');
+        const activeButton = document.querySelector(`#home-category-sliders-section .cs-category-btn[data-category="${category}"]`);
+
+        // Update active button
+        categoryButtons.forEach(btn => btn.classList.remove('active'));
+        if (activeButton) {
+            activeButton.classList.add('active');
+        }
+
+        // Get current slider height before hiding
+        const currentSlider = document.querySelector(`#home-category-sliders-section .cs-category-slider[data-category="${currentCategory}"]`);
+        if (currentSlider && currentSlider.offsetHeight > 0) {
+            sliderHeight = currentSlider.offsetHeight;
+        }
+
+        // Hide all sliders
+        categorySliders.forEach(slider => {
+            slider.style.display = 'none';
+        });
+
+        // Show target slider with fixed height for smooth transition
+        const targetSlider = document.querySelector(`#home-category-sliders-section .cs-category-slider[data-category="${category}"]`);
+        if (targetSlider) {
+            // Show overlay while initializing
+            const overlayId = `home-${category}-slider-overlay`;
+            const overlay = document.getElementById(overlayId);
+            if (overlay) {
+                overlay.style.display = 'block';
+                overlay.style.opacity = '1';
+            }
+
+            // Set fixed height for smooth transition
+            if (sliderHeight && sliderHeight > 0) {
+                targetSlider.style.height = sliderHeight + 'px';
+            }
+            targetSlider.style.display = 'block';
+            targetSlider.style.opacity = '0';
+            targetSlider.style.transition = 'opacity 0.3s ease';
+
+            // Initialize slider if not already initialized
+            const sliderId = `home-${category}-slider`;
+            const containerSelector = `#home-category-sliders-section .cs-category-slider[data-category="${category}"]`;
+            
+            // Small delay to ensure DOM is ready
+            setTimeout(() => {
+                initSlider(sliderId, overlayId, containerSelector);
+                
+                // Update height after initialization
+                requestAnimationFrame(() => {
+                    const newHeight = targetSlider.offsetHeight;
+                    if (newHeight > 0) {
+                        sliderHeight = newHeight;
+                        targetSlider.style.height = newHeight + 'px';
+                    }
+                    
+                    // Fade in slider
+                    setTimeout(() => {
+                        targetSlider.style.opacity = '1';
+                        
+                        // Remove fixed height after transition completes
+                        setTimeout(() => {
+                            targetSlider.style.height = '';
+                            targetSlider.style.transition = '';
+                        }, 300);
+                    }, 50);
+                });
+            }, 50);
+        }
+
+        // Update view all button
+        if (viewAllBtn && activeButton) {
+            const categoryUrl = activeButton.getAttribute('data-category-url');
+            viewAllBtn.textContent = 'Peržiūrėti visus';
+            viewAllBtn.href = categoryUrl;
+        }
+
+        currentCategory = category;
+    }
+
+    // Load Keen Slider script dynamically
+    const script = document.createElement('script');
+    script.src = 'https://cdn.jsdelivr.net/npm/keen-slider@6.8.6/keen-slider.min.js';
+    script.onload = function() {
+        KeenSlider = window.KeenSlider;
+        
+        // Initialize only the default slider (Krovininiai) on load
+        const section = document.getElementById('home-category-sliders-section');
+        if (section) {
+            initSlider('home-krovininiai-slider', 'home-krovininiai-slider-overlay', '#home-category-sliders-section .cs-category-slider[data-category="krovininiai"]');
+            
+            // Set up category button click handlers
+            const categoryButtons = section.querySelectorAll('.cs-category-btn');
+            categoryButtons.forEach(button => {
+                button.addEventListener('click', function() {
+                    const category = this.getAttribute('data-category');
+                    switchCategory(category);
+                });
+            });
+        }
+    };
+    document.head.appendChild(script);
+})();
+</script>
+

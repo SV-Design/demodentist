@@ -1,0 +1,117 @@
+---
+permalink: /llms.txt
+layout: null
+eleventyExcludeFromCollections: true
+---
+
+# AutoVerus - LLMs.txt
+
+## Site Description
+
+AutoVerus (autoverus.lt) is a Lithuanian car rental service. We provide car
+rental services with cargo minibuses (krovininiai mikroautobusai), passenger minibuses (keleiviniai mikroautobusai), and light vehicles (lengvieji automobiliai) for various business and personal needs.
+
+Our services include:
+- Car rental: Cargo minibuses (krovininiai mikroautobusai), passenger minibuses (keleiviniai mikroautobusai), and light vehicles (lengvieji automobiliai) for short-term and long-term rental
+- Flexible rental terms: Short-term and long-term rental options available
+- Convenient locations: Rental services available in major Lithuanian cities
+- Professional service: Technically maintained vehicles with 24/7 roadside assistance
+
+## Site Structure
+
+### Main Pages
+{{ client.domain }}/
+{{ client.domain }}/apie-mus/
+{{ client.domain }}/kontaktai/
+{{ client.domain }}/suzinoti-kaina/
+{{ client.domain }}/atsiliepimai/
+{{ client.domain }}/automobilio-paieska/
+{{ client.domain }}/automobilio-patikra/
+{{ client.domain }}/privatumo-politika/
+{{ client.domain }}/nuoma/
+
+### Service Pages
+{{ client.domain }}/ilgalaike-automobiliu-nuoma/
+{{ client.domain }}/automobiliu-nuoma-kaune/
+{{ client.domain }}/mikroautobusu-nuoma-kaune/
+{{ client.domain }}/mikroautobusu-pristatymas-nuomai-lietuvoje/
+{{ client.domain }}/automobilio-nuoma-su-vairuotoju/
+
+### Car Categories
+{%- for category in collections["car-category"] %}
+{{ client.domain }}{{ category.url }}
+{%- endfor %}
+
+### Product Pages (Cars)
+{%- for car in collections.car %}
+{{ client.domain }}{{ car.url }}
+{%- endfor %}
+
+### Blog Posts
+{{ client.domain }}/tinklarastis/
+{%- for post in collections.post %}
+{{ client.domain }}{{ post.url }}
+{%- endfor %}
+
+## Content Details
+
+### Car Categories
+{%- for category in collections["car-category"] %}
+- {{ category.data.title }}: {{ category.data.description | default("No description") }}
+URL: {{ client.domain }}{{ category.url }}
+{%- endfor %}
+
+### Available Cars
+{%- for car in collections.car %}
+- {{ car.data.brand }} {{ car.data.model }} ({{ car.data.year }})
+Categories: {{ car.data.category | formatCategory }}
+Price: from {{ car.data.price }}€
+URL: {{ client.domain }}{{ car.url }}
+{%- endfor %}
+
+### Blog Content
+{%- for post in collections.post %}
+- {{ post.data.title }}
+Published: {{ post.date | isoDate }}
+URL: {{ client.domain }}{{ post.url }}
+{%- endfor %}
+
+### Service Pages
+- Automobilių nuoma: Patikima automobilių nuoma kelionėms ir darbams. Siūlome techniškai tvarkingus lengvuosius automobilius bei mikroautobusus su pagalba kelyje.
+URL: {{ client.domain }}/automobiliu-nuoma/
+
+- Ilgalaikė automobilių nuoma verslui ir asmenims: Lanksti ilgalaikė nuoma be banko įsipareigojimų. Automobiliai mėnesiui ar ilgiau su technine priežiūra ir pakaitiniu transportu.
+URL: {{ client.domain }}/ilgalaike-automobiliu-nuoma/
+
+- Automobilių nuoma Kaune: Ieškote automobilio Kaune? Siūlome platų lengvųjų automobilių ir mikroautobusų pasirinkimą. Patogus atsiėmimas ir grąžinimas.
+URL: {{ client.domain }}/automobiliu-nuoma-kaune/
+
+- Automobilių nuoma Vilniuje: Kokybiška automobilių nuoma Vilniuje. Lengvieji automobiliai ir mikroautobusai jūsų poreikiams. Strategiškai patogi vieta.
+URL: {{ client.domain }}/automobiliu-nuoma-vilniuje/
+
+- Mikroautobusų nuoma Kaune: Erdvūs mikroautobusai nuomai Kaune. Siūlome transportą kelionėms, krovinių gabenimui ir persikraustymui. Vairavimas su B kategorija.
+URL: {{ client.domain }}/mikroautobusu-nuoma-kaune/
+
+- Mikroautobusų nuoma Vilniuje: Talpūs keleiviniai ir krovininiai mikroautobusai Vilniuje. Puikus sprendimas logistikai ar atostogoms. Patogus susisiekimas.
+URL: {{ client.domain }}/mikroautobusu-nuoma-vilniuje/
+
+- Automobilių nuoma su vairuotoju: Keleivių pervežimo paslaugos su profesionaliu vairuotoju. Delegacijų pasitikimas, šventės ir kelionės visoje Lietuvoje.
+URL: {{ client.domain }}/automobilio-nuoma-su-vairuotoju/
+
+## Technical Information
+
+- Sitemap: {{ client.domain }}/sitemap.xml
+- Robots.txt: {{ client.domain }}/robots.txt
+- Language: Lithuanian (lt)
+- Country: Lithuania
+- Contact Email: {{ client.email }}
+- Phone: {{ client.phoneFormatted }}
+
+## Content Guidelines
+
+This site focuses on:
+1. Car rental services - cargo minibuses (krovininiai mikroautobusai), passenger minibuses (keleiviniai mikroautobusai), and light vehicles (lengvieji automobiliai) rentals
+2. Location-based services - car rental services in major Lithuanian cities
+3. Educational content - blog posts about car rental, maintenance tips, and travel advice
+
+All content is in Lithuanian language and targets the Lithuanian market.

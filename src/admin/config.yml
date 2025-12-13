@@ -1,0 +1,111 @@
+# Replace the "backend" object below with the snippet from DecapBridge. We need something here to get the CMS to work locally, but this alone won't work in production
+backend:
+  name: git-gateway
+  repo: SV-Design/
+  branch: main
+  identity_url: https://auth.decapbridge.com/sites/
+  gateway_url: https://gateway.decapbridge.com
+
+# Keep this to allow you to edit the cms locally
+local_backend: true
+
+# change url to a link to the image you want to use, no file paths, must be a URL
+logo_url: https://codestitch.app/frontend/images/logo.png
+
+# Image folders
+media_folder: "src/assets/images/blog"
+public_folder: "/assets/images/blog"
+
+# Decap CMS Collections
+collections:
+    - name: "blog"
+      label: "Blog"
+      folder: "src/content/blog"
+      create: true
+      slug: "{{slug}}"
+      fields:
+          - { label: "Title", name: "title", widget: "string" }
+          - { label: "Category", name: "category", widget: "string", required: false }
+          - {
+                label: "URL Slug",
+                name: "url",
+                widget: "string",
+                hint: 'Specify where the page will be written to. If you use "Blog Post", the post will be accessible from "blog/blog-post"',
+            }
+          - { label: "Description", name: "description", widget: "string" }
+          - { label: "Author", name: "author", widget: "string" }
+          - { label: "Date", name: "date", widget: "datetime" }
+          - { label: "Tags", name: "tags", widget: "list", default: ["post"] }
+          - { label: "Featured Image", name: "image", widget: "image" }
+          - { label: "Image Caption", name: "imageAlt", widget: "string" }
+          - { label: "Body", name: "body", widget: "markdown" }
+    
+    - name: "car-categories"
+      label: "Car Categories"
+      folder: "src/content/car-categories"
+      create: true
+      slug: "{{slug}}"
+      fields:
+          - { label: "Title", name: "title", widget: "string" }
+          - {
+                label: "URL Slug",
+                name: "url",
+                widget: "string",
+                hint: 'Specify where the page will be written to. If you use "Sedans", the category will be accessible from "cars/sedans"',
+            }
+          - { label: "Banner Text", name: "bannerText", widget: "text", required: false, hint: "Custom text to display in the banner area" }
+          - { label: "Description", name: "description", widget: "string" }
+          - { label: "Long Description", name: "longDescription", widget: "markdown", required: false }
+          - { label: "Featured Image", name: "image", widget: "image" }
+          - { label: "Image Alt Text", name: "imageAlt", widget: "string" }
+    
+    - name: "cars"
+      label: "Cars"
+      folder: "src/content/nuoma"
+      create: true
+      slug: "{{slug}}"
+      fields:
+          - { label: "Title", name: "title", widget: "string" }
+          - { label: "Category", name: "category", widget: "select", options: ["Krovininiai", "Keleiviniai", "Lengvieji"], multiple: true, required: true, hint: "Select one or more categories" }
+          - {
+                label: "URL Slug",
+                name: "url",
+                widget: "string",
+                hint: 'Specify where the page will be written to. If you use "opel-movano", the car will be accessible from "cars/opel-movano"',
+            }
+          - { label: "Featured Image", name: "image", widget: "image" }
+          - { label: "Image Alt Text", name: "imageAlt", widget: "string" }
+          - { label: "Price (nuo)", name: "price", widget: "string", hint: "e.g., 70" }
+          - { label: "Markė (Brand)", name: "brand", widget: "string" }
+          - { label: "Modelis (Model)", name: "model", widget: "string" }
+          - { label: "Metai (Year)", name: "year", widget: "string" }
+          - { label: "Kuro tipas (Fuel Type)", name: "fuelType", widget: "string" }
+          - { label: "Variklis, cm3 (Engine)", name: "engine", widget: "string" }
+          - { label: "Galia (kw) (Power)", name: "power", widget: "string" }
+          - { label: "Pavarų dėžė (Transmission)", name: "transmission", widget: "string" }
+          - { label: "Sėdimos vietos (Seats)", name: "seats", widget: "string", required: false }
+          - { label: "Durys (Doors)", name: "doors", widget: "string", required: false, hint: "e.g., 5" }
+          - { label: "Kėbulo tipas (Body Type)", name: "bodyType", widget: "select", options: ["Sedanas", "SUV", "Hatchback", "Universalas", "Krovininis", "Mikroautobusas", "Kita"], required: false }
+          - { label: "Variklio tipas (Drive Type)", name: "driveType", widget: "select", options: ["Priekinė", "Galinė", "Visų ratų", "Elektra"], required: false, hint: "Priekinė, Galinė, Visų ratų, Elektra" }
+          - { label: "Spalva (Color)", name: "color", widget: "select", options: ["Balta", "Juoda", "Pilka", "Mėlyna", "Raudona", "Sidabrinė", "Kita"], required: false }
+          - { label: "Rida (Mileage)", name: "mileage", widget: "string", required: false, hint: "e.g., 50000 (in km)" }
+          - { label: "Depozitas (Deposit)", name: "deposit", widget: "string", required: false, hint: "e.g., 300" }
+          - { label: "Minimalus nuomos laikotarpis (Min Rental Days)", name: "minRentalDays", widget: "string", required: false, hint: "e.g., 1" }
+          - { label: "Klimato valdymas (Air Conditioning)", name: "airConditioning", widget: "boolean", required: false, default: true }
+          - { label: "Navigacija (Navigation)", name: "navigation", widget: "boolean", required: false, default: false }
+          - { label: "Bluetooth", name: "bluetooth", widget: "boolean", required: false, default: false }
+          - { label: "Kruizo kontrolė (Cruise Control)", name: "cruiseControl", widget: "boolean", required: false, default: false }
+          - { label: "Galinio vaizdo kamera (Rear View Camera)", name: "rearViewCamera", widget: "boolean", required: false, default: false }
+          - { label: "Parkavimo sistema (Parking System)", name: "parkingSystem", widget: "boolean", required: false, default: false }
+          - { label: "Šildomos sėdynės (Heated Seats)", name: "heatedSeats", widget: "boolean", required: false, default: false }
+          - { label: "Aukštis (Height)", name: "height", widget: "string", required: false, hint: "e.g., 2,10m" }
+          - { label: "Plotis (Width)", name: "width", widget: "string", required: false, hint: "e.g., 1,85m" }
+          - { label: "Ilgis (Length)", name: "length", widget: "string", required: false, hint: "e.g., 4,00m" }
+          - { label: "Kuro suvartojimas (Fuel Consumption)", name: "fuelConsumption", widget: "string", required: false, hint: "e.g., 10 L/100KM" }
+          - { label: "Plotis tarp ratų arkų (Width between wheel arches)", name: "wheelArchesWidth", widget: "string", required: false, hint: "e.g., 1,30m" }
+          - { label: "Aukštis tarp durų (Height between doors)", name: "doorsHeight", widget: "string", required: false, hint: "e.g., 1,80m" }
+          - { label: "Gallery Images", name: "gallery", widget: "list", fields: [{ label: "Image", name: "image", widget: "image" }], required: false }
+          - { label: "Automobilio aprašymas (Description)", name: "description", widget: "markdown", required: false }
+          - { label: "Ypatumai (Features)", name: "features", widget: "markdown", required: false, hint: "List features, one per line" }
+          - { label: "Techniniai duomenys (Technical Data)", name: "technicalData", widget: "markdown", required: false }
+          - { label: "Panašūs automobiliai (Related Cars)", name: "relatedCars", widget: "relation", collection: "cars", searchFields: ["title"], valueField: "url", displayFields: ["title"], multiple: true, required: false, hint: "Select related cars from the same category. If none selected, top 6 from same category will be shown." }

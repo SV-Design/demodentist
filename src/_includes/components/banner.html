@@ -1,0 +1,120 @@
+<style>
+    @media only screen and (min-width: 0rem) {
+        #banner-310 {
+            background: #fff;
+            border-bottom: 1px solid #e0e0e0;
+            padding-bottom: clamp(3rem,13vw,4.75rem);
+            padding-top: clamp(11rem,25vw,15.75rem);
+            position: relative;
+            z-index: 1
+        }
+
+        #banner-310 .cs-container {
+            align-items: flex-start;
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-start;
+            margin: auto;
+            max-width: 80rem;
+            padding: 0 1rem;
+            width: 100%
+        }
+
+        #banner-310 .cs-int-title {
+            font-size: clamp(2rem, 4.5vw, 3.0625rem);
+            font-weight: 700;
+            line-height: 1.2em;
+            text-align: left;
+            margin: 0 0 0.75rem;
+            position: relative;
+            color: #000;
+        }
+
+        #banner-310 .cs-breadcrumbs,#banner-310 .cs-link {
+            align-items: center;
+            display: flex;
+            justify-content: center
+        }
+
+        #banner-310 .cs-link {
+            color: #111;
+            font-size: clamp(0.875rem, 1.5vw, 1rem);
+            line-height: 1.2em;
+            text-decoration: none;
+            position: relative;
+            display: flex
+        ;
+            justify-content: center;
+            align-items: center;
+        }
+
+        #banner-310 .cs-link:last-of-type:after {
+            display: none
+        }
+
+        #banner-310 .cs-link:after {
+            background: url(/assets/svgs/right.svg);
+            background-position: 50%;
+            background-repeat: no-repeat;
+            background-size: contain;
+            content: "";
+            height: .75rem;
+            margin-left: .75rem;
+            margin-right: .75rem;
+            width: .4375rem
+        }
+
+        #banner-310 .cs-background {
+            z-index: -1
+        }
+
+        #banner-310 .cs-background,#banner-310 .cs-background:before {
+            display: block;
+            height: 100%;
+            left: 0;
+            position: absolute;
+            top: 0;
+            width: 100%
+        }
+
+        #banner-310 .cs-background:before {
+            background: #000;
+            content: "";
+            opacity: .72;
+            z-index: 1
+        }
+
+        #banner-310 .cs-background img {
+            height: 100%;
+            left: 0;
+            -o-object-fit: cover;
+            object-fit: cover;
+            position: absolute;
+            top: 0;
+            width: 100%
+        }
+    }
+
+    @media only screen and (min-width: 1320px) {
+        #banner-310 .cs-container {
+            padding-left:0;
+            padding-right: 0
+        }
+    }
+
+    @media only screen and (max-width: 48rem) {
+        #banner-310 {
+            padding-top:clamp(14rem,25vw,15.75rem)
+        }
+    }
+</style>
+
+<div id="banner-310">
+    <div class="cs-container">
+        <h1 class="cs-int-title">{{ bannerTitle | default("Contact us") }}</h1>
+        <div class="cs-breadcrumbs">
+            <a href="/" class="cs-link">{{ breadcrumbsHome | default("Home") }}</a>
+            <a href="" class="cs-link cs-active">{{ breadcrumbsCurrent | default(bannerTitle) | default("Contact us") }}</a>
+        </div>
+    </div>
+</div>

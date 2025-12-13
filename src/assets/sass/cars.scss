@@ -1,0 +1,2268 @@
+// ─────────────────────────────────────────────────────────────────────────────
+// CAR PAGES STYLES
+// Styles for car category and car product pages
+// ─────────────────────────────────────────────────────────────────────────────
+
+/*-- -------------------------- -->
+<---          Banner-310          -->
+<--- -------------------------- -*/
+
+/* Mobile - 360px */
+
+/*-- -------------------------- -->
+<---      Cars Listing Page       -->
+<--- -------------------------- -*/
+
+/* Mobile - 360px */
+@media only screen and (min-width: 0rem) {
+    #car-categories-section {
+        padding: var(--sectionPadding);
+        position: relative;
+        z-index: 1;
+        overflow: hidden;
+        background: #fff;
+    }
+
+    #car-categories-section .cs-container {
+        width: 100%;
+        max-width: 43.75rem;
+        margin: auto;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: clamp(3rem, 6vw, 4rem);
+    }
+
+    #car-categories-section .cs-content {
+        text-align: center;
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    #car-categories-section .cs-title {
+        max-width: 26ch;
+    }
+
+    #car-categories-section .cs-topper {
+        color: var(--primary);
+    }
+
+    #car-categories-section .cs-card-group {
+        width: 100%;
+        margin: 0;
+        padding: 0;
+        display: grid;
+        grid-template-columns: repeat(12, 1fr);
+        gap: 1rem;
+    }
+
+    #car-categories-section .cs-item {
+        list-style: none;
+        display: flex;
+        flex-direction: column;
+        grid-column: span 12;
+    }
+
+    #car-categories-section .cs-item:hover .cs-h3 {
+        color: #fff;
+    }
+
+    #car-categories-section .cs-item:hover .cs-flex {
+        background-color: var(--primary);
+    }
+
+    #car-categories-section .cs-link {
+        text-decoration: none;
+        display: flex;
+        flex-direction: column;
+        flex-grow: 1;
+        gap: 1rem;
+        color: inherit;
+    }
+
+    #car-categories-section .cs-picture {
+        width: 100%;
+        height: 20rem;
+        margin: 0;
+        display: block;
+        position: relative;
+        z-index: 1;
+        overflow: hidden;
+        border-radius: 6px;
+    }
+
+    #car-categories-section .cs-picture img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        position: absolute;
+        top: 0;
+        left: 0;
+        border-radius: 6px;
+        transition: transform 0.3s;
+    }
+
+    #car-categories-section .cs-item:hover .cs-picture img {
+        transform: scale(1.05);
+    }
+
+    #car-categories-section .cs-flex {
+        padding: 1.25rem;
+        background-color: #f5f5f5;
+        border-radius: 6px;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        flex-grow: 1;
+        transition: background-color 0.3s;
+    }
+
+    #car-categories-section .cs-h3 {
+        font-size: clamp(1.25rem, 1.8vw, 1.5625rem);
+        line-height: 1.2em;
+        text-align: left;
+        margin: 0 0 0.75rem 0;
+        color: #1a1a1a;
+        transition: color 0.3s;
+    }
+
+    #car-categories-section .cs-item-text {
+        font-size: 1rem;
+        line-height: 1.5em;
+        text-align: left;
+        margin: 0 0 1rem 0;
+        color: var(--bodyTextColor);
+    }
+
+    #car-categories-section .cs-link-text {
+        font-size: 1rem;
+        font-weight: 700;
+        color: var(--primary);
+        display: flex;
+        align-items: center;
+        gap: 0.5rem;
+        margin-top: auto;
+    }
+
+    #car-categories-section .cs-arrow {
+        transition: transform 0.3s;
+    }
+
+    #car-categories-section .cs-item:hover .cs-arrow {
+        transform: translateX(5px);
+    }
+}
+
+/* Desktop - 1024px */
+@media only screen and (min-width: 64rem) {
+    #car-categories-section .cs-container {
+        max-width: 80rem;
+    }
+
+    #car-categories-section .cs-item {
+        grid-column: span 4;
+    }
+}
+
+/*-- -------------------------- -->
+<---      Car Category Page      -->
+<--- -------------------------- -*/
+
+/* Mobile - 360px */
+@media only screen and (min-width: 0rem) {
+    #car-category-1144 {
+        padding: var(--sectionPadding);
+        position: relative;
+        z-index: 1;
+        overflow: hidden;
+        background: #fff;
+        padding-top: 2rem;
+    }
+
+    #car-category-1144 .cs-container {
+        width: 100%;
+        margin: auto;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 0;
+    }
+
+    #car-category-1144 .cs-content {
+        text-align: left;
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    #car-category-1144 .cs-title {
+        max-width: none;
+        text-align: left;
+    }
+    
+    #car-category-1144 .cs-content-flex {
+        text-align: left;
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+    }
+    
+    #car-category-1144 .cs-text {
+        text-align: left;
+    }
+
+    #car-category-1144 .cs-topper {
+        color: var(--primary);
+    }
+
+    #car-category-1144 .cs-card-group {
+        width: 100%;
+        margin: 0;
+        padding: 0;
+        display: grid;
+        grid-template-columns: repeat(12, 1fr);
+        gap: 1rem;
+    }
+
+    #car-category-1144 .cs-item {
+        list-style: none;
+        display: flex;
+        flex-direction: column;
+        grid-column: span 12;
+        border-radius: 0.75rem;
+        background-color: #fff;
+        border: 1px solid rgba(0, 0, 0, 0.2);
+        transition: border-color 0.3s;
+        overflow: hidden;
+    }
+
+    #car-category-1144 .cs-item:hover {
+        border-color: rgba(0, 0, 0, 0.12);
+    }
+
+/* Tablet - 680px to 1024px */
+@media only screen and (min-width: 42.5rem) and (max-width: 64rem) {
+    #car-category-1144 .cs-item {
+        grid-column: span 6;
+    }
+}
+
+    #car-category-1144 .cs-item:hover .cs-h3 {
+        color: var(--primary);
+    }
+
+    #car-category-1144 .cs-item:hover .cs-item-text {
+        background-color: var(--primary);
+    }
+
+    #car-category-1144 .cs-item:hover .cs-icon-wrapper {
+        border-color: #fff;
+    }
+
+    #car-category-1144 .cs-item:hover .cs-icon {
+        filter: brightness(1000%) grayscale(1);
+    }
+
+    #car-category-1144 .cs-link {
+        text-decoration: none;
+        display: flex;
+        flex-direction: column;
+        flex-grow: 1;
+        gap: 0;
+        color: inherit;
+    }
+
+    #car-category-1144 .cs-h3 {
+        position: absolute;
+        top: 0.75rem;
+        left: 0.75rem;
+        margin: 0;
+        padding: 0.5rem 0.75rem;
+        font-size: clamp(1.125rem, 1.6vw, 1.375rem);
+        line-height: 1.3em;
+        text-align: left;
+        color: #1a1a1a;
+        font-weight: 600;
+        background-color: rgba(255, 255, 255, 0.9);
+        border-radius: 0.375rem;
+        z-index: 2;
+        transition: color 0.3s;
+    }
+
+    #car-category-1144 .cs-picture {
+        width: 100%;
+        aspect-ratio: 300 / 220;
+        margin: 0;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        position: relative;
+        z-index: 1;
+        overflow: hidden;
+    }
+
+    #car-category-1144 .cs-picture img {
+        max-width: 100%;
+        max-height: 100%;
+        width: auto;
+        height: auto;
+        object-fit: contain;
+        transition: transform 0.3s;
+    }
+
+    #car-category-1144 .cs-item:hover .cs-picture img {
+        transform: scale(1.05);
+    }
+
+    #car-category-1144 .cs-price-overlay {
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        padding: 1rem 1.25rem;
+        background: linear-gradient(to top, rgba(0, 0, 0, 0.7) 0%, rgba(0, 0, 0, 0.4) 50%, transparent 100%);
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 0.25rem;
+        width: 100%;
+        z-index: 2;
+    }
+
+    #car-category-1144 .cs-price-label {
+        font-size: 0.75rem;
+        font-weight: 700;
+        text-transform: uppercase;
+        letter-spacing: 0.05em;
+        color: #fff;
+        opacity: 0.9;
+    }
+
+    #car-category-1144 .cs-price-group {
+        display: flex;
+        align-items: baseline;
+        gap: 0.25rem;
+    }
+
+    #car-category-1144 .cs-price-amount {
+        font-size: clamp(1.5rem, 2.5vw, 2rem);
+        font-weight: 700;
+        color: #fff;
+        line-height: 1;
+        text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+    }
+
+    #car-category-1144 .cs-price-unit {
+        font-size: 0.875rem;
+        color: #fff;
+        opacity: 0.9;
+        text-shadow: 0 1px 2px rgba(0, 0, 0, 0.3);
+    }
+
+    #car-category-1144 .cs-link-text-overlay {
+        position: absolute;
+        bottom: 1rem;
+        right: 1rem;
+        z-index: 3;
+        background: rgba(0, 0, 0, 0.3);
+        padding: 0.5rem 0.75rem;
+        border-radius: 0.375rem;
+        backdrop-filter: blur(4px);
+        font-size: 0.9375rem;
+        font-weight: 700;
+        color: #fff;
+        text-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
+        line-height: 1;
+        justify-content: center;
+        align-items: center;
+        display: flex;
+    }
+
+    #car-category-1144 .cs-link-text-overlay .cs-link-text-label {
+        display: inline;
+    }
+
+    #car-category-1144 .cs-link-text-overlay .cs-arrow {
+        width: 20px;
+        height: 20px;
+        display: inline;
+        vertical-align: baseline;
+        margin-left: 0.5rem;
+        transition: transform 0.3s;
+        filter: brightness(1000);
+    }
+
+    #car-category-1144 .cs-item:hover .cs-link-text-overlay .cs-arrow {
+        transform: translateX(5px);
+    }
+
+    #car-category-1144 .cs-flex {
+        padding: 1rem;
+        border-radius: 0 0 6px 6px;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        flex-grow: 1;
+        background-color: #fff;
+        gap: 0.75rem;
+    }
+
+    #car-category-1144 .cs-specs {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 0.5rem;
+        margin: 0;
+    }
+
+    #car-category-1144 .cs-spec-item {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 0.25rem;
+        padding: 0;
+    }
+
+    #car-category-1144 .cs-spec-icon {
+        width: 1.25rem;
+        height: 1.25rem;
+        color: var(--primary);
+        flex-shrink: 0;
+    }
+
+    #car-category-1144 .cs-spec-value {
+        font-size: 0.75rem;
+        font-weight: 500;
+        color: var(--bodyTextColor);
+        text-align: center;
+        line-height: 1.2;
+    }
+
+
+    #car-category-1144 .cs-link-text {
+        font-size: 0.9375rem;
+        font-weight: 700;
+        color: var(--primary);
+        display: flex;
+        align-items: center;
+        gap: 0.5rem;
+        margin-top: 0.5rem;
+    }
+
+    #car-category-1144 .cs-arrow {
+        transition: transform 0.3s;
+    }
+
+    #car-category-1144 .cs-item:hover .cs-arrow {
+        transform: translateX(5px);
+    }
+}
+
+/* Mobile - below 680px */
+@media only screen and (max-width: 42.5rem) {
+    #car-category-1144 .cs-item {
+        grid-column: span 12;
+    }
+}
+
+/* Desktop - 1024px */
+@media only screen and (min-width: 64rem) {
+    #car-category-1144 .cs-container {
+        max-width: 80rem;
+    }
+
+    #car-category-1144 .cs-item {
+        grid-column: span 4;
+    }
+}
+
+/*-- -------------------------- -->
+<---        Single Car Page       -->
+<--- -------------------------- -*/
+
+/* Mobile - 360px */
+@media only screen and (min-width: 0rem) {
+    #single-car {
+        padding: var(--sectionPadding);
+        background: #fff;
+    }
+
+    #single-car .cs-container {
+        width: 100%;
+        max-width: 80rem;
+        margin: auto;
+    }
+
+    #single-car .cs-car-layout {
+        display: flex;
+        flex-direction: column;
+        gap: 2rem;
+    }
+
+    #single-car .cs-car-left {
+        width: 100%;
+    }
+
+    #single-car .cs-car-mobile-header {
+        display: block;
+        margin-bottom: 1.5rem;
+    }
+
+    #single-car .cs-car-mobile-header .cs-button-solid {
+        width: 100%;
+        text-align: center;
+        color: #fff;
+    }
+
+    #single-car .cs-car-right {
+        width: 100%;
+    }
+
+    #single-car .cs-car-right .cs-car-category,
+    #single-car .cs-car-right .cs-car-title,
+    #single-car .cs-car-right .cs-car-price-section {
+        display: none;
+    }
+
+    #single-car .cs-car-main-image {
+        width: 100%;
+        display: block;
+        margin-bottom: 0;
+        border-radius: 0.5rem;
+        overflow: hidden;
+    }
+
+    #single-car .cs-car-main-image img {
+        width: 100%;
+        height: auto;
+        display: block;
+    }
+
+    #single-car .cs-car-right {
+        width: 100%;
+    }
+
+    #single-car .cs-car-category {
+        font-size: 0.875rem;
+        font-weight: 700;
+        color: #757575;
+        margin: 0;
+        text-transform: uppercase;
+        letter-spacing: 0.05em;
+    }
+
+    #single-car .cs-car-title {
+        font-size: clamp(1.75rem, 4vw, 2.5rem);
+        font-weight: 700;
+        line-height: 1.2em;
+        margin: 0 0 1.5rem 0;
+        color: var(--primary);
+    }
+
+    #single-car .cs-car-price-section {
+        margin-bottom: 1rem;
+    }
+
+    #single-car .cs-price-title {
+        font-size: clamp(1.5rem, 3vw, 2rem);
+        font-weight: 700;
+        margin: 0;
+    }
+
+    #single-car .cs-price-text {
+        color: #1a1a1a;
+    }
+
+    #single-car .cs-price-pvm {
+        font-size: 0.6em;
+    }
+
+    #single-car .cs-price-amount {
+        color: var(--primary);
+    }
+
+    #single-car .cs-reservation-title {
+        font-size: clamp(1.25rem, 2.5vw, 1.5rem);
+        font-weight: 700;
+        margin: 1.5rem 0 1rem 0;
+        padding: 1.5rem 0 0 0;
+        border-top: 1px solid rgba(0, 0, 0, 0.08);
+        color: var(--headerColor);
+    }
+
+    #single-car .cs-car-specifications {
+        margin: 1.5rem 0 0 0;
+        padding: 1.5rem 0 0 0;
+        border-top: 1px solid rgba(0, 0, 0, 0.08);
+    }
+
+    #single-car .cs-spec-title {
+        font-size: clamp(1rem, 2vw, 1.25rem);
+        font-weight: 400;
+        margin: 0 0 1rem 0;
+        color: var(--headerColor);
+    }
+
+    #single-car .cs-spec-list {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 0 2rem;
+    }
+
+/* Mobile - below 500px */
+@media only screen and (max-width: 31.25rem) {
+    #single-car .cs-spec-list {
+        grid-template-columns: 1fr;
+        gap: 0;
+    }
+
+    #single-car .cs-spec-row:nth-last-child(-n+2) {
+        border-bottom: 1px solid rgba(0, 0, 0, 0.08);
+    }
+
+    #single-car .cs-spec-row:last-child {
+        border-bottom: none;
+    }
+}
+
+    #single-car .cs-spec-row {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 0.5rem 0;
+        border-bottom: 1px solid rgba(0, 0, 0, 0.08);
+    }
+
+    #single-car .cs-spec-row:nth-last-child(-n+2) {
+        border-bottom: none;
+    }
+
+    #single-car .cs-spec-label-wrapper {
+        display: flex;
+        align-items: center;
+        gap: 0.5rem;
+    }
+
+    #single-car .cs-spec-icon {
+        width: 1.25rem;
+        height: 1.25rem;
+        color: var(--primary);
+        flex-shrink: 0;
+    }
+
+    #single-car .cs-spec-label {
+        font-size: 1rem;
+        color: var(--bodyTextColor);
+        font-weight: 500;
+    }
+
+    #single-car .cs-spec-value {
+        font-size: 1rem;
+        font-weight: 700;
+        color: var(--headerColor);
+    }
+
+    #single-car .cs-car-tabs {
+        margin-top: 2rem;
+    }
+
+    #single-car .cs-tab-buttons {
+        display: flex;
+        gap: 0;
+        border-bottom: 2px solid rgba(0, 0, 0, 0.08);
+        margin-bottom: 1.5rem;
+    }
+
+    #single-car .cs-tab-button {
+        background: none;
+        border: none;
+        padding: 1rem 1.5rem;
+        font-size: 1rem;
+        font-weight: 600;
+        color: var(--headerColor);
+        cursor: pointer;
+        position: relative;
+        transition: color 0.3s;
+    }
+
+    #single-car .cs-tab-button:hover {
+        opacity: 1;
+        color: var(--primary);
+    }
+
+    #single-car .cs-tab-button.cs-active {
+        color: var(--primary);
+        opacity: 1;
+    }
+
+    #single-car .cs-tab-button.cs-active::after {
+        content: "";
+        position: absolute;
+        bottom: -2px;
+        left: 0;
+        right: 0;
+        height: 2px;
+        background-color: var(--primary);
+    }
+
+    #single-car .cs-tab-content {
+        position: relative;
+    }
+
+    #single-car .cs-tab-panel {
+        display: none;
+    }
+
+    #single-car .cs-tab-panel.cs-active {
+        display: block;
+    }
+
+    #single-car .cs-tab-text {
+        font-size: 1rem;
+        line-height: 1.6em;
+        color: var(--bodyTextColor);
+    }
+
+    #single-car .cs-tab-text p {
+        margin: 0 0 1rem 0;
+    }
+
+    #single-car .cs-tab-text p:last-child {
+        margin-bottom: 0;
+    }
+
+    #single-car .cs-tab-text ul,
+    #single-car .cs-tab-text ol {
+        margin: 0 0 1rem 0;
+        padding-left: 1.5rem;
+    }
+
+    #single-car .cs-tab-text li {
+        margin-bottom: 0.5rem;
+    }
+
+    /* Simple indentation for content blocks wrapped in divs */
+    #single-car .cs-tab-text .cs-indent-block {
+        padding-left: 10px;
+    }
+
+    /* Features Tab Specific Styling */
+    #single-car #tab-features .cs-features-content {
+        list-style: none;
+        padding: 0;
+        margin: 0;
+        display: flex;
+        flex-direction: column;
+        gap: 0.75rem;
+    }
+
+    #single-car .cs-feature-item {
+        font-size: 1rem;
+        line-height: 1.8em;
+        margin-bottom: 0;
+        color: var(--bodyTextColor);
+        display: flex;
+        align-items: center;
+        gap: 0.75rem;
+        padding-bottom: 0.75rem;
+        border-bottom: 1px dotted rgba(0, 0, 0, 0.1);
+    }
+
+    #single-car .cs-feature-item:last-child {
+        margin-bottom: 0;
+        border-bottom: none;
+        padding-bottom: 0;
+    }
+
+    #single-car .cs-feature-item::before {
+        content: "+";
+        color: var(--primary);
+        font-size: 1.25rem;
+        font-weight: 700;
+        line-height: 1;
+        flex-shrink: 0;
+    }
+
+    /* Desktop - 2 columns for features */
+    @media only screen and (min-width: 48rem) {
+        #single-car #tab-features .cs-features-content {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 0.75rem;
+        }
+    }
+
+    /* Technical Data Tab Specific Styling */
+    #single-car #tab-technical .cs-technical-content {
+        list-style: none;
+        padding: 0;
+        margin: 0;
+        display: flex;
+        flex-direction: column;
+        gap: 0.75rem;
+    }
+
+    #single-car .cs-technical-item {
+        font-size: 1rem;
+        line-height: 1.8em;
+        margin-bottom: 0;
+        color: var(--bodyTextColor);
+        display: flex;
+        align-items: center;
+        gap: 0.75rem;
+        padding-bottom: 0.75rem;
+        border-bottom: 1px dotted rgba(0, 0, 0, 0.1);
+    }
+
+    #single-car .cs-technical-item:last-child {
+        margin-bottom: 0;
+        border-bottom: none;
+        padding-bottom: 0;
+    }
+
+    /* Desktop - 2 columns for technical data */
+    @media only screen and (min-width: 48rem) {
+        #single-car #tab-technical .cs-technical-content {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 0.75rem;
+        }
+    }
+
+    #single-car .cs-car-phones {
+        display: flex;
+        justify-content: flex-start;
+        align-items: center;
+        gap: clamp(2rem, 3vw, 3rem);
+        margin: 0 0 2rem 0;
+        flex-wrap: wrap;
+        position: relative;
+    }
+
+    #single-car .cs-car-phone-link:not(:last-child)::after {
+        content: "";
+        position: absolute;
+        right: calc(-1 * clamp(1rem, 1.5vw, 1.5rem));
+        top: 50%;
+        transform: translateY(-50%);
+        width: 1px;
+        height: 60%;
+        background-color: #e0e0e0;
+    }
+
+    #single-car .cs-car-phone-link {
+        font-size: 0.875rem;
+        line-height: 1.5em;
+        text-decoration: none;
+        margin: 0;
+        color: #111;
+        display: flex;
+        justify-content: flex-start;
+        align-items: flex-start;
+        gap: 0.5rem;
+        position: relative;
+    }
+
+    #single-car .cs-phone-content {
+        display: flex;
+        flex-direction: column;
+        gap: 0;
+    }
+
+    #single-car .cs-car-phones .cs-link-wrapper {
+        align-items: center;
+        background-color: #eff1f0;
+        border-radius: 50%;
+        display: flex;
+        height: 2.4rem;
+        justify-content: center;
+        transition: transform 0.3s;
+        width: 2.4rem;
+        flex-shrink: 0;
+    }
+
+    #single-car .cs-car-phones .cs-link-wrapper:hover {
+        transform: scale(1.1);
+    }
+
+    #single-car .cs-car-phones .cs-link-icon {
+        height: auto;
+        display: block;
+        width: 1.2rem;
+    }
+
+    #single-car .cs-phone-label {
+        font-weight: 500;
+        font-size: 0.75rem;
+        color: #111;
+        opacity: 0.7;
+    }
+
+    #single-car .cs-phone-number {
+        font-weight: 600;
+        font-size: 0.875rem;
+        color: #111;
+    }
+
+    #single-car .cs-car-gallery {
+        padding: 0;
+        margin-top: 2rem;
+    }
+
+    #single-car .cs-gallery-grid {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 1rem;
+    }
+
+    #single-car .cs-gallery-item {
+        width: 100%;
+        height: auto;
+        display: block;
+        border-radius: 0.75rem;
+        overflow: hidden;
+        border: 1px solid rgba(0, 0, 0, 0.08);
+        box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05), 0 1px 2px rgba(0, 0, 0, 0.1);
+        transition: box-shadow 0.3s, border-color 0.3s, transform 0.3s;
+        background-color: #fff;
+    }
+
+    #single-car .cs-gallery-item:hover {
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1), 0 2px 4px rgba(0, 0, 0, 0.08);
+        border-color: rgba(0, 0, 0, 0.12);
+        transform: translateY(-2px);
+    }
+
+    #single-car .cs-gallery-item img {
+        width: 100%;
+        height: auto;
+        display: block;
+        transition: transform 0.3s;
+    }
+
+    #single-car .cs-gallery-item:hover img {
+        transform: scale(1.05);
+    }
+
+
+    /* Rental Form Styles - Based on Hero Form */
+    #single-car .cs-form-wrapper {
+        margin-top: 2rem;
+        border: 1px solid rgba(0, 0, 0, 0.08);
+        border-radius: 0.75rem;
+        background-color: #fff;
+        box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05), 0 1px 2px rgba(0, 0, 0, 0.1);
+        padding: clamp(1.5rem, 3vw, 2rem);
+        transition: box-shadow 0.3s, border-color 0.3s;
+    }
+
+    #single-car .cs-rental-form {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 1rem;
+    }
+
+    #single-car .cs-form-title {
+        font-size: clamp(1.25rem, 2vw, 1.5rem);
+        font-weight: 700;
+        color: var(--headerColor);
+        margin: 0 0 1.5rem 0;
+        line-height: 1.2em;
+        width: 100%;
+        display: block;
+    }
+
+    #single-car .cs-label.sr-only {
+        position: absolute;
+        width: 1px;
+        height: 1px;
+        padding: 0;
+        margin: -1px;
+        overflow: hidden;
+        clip: rect(0, 0, 0, 0);
+        white-space: nowrap;
+        border-width: 0;
+    }
+
+    #single-car .cs-input-wrapper {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: flex-start;
+        width: 100%;
+        gap: 0.25rem;
+    }
+
+    #single-car .cs-input-wrapper.cs-message {
+        grid-column: span 12;
+    }
+
+    #single-car .custom-labeled-checkbox {
+        width: 100%;
+        grid-column: span 12;
+        margin-bottom: 1rem;
+    }
+
+    #single-car .custom-labeled-checkbox a {
+        margin-left: 0.25rem;
+        margin-right: 0.25rem;
+        color: var(--primary);
+    }
+
+    #single-car .custom-labeled-checkbox .row.short {
+        display: none;
+    }
+
+    #single-car #gdpr-error-rental {
+        margin-top: 5px;
+        text-align: left;
+    }
+
+    #single-car .cs-input,
+    #single-car select {
+        border: none;
+        border-radius: 6px;
+        background-color: #f5f5f5;
+        height: 3.5rem;
+        width: 100%;
+        box-sizing: border-box;
+        padding: 0;
+        padding-left: 1.5rem;
+        font-size: 1rem;
+        color: var(--bodyTextColor);
+        transition: border-color 0.3s;
+        font-family: inherit;
+    }
+
+    #single-car select {
+        appearance: none;
+        background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 12 12'%3E%3Cpath fill='%234e4b66' d='M6 9L1 4h10z'/%3E%3C/svg%3E");
+        background-repeat: no-repeat;
+        background-position: right 1.5rem center;
+        padding-right: 3rem;
+    }
+
+    #single-car .cs-input::placeholder,
+    #single-car select::placeholder,
+    #single-car .cs-textarea::placeholder {
+        opacity: 1;
+        color: #4e4b66;
+    }
+
+    #single-car .cs-input:hover,
+    #single-car select:hover {
+        border-color: var(--secondary);
+    }
+
+    #single-car .cs-input:focus,
+    #single-car select:focus,
+    #single-car .cs-textarea:focus {
+        outline: 1px solid lightgray;
+    }
+
+    #single-car .cs-textarea {
+        margin-bottom: 0.75rem;
+        min-height: 3.5rem;
+        height: 3.5rem;
+        padding: 0;
+        padding-left: 1.5rem;
+        padding-top: 1.1rem;
+        border-radius: 6px;
+        font-family: inherit;
+        resize: vertical;
+    }
+
+    #single-car .cs-submit {
+        border: none;
+        margin: 0;
+        width: 100%;
+        border-radius: 6px;
+    }
+
+    #single-car .cs-submit:hover {
+        cursor: pointer;
+    }
+
+    #single-car .cs-rental-form {
+        .error-message {
+            color: #dc2626;
+            font-size: 0.875rem;
+            margin-top: 3px;
+            display: none;
+        }
+
+        #message-error-rental {
+            margin-top: -10px;
+        }
+
+        .input-error {
+            border: 2px solid #dc2626 !important;
+        }
+
+        .shake {
+            animation: shake 0.5s;
+        }
+
+        .custom-labeled-checkbox {
+            width: 100%;
+            grid-column: 1 / -1;
+        }
+
+        .custom-labeled-checkbox a {
+            margin-left: 0.25rem;
+            margin-right: 0.25rem;
+            color: var(--primary);
+        }
+
+        .custom-labeled-checkbox .row.short {
+            display: none;
+        }
+
+        #gdpr-error-rental {
+            margin-top: 5px;
+            text-align: left;
+        }
+    }
+}
+
+@keyframes shake {
+    0%, 100% { transform: translateX(0); }
+    10%, 30%, 50%, 70%, 90% { transform: translateX(-5px); }
+    20%, 40%, 60%, 80% { transform: translateX(5px); }
+}
+
+/* Tablet - 991px */
+@media only screen and (min-width: 61.9375rem) {
+    #single-car .cs-car-layout {
+        flex-direction: row;
+        align-items: flex-start;
+        gap: 3rem;
+    }
+
+    #single-car .cs-car-left {
+        flex: 1 1 0;
+        min-width: 0;
+    }
+
+    #single-car .cs-car-mobile-header {
+        display: none;
+    }
+
+    #single-car .cs-car-right .cs-car-category,
+    #single-car .cs-car-right .cs-car-title,
+    #single-car .cs-car-right .cs-car-price-section {
+        display: block;
+    }
+
+    #single-car .cs-car-right {
+        flex: 1 1 0;
+        min-width: 0;
+    }
+
+    #single-car .cs-rental-form {
+        display: grid;
+        grid-template-columns: repeat(12, 1fr);
+    }
+
+    #single-car .cs-input-wrapper:not(.cs-message) {
+        grid-column: span 6;
+    }
+
+    #single-car .cs-input-wrapper.cs-message {
+        grid-column: span 12;
+    }
+
+    #single-car .custom-labeled-checkbox {
+        grid-column: span 12;
+    }
+
+    #single-car .recaptcha-container {
+        grid-column: span 12;
+        margin-bottom: 1rem;
+    }
+
+    #single-car .cs-submit {
+        grid-column: span 12;
+    }
+
+    #single-car #rental-success-message {
+        display: flex;
+        flex-direction: column;
+        gap: 1rem;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+        padding: 2rem;
+        border: 1px solid rgba(0, 0, 0, 0.08);
+        border-radius: 0.75rem;
+        background-color: #fff;
+        box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05), 0 1px 2px rgba(0, 0, 0, 0.1);
+
+        h2 {
+            font-size: clamp(1.5rem, 3vw, 2rem);
+            font-weight: 700;
+            color: var(--headerColor);
+            margin: 0;
+        }
+
+        p {
+            font-size: 1rem;
+            line-height: 1.6;
+            color: var(--bodyTextColor);
+            margin: 0;
+        }
+    }
+}
+
+@media (max-width: 890px) {
+    #single-car .custom-labeled-checkbox .row {
+        display: none;
+    }
+
+    #single-car .custom-labeled-checkbox .row.short {
+        display: block;
+    }
+}
+
+
+/* Desktop - 1024px */
+@media only screen and (min-width: 64rem) {
+    #single-car .cs-gallery-grid {
+        grid-template-columns: repeat(4, 1fr);
+    }
+}
+
+
+/* Related Cars Section */
+#related-cars-section {
+    padding: var(--sectionPadding);
+    background-color: #f5f5f5;
+    overflow: hidden;
+}
+
+#related-cars-section .cs-content {
+    text-align: left;
+    margin-bottom: 2rem;
+    max-width: 80rem;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+#related-cars-section .cs-title {
+    font-size: clamp(1.75rem, 3vw, 2.5rem);
+    font-weight: 700;
+    color: var(--headerColor);
+    margin: 0;
+}
+
+#related-cars-section .cs-slider-container {
+    position: relative;
+    max-width: 80rem;
+    margin: 0 auto;
+}
+
+#related-cars-section .cs-slider-wrapper {
+    overflow: hidden;
+    position: relative;
+}
+
+#related-cars-section .cs-slider-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: #fff;
+    z-index: 100;
+    min-height: 300px;
+}
+
+#related-cars-section .keen-slider {
+    overflow: visible;
+}
+
+#related-cars-section .keen-slider__slide {
+    min-width: 0;
+}
+
+#related-cars-section .cs-item {
+    list-style: none;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    border: 1px solid rgba(0, 0, 0, 0.2);
+    border-radius: 0.75rem;
+    background-color: #fff;
+    transition: border-color 0.3s;
+    overflow: hidden;
+}
+
+#related-cars-section .cs-item:hover {
+    border-color: rgba(0, 0, 0, 0.12);
+}
+
+#related-cars-section .cs-link {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    flex-grow: 1;
+    text-decoration: none;
+    color: inherit;
+}
+
+#related-cars-section .cs-picture {
+    position: relative;
+    width: 100%;
+    aspect-ratio: 300 / 220;
+    overflow: hidden;
+    background-color: #fff;
+}
+
+#related-cars-section .cs-picture img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    display: block;
+    transition: transform 0.3s ease;
+}
+
+#related-cars-section .cs-item:hover .cs-picture img {
+    transform: scale(1.05);
+}
+
+#related-cars-section .cs-h3 {
+    position: absolute;
+    top: 0.75rem;
+    left: 0.75rem;
+    margin: 0;
+    padding: 0.5rem 0.75rem;
+    font-size: clamp(1.125rem, 1.6vw, 1.375rem);
+    line-height: 1.2em;
+    color: #1a1a1a;
+    font-weight: 600;
+    background-color: rgba(255, 255, 255, 0.9);
+    border-radius: 0.375rem;
+    z-index: 2;
+    transition: color 0.3s;
+}
+
+#related-cars-section .cs-price-overlay {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    padding: 1rem 1.25rem;
+    background: linear-gradient(to top, rgba(0, 0, 0, 0.7) 0%, rgba(0, 0, 0, 0.4) 50%, transparent 100%);
+    display: flex;
+    flex-direction: column;
+    gap: 0.25rem;
+    z-index: 2;
+    width: 100%;
+}
+
+#related-cars-section .cs-price-label {
+    font-size: 0.75rem;
+    font-weight: 600;
+    color: #fff;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+}
+
+#related-cars-section .cs-price-group {
+    display: flex;
+    align-items: baseline;
+    gap: 0.25rem;
+}
+
+#related-cars-section .cs-price-amount {
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: #fff;
+    line-height: 1;
+}
+
+#related-cars-section .cs-price-unit {
+    font-size: 0.875rem;
+    font-weight: 500;
+    color: rgba(255, 255, 255, 0.9);
+}
+
+#related-cars-section .cs-link-text-overlay {
+    position: absolute;
+    bottom: 1rem;
+    right: 1rem;
+    z-index: 3;
+    background: rgba(0, 0, 0, 0.3);
+    padding: 0.5rem 0.75rem;
+    border-radius: 0.375rem;
+    backdrop-filter: blur(4px);
+    font-size: 0.9375rem;
+    font-weight: 700;
+    color: #fff;
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
+    line-height: 1;
+    justify-content: center;
+    align-items: center;
+    display: flex;
+    gap: 0.5rem;
+}
+
+#related-cars-section .cs-link-text-label {
+    white-space: nowrap;
+}
+
+#related-cars-section .cs-arrow {
+    display: inline;
+    vertical-align: baseline;
+    margin-left: 0.25rem;
+    transition: transform 0.3s;
+    filter: brightness(1000);
+}
+
+#related-cars-section .cs-link:hover .cs-arrow {
+    transform: translateX(5px);
+}
+
+#related-cars-section .cs-item:hover .cs-h3 {
+    color: var(--primary);
+}
+
+#related-cars-section .cs-flex {
+    padding: 1rem;
+    border-radius: 0 0 6px 6px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    flex-grow: 1;
+    background-color: #fff;
+    gap: 0.75rem;
+}
+
+#related-cars-section .cs-specs {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 0.5rem;
+}
+
+#related-cars-section .cs-spec-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.25rem;
+    padding: 0;
+}
+
+#related-cars-section .cs-spec-icon {
+    width: 1.5rem;
+    height: 1.5rem;
+    color: var(--primary);
+    flex-shrink: 0;
+}
+
+#related-cars-section .cs-spec-value {
+    font-size: 0.75rem;
+    font-weight: 500;
+    color: var(--bodyTextColor);
+    text-align: center;
+    line-height: 1.2;
+}
+
+#related-cars-section .cs-slider-arrow {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background-color: #fff;
+    border: 1px solid rgba(0, 0, 0, 0.1);
+    border-radius: 50%;
+    width: 3rem;
+    height: 3rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    z-index: 10;
+    transition: all 0.3s;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+#related-cars-section .cs-slider-arrow:hover {
+    background-color: var(--primary);
+    border-color: var(--primary);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+    color: #fff;
+    transition: none;
+}
+
+#related-cars-section .cs-slider-arrow:hover svg {
+    stroke: #fff;
+    fill: var(--primary);
+}
+
+#related-cars-section .cs-slider-arrow:hover svg path {
+    stroke: #fff;
+}
+
+#related-cars-section .cs-slider-arrow svg {
+    stroke: var(--headerColor);
+}
+
+#related-cars-section .cs-slider-container .cs-slider-prev {
+    left: -1.5rem;
+}
+
+#related-cars-section .cs-slider-container .cs-slider-next {
+    right: -1.5rem;
+}
+
+/* Mobile - hide arrows when showing 1.2 items */
+@media only screen and (max-width: 47.9375rem) {
+    #related-cars-section .cs-slider-arrow {
+        display: none;
+    }
+
+    #related-cars-section .cs-slider-wrapper {
+        overflow: visible;
+    }
+}
+
+/*-- -------------------------- -->
+<---      Car Filters Section    -->
+<--- -------------------------- -*/
+
+/* Mobile - 360px */
+@media only screen and (min-width: 0rem) {
+    #car-filters-section {
+        width: 100%;
+    }
+
+    .cs-filters-header {
+        margin-bottom: 0.75rem;
+    }
+    
+    .cs-controls-wrapper {
+        display: flex;
+        align-items: center;
+        gap: 1rem;
+        flex-wrap: wrap;
+    }
+
+    .cs-results-count {
+        font-size: 0.875rem;
+        color: var(--bodyTextColor);
+        font-weight: 600;
+        margin-top: 1rem;
+        margin-bottom: 1rem;
+    }
+
+    .cs-results-count span {
+        color: var(--primary);
+        font-weight: 700;
+    }
+    
+    /* Filter toggle button - center SVG */
+    #filter-toggle-btn {
+        line-height: 2.875rem;
+    }
+
+    .cs-filters-panel {
+        background-color: #f5f5f5;
+        border-radius: 8px;
+        border: 1px solid rgba(0, 0, 0, 0.08);
+        position: relative;
+        z-index: 10000;
+        /* Hide by default */
+        max-height: 0;
+        opacity: 0;
+        margin-top: 0;
+        margin-bottom: 0;
+        padding: 0 1rem;
+        overflow: hidden;
+        transition: max-height 0.4s ease, opacity 0.4s ease, margin-top 0.4s ease, padding-top 0.4s ease, padding-bottom 0.4s ease;
+    }
+    
+    .cs-filters-panel.cs-open {
+        max-height: 500px;
+        opacity: 1;
+        margin-top: 0.75rem;
+        padding-top: 0.75rem;
+        padding-bottom: 0.75rem;
+        /* Allow dropdowns to escape when open */
+        overflow: visible;
+    }
+    
+    /* Scroll container - handles scrolling */
+    .cs-filters-scroll {
+        display: flex;
+        align-items: center;
+        gap: 1.5rem;
+        flex-wrap: wrap;
+        min-height: 60px;
+        max-height: 120px;
+        overflow-y: auto;
+        overflow-x: hidden;
+        position: relative;
+    }
+    
+    /* Stack filters vertically below 1090px */
+    @media only screen and (max-width: 68.125rem) {
+        .cs-filters-panel {
+            position: relative;
+        }
+        
+        .cs-filters-panel.cs-open {
+            max-height: none;
+            overflow: visible;
+        }
+        
+        .cs-filters-scroll {
+            flex-direction: column;
+            align-items: stretch;
+            max-height: none;
+            overflow: visible;
+            gap: 1rem;
+        }
+        
+        .cs-filter-group {
+            width: 100%;
+        }
+        
+        .cs-button-clear-compact {
+            position: absolute;
+            top: 0;
+            right: 0;
+            width: 32px;
+            height: 32px;
+            z-index: 10;
+        }
+    }
+    
+    /* When dropdown is open, remove overflow clipping to allow dropdown to escape */
+    /* Note: This temporarily disables scrolling, but allows dropdown to be visible */
+    .cs-filters-scroll:has(.cs-dropdown-panel.cs-open) {
+        overflow: visible;
+        max-height: none;
+    }
+
+    .cs-filters-scroll::-webkit-scrollbar {
+        height: 6px;
+        width: 6px;
+    }
+
+    .cs-filters-scroll::-webkit-scrollbar-track {
+        background: #e5e5e5;
+        border-radius: 3px;
+    }
+
+    .cs-filters-scroll::-webkit-scrollbar-thumb {
+        background: var(--primary);
+        border-radius: 3px;
+    }
+
+    .cs-filters-scroll::-webkit-scrollbar-thumb:hover {
+        background: #b80909;
+    }
+
+    .cs-filter-group {
+        display: flex;
+        align-items: center;
+        gap: 0.5rem;
+        flex-shrink: 0;
+        position: relative;
+        z-index: 1;
+    }
+    
+    /* Ensure filter group doesn't interfere with dropdown stacking */
+    .cs-filter-group:has(.cs-dropdown-panel.cs-open) {
+        z-index: 10006;
+    }
+
+    .cs-filter-label {
+        font-size: 0.8125rem;
+        font-weight: 600;
+        color: var(--bodyTextColor);
+        white-space: nowrap;
+    }
+
+    .cs-range-group {
+        min-width: 200px;
+    }
+
+    .cs-range-slider-wrapper {
+        display: flex;
+        flex-direction: column;
+        gap: 0.625rem;
+        width: 100%;
+    }
+
+    .cs-range-values {
+        display: flex;
+        align-items: center;
+        gap: 0.375rem;
+        font-size: 0.8125rem;
+        font-weight: 600;
+        color: var(--headerColor);
+    }
+
+    .cs-range-unit {
+        color: var(--bodyTextColor);
+        font-weight: 500;
+        margin-left: 0.25rem;
+    }
+
+    .cs-range-separator {
+        font-size: 0.75rem;
+        color: var(--bodyTextColor);
+        font-weight: 500;
+    }
+
+    .cs-range-slider-container {
+        position: relative;
+        height: 20px;
+        background-color: #e8e8e8;
+        border-radius: 10px;
+        margin: 0.75rem 0;
+        padding: 0;
+        display: flex;
+        align-items: center;
+    }
+
+    .cs-range-slider {
+        position: absolute;
+        width: 100%;
+        height: 20px;
+        background: none;
+        outline: none;
+        -webkit-appearance: none;
+        appearance: none;
+        pointer-events: none;
+        z-index: 2;
+        margin: 0;
+        padding: 0;
+        top: 0;
+        bottom: 0;
+    }
+
+    .cs-range-slider::-webkit-slider-thumb {
+        -webkit-appearance: none;
+        appearance: none;
+        width: 20px;
+        height: 20px;
+        background-color: #fff;
+        border: 3px solid var(--primary);
+        border-radius: 50%;
+        cursor: pointer;
+        pointer-events: all;
+        box-shadow: 0 2px 8px rgba(217, 11, 11, 0.25), 0 0 0 0 rgba(217, 11, 11, 0.1);
+        transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+        margin-top: -6px;
+    }
+
+    .cs-range-slider::-webkit-slider-thumb:hover {
+        transform: scale(1.15);
+        box-shadow: 0 4px 12px rgba(217, 11, 11, 0.35), 0 0 0 4px rgba(217, 11, 11, 0.1);
+        border-width: 3px;
+    }
+
+    .cs-range-slider::-webkit-slider-thumb:active {
+        transform: scale(1.2);
+        box-shadow: 0 2px 8px rgba(217, 11, 11, 0.4), 0 0 0 6px rgba(217, 11, 11, 0.15);
+    }
+
+    .cs-range-slider::-moz-range-thumb {
+        width: 20px;
+        height: 20px;
+        background-color: #fff;
+        border: 3px solid var(--primary);
+        border-radius: 50%;
+        cursor: pointer;
+        pointer-events: all;
+        box-shadow: 0 2px 8px rgba(217, 11, 11, 0.25), 0 0 0 0 rgba(217, 11, 11, 0.1);
+        transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+        -moz-appearance: none;
+        appearance: none;
+    }
+
+    .cs-range-slider::-moz-range-thumb:hover {
+        transform: scale(1.15);
+        box-shadow: 0 4px 12px rgba(217, 11, 11, 0.35), 0 0 0 4px rgba(217, 11, 11, 0.1);
+        border-width: 3px;
+    }
+
+    .cs-range-slider::-moz-range-thumb:active {
+        transform: scale(1.2);
+        box-shadow: 0 2px 8px rgba(217, 11, 11, 0.4), 0 0 0 6px rgba(217, 11, 11, 0.15);
+    }
+
+    .cs-range-slider::-webkit-slider-runnable-track {
+        height: 8px;
+        background: transparent;
+        border-radius: 4px;
+        margin: 6px 0;
+    }
+
+    .cs-range-slider::-moz-range-track {
+        height: 8px;
+        background: transparent;
+        border-radius: 4px;
+        border: none;
+    }
+
+    /* Active track styling */
+    .cs-range-slider-container::before {
+        content: '';
+        position: absolute;
+        top: 50%;
+        left: 0;
+        right: 0;
+        height: 8px;
+        transform: translateY(-50%);
+        background: linear-gradient(
+            to right,
+            #e8e8e8 0%,
+            #e8e8e8 var(--min-percent, 0%),
+            var(--primary) var(--min-percent, 0%),
+            var(--primary) var(--max-percent, 100%),
+            #e8e8e8 var(--max-percent, 100%),
+            #e8e8e8 100%
+        );
+        border-radius: 4px;
+        pointer-events: none;
+        z-index: 1;
+        transition: background 0.15s cubic-bezier(0.4, 0, 0.2, 1);
+    }
+
+    /* Dropdown with checkboxes - positioned to escape overflow clipping */
+    .cs-dropdown-wrapper {
+        position: relative;
+        min-width: 140px;
+        max-width: 180px;
+        height: 2.5rem;
+        flex-shrink: 0;
+        z-index: 10001;
+        display: flex;
+    }
+    
+    /* When dropdown is open, increase wrapper z-index to ensure panel appears above */
+    .cs-dropdown-wrapper:has(.cs-dropdown-panel.cs-open) {
+        z-index: 10005;
+    }
+
+    .cs-dropdown-trigger {
+        border: 1px solid rgba(0, 0, 0, 0.1);
+        border-radius: 6px;
+        background-color: #fff;
+        font-size: 0.8125rem;
+        color: var(--bodyTextColor);
+        cursor: pointer;
+        transition: border-color 0.3s;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        text-align: left;
+        position: relative;
+        z-index: 1;
+        width: 100%;
+        padding: 0.5rem 0.5rem 0.5rem 0.5rem;
+    }
+    
+    /* When panel is open, ensure trigger stays below */
+    .cs-dropdown-wrapper:has(.cs-dropdown-panel.cs-open) .cs-dropdown-trigger,
+    .cs-dropdown-trigger.cs-open {
+        z-index: 1 !important;
+        position: relative;
+    }
+
+    .cs-dropdown-trigger:hover {
+        border-color: var(--primary);
+    }
+
+    .cs-dropdown-trigger.cs-open {
+        border-color: var(--primary);
+        box-shadow: 0 0 0 3px rgba(217, 11, 11, 0.1);
+    }
+
+    .cs-dropdown-text {
+        flex: 1;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        white-space: nowrap;
+    }
+
+    .cs-dropdown-arrow {
+        flex-shrink: 0;
+        margin-left: 0.5rem;
+        transition: transform 0.3s;
+    }
+
+    .cs-dropdown-trigger.cs-open .cs-dropdown-arrow {
+        transform: rotate(180deg);
+    }
+
+    .cs-dropdown-panel {
+        position: absolute;
+        top: calc(100% + 0.25rem);
+        left: 0;
+        right: 0;
+        background-color: #fff;
+        border: 1px solid rgba(0, 0, 0, 0.1);
+        border-radius: 6px;
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+        z-index: 2;
+        max-height: 0;
+        overflow: hidden;
+        opacity: 0;
+        transition: none;
+        pointer-events: none;
+    }
+    
+    .cs-dropdown-panel.cs-open {
+        max-height: 300px;
+        opacity: 1;
+        overflow-y: auto;
+        pointer-events: all;
+        z-index: 9999 !important;
+    }
+    
+    /* Force trigger below panel when open */
+    .cs-dropdown-wrapper:has(.cs-dropdown-panel.cs-open) .cs-dropdown-trigger,
+    .cs-dropdown-trigger.cs-open {
+        z-index: 1 !important;
+    }
+    
+    .cs-dropdown-wrapper:has(.cs-dropdown-panel.cs-open) .cs-dropdown-panel.cs-open {
+        z-index: 9999 !important;
+    }
+
+    .cs-dropdown-checkboxes {
+        padding: 0.5rem;
+        display: flex;
+        flex-direction: column;
+        gap: 0.25rem;
+    }
+
+    #hero-1467 .cs-dropdown-checkboxes {
+        background-color: rgba(0, 0, 0, 0.9);
+    }
+
+    .cs-dropdown-checkbox-label {
+        display: flex;
+        align-items: center;
+        gap: 0.5rem;
+        padding: 0.5rem;
+        border-radius: 4px;
+        cursor: pointer;
+        transition: background-color 0.2s;
+        font-size: 0.8125rem;
+        color: var(--bodyTextColor);
+    }
+
+    .cs-dropdown-checkbox-label:hover {
+        background-color: rgba(217, 11, 11, 0.05);
+    }
+
+    .cs-dropdown-checkbox-label.cs-checked {
+        background-color: rgba(217, 11, 11, 0.1);
+        color: var(--primary);
+        font-weight: 500;
+    }
+    
+    /* Sort dropdown specific styling - single selection */
+    #sort-dropdown .cs-dropdown-checkbox-label {
+        cursor: pointer;
+    }
+    
+    #sort-dropdown .cs-dropdown-checkbox-label.cs-checked {
+        background-color: var(--primary);
+        color: #fff;
+        font-weight: 600;
+    }
+    
+    #sort-dropdown .cs-dropdown-checkbox-label.cs-checked:hover {
+        background-color: #b80909;
+    }
+
+    .cs-dropdown-checkbox {
+        width: 16px;
+        height: 16px;
+        cursor: pointer;
+        accent-color: var(--primary);
+    }
+
+    .cs-checkbox-group-compact {
+        display: flex;
+        align-items: center;
+        gap: 0.5rem;
+        flex-wrap: wrap;
+    }
+
+    .cs-checkbox-label {
+        display: flex;
+        align-items: center;
+        gap: 0.375rem;
+        cursor: pointer;
+        padding: 0.375rem 0.625rem;
+        background-color: #fff;
+        border: 1px solid rgba(0, 0, 0, 0.1);
+        border-radius: 6px;
+        transition: all 0.2s;
+        white-space: nowrap;
+    }
+
+    .cs-checkbox-label:hover {
+        border-color: var(--primary);
+        background-color: rgba(217, 11, 11, 0.05);
+    }
+
+    .cs-checkbox-label:has(.cs-checkbox:checked),
+    .cs-checkbox-label.cs-checked {
+        background-color: var(--primary);
+        border-color: var(--primary);
+        color: #fff;
+    }
+
+    .cs-checkbox-label:has(.cs-checkbox:checked) span,
+    .cs-checkbox-label.cs-checked span {
+        color: #fff;
+    }
+
+    .cs-checkbox {
+        width: 16px;
+        height: 16px;
+        cursor: pointer;
+        accent-color: var(--primary);
+        flex-shrink: 0;
+        margin: 0;
+    }
+
+    .cs-checkbox-label span {
+        font-size: 0.8125rem;
+        color: var(--bodyTextColor);
+        user-select: none;
+        font-weight: 500;
+    }
+
+    .cs-button-clear-compact {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 32px;
+        height: 32px;
+        padding: 0;
+        background-color: #fff;
+        border: 1px solid rgba(0, 0, 0, 0.1);
+        border-radius: 6px;
+        color: var(--bodyTextColor);
+        cursor: pointer;
+        transition: all 0.2s;
+        flex-shrink: 0;
+        margin-left: auto;
+    }
+
+    .cs-button-clear-compact:hover {
+        background-color: var(--primary);
+        border-color: var(--primary);
+        color: #fff;
+    }
+    
+    /* Make button red when there are active filters */
+    #car-filters-section:has(.cs-active-filters.cs-has-filters) .cs-button-clear-compact {
+        background-color: var(--primary);
+        border-color: var(--primary);
+        color: #fff;
+    }
+    
+    #car-filters-section:has(.cs-active-filters.cs-has-filters) .cs-button-clear-compact:hover {
+        background-color: #b80909;
+        border-color: #b80909;
+    }
+
+    .cs-button-clear-compact svg {
+        width: 16px;
+        height: 16px;
+    }
+
+    /* Active Filters Display */
+    .cs-active-filters {
+        margin-top: 20px;
+        display: none;
+        text-align: left;
+    }
+
+    .cs-active-filters.cs-has-filters {
+        display: block;
+    }
+
+    .cs-active-filters-content {
+        display: flex;
+        flex-wrap: wrap;
+        align-items: center;
+        justify-content: flex-start;
+        gap: 0.75rem;
+        padding: 0;
+        background-color: transparent;
+        border-radius: 0;
+        border: none;
+    }
+
+    .cs-active-label {
+        font-size: 0.875rem;
+        font-weight: 600;
+        color: var(--bodyTextColor);
+    }
+
+    .cs-filter-chips {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 0.5rem;
+    }
+
+    .cs-filter-chip {
+        display: inline-flex;
+        align-items: center;
+        gap: 0.5rem;
+        padding: 0.5rem 0.75rem;
+        background-color: #fff;
+        border: 1px solid rgba(0, 0, 0, 0.1);
+        border-radius: 6px;
+        font-size: 0.875rem;
+        color: var(--bodyTextColor);
+    }
+
+    .cs-filter-chip-remove {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 18px;
+        height: 18px;
+        padding: 0;
+        background: none;
+        border: none;
+        cursor: pointer;
+        color: var(--bodyTextColor);
+        transition: color 0.2s;
+        flex-shrink: 0;
+    }
+
+    .cs-filter-chip-remove:hover {
+        color: var(--primary);
+    }
+
+    .cs-filter-chip-remove svg {
+        width: 14px;
+        height: 14px;
+    }
+
+    /* Hidden state for filtered out cars */
+    .cs-item.cs-hidden {
+        display: none !important;
+    }
+    
+    /* Hide entire list when empty */
+    #cars-list[style*="display: none"] {
+        display: none !important;
+    }
+
+    /* No results message */
+    .cs-no-results {
+        text-align: center;
+        padding: 3rem 1rem;
+        margin-bottom: 2rem;
+    }
+
+    .cs-no-results-text {
+        font-size: 1.125rem;
+        color: var(--bodyTextColor);
+        margin-bottom: 1.5rem;
+    }
+
+    .sr-only {
+        position: absolute;
+        width: 1px;
+        height: 1px;
+        padding: 0;
+        margin: -1px;
+        overflow: hidden;
+        clip: rect(0, 0, 0, 0);
+        white-space: nowrap;
+        border-width: 0;
+    }
+
+    .cs-long-description {
+        margin-top: 3rem;
+        padding-top: 3rem;
+        border-top: 1px solid rgba(0, 0, 0, 0.1);
+    }
+
+    .cs-long-description p {
+        font-size: 1rem;
+        line-height: 1.6em;
+        color: var(--bodyTextColor);
+        margin-bottom: 1rem;
+    }
+
+    .cs-long-description h1,
+    .cs-long-description h2,
+    .cs-long-description h3,
+    .cs-long-description h4 {
+        font-weight: 700;
+        color: var(--headerColor);
+        margin-top: 2rem;
+        margin-bottom: 1rem;
+    }
+
+    .cs-long-description h2 {
+        font-size: clamp(1.5rem, 2vw, 2rem);
+    }
+
+    .cs-long-description h3 {
+        font-size: clamp(1.25rem, 1.8vw, 1.5625rem);
+    }
+
+    /* Simple indentation for content blocks wrapped in divs */
+    .cs-long-description .cs-indent-block {
+        padding-left: 10px;
+    }
+
+    .cs-long-description ul,
+    .cs-long-description ol {
+        margin-left: 1.5rem;
+        margin-bottom: 1rem;
+    }
+
+    .cs-long-description li {
+        margin-bottom: 0.5rem;
+        line-height: 1.6em;
+    }
+
+    .cs-long-description strong {
+        font-weight: 700;
+        color: var(--headerColor);
+    }
+}
+
+/* Tablet - 680px */
+@media only screen and (min-width: 42.5rem) {
+    .cs-range-group {
+        min-width: 220px;
+    }
+}
+
+/* Desktop - 1024px */
+@media only screen and (min-width: 64rem) {
+    .cs-filters-scroll {
+        gap: 2rem;
+    }
+
+    .cs-range-group {
+        min-width: 200px;
+    }
+}
+
+/* Desktop - 1090px */
+@media only screen and (min-width: 68.125rem) {
+    #hero-1467 .cs-dropdown-checkboxes {
+        background-color: rgba(0, 0, 0, 0.2);
+    }
+}
+
+
