@@ -54,18 +54,17 @@
 @media only screen and (min-width: 0rem) {
     :root {
         /* Add these styles to your global stylesheet, which is used across all site pages. You only need to do this once. All elements in the library derive their variables and base styles from this central sheet, simplifying site-wide edits. For instance, if you want to modify how your h2's appear across the site, you just update it once in the global styles, and the changes apply everywhere. */
-        --primary: #D90B0B;
+        --primary: #2054A4;
 
-
-        --primarySecond: #D90B0B;
+        --primarySecond: #2054A4;
         //--primaryLight: #43b7ff;
-        --primaryLight: #D90B0B;
-        --secondary: #D90B0B;
-        --secondaryLight: #D90B0B;
+        --primaryLight: #2054A4;
+        --secondary: #2054A4;
+        --secondaryLight: #2054A4;
         --headerColor: #1a1a1a;
         --bodyTextColor: #4e4b66;
         --bodyTextColorWhite: #fafbfc;
-        --LightBG: rgba(254, 80, 0, 0.06);
+        --LightBG: #F5FBFF;
 
         /* 13px - 16px */
         --topperFontSize: clamp(0.8125rem, 1.6vw, 1rem);
@@ -1206,7 +1205,7 @@
 
     #cs-navigation .cs-li-link.cs-drop-link:hover {
         color: var(--primary);
-        background-color: #f5f5f5;
+        background-color: #F5FBFF;
     }
 
     #cs-navigation .cs-li-link.cs-drop-link:before {
@@ -1878,7 +1877,7 @@
 
     #footer .cs-table {
         width: 100%;
-        background-color: #f5f5f5;
+        background-color: #F5FBFF;
         border: 1px solid #dadada;
         border-top: 4px solid var(--primary);
         max-height: 176px;
@@ -2510,7 +2509,7 @@ fieldset.slider-wrapper {
         padding: 0;
         padding-left: 1.5rem;
         color: var(--headerColor);
-        background-color: #f5f5f5;
+        background-color: #F5FBFF;
         border: none;
         box-sizing: border-box;
     }
@@ -2845,7 +2844,7 @@ label {
         justify-content: space-between;
         align-items: center;
         padding: 0.5rem 0.75rem;
-        background-color: #f5f5f5;
+        background-color: #F5FBFF;
         border-radius: 4px;
         font-size: 0.875rem;
     }
