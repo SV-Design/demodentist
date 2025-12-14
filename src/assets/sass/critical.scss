@@ -1,474 +1,315 @@
 @media only screen and (min-width: 0rem) {
-
-  #hero-1467 {
-    padding:var(--sectionPadding);
-    padding-bottom: 0;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    gap: clamp(3rem,7vw,4rem);
+  #hero-288 {
+    text-align: center;
+    padding: clamp(11.25rem, 16.82vw, 10.25rem) 1rem clamp(3.75rem, 7.82vw, 6.25rem);
     position: relative;
-    z-index: 1;
-    min-height: 100vh;
   }
 
-  #hero-1467 .cs-container {
+  #hero-288 .cs-container {
     width: 100%;
     max-width: 80rem;
     margin: auto;
     display: flex;
-    flex-direction: column;
-    align-items: center;
     justify-content: center;
-    gap: clamp(3rem,7vw,4rem)
-  }
-
-  #hero-1467 .cs-container2 {
-    max-width: 80rem
-  }
-
-  #hero-1467 .cs-content {
-    text-align: center;
-    width: 100%;
-    max-width: 39.375rem;
-    display: flex;
-    flex-direction: column;
     align-items: center;
-    position: relative;
-    z-index: 10
+    flex-direction: column;
   }
 
-  #hero-1467 .cs-topper {
-    font-size: var(--topperFontSize);
-    line-height: 1.2em;
-    text-transform: uppercase;
-    text-align: center;
-    letter-spacing: .1em;
+  #hero-288 .cs-content {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+  }
+
+  #hero-288 .cs-title {
+    font-size: clamp(2.4375rem, 5vw, 3.3125rem);
     font-weight: 700;
-    color: var(--primary);
-    margin-bottom: .25rem;
-    display: block
-  }
-
-  #hero-1467 .cs-title {
-    font-size: clamp(2.4375rem, 6.4vw, 3.6125rem);
-    font-weight: 900;
     line-height: 1.2em;
-    width: 100%;
-    max-width: 17ch;
-    margin: 0 0 1rem;
-    color: var(--headerColor);
-    position: relative
-  }
-
-  #hero-1467 .cs-text {
-    font-size: clamp(.875rem, 2.5vw, 1.25rem);
-    line-height: 1.5em;
-    width: 100%;
+    text-align: center;
     max-width: 43.75rem;
-    margin: 0 0 clamp(1.75rem,4vw,2.5rem);
+    margin: 0 auto 1rem;
     color: var(--headerColor);
+    position: relative;
   }
 
-  #hero-1467 .cs-button-group {
+  #hero-288 .cs-text {
+    font-size: clamp(1rem, 1.5vw, 1.25rem);
+    line-height: 1.5em;
+    text-align: center;
+    width: 100%;
+    max-width: 33.1875rem;
+    margin-bottom: clamp(1.75rem, 3.92vw, 2.5rem);
+    color: var(--bodyTextColor);
+  }
+
+  #hero-288 .cs-button-group {
     display: flex;
     gap: 1.2rem;
     flex-wrap: wrap;
     justify-content: center;
     align-items: center;
     width: 100%;
+    margin-bottom: 0;
   }
 
-  #hero-1467 .cs-button-solid:not(.second) {
-    color: #fff;
+  #hero-288 .cs-button-solid {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    position: relative;
+    overflow: hidden;
+    background-image: url(/assets/svgs/stripe.png);
+    background-size: 30px auto;
   }
 
-  #hero-1467 .cs-button-solid:not(.second):hover {
-    color: #fff;
+  #hero-288 .cs-button-solid span {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 0;
+    height: 0;
+    padding: 0;
+    margin: 0;
+    pointer-events: none;
   }
 
-  #hero-1467 .cs-button-solid:not(.second)::before {
+  #hero-288 .cs-button-solid:hover span {
+    width: 0;
+    padding-top: 0;
+  }
+
+  #hero-288 .cs-button-solid:before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 0%;
+    background: #000;
+    opacity: 1;
+    z-index: 0;
+    transition: width 0.3s;
+  }
+
+  #hero-288 .cs-button-solid:hover:before {
+    width: 100%;
+  }
+
+  #hero-288 .cs-button-solid p,
+  #hero-288 .cs-button-solid .cs-button-icon {
+    position: relative;
+    z-index: 1;
+  }
+
+  #hero-288 .cs-button-icon {
+    width: auto;
+    height: 25px;
+    display: block;
+    flex-shrink: 0;
+  }
+
+  #hero-288 .cs-button-phone {
+    background: transparent;
+    border: 1px solid var(--primary);
+    color: var(--primary);
+  }
+
+  #hero-288 .cs-button-phone p {
+    color: var(--primary);
+  }
+
+  #hero-288 .cs-button-solid .cs-button-icon {
+    filter: brightness(0) invert(1);
+  }
+
+  #hero-288 .cs-button-phone .cs-button-icon {
+    filter: none;
+    transition: filter 0.3s;
+  }
+
+  #hero-288 .cs-button-phone:hover .cs-button-icon {
+    filter: brightness(0) invert(1);
+  }
+
+  #hero-288 .cs-button-phone:before {
     background: #000;
   }
 
-  #hero-1467 .cs-button-solid.second {
-    background: transparent;
-    border: 1px solid #1a1a1a;
-    color: #1a1a1a;
-    transition: color 0.3s;
+  #hero-288 .cs-button-phone:hover {
+    color: #fff;
+    border-color: #1a1a1a;
   }
 
-  #hero-1467 .cs-button-solid.second::before {
-    background: #1a1a1a;
-  }
-
-  #hero-1467 .cs-button-solid.second:hover {
+  #hero-288 .cs-button-phone:hover p {
     color: #fff;
   }
 
-  #hero-1467 .cs-picture {
-    width: 100%;
-    max-width: clamp(26.6875rem,50vw,29.25rem);
-    height: auto;
-    display: flex;
-    align-items: flex-end;
-    position: relative;
-    z-index: 7
-  }
-
-  #hero-1467 .cs-picture img {
-    width: 100%;
-    height: auto
-  }
-
-  #hero-1467 .cs-card-group {
-    width: 100%;
+  #hero-288 .cs-stats-group {
+    max-width: 32.625rem;
     margin: 0;
-    padding: 0 1rem;
-    background-color: #fff;
-    box-shadow: 0 4px 25px 0 rgba(0,0,0,.1);
-    box-sizing: border-box;
-    display: grid;
-    grid-template-columns: repeat(12,1fr);
-    position: relative;
-    z-index: 15
-  }
-
-  #hero-1467 .cs-item {
-    text-align: left;
-    list-style: none;
-    width: 100%;
-    border-bottom: 1px solid #e8e8e8;
-    box-sizing: border-box;
-    grid-column: span 12;
-    transition: background-color .3s,border-color .3s
-  }
-
-  #hero-1467 .cs-item:last-of-type {
-    border-bottom: none
-  }
-
-  #hero-1467 .cs-link {
-    text-decoration: none;
-    padding: clamp(1.5rem,5.3vw,3.75rem) clamp(1rem,2.7vw,2.5rem);
+    margin-top: clamp(1.75rem, 3.92vw, 2.5rem);
+    padding: 0;
     display: flex;
-    justify-content: center;
-    align-items: flex-start;
-    flex-direction: column
-  }
-
-  #hero-1467 .cs-icon {
-    height: clamp(2rem,4vw,2.5rem);
-    width: clamp(2rem,4vw,2.5rem);
-    margin: 0 0 1rem 0;
-    background-color: var(--primary);
-    mask-size: contain;
-    mask-repeat: no-repeat;
-    mask-position: center;
-    -webkit-mask-size: contain;
-    -webkit-mask-repeat: no-repeat;
-    -webkit-mask-position: center;
-    -o-object-fit: none;
-    object-fit: none
-  }
-
-  #hero-1467 .cs-link[href="/standard-house-cleaning-cheltenham/"] .cs-icon {
-    mask-image: url("/assets/svgs/services/house.svg");
-    -webkit-mask-image: url("/assets/svgs/services/house.svg")
-  }
-
-  #hero-1467 .cs-link[href="/end-of-tenancy-cleaning-cheltenham/"] .cs-icon {
-    mask-image: url("/assets/svgs/services/cleaning.svg");
-    -webkit-mask-image: url("/assets/svgs/services/cleaning.svg")
-  }
-
-  #hero-1467 .cs-link[href="/holiday-let-cleaning-cheltenham/"] .cs-icon {
-    mask-image: url("/assets/svgs/services/holiday.svg");
-    -webkit-mask-image: url("/assets/svgs/services/holiday.svg")
-  }
-
-  #hero-1467 .cs-link[href="/roof-cleaning-moss-removal-cheltenham/"] .cs-icon {
-    mask-image: url("/assets/svgs/services/roof.svg");
-    -webkit-mask-image: url("/assets/svgs/services/roof.svg");
-    min-width: 48px;
-    margin-left: -7px
-  }
-
-  #hero-1467 .cs-link[href="/office-cleaning-cheltenham/"] .cs-icon {
-    mask-image: url("/assets/svgs/services/office.svg");
-    -webkit-mask-image: url("/assets/svgs/services/office.svg")
-  }
-
-  #hero-1467 .cs-link[href="/driveway-patio-cleaning-cheltenham/"] .cs-icon {
-    mask-image: url("/assets/svgs/services/driveway.svg");
-    -webkit-mask-image: url("/assets/svgs/services/driveway.svg")
-  }
-
-  #hero-1467 .cs-link[href="/gutter-cleaning-cheltenham/"] .cs-icon {
-    mask-image: url("/assets/svgs/services/gutter.svg");
-    -webkit-mask-image: url("/assets/svgs/services/gutter.svg")
-  }
-
-  #hero-1467 .cs-link[href="/window-cleaning-cheltenham/"] .cs-icon {
-    mask-image: url("/assets/svgs/services/window.svg");
-    -webkit-mask-image: url("/assets/svgs/services/window.svg")
-  }
-
-  #hero-1467 .cs-link[href="/rubish-removal-cleaning-cheltenham/"] .cs-icon {
-    mask-image: url("/assets/svgs/services/rubbish.svg");
-    -webkit-mask-image: url("/assets/svgs/services/rubbish.svg")
-  }
-
-  #hero-1467 .cs-link[href="/end-of-tenancy-cleaning-cheltenham/"] .cs-icon,#hero-1467 .cs-link[href="/holiday-let-cleaning-cheltenham/"] .cs-icon,#hero-1467 .cs-link[href="/roof-cleaning-moss-removal-cheltenham/"] .cs-icon,#hero-1467 .cs-link[href="/standard-house-cleaning-cheltenham/"] .cs-icon {
-    height: clamp(2.4rem,4.8vw,3rem)
-  }
-
-  #hero-1467 .cs-h3 {
-    font-size: clamp(1.25rem, 2vw, 1.5625rem);
-    font-weight: 700;
-    text-align: inherit;
-    line-height: 1.2em;
-    margin: 0 0 .75rem 0;
-    color: var(--headerColor);
-    transition: color .3s
-  }
-
-  #hero-1467 .cs-item-text {
-    font-size: clamp(.875rem, 1.5vw, 1rem);
-    text-align: inherit;
-    line-height: 1.5em;
-    margin: 0;
-    color: var(--bodyTextColor);
-    transition: color .3s,opacity .3s
-  }
-
-  #hero-1467 .cs-fake-link {
-    font-size: 1rem;
-    text-decoration: none;
-    line-height: 1.2em;
-    font-weight: 700;
-    margin: 1rem 0 0 0;
-    color: var(--headerColor);
-    display: flex;
-    justify-content: center;
+    justify-content: space-evenly;
     align-items: center;
-    gap: .25rem
+    column-gap: clamp(1.25rem, 5.9vw, 2.5rem);
   }
 
-  #hero-1467 .cs-arrow {
-    width: 1.5rem;
-    height: auto
+  #hero-288 .cs-item {
+    list-style: none;
+    width: auto;
   }
 
-  #hero-1467 .cs-floater-wrapper {
+  #hero-288 .cs-number {
+    font-size: clamp(1.5625rem, 3.8vw, 3.0625rem);
+    line-height: 1.2em;
+    font-weight: 700;
+    color: var(--headerColor);
+    display: block;
+  }
+
+  #hero-288 .cs-desc {
+    font-size: clamp(0.875rem, 2.1vw, 1rem);
+    line-height: 1.5em;
+    color: #767676;
+  }
+
+  #hero-288 .cs-picture {
     width: 100%;
-    height: 100%;
+    max-width: 36.5625rem;
+    height: clamp(17.75rem, 90vw, 27.3215rem);
+    border-radius: 0.75rem;
     overflow: hidden;
+    display: block;
+    position: relative;
+  }
+
+  #hero-288 .cs-picture::after {
+    content: '';
     position: absolute;
     top: 0;
     left: 0;
-    z-index: -1
-  }
-
-  #hero-1467 .cs-floater {
-    width: 68.125rem;
-    height: auto;
-    opacity: .1;
-    display: block;
-    position: absolute;
-    left: 0;
-    bottom: 0
-  }
-
-  #hero-1467 .cs-background {
     width: 100%;
     height: 100%;
-    display: block;
+    background: var(--blueOverlay);
+    z-index: 1;
+    pointer-events: none;
+  }
+
+  #hero-288 .cs-picture img {
     position: absolute;
     top: 0;
     left: 0;
-    z-index: -1
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
   }
+
+  #hero-288 .cs-waves {
+    width: 100%;
+    height: 30%;
+    background-color: var(--primary);
+    background-image: url('/assets/svgs/stripe.png');
+    background-size: 30px auto;
+    display: block;
+    position: absolute;
+    border-radius: 25px;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    z-index: -1;
+  }
+
 }
 
-/*@media only screen and (min-width: 0rem) and (max-width:47.9375rem) {*/
-/*    #hero-1467 .cs-background {*/
-/*        top:-100px*/
-/*    }*/
-/*}*/
-
 @media only screen and (min-width: 0rem) {
-  #hero-1467 .cs-background:before {
-    content:"";
-    position: absolute;
-    display: block;
-    height: 100%;
-    width: 100%;
-    background: #fff;
-    opacity: .84;
-    top: 0;
-    left: 0;
-    z-index: 1
-  }
-
-  #hero-1467 .cs-background img {
-    position: absolute;
-    top: 0;
-    left: 0;
-    height: 100%;
-    width: 100%;
-    -o-object-fit: cover;
-    object-fit: cover
+  body.dark-mode #hero-288 .cs-desc,
+  body.dark-mode #hero-288 .cs-number,
+  body.dark-mode #hero-288 .cs-text,
+  body.dark-mode #hero-288 .cs-title {
+    color: var(--bodyTextColorWhite);
   }
 
   #cta-697 .cs-button-solid {
     background-color: #fff;
-    color: var(--primary)
+    color: var(--primary);
   }
 
   #cta-697 .cs-button-solid:hover {
-    color: #fff
+    color: #fff;
   }
 }
 
-@media only screen and (min-width: 48rem) {
-  #hero-1467 {
-    display:flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    gap: clamp(3.125rem,10vw,5.625rem)
+@media only screen and (max-width: 63.9375rem) {
+  #hero-288 .cs-stats-group {
+    margin-bottom: clamp(1.75rem, 3.92vw, 2.5rem);
   }
 
-  #hero-1467 .cs-container {
-    justify-content: flex-start;
-    flex-direction: row
-  }
-
-  #hero-1467 .cs-content {
-    text-align: left;
-    width: 60%;
-    align-items: flex-start
-  }
-
-  #hero-1467 .cs-button-group {
-    justify-content: flex-start;
-  }
-
-  #hero-1467 .cs-picture-wrapper {
-    width: 100%;
-    max-width: 80rem;
-    height: 100%;
-    overflow: hidden;
-    position: absolute;
-    top: 0;
-    left: 50%;
-    transform: translateX(-50%)
-  }
-
-  #hero-1467 .cs-picture {
-    width: 56%;
-    margin-right: clamp(3.125rem,12vw,10.625rem);
-    position: absolute;
-    bottom: 0;
-    right: 50%;
-    z-index: 10
-  }
-
-  #hero-1467 .cs-item {
-    grid-column: span 6
-  }
-
-  #hero-1467 .cs-item:nth-of-type(6) {
-    border-bottom: none
-  }
-
-  #hero-1467 .cs-floater-wrapper {
-    display: block
-  }
-
-  #hero-1467 .cs-background {
-    overflow: hidden;
-    height: 100%;
-  }
-
-  #hero-1467 .cs-background:before {
-    opacity: 1;
-    background: linear-gradient(270deg,rgba(255,255,255,.96) 47.66%,rgba(255,255,255,0) 71.43%);
-    transform: scaleX(-1)
+  #hero-288 .cs-waves {
+    border-radius: 0;
   }
 }
 
 @media only screen and (min-width: 64rem) {
-  #hero-1467 .cs-card-group {
-    padding:0
+  #hero-288 {
+    text-align: left;
+    overflow-x: hidden;
   }
 
-  #hero-1467 .cs-item {
-    grid-column: span 4;
-    border-bottom: 1px solid #e8e8e8;
-    border-right: 1px solid #e8e8e8
+  #hero-288 .cs-container {
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: stretch;
+    column-gap: 6.25rem;
   }
 
-  #hero-1467 .cs-item:hover {
-    background-color: var(--primary);
-    border-color: var(--primary)
+  #hero-288 .cs-content {
+    width: 40%;
+    flex: none;
+    align-items: flex-start;
+    display: flex;
+    flex-direction: column;
   }
 
-  #hero-1467 .cs-item:hover .cs-fake-link,#hero-1467 .cs-item:hover .cs-h3,#hero-1467 .cs-item:hover .cs-item-text {
-    color: var(--bodyTextColorWhite)
+  #hero-288 .cs-text,
+  #hero-288 .cs-title {
+    text-align: left;
   }
 
-  #hero-1467 .cs-item:hover .cs-icon {
-    filter: brightness(100)
+  #hero-288 .cs-button-group {
+    justify-content: flex-start;
   }
 
-  #hero-1467 .cs-item:hover .cs-arrow {
-    filter: grayscale(1) brightness(1000%)
+  #hero-288 .cs-picture {
+    max-width: 49.375rem;
+    flex: 1 1 auto;
+    align-self: stretch;
+    min-height: clamp(38.9375rem, 44vw, 50.875rem);
   }
 
-  #hero-1467 .cs-item:hover .cs-item-text {
-    opacity: .8
-  }
-
-  #hero-1467 .cs-item:nth-of-type(5),#hero-1467 .cs-item:nth-of-type(6) {
-    border-bottom: 1px solid #e8e8e8
-  }
-
-  #hero-1467 .cs-item:nth-of-type(7),#hero-1467 .cs-item:nth-of-type(8),#hero-1467 .cs-item:nth-of-type(9) {
-    border-bottom: none
-  }
-
-  #hero-1467 .cs-item:last-of-type {
-    border-right: none
-  }
-
-  #hero-1467 .cs-floater {
-    left: 40%;
-    right: auto;
-    top: auto;
-    bottom: 0
+  #hero-288 .cs-waves {
+    height: 100%;
+    width: calc(49vw);
+    left: 50%;
+    margin-left: 12.5rem;
   }
 }
 
-@media only screen and (min-width: 81.25rem) {
-  #hero-1467 .cs-picture {
-    bottom:6.25rem
-  }
-}
-
-@media only screen and (min-width: 100rem) {
-  #hero-1467 .cs-background {
-    background:url("/assets/images/main3.jpg");
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
-    background-attachment: fixed
+@media only screen and (min-width: 93.75rem) {
+  #hero-288 .cs-container {
+    flex-direction: row;
+    justify-content: space-between;
+    column-gap: 11.25rem;
   }
 
-  #hero-1467 .cs-background img {
-    display: none
+  #hero-288 .cs-picture {
+    max-width: unset;
+    flex: 1 1 auto;
+    min-width: 46vw;
+    align-self: stretch;
+    min-height: clamp(38.9375rem, 44vw, 44.875rem);
   }
 }
 

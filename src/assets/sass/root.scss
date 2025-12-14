@@ -65,6 +65,7 @@
         --bodyTextColor: #4e4b66;
         --bodyTextColorWhite: #fafbfc;
         --LightBG: #F5FBFF;
+        --blueOverlay: rgba(74, 144, 226, 0.25);
 
         /* 13px - 16px */
         --topperFontSize: clamp(0.8125rem, 1.6vw, 1rem);
@@ -138,6 +139,8 @@
         min-width: 9.375rem;
         padding: 0 1.5rem;
         background-color: var(--primary);
+        background-image: url(/assets/svgs/stripe.png);
+        background-size: 30px auto;
         z-index: 1;
         box-sizing: border-box;
         transition: color 0.3s;
@@ -1043,7 +1046,7 @@
     }
 }
 
-@media only screen and (min-width: 64rem) {
+@media only screen and (min-width: 63.9375rem) {
     #cs-navigation .cs-dropdown {
         position: relative;
     }
@@ -1277,7 +1280,7 @@
     }
 }
 
-@media only screen and (min-width: 64rem) {
+@media only screen and (min-width: 63.9375rem) {
     body.scroll #cs-navigation {
         transform: translateY(-3.3125rem);
     }
@@ -1475,6 +1478,8 @@
         color: #fff;
         padding: 0 2rem;
         background-color: var(--primary);
+        background-image: url(/assets/svgs/stripe.png);
+        background-size: 30px auto;
         overflow: hidden;
         border-radius: 6px;
         display: inline-block;
