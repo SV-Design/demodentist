@@ -26,7 +26,7 @@
     font-size: clamp(2.4375rem, 5vw, 3.3125rem);
     font-weight: 700;
     line-height: 1.2em;
-    text-align: center;
+    text-align: left;
     max-width: 43.75rem;
     margin: 0 auto 1rem;
     color: var(--headerColor);
@@ -36,7 +36,7 @@
   #hero-288 .cs-text {
     font-size: clamp(1rem, 1.5vw, 1.25rem);
     line-height: 1.5em;
-    text-align: center;
+    text-align: left;
     width: 100%;
     max-width: 33.1875rem;
     margin-bottom: clamp(1.75rem, 3.92vw, 2.5rem);
@@ -47,7 +47,7 @@
     display: flex;
     gap: 1.2rem;
     flex-wrap: wrap;
-    justify-content: center;
+    justify-content: left;
     align-items: center;
     width: 100%;
     margin-bottom: 0;

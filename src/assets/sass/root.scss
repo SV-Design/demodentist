@@ -128,7 +128,7 @@
     }
 
     body .cs-button-solid {
-        text-transform: uppercase;
+        //text-transform: uppercase;
         font-size: 1rem;
         /* 46px - 56px */
         line-height: clamp(2.875rem, 5.5vw, 3.5rem);
@@ -159,7 +159,6 @@
 
     .cs-button-solid p {
         color: #fff;
-        text-transform: uppercase;
         font-size: 1rem;
         line-height: 3.125em;
         position: relative;
@@ -399,6 +398,10 @@
         justify-content: center;
         transition: transform .3s;
         width: 2.4rem;
+        /* prevent the icon circle from being squished on very small screens */
+        flex-shrink: 0;
+        min-width: 2.4rem;
+        min-height: 2.4rem;
     }
 
     #cs-navigation .cs-link-icon {
@@ -518,6 +521,17 @@
         color: #5a5a5a;
     }
 
+    #cs-navigation .cs-top-link.cs-facebook-link{
+        margin-left: auto !important;
+    }
+
+    // Hide Facebook link on small screens (<768px)
+    @media only screen and (max-width: 767px) {
+        #cs-navigation .cs-top-link.cs-facebook-link {
+            display: none;
+        }
+    }
+
 
 
     //.cs-container {
@@ -596,6 +610,7 @@
         display: flex;
         justify-content: center;
         align-items: center;
+        border-bottom: none;
     }
 
     #cs-navigation .cs-top-container {
@@ -607,6 +622,7 @@
         justify-content: space-between;
         align-items: center;
         gap: 1rem;
+        border-bottom: 1px solid #eff1f0;
     }
 
     #cs-navigation .cs-top-contact {
@@ -616,6 +632,14 @@
         justify-content: center;
         align-items: center;
         gap: clamp(1rem, 2vw, 1.5rem);
+    }
+
+    @media (max-width: 400px) {
+        #cs-navigation .cs-top-contact {
+            //flex-wrap: wrap;
+            justify-content: flex-start;
+            gap: 0.75rem;
+        }
     }
 
     #cs-navigation .cs-top-link {
@@ -1350,10 +1374,6 @@
         align-items: center;
         gap: 0.5rem;
         position: relative;
-    }
-
-    #cs-navigation .cs-top-link.cs-facebook-link{
-        margin-left: auto;
     }
 
     #cs-navigation .cs-top-link:hover {
@@ -2336,10 +2356,9 @@ fieldset.slider-wrapper {
         border-top: 4px solid var(--primary);
     }
 
-
     #registruotis {
         padding: var(--sectionPadding);
-        padding-bottom: 0;
+        //padding-bottom: 0;
         background-color: #fff;
     }
 
@@ -2476,7 +2495,7 @@ fieldset.slider-wrapper {
     #registruotis .cs-form {
         width: 100%;
         max-width: 39.375rem;
-        margin-bottom: calc(clamp(1.875rem, 7vw, 6.25rem) * -1);
+        //margin-bottom: calc(clamp(1.875rem, 7vw, 6.25rem) * -1);
         padding: clamp(1.5rem, 5.18vw, 3rem) clamp(1rem, 4vw, 3rem);
         box-sizing: border-box;
         background-color: #fff;
@@ -2725,7 +2744,10 @@ label {
 }
 
 #registruotis .cs-form {
-    border: 1px solid lightgray;
+    height: fit-content;
+    border: 1px solid transparent;
+    box-sizing: border-box;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
     border-top: 4px solid var(--primary);
     z-index: 3;
     position: relative;
@@ -2737,9 +2759,28 @@ label {
     border-radius: 1.5rem;
     background-color: #fff;
     width: 100%;
-    box-sizing: border-box;
     padding: clamp(2rem, 5vw, 3rem) clamp(1rem, 4vw, 3rem);
     text-align: left;
+}
+
+#registruotis .cta-map {
+    width: 100%;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+    min-height: 300px;
+    height: 100%;
+    border-radius: 1.5rem;
+    overflow: visible;
+    border: 1px solid rgba(0, 0, 0, 0.1);
+}
+
+#registruotis .cta-map iframe {
+    display: block;
+    width: 100%;
+    height: 100%;
+    min-height: 300px;
+    border: 0;
+    overflow: hidden;
+    border-radius: 1.5rem;
 }
 
 #registruotis #success-message p {
@@ -3198,16 +3239,14 @@ label {
 }
 
 /*Call button*/
-
 #call-button-container {
     position: fixed;
-    bottom: 10px;
-    right: 10px;
-    z-index: 99999;
+    bottom: 69px;
+    right: 16px;
+    z-index: 9999;
 }
 
-.call-button,
-.messenger-button {
+.call-button {
     background-color: var(--primary);
     align-items: center;
     border-radius: 60px;
@@ -3218,39 +3257,17 @@ label {
     position: absolute;
     right: 0px;
     box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.40);
-    z-index: 99999;
-}
-
-.call-button {
-    bottom: 0px;
-}
-
-.messenger-button {
-    bottom: 64px;
-}
-
-.call-button-img,
-.messenger-button-img {
-    height: 33px;
-    width: 33px;
-    background-size: contain;
-    background-repeat: no-repeat;
-    background-position: center;
-    z-index: 50;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    position: absolute;
 }
 
 .call-button-img {
+    height: 33px;
+    width: 33px;
     background-image: url("/assets/svgs/phone.svg");
-    height: calc(33px * 0.9);
-    width: calc(33px * 0.9);
-}
-
-.messenger-button-img {
-    background-image: url("/assets/svgs/messenger.svg");
+    background-size: cover;
+    z-index: 50;
+    top: 11px;
+    left: 12px;
+    position: absolute;
 }
 
 /* Cookie Popup Styles */
@@ -3445,4 +3462,4 @@ label {
     }
 }
 
-.keen-slider:not([data-keen-slider-disabled]){-webkit-touch-callout:none;-webkit-tap-highlight-color:transparent;align-content:flex-start;display:flex;overflow:hidden;position:relative;touch-action:pan-y;-webkit-user-select:none;-moz-user-select:none;-ms-user-select:none;user-select:none;-khtml-user-select:none;width:100%}.keen-slider:not([data-keen-slider-disabled]) .keen-slider__slide{min-height:100%;overflow:hidden;position:relative;width:100%}.keen-slider:not([data-keen-slider-disabled])[data-keen-slider-reverse]{flex-direction:row-reverse}.keen-slider:not([data-keen-slider-disabled])[data-keen-slider-v]{flex-wrap:wrap}
+.keen-slider:not([data-keen-slider-disabled]){-webkit-touch-callout:none;-webkit-tap-highlight-color:transparent;align-content:flex-start;display:flex;overflow:hidden;position:relative;touch-action:pan-y;-webkit-user-select:none;-moz-user-select:none;-ms-user-select:none;user-select:none;-khtml-user-select:none;width:100%}.keen-slider:not([data-keen-slider-disabled]) .keen-slider__slide{min-height:100%;overflow:visible;list-style: none;position:relative;width:100%}.keen-slider:not([data-keen-slider-disabled])[data-keen-slider-reverse]{flex-direction:row-reverse}.keen-slider:not([data-keen-slider-disabled])[data-keen-slider-v]{flex-wrap:wrap}

@@ -762,16 +762,15 @@
 
 /* Logo Carousel Section */
 .cs-logos-section {
-    padding: 0;
-    background-color: #fff;
+  background-color: #fff;
+  margin: 0 auto;
+  padding: var(--sectionPadding);
 }
 
 .cs-logos-section .cs-container {
   max-width: 80rem;
   margin: 0 auto;
-  padding: var(--sectionPadding);
-  padding-bottom: 0;
-  border-top: 1px solid rgba(0, 0, 0, 0.1);
+  //border-top: 1px solid rgba(0, 0, 0, 0.1);
 }
 
 .cs-logos-content {
@@ -807,7 +806,7 @@
 @media only screen and (min-width: 48rem) {
     .cs-logos-content {
         flex-direction: row;
-        align-items: center;
+        align-items: flex-start;
         gap: 3rem;
     }
 
@@ -830,11 +829,12 @@
 }
 
 .cs-logos {
-    overflow: hidden;
-    padding: 60px 0;
-    background: white;
-    white-space: nowrap;
-    position: relative;
+  overflow: hidden;
+  background: white;
+  padding-top: 3rem;
+  white-space: nowrap;
+  padding-bottom: 0;
+  position: relative;
 }
 
 .cs-logos:before,
@@ -1084,15 +1084,12 @@
 }
 
 
-/* ============================================ */
-/*           Reviews Slider Section             */
-/* ============================================ */
-
 #reviews-slider-section {
     padding: var(--sectionPadding);
     background-color: transparent;
     position: relative;
     overflow: hidden;
+    padding-top: 0;
 }
 
 #reviews-slider-section::after {
@@ -1101,15 +1098,15 @@
     bottom: 0;
     left: 0;
     width: 100%;
-    height: 50%;
-    background-color: #F5FBFF;
+    height: 47%;
+    background-color: #fff;
     z-index: 0;
     pointer-events: none;
 }
 
 #reviews-slider-section .cs-waves {
     width: 100%;
-    height: 50%;
+    height: 58%;
     background-color: var(--primary);
     background-image: url(/assets/svgs/stripe.png);
     background-size: 30px auto;
@@ -1163,11 +1160,16 @@
     flex: none;
 }
 
+@media only screen and (max-width: 47.9375rem) {
+    #reviews-slider-section .reviews-button-desktop {
+        display: none !important;
+    }
+}
+
 #reviews-slider-section .reviews-button-mobile {
     display: inline-block;
     text-align: center;
     width: fit-content;
-    margin-left: auto;
   margin-right: auto;
 }
 
@@ -1190,6 +1192,10 @@
 #reviews-slider-section .cs-slider-wrapper {
     overflow: hidden;
     position: relative;
+    /* give shadows room so they don't get clipped by the wrapper */
+    margin: -15px -10px;
+    padding: 15px 10px;
+    width: calc(100% + 20px);
 }
 
 #reviews-slider-section .cs-slider-overlay {
@@ -1209,96 +1215,88 @@
 
 #reviews-slider-section .keen-slider__slide {
     min-width: 0;
+    /* keen-slider default sets overflow:hidden on slides, which clips box-shadows */
+    overflow: visible;
 }
 
-/* Review Card Styling */
-.review-card {
+/* Review Card Styling (item card only) */
+#reviews-slider-section .cs-item {
+    width: 100%;
+    padding: clamp(1.25rem, 3.15vw, 2.5rem);
     background-color: #fff;
-    border-radius: 0.75rem;
-    padding: 1.75rem;
-    height: 100%;
-    display: flex;
-    flex-direction: column;
     box-sizing: border-box;
-    transition: border-color 0.3s;
+    display: flex;
+    justify-content: flex-start;
+    align-items: flex-start;
+    flex-direction: column;
+    position: relative;
+    gap: clamp(1.5rem, 1vw, 3rem);
+    border-radius: 0.75rem;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+    transition: box-shadow 0.3s;
+    height: 100%;
     overflow: hidden;
-    border: 1px solid rgba(0, 0, 0, 0.2);
 }
 
-.review-header {
+#reviews-slider-section .cs-flex-group {
     display: flex;
-    justify-content: space-between;
-    align-items: center;
-    margin-bottom: 0.5rem;
-}
-
-.review-avatar-wrapper {
-    display: flex;
-    align-items: center;
+    align-items: flex-start;
     gap: 0.75rem;
-    flex: 1;
 }
 
-.review-avatar {
-    width: 3.5rem;
-    height: 3.5rem;
+#reviews-slider-section .cs-picture {
+    width: 3.25rem;
+    height: 3.25rem;
     border-radius: 50%;
-    background-color: #e0e0e0;
     display: flex;
     align-items: center;
     justify-content: center;
     flex-shrink: 0;
+    background-color: var(--LightBG);
 }
 
-.review-avatar span {
+#reviews-slider-section .cs-profile {
+    width: 1.75rem;
+    height: 1.75rem;
+    display: block;
+}
+
+#reviews-slider-section .cs-name {
     font-size: 1.25rem;
-    font-weight: 600;
-    color: #333;
+    line-height: 1.2em;
+    font-weight: 700;
+    margin: auto 0;
+    color: var(--headerColor);
+    display: block;
 }
 
-.review-name-wrapper {
+#reviews-slider-section .wrapper {
     display: flex;
-    align-items: center;
+    flex-direction: column;
+    gap: 1rem;
 }
 
-.review-name {
-    font-size: 1.125rem;
-    font-weight: 600;
-    color: #1a1a1a;
-    line-height: 1.2;
+#reviews-slider-section .cs-item-stars {
+    width: 6.75rem;
+    height: auto;
 }
 
-.review-google-logo {
-    width: 1.5rem;
-    height: 1.5rem;
-    flex-shrink: 0;
-}
-
-.review-stars {
-    display: flex;
-    gap: 0.25rem;
-    margin-top: 0.5rem;
-    margin-bottom: 0.75rem;
-}
-
-.review-stars svg {
-    width: 1.125rem;
-    height: 1.125rem;
-    flex-shrink: 0;
-}
-
-.review-stars img {
-    width: 5.625rem;
-    height: 1.125rem;
-    flex-shrink: 0;
-}
-
-.review-text {
-    font-size: 0.9375rem;
-    line-height: 1.5;
-    color: #555;
+#reviews-slider-section .cs-review {
+    font-size: clamp(0.875rem, 1.6vw, 1.25rem);
+    line-height: 1.5em;
     margin: 0;
-    flex: 1;
+    color: var(--bodyTextColor);
+    z-index: 1;
+}
+
+#reviews-slider-section .cs-quote {
+    width: 5.375rem;
+    height: auto;
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    z-index: 0;
+    opacity: 0.2;
 }
 
 /* Slider Arrows */
@@ -1323,12 +1321,67 @@
 #reviews-slider-section .cs-button-solid {
   color: #fff;
   background-color: transparent;
+  background-image: none;
   border: 1px solid #fff;
+  transition: border-color 0.3s, color 0.3s;
 }
 
 #reviews-slider-section .cs-button-solid:hover {
-  background-color: #fff;
-  color: var(--primary);
+  /* let the global .cs-button-solid:before black overlay show through */
+  background-color: transparent;
+  color: #fff;
+  border-color: #111;
+}
+
+/* Below 768px: use the global (root.scss) "normal" solid button styling */
+@media only screen and (max-width: 47.9375rem) {
+    #reviews-slider-section .cs-button-solid {
+        font-size: 1rem;
+        line-height: clamp(2.875rem, 5.5vw, 3.5rem);
+        text-decoration: none;
+        font-weight: 700;
+        text-align: center;
+        color: #fff;
+        min-width: 9.375rem;
+        padding: 0 1.5rem;
+        background-color: var(--primary);
+        background-image: url(/assets/svgs/stripe.png);
+        background-size: 30px auto;
+        z-index: 1;
+        box-sizing: border-box;
+        transition: color 0.3s;
+        --width: 100%;
+        --time: 0.7s;
+        position: relative;
+        display: inline-block;
+        overflow: hidden;
+        text-wrap: nowrap;
+        border-radius: 6px;
+        border: none;
+    }
+
+    #reviews-slider-section .cs-button-solid:hover {
+        color: #fff;
+        background-color: var(--primary);
+        border-color: transparent;
+    }
+
+    #reviews-slider-section .cs-button-solid:before {
+        content: "";
+        position: absolute;
+        height: 100%;
+        width: 0%;
+        background: #000;
+        opacity: 1;
+        top: 0;
+        left: 0;
+        z-index: -1;
+        transition: width 0.3s;
+    }
+
+    #reviews-slider-section .cs-button-solid:hover:before {
+        width: 100%;
+    }
 }
 
 #reviews-slider-section .cs-slider-arrow:hover {
@@ -1376,27 +1429,23 @@
 
 /* Tablet adjustments */
 @media only screen and (min-width: 26.25rem) and (max-width: 47.9375rem) {
-    .review-card {
+    #reviews-slider-section .cs-item {
         padding: 1.5rem;
     }
-    
-    .review-avatar {
+
+    #reviews-slider-section .cs-picture {
         width: 3rem;
         height: 3rem;
     }
-    
-    .review-avatar span {
-        font-size: 1.125rem;
-    }
-    
-    .review-name {
+
+    #reviews-slider-section .cs-name {
         font-size: 1rem;
     }
 }
 
 /* Desktop adjustments */
 @media only screen and (min-width: 64rem) {
-    .review-card {
+    #reviews-slider-section .cs-item {
         padding: 1.75rem;
     }
 }
@@ -1713,8 +1762,11 @@
         }
 
         .cs-slider-wrapper {
-            overflow: hidden;
-            position: relative;
+          overflow: hidden;
+          position: relative;
+          margin: -15px -10px;
+          padding: 15px 10px;
+          width: calc(100% + 20px);
         }
 
         .cs-slider-overlay {
@@ -1729,7 +1781,7 @@
         }
 
         .keen-slider {
-            overflow: hidden;
+            overflow: visible;
         }
 
         .keen-slider__slide {
@@ -1863,6 +1915,7 @@
             z-index: 10;
             transition: all 0.3s;
             box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+            color: var(--headerColor);
         }
 
         .cs-slider-arrow svg {
@@ -1881,14 +1934,15 @@
             background-color: var(--primary);
             border-color: var(--primary);
             box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+            color: #fff;
         }
 
         .cs-slider-arrow:hover svg {
             stroke: #fff;
         }
 
-        /* Hide arrows below desktop breakpoint */
-        @media only screen and (max-width: 63.9375rem) {
+        /* Hide arrows only when showing fractional slides (<420px) */
+        @media only screen and (max-width: 26.1875rem) {
             .cs-slider-arrow {
                 display: none;
             }
@@ -1917,8 +1971,8 @@
     }
 }
 
-/* Tablet and below - remove overflow and padding for slider */
-@media only screen and (max-width: 63.9375rem) {
+/* Extra-small screens: allow partial slides to show (perView ~1.2) */
+@media only screen and (max-width: 26.1875rem) {
     #services1 .cs-slider-wrapper {
         overflow: visible;
     }
@@ -1930,6 +1984,14 @@
     
     #services1 .cs-container {
         padding-right: 1rem;
+    }
+}
+
+/* Extra-small screens: allow partial slides to show (e.g. 1.3 / 2.5 items) */
+@media only screen and (max-width: 26.1875rem) {
+    #services1 .keen-slider,
+    #team-section .keen-slider {
+        overflow: visible;
     }
 }
 
@@ -1964,7 +2026,7 @@
         top: 0;
         left: 0;
         width: 100%;
-        height: 50%;
+        height: 61%;
         background-color: #fff;
         z-index: 0;
         pointer-events: none;
@@ -2030,6 +2092,10 @@
     #team-section .cs-slider-wrapper {
         overflow: hidden;
         position: relative;
+        /* allow card shadows to render without being clipped */
+        margin: -15px -10px;
+        padding: 15px 10px;
+        width: calc(100% + 20px);
     }
 
     #team-section .cs-slider-overlay {
@@ -2044,13 +2110,15 @@
     }
 
     #team-section .keen-slider {
-        overflow: hidden;
+        overflow: visible;
     }
 
     #team-section .keen-slider__slide {
         min-width: 0;
         display: flex;
         align-items: stretch;
+        /* keen-slider default sets overflow:hidden on slides, which clips box-shadows */
+        overflow: visible;
     }
 
     /* Team Card Styling */
@@ -2063,12 +2131,14 @@
         position: relative;
         box-sizing: border-box;
         overflow: hidden;
-        box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
-        transition: box-shadow 0.3s, transform 0.3s;
+        /* use drop-shadow so the shadow isn't lost when overflow clipping is involved */
+        box-shadow: none;
+        filter: drop-shadow(0 2px 8px rgba(0, 0, 0, 0.08));
+        transition: filter 0.3s, transform 0.3s;
     }
 
     #team-section .team-card:hover {
-        box-shadow: 0 4px 16px rgba(0, 0, 0, 0.12);
+        filter: drop-shadow(0 4px 16px rgba(0, 0, 0, 0.12));
     }
 
     #team-section .team-image-wrapper {
@@ -2139,6 +2209,27 @@
         background: linear-gradient(to top, rgba(0, 0, 0, 0.6) 0%, rgba(0, 0, 0, 0.3) 50%, transparent 100%);
     }
 
+    #team-section .cs-license {
+        font-size: 0.7rem;
+        text-transform: uppercase;
+        letter-spacing: 0.1em;
+        color: #fff;
+        font-weight: 700;
+        display: flex;
+        align-items: center;
+        gap: 6px;
+        text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+    }
+
+    #team-section .cs-license::before {
+        content: '';
+        width: 8px;
+        height: 1px;
+        background-color: #fff;
+        display: block;
+        flex-shrink: 0;
+    }
+
     #team-section .team-name {
         font-size: clamp(1.125rem, 1.5vw, 1.25rem);
         font-weight: 700;
@@ -2172,6 +2263,7 @@
         z-index: 10;
         transition: all 0.3s;
         box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+        color: var(--headerColor);
     }
 
     #team-section .cs-slider-arrow svg {
@@ -2190,6 +2282,7 @@
         background-color: var(--primary);
         border-color: var(--primary);
         box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+        color: #fff;
     }
 
     #team-section .cs-slider-arrow:hover svg {
@@ -2228,23 +2321,22 @@
     //     border: 1px solid var(--primary);
     // }
 
-    /* Hide arrows below desktop breakpoint */
-    @media only screen and (max-width: 63.9375rem) {
+    /* Hide arrows only when showing fractional slides (<420px) */
+    @media only screen and (max-width: 26.1875rem) {
         #team-section .cs-slider-arrow {
             display: none;
         }
+    }
 
+    /* At <420px we show fractional slides (perView: 1.2), so allow the "peek" */
+    @media only screen and (max-width: 26.1875rem) {
         #team-section .cs-slider-wrapper {
             overflow: visible;
         }
-        
+
         #team-section {
             overflow: visible;
             padding-right: 0;
-        }
-        
-        #team-section .cs-container {
-            padding-right: 1rem;
         }
     }
 }
@@ -2442,7 +2534,7 @@
   }
 
   #sbs-945 .cs-picture2,#sbs-945 .cs-picture3 {
-    border-radius: 2em 2em 2em 2em;
+    border-radius: 0.75rem;
     right: 0;
     width: 17.5625em
   }

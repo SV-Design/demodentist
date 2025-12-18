@@ -77,6 +77,32 @@ tags: "sitemap" # content/content.json will make sure that all pages in content/
 <!--           Home Category Cars Sections        -->
 <!-- ============================================ -->
 
+<!-- ============================================ -->
+<!--           Logo Carousel Section              -->
+<!-- ============================================ -->
+
+<section class="cs-logos-section">
+    <div class="cs-container">
+        <div class="cs-logos-content">
+            <div class="cs-logos-text-left">
+                <h2 class="cs-logos-title">Patikimas transportas <span style="color: var(--primary);">darbui</span> ir <span style="color: var(--primary);">kelionėms</span></h2>
+            </div>
+            <div class="cs-logos-text-right">
+                <p class="cs-logos-description">Statybos, gamybos ir prekybos įmonėms siūlome talpius krovininius mikroautobusus įrangai bei produkcijai. Transporto sektoriui ir keliautojams paruošėme keleivinius modelius, tinkančius vilkikų vairuotojų rotacijai, komandiruotėms ar tolimoms išvykoms į kalnus bei žvejybą.</p>
+            </div>
+        </div>
+    </div>
+    <div class="cs-logos">
+        <div class="cs-logos-slide">
+            <img src="/assets/images/brands/logo1.svg" alt="Logo 1" />
+            <img src="/assets/images/brands/logo2.svg" alt="Logo 2" />
+            <img src="/assets/images/brands/logo3.svg" alt="Logo 3" />
+            <img src="/assets/images/brands/logo4.svg" alt="Logo 4" />
+            <img src="/assets/images/brands/logo5.svg" alt="Logo 5" />
+        </div>
+    </div>
+</section>
+
 <section id="services1">
     <div class="cs-container">
         <div class="cs-content">
@@ -196,36 +222,6 @@ tags: "sitemap" # content/content.json will make sure that all pages in content/
     </div>
 </section>
 
-<!-- ============================================ -->
-<!--           Team Section                       -->
-<!-- ============================================ -->
-
-
-<!-- ============================================ -->
-<!--           Logo Carousel Section              -->
-<!-- ============================================ -->
-
-<section class="cs-logos-section">
-    <div class="cs-container">
-        <div class="cs-logos-content">
-            <div class="cs-logos-text-left">
-                <h2 class="cs-logos-title">Patikimas transportas <span style="color: var(--primary);">darbui</span> ir <span style="color: var(--primary);">kelionėms</span></h2>
-            </div>
-            <div class="cs-logos-text-right">
-                <p class="cs-logos-description">Statybos, gamybos ir prekybos įmonėms siūlome talpius krovininius mikroautobusus įrangai bei produkcijai. Transporto sektoriui ir keliautojams paruošėme keleivinius modelius, tinkančius vilkikų vairuotojų rotacijai, komandiruotėms ar tolimoms išvykoms į kalnus bei žvejybą.</p>
-            </div>
-        </div>
-    </div>
-    <div class="cs-logos">
-        <div class="cs-logos-slide">
-            <img src="/assets/images/brands/logo1.svg" alt="Logo 1" />
-            <img src="/assets/images/brands/logo2.svg" alt="Logo 2" />
-            <img src="/assets/images/brands/logo3.svg" alt="Logo 3" />
-            <img src="/assets/images/brands/logo4.svg" alt="Logo 4" />
-            <img src="/assets/images/brands/logo5.svg" alt="Logo 5" />
-        </div>
-    </div>
-</section>
 
 <section id="sbs-945">
     <div class="cs-container">
@@ -286,78 +282,17 @@ tags: "sitemap" # content/content.json will make sure that all pages in content/
     </div>
 </section>
 
+
+<!-- ============================================ -->
+<!--           Team Section                       -->
+<!-- ============================================ -->
+
+
+
+
 <!-- ============================================ -->
 <!--           Hero Journey Section               -->
 <!-- ============================================ -->
-
-<section id="hero-journey-section">
-    <div class="cs-hero-container">
-        <div class="cs-hero-image-block">
-            <picture class="cs-hero-background">
-                <!--Mobile Image-->
-                <source media="(max-width: 600px)" srcset="{% getUrl "/assets/images/vanredsummer.jpg" | resize({ width: 640 }) | avif %}" type="image/avif">
-                <source media="(max-width: 600px)" srcset="{% getUrl "/assets/images/vanredsummer.jpg" | resize({ width: 640 }) | webp %}" type="image/webp">
-                <source media="(max-width: 600px)" srcset="{% getUrl "/assets/images/vanredsummer.jpg" | resize({ width: 640 }) | jpeg %}" type="image/jpeg">
-                <!--Tablet Image-->
-                <source media="(max-width: 1024px)" srcset="{% getUrl "/assets/images/vanredsummer.jpg" | resize({ width: 1280 }) | avif %}" type="image/avif">
-                <source media="(max-width: 1024px)" srcset="{% getUrl "/assets/images/vanredsummer.jpg" | resize({ width: 1280 }) | webp %}" type="image/webp">
-                <source media="(max-width: 1024px)" srcset="{% getUrl "/assets/images/vanredsummer.jpg" | resize({ width: 1280 }) | jpeg %}" type="image/jpeg">
-                <!--Desktop Image-->
-                <source media="(min-width: 1024px)" srcset="{% getUrl "/assets/images/vanredsummer.jpg" | resize({ width: 1920 }) | avif %}" type="image/avif">
-                <source media="(min-width: 1024px)" srcset="{% getUrl "/assets/images/vanredsummer.jpg" | resize({ width: 1920 }) | webp %}" type="image/webp">
-                <source media="(min-width: 1024px)" srcset="{% getUrl "/assets/images/vanredsummer.jpg" | resize({ width: 1920 }) | jpeg %}" type="image/jpeg">
-                <img src="{% getUrl "/assets/images/vanredsummer.jpg" | resize({ width: 2000 }) | jpeg %}" alt="Happy family journey" loading="lazy" decoding="async">
-            </picture>
-            <div class="cs-hero-overlay"></div>
-            <h2 class="cs-hero-heading">
-                Jūsų kelionė,<br>
-                mūsų automobilis
-            </h2>
-            <div class="cs-hero-badge">
-                <div class="cs-badge-content">
-                    <h3 class="cs-badge-heading">
-                        Krovininiai ir keleiviniai<br>
-                        automobiliai darbui ir kelionėms
-                    </h3>
-                </div>
-                <div class="cs-badge-image">
-                    <img src="/assets/images/redcar.png" alt="Car" loading="lazy" decoding="async">
-                </div>
-            </div>
-        </div>
-        <div class="cs-feature-cards">
-            <div class="cs-feature-card">
-                <div class="cs-feature-icon">
-                    <img src="/assets/images/security/magnifyeuro.svg" alt="Skaidri kainodara icon" width="48" height="48" loading="lazy" decoding="async">
-                </div>
-                <div class="cs-feature-text">
-                    <h3 class="cs-feature-title">Skaidri kainodara</h3>
-                    <p class="cs-feature-description">Supraskite kiekvienos procedūros kainą prieš jai pradedant. Jokių netikėtų sąskaitų.</p>
-                </div>
-            </div>
-            <div class="cs-feature-card">
-                <div class="cs-feature-icon">
-                    <img src="/assets/images/security/handshake.svg" alt="Pasitikėjimu grįsta odontologija icon" width="48" height="48" loading="lazy" decoding="async">
-                </div>
-                <div class="cs-feature-text">
-                    <h3 class="cs-feature-title">Pasitikėjimu grįsta odontologija</h3>
-                    <p class="cs-feature-description">Tikėkitės visiško skaidrumo kiekvieno gydymo metu nuo pradžios iki pabaigos.</p>
-                </div>
-            </div>
-            <div class="cs-feature-card">
-                <div class="cs-feature-icon">
-                    <img src="/assets/images/security/quality.svg" alt="Aukščiausios kokybės medžiagos icon" width="48" height="48" loading="lazy" decoding="async">
-                </div>
-                <div class="cs-feature-text">
-                    <h3 class="cs-feature-title">Aukščiausios kokybės medžiagos</h3>
-                    <p class="cs-feature-description">Naudojame aukščiausios kokybės medžiagas, kad gautumėte geriausią priežiūrą.</p>
-                </div>
-            </div>
-        </div>
-    </div>
-    <div class="cs-waves"></div>
-</section>
-
 
 <section id="team-section">
     <div class="cs-container">
@@ -384,6 +319,7 @@ tags: "sitemap" # content/content.json will make sure that all pages in content/
                                 <img src="https://images.unsplash.com/photo-1559839734-2b71ea197ec2?w=400&h=500&fit=crop" alt="Domantas Girskis" class="team-image" loading="lazy" decoding="async">
                             </div>
                             <div class="team-info">
+                                <div class="cs-license">Licencijos Nr. OPL-05259</div>
                                 <h3 class="team-name">Domantas Girskis</h3>
                                 <p class="team-role">Protezuojantis gydytojas odontologas</p>
                             </div>
@@ -395,6 +331,7 @@ tags: "sitemap" # content/content.json will make sure that all pages in content/
                                 <img src="https://images.unsplash.com/photo-1551601651-2a8555f1a136?w=400&h=500&fit=crop" alt="Eglė Girskė" class="team-image" loading="lazy" decoding="async">
                             </div>
                             <div class="team-info">
+                                <div class="cs-license">Licencijos Nr. OPL-05259</div>
                                 <h3 class="team-name">Eglė Girskė</h3>
                                 <p class="team-role">Gydytoja odontologė</p>
                             </div>
@@ -406,6 +343,7 @@ tags: "sitemap" # content/content.json will make sure that all pages in content/
                                 <img src="https://images.unsplash.com/photo-1582750433449-648ed127bb54?w=400&h=500&fit=crop" alt="Donatas Cirulis" class="team-image" loading="lazy" decoding="async">
                             </div>
                             <div class="team-info">
+                                <div class="cs-license">Licencijos Nr. OPL-05259</div>
                                 <h3 class="team-name">Donatas Cirulis</h3>
                                 <p class="team-role">Gyd. burnos chirurgas</p>
                             </div>
@@ -417,6 +355,7 @@ tags: "sitemap" # content/content.json will make sure that all pages in content/
                                 <img src="https://images.unsplash.com/photo-1612349317150-e413f6a5b16d?w=400&h=500&fit=crop" alt="Team Member" class="team-image" loading="lazy" decoding="async">
                             </div>
                             <div class="team-info">
+                                <div class="cs-license">Licencijos Nr. OPL-05259</div>
                                 <h3 class="team-name">Dr. Gydytojas</h3>
                                 <p class="team-role">Gydytojas odontologas</p>
                             </div>
@@ -446,7 +385,7 @@ tags: "sitemap" # content/content.json will make sure that all pages in content/
         <div class="reviews-slider-content">
             <div class="reviews-content-flex">
                 <span class="cs-topper">Atsiliepimai</span>
-                <h2 class="cs-title">Ką apie mus sako klientai</h2>
+                <h2 class="cs-title">Ką apie mus sako pacientai</h2>
             </div>
             <a href="/atsiliepimai/" class="cs-button-solid reviews-button-desktop">Daugiau atsiliepimų</a>
         </div>
@@ -461,345 +400,88 @@ tags: "sitemap" # content/content.json will make sure that all pages in content/
                 <div id="reviews-slider-overlay" class="cs-slider-overlay"></div>
                 <div id="reviews-slider" class="keen-slider">
                     <!-- TOP TIER - 1. Itella Logistics Lietuva -->
-                    <div class="keen-slider__slide">
-                        <div class="review-card">
-                            <div class="review-header">
-                                <div class="review-avatar-wrapper">
-                                    <div class="review-avatar">
-                                        <span>I</span>
-                                    </div>
-                                    <div class="review-name-wrapper">
-                                        <span class="review-name">Itella Logistics Lietuva</span>
-                                    </div>
-                                </div>
-                                <img class="review-google-logo" src="/assets/svgs/quote.svg" alt="Quote" width="24" height="24" aria-hidden="true">
-                            </div>
-                            <div class="review-stars">
-                                <svg width="20" height="20" viewBox="0 0 24 24" fill="var(--primary)" xmlns="http://www.w3.org/2000/svg">
-                                    <path d="M12 2L15.09 8.26L22 9.27L17 14.14L18.18 21.02L12 17.77L5.82 21.02L7 14.14L2 9.27L8.91 8.26L12 2Z"/>
-                                </svg>
-                                <svg width="20" height="20" viewBox="0 0 24 24" fill="var(--primary)" xmlns="http://www.w3.org/2000/svg">
-                                    <path d="M12 2L15.09 8.26L22 9.27L17 14.14L18.18 21.02L12 17.77L5.82 21.02L7 14.14L2 9.27L8.91 8.26L12 2Z"/>
-                                </svg>
-                                <svg width="20" height="20" viewBox="0 0 24 24" fill="var(--primary)" xmlns="http://www.w3.org/2000/svg">
-                                    <path d="M12 2L15.09 8.26L22 9.27L17 14.14L18.18 21.02L12 17.77L5.82 21.02L7 14.14L2 9.27L8.91 8.26L12 2Z"/>
-                                </svg>
-                                <svg width="20" height="20" viewBox="0 0 24 24" fill="var(--primary)" xmlns="http://www.w3.org/2000/svg">
-                                    <path d="M12 2L15.09 8.26L22 9.27L17 14.14L18.18 21.02L12 17.77L5.82 21.02L7 14.14L2 9.27L8.91 8.26L12 2Z"/>
-                                </svg>
-                                <svg width="20" height="20" viewBox="0 0 24 24" fill="var(--primary)" xmlns="http://www.w3.org/2000/svg">
-                                    <path d="M12 2L15.09 8.26L22 9.27L17 14.14L18.18 21.02L12 17.77L5.82 21.02L7 14.14L2 9.27L8.91 8.26L12 2Z"/>
-                                </svg>
-                            </div>
-                            <p class="review-text">Norint užtikrinti kokybišką siuntų pristatymą reikalingas patikimas partneris. Todėl mes renkamės AutoVerus. Patikimas, greitas ir labai kokybiškas aptarnavimas. Rekomenduoju!</p>
-                        </div>
-                    </div>
+
                     <!-- TOP TIER - 2. UAB Doriteksas / ibis Kaunas Centre -->
                     <div class="keen-slider__slide">
-                        <div class="review-card">
-                            <div class="review-header">
-                                <div class="review-avatar-wrapper">
-                                    <div class="review-avatar">
-                                        <span>U</span>
-                                    </div>
-                                    <div class="review-name-wrapper">
-                                        <span class="review-name">UAB Doriteksas, ibis Kaunas Centre</span>
-                                    </div>
-                                </div>
-                                <img class="review-google-logo" src="/assets/svgs/quote.svg" alt="Quote" width="24" height="24" aria-hidden="true">
+                        <div class="cs-item">
+                            <div class="cs-flex-group">
+                                <picture class="cs-picture">
+                                    <img src="/assets/svgs/user.svg" alt="" height="50" decoding="async" width="50" class="cs-profile" loading="lazy" aria-hidden="true">
+                                </picture>
+                                <span class="cs-name">Itella Logistics Lietuva</span>
                             </div>
-                            <div class="review-stars">
-                                <svg width="20" height="20" viewBox="0 0 24 24" fill="var(--primary)" xmlns="http://www.w3.org/2000/svg">
-                                    <path d="M12 2L15.09 8.26L22 9.27L17 14.14L18.18 21.02L12 17.77L5.82 21.02L7 14.14L2 9.27L8.91 8.26L12 2Z"/>
-                                </svg>
-                                <svg width="20" height="20" viewBox="0 0 24 24" fill="var(--primary)" xmlns="http://www.w3.org/2000/svg">
-                                    <path d="M12 2L15.09 8.26L22 9.27L17 14.14L18.18 21.02L12 17.77L5.82 21.02L7 14.14L2 9.27L8.91 8.26L12 2Z"/>
-                                </svg>
-                                <svg width="20" height="20" viewBox="0 0 24 24" fill="var(--primary)" xmlns="http://www.w3.org/2000/svg">
-                                    <path d="M12 2L15.09 8.26L22 9.27L17 14.14L18.18 21.02L12 17.77L5.82 21.02L7 14.14L2 9.27L8.91 8.26L12 2Z"/>
-                                </svg>
-                                <svg width="20" height="20" viewBox="0 0 24 24" fill="var(--primary)" xmlns="http://www.w3.org/2000/svg">
-                                    <path d="M12 2L15.09 8.26L22 9.27L17 14.14L18.18 21.02L12 17.77L5.82 21.02L7 14.14L2 9.27L8.91 8.26L12 2Z"/>
-                                </svg>
-                                <svg width="20" height="20" viewBox="0 0 24 24" fill="var(--primary)" xmlns="http://www.w3.org/2000/svg">
-                                    <path d="M12 2L15.09 8.26L22 9.27L17 14.14L18.18 21.02L12 17.77L5.82 21.02L7 14.14L2 9.27L8.91 8.26L12 2Z"/>
-                                </svg>
+                            <div class="wrapper">
+                                <img src="/assets/svgs/stars-5.svg" alt="" height="16" decoding="async" width="96" class="cs-item-stars" loading="lazy" aria-hidden="true">
+                                <p class="cs-review">Norint užtikrinti kokybišką siuntų pristatymą Norint užtikrinti kokybišką siuntų pristatymą Norint užtikrinti kokybišką siuntų pristatymą</p>
                             </div>
-                            <p class="review-text">Norime padėkoti įmonei UAB "AutoVerus" už operatyvų, profesionalų, draugišką bendradarbiavimą. Iškilus nesklandumui - sureaguojama ir išsprendžiama iš karto. Esame labai patenkinti ir jaučiamės saugūs, kad bus išpildyti visi mūsų lūkesčiai. Rekomenduojame.</p>
+                            <img src="/assets/svgs/quote.svg" alt="" height="99" decoding="async" width="120" class="cs-quote" loading="lazy" aria-hidden="true">
                         </div>
                     </div>
-                    <!-- TOP TIER - 3. UAB "Viržis" -->
+
                     <div class="keen-slider__slide">
-                        <div class="review-card">
-                            <div class="review-header">
-                                <div class="review-avatar-wrapper">
-                                    <div class="review-avatar">
-                                        <span>U</span>
-                                    </div>
-                                    <div class="review-name-wrapper">
-                                        <span class="review-name">UAB "Viržis"</span>
-                                    </div>
-                                </div>
-                                <img class="review-google-logo" src="/assets/svgs/quote.svg" alt="Quote" width="24" height="24" aria-hidden="true">
+                        <div class="cs-item">
+                            <div class="cs-flex-group">
+                                <picture class="cs-picture">
+                                    <img src="/assets/svgs/user.svg" alt="" height="50" decoding="async" width="50" class="cs-profile" loading="lazy" aria-hidden="true">
+                                </picture>
+                                <span class="cs-name">Itella Logistics Lietuva</span>
                             </div>
-                            <div class="review-stars">
-                                <svg width="20" height="20" viewBox="0 0 24 24" fill="var(--primary)" xmlns="http://www.w3.org/2000/svg">
-                                    <path d="M12 2L15.09 8.26L22 9.27L17 14.14L18.18 21.02L12 17.77L5.82 21.02L7 14.14L2 9.27L8.91 8.26L12 2Z"/>
-                                </svg>
-                                <svg width="20" height="20" viewBox="0 0 24 24" fill="var(--primary)" xmlns="http://www.w3.org/2000/svg">
-                                    <path d="M12 2L15.09 8.26L22 9.27L17 14.14L18.18 21.02L12 17.77L5.82 21.02L7 14.14L2 9.27L8.91 8.26L12 2Z"/>
-                                </svg>
-                                <svg width="20" height="20" viewBox="0 0 24 24" fill="var(--primary)" xmlns="http://www.w3.org/2000/svg">
-                                    <path d="M12 2L15.09 8.26L22 9.27L17 14.14L18.18 21.02L12 17.77L5.82 21.02L7 14.14L2 9.27L8.91 8.26L12 2Z"/>
-                                </svg>
-                                <svg width="20" height="20" viewBox="0 0 24 24" fill="var(--primary)" xmlns="http://www.w3.org/2000/svg">
-                                    <path d="M12 2L15.09 8.26L22 9.27L17 14.14L18.18 21.02L12 17.77L5.82 21.02L7 14.14L2 9.27L8.91 8.26L12 2Z"/>
-                                </svg>
-                                <svg width="20" height="20" viewBox="0 0 24 24" fill="var(--primary)" xmlns="http://www.w3.org/2000/svg">
-                                    <path d="M12 2L15.09 8.26L22 9.27L17 14.14L18.18 21.02L12 17.77L5.82 21.02L7 14.14L2 9.27L8.91 8.26L12 2Z"/>
-                                </svg>
+                            <div class="wrapper">
+                                <img src="/assets/svgs/stars-5.svg" alt="" height="16" decoding="async" width="96" class="cs-item-stars" loading="lazy" aria-hidden="true">
+                                <p class="cs-review">Norint užtikrinti kokybišką siuntų pristatymą Norint užtikrinti kokybišką siuntų pristatymą Norint užtikrinti kokybišką siuntų pristatymą</p>
                             </div>
-                            <p class="review-text">Penkis metus dirbame su "AutoVerus". Džiaugiamės Jūsų paslaugų kokybe, lankstumu, noru visada padėti ir siekiu tobulėti. Profesionalus požiūris į klientą, greitas prisitaikymas prie poreikių ir atsakingumas yra kokybės ir patikimumo garantas.</p>
+                            <img src="/assets/svgs/quote.svg" alt="" height="99" decoding="async" width="120" class="cs-quote" loading="lazy" aria-hidden="true">
                         </div>
                     </div>
-                    <!-- TOP TIER - 4. HAB "Daigelis" -->
+
                     <div class="keen-slider__slide">
-                        <div class="review-card">
-                            <div class="review-header">
-                                <div class="review-avatar-wrapper">
-                                    <div class="review-avatar">
-                                        <span>H</span>
-                                    </div>
-                                    <div class="review-name-wrapper">
-                                        <span class="review-name">HAB "Daigelis"</span>
-                                    </div>
-                                </div>
-                                <img class="review-google-logo" src="/assets/svgs/quote.svg" alt="Quote" width="24" height="24" aria-hidden="true">
+                        <div class="cs-item">
+                            <div class="cs-flex-group">
+                                <picture class="cs-picture">
+                                    <img src="/assets/svgs/user.svg" alt="" height="50" decoding="async" width="50" class="cs-profile" loading="lazy" aria-hidden="true">
+                                </picture>
+                                <span class="cs-name">Itella Logistics Lietuva</span>
                             </div>
-                            <div class="review-stars">
-                                <svg width="20" height="20" viewBox="0 0 24 24" fill="var(--primary)" xmlns="http://www.w3.org/2000/svg">
-                                    <path d="M12 2L15.09 8.26L22 9.27L17 14.14L18.18 21.02L12 17.77L5.82 21.02L7 14.14L2 9.27L8.91 8.26L12 2Z"/>
-                                </svg>
-                                <svg width="20" height="20" viewBox="0 0 24 24" fill="var(--primary)" xmlns="http://www.w3.org/2000/svg">
-                                    <path d="M12 2L15.09 8.26L22 9.27L17 14.14L18.18 21.02L12 17.77L5.82 21.02L7 14.14L2 9.27L8.91 8.26L12 2Z"/>
-                                </svg>
-                                <svg width="20" height="20" viewBox="0 0 24 24" fill="var(--primary)" xmlns="http://www.w3.org/2000/svg">
-                                    <path d="M12 2L15.09 8.26L22 9.27L17 14.14L18.18 21.02L12 17.77L5.82 21.02L7 14.14L2 9.27L8.91 8.26L12 2Z"/>
-                                </svg>
-                                <svg width="20" height="20" viewBox="0 0 24 24" fill="var(--primary)" xmlns="http://www.w3.org/2000/svg">
-                                    <path d="M12 2L15.09 8.26L22 9.27L17 14.14L18.18 21.02L12 17.77L5.82 21.02L7 14.14L2 9.27L8.91 8.26L12 2Z"/>
-                                </svg>
-                                <svg width="20" height="20" viewBox="0 0 24 24" fill="var(--primary)" xmlns="http://www.w3.org/2000/svg">
-                                    <path d="M12 2L15.09 8.26L22 9.27L17 14.14L18.18 21.02L12 17.77L5.82 21.02L7 14.14L2 9.27L8.91 8.26L12 2Z"/>
-                                </svg>
+                            <div class="wrapper">
+                                <img src="/assets/svgs/stars-5.svg" alt="" height="16" decoding="async" width="96" class="cs-item-stars" loading="lazy" aria-hidden="true">
+                                <p class="cs-review">Norint užtikrinti kokybišką siuntų pristatymą Norint užtikrinti kokybišką siuntų pristatymą Norint užtikrinti kokybišką siuntų pristatymą</p>
                             </div>
-                            <p class="review-text">Keletą metų dirbame su "AutoVerus". Padėjo išspręsti transportavimo problemas. Patinka požiūris į klientą, lankstumas ir žodžio laikymasis. Daug nekalbant-patikima įmonė.</p>
+                            <img src="/assets/svgs/quote.svg" alt="" height="99" decoding="async" width="120" class="cs-quote" loading="lazy" aria-hidden="true">
                         </div>
                     </div>
-                    <!-- TOP TIER - 5. Adomas / Baltic Transline -->
+
                     <div class="keen-slider__slide">
-                        <div class="review-card">
-                            <div class="review-header">
-                                <div class="review-avatar-wrapper">
-                                    <div class="review-avatar">
-                                        <span>A</span>
-                                    </div>
-                                    <div class="review-name-wrapper">
-                                        <span class="review-name">Adomas Baltic Transline</span>
-                                    </div>
-                                </div>
-                                <img class="review-google-logo" src="/assets/svgs/quote.svg" alt="Quote" width="24" height="24" aria-hidden="true">
+                        <div class="cs-item">
+                            <div class="cs-flex-group">
+                                <picture class="cs-picture">
+                                    <img src="/assets/svgs/user.svg" alt="" height="50" decoding="async" width="50" class="cs-profile" loading="lazy" aria-hidden="true">
+                                </picture>
+                                <span class="cs-name">Itella Logistics Lietuva</span>
                             </div>
-                            <div class="review-stars">
-                                <svg width="20" height="20" viewBox="0 0 24 24" fill="var(--primary)" xmlns="http://www.w3.org/2000/svg">
-                                    <path d="M12 2L15.09 8.26L22 9.27L17 14.14L18.18 21.02L12 17.77L5.82 21.02L7 14.14L2 9.27L8.91 8.26L12 2Z"/>
-                                </svg>
-                                <svg width="20" height="20" viewBox="0 0 24 24" fill="var(--primary)" xmlns="http://www.w3.org/2000/svg">
-                                    <path d="M12 2L15.09 8.26L22 9.27L17 14.14L18.18 21.02L12 17.77L5.82 21.02L7 14.14L2 9.27L8.91 8.26L12 2Z"/>
-                                </svg>
-                                <svg width="20" height="20" viewBox="0 0 24 24" fill="var(--primary)" xmlns="http://www.w3.org/2000/svg">
-                                    <path d="M12 2L15.09 8.26L22 9.27L17 14.14L18.18 21.02L12 17.77L5.82 21.02L7 14.14L2 9.27L8.91 8.26L12 2Z"/>
-                                </svg>
-                                <svg width="20" height="20" viewBox="0 0 24 24" fill="var(--primary)" xmlns="http://www.w3.org/2000/svg">
-                                    <path d="M12 2L15.09 8.26L22 9.27L17 14.14L18.18 21.02L12 17.77L5.82 21.02L7 14.14L2 9.27L8.91 8.26L12 2Z"/>
-                                </svg>
-                                <svg width="20" height="20" viewBox="0 0 24 24" fill="var(--primary)" xmlns="http://www.w3.org/2000/svg">
-                                    <path d="M12 2L15.09 8.26L22 9.27L17 14.14L18.18 21.02L12 17.77L5.82 21.02L7 14.14L2 9.27L8.91 8.26L12 2Z"/>
-                                </svg>
+                            <div class="wrapper">
+                                <img src="/assets/svgs/stars-5.svg" alt="" height="16" decoding="async" width="96" class="cs-item-stars" loading="lazy" aria-hidden="true">
+                                <p class="cs-review">Norint užtikrinti kokybišką siuntų pristatymą Norint užtikrinti kokybišką siuntų pristatymą Norint užtikrinti kokybišką siuntų pristatymą</p>
                             </div>
-                            <p class="review-text">Su šia kompanija jau dirbam keletą metų, visada randam bendram kalbą, problemas sprendžia čia ir dabar. Esame labai patenkinti turėdami tokį partnerį.</p>
+                            <img src="/assets/svgs/quote.svg" alt="" height="99" decoding="async" width="120" class="cs-quote" loading="lazy" aria-hidden="true">
                         </div>
                     </div>
-                    <!-- SECOND TIER - 6. Kauno kolegijos studentų atstovybė -->
+
                     <div class="keen-slider__slide">
-                        <div class="review-card">
-                            <div class="review-header">
-                                <div class="review-avatar-wrapper">
-                                    <div class="review-avatar">
-                                        <span>K</span>
-                                    </div>
-                                    <div class="review-name-wrapper">
-                                        <span class="review-name">Kauno kolegijos studentų atstovybė</span>
-                                    </div>
-                                </div>
-                                <img class="review-google-logo" src="/assets/svgs/quote.svg" alt="Quote" width="24" height="24" aria-hidden="true">
+                        <div class="cs-item">
+                            <div class="cs-flex-group">
+                                <picture class="cs-picture">
+                                    <img src="/assets/svgs/user.svg" alt="" height="50" decoding="async" width="50" class="cs-profile" loading="lazy" aria-hidden="true">
+                                </picture>
+                                <span class="cs-name">Itella Logistics Lietuva</span>
                             </div>
-                            <div class="review-stars">
-                                <svg width="20" height="20" viewBox="0 0 24 24" fill="var(--primary)" xmlns="http://www.w3.org/2000/svg">
-                                    <path d="M12 2L15.09 8.26L22 9.27L17 14.14L18.18 21.02L12 17.77L5.82 21.02L7 14.14L2 9.27L8.91 8.26L12 2Z"/>
-                                </svg>
-                                <svg width="20" height="20" viewBox="0 0 24 24" fill="var(--primary)" xmlns="http://www.w3.org/2000/svg">
-                                    <path d="M12 2L15.09 8.26L22 9.27L17 14.14L18.18 21.02L12 17.77L5.82 21.02L7 14.14L2 9.27L8.91 8.26L12 2Z"/>
-                                </svg>
-                                <svg width="20" height="20" viewBox="0 0 24 24" fill="var(--primary)" xmlns="http://www.w3.org/2000/svg">
-                                    <path d="M12 2L15.09 8.26L22 9.27L17 14.14L18.18 21.02L12 17.77L5.82 21.02L7 14.14L2 9.27L8.91 8.26L12 2Z"/>
-                                </svg>
-                                <svg width="20" height="20" viewBox="0 0 24 24" fill="var(--primary)" xmlns="http://www.w3.org/2000/svg">
-                                    <path d="M12 2L15.09 8.26L22 9.27L17 14.14L18.18 21.02L12 17.77L5.82 21.02L7 14.14L2 9.27L8.91 8.26L12 2Z"/>
-                                </svg>
-                                <svg width="20" height="20" viewBox="0 0 24 24" fill="var(--primary)" xmlns="http://www.w3.org/2000/svg">
-                                    <path d="M12 2L15.09 8.26L22 9.27L17 14.14L18.18 21.02L12 17.77L5.82 21.02L7 14.14L2 9.27L8.91 8.26L12 2Z"/>
-                                </svg>
+                            <div class="wrapper">
+                                <img src="/assets/svgs/stars-5.svg" alt="" height="16" decoding="async" width="96" class="cs-item-stars" loading="lazy" aria-hidden="true">
+                                <p class="cs-review">Norint užtikrinti kokybišką siuntų pristatymą Norint užtikrinti kokybišką siuntų pristatymą Norint užtikrinti kokybišką siuntų pristatymą</p>
                             </div>
-                            <p class="review-text">Malonus bendradarbiavimas, lengva surasti bendrą kalbą ir labai puikus aptarnavimas! Padėjo išspręsti transportavimo problemas. Labai džiaugiamės turėję bendrų reikalų ir tikimės tolimesnio malonaus bendradarbiavimo.</p>
+                            <img src="/assets/svgs/quote.svg" alt="" height="99" decoding="async" width="120" class="cs-quote" loading="lazy" aria-hidden="true">
                         </div>
                     </div>
-                    <!-- SECOND TIER - 7. O DURYS -->
-                    <div class="keen-slider__slide">
-                        <div class="review-card">
-                            <div class="review-header">
-                                <div class="review-avatar-wrapper">
-                                    <div class="review-avatar">
-                                        <span>O</span>
-                                    </div>
-                                    <div class="review-name-wrapper">
-                                        <span class="review-name">O DURYS</span>
-                                    </div>
-                                </div>
-                                <img class="review-google-logo" src="/assets/svgs/quote.svg" alt="Quote" width="24" height="24" aria-hidden="true">
-                            </div>
-                            <div class="review-stars">
-                                <svg width="20" height="20" viewBox="0 0 24 24" fill="var(--primary)" xmlns="http://www.w3.org/2000/svg">
-                                    <path d="M12 2L15.09 8.26L22 9.27L17 14.14L18.18 21.02L12 17.77L5.82 21.02L7 14.14L2 9.27L8.91 8.26L12 2Z"/>
-                                </svg>
-                                <svg width="20" height="20" viewBox="0 0 24 24" fill="var(--primary)" xmlns="http://www.w3.org/2000/svg">
-                                    <path d="M12 2L15.09 8.26L22 9.27L17 14.14L18.18 21.02L12 17.77L5.82 21.02L7 14.14L2 9.27L8.91 8.26L12 2Z"/>
-                                </svg>
-                                <svg width="20" height="20" viewBox="0 0 24 24" fill="var(--primary)" xmlns="http://www.w3.org/2000/svg">
-                                    <path d="M12 2L15.09 8.26L22 9.27L17 14.14L18.18 21.02L12 17.77L5.82 21.02L7 14.14L2 9.27L8.91 8.26L12 2Z"/>
-                                </svg>
-                                <svg width="20" height="20" viewBox="0 0 24 24" fill="var(--primary)" xmlns="http://www.w3.org/2000/svg">
-                                    <path d="M12 2L15.09 8.26L22 9.27L17 14.14L18.18 21.02L12 17.77L5.82 21.02L7 14.14L2 9.27L8.91 8.26L12 2Z"/>
-                                </svg>
-                                <svg width="20" height="20" viewBox="0 0 24 24" fill="var(--primary)" xmlns="http://www.w3.org/2000/svg">
-                                    <path d="M12 2L15.09 8.26L22 9.27L17 14.14L18.18 21.02L12 17.77L5.82 21.02L7 14.14L2 9.27L8.91 8.26L12 2Z"/>
-                                </svg>
-                            </div>
-                            <p class="review-text">Ačiū vadybininkui Mantui, už supratingumą ir greita komunikaciją. Rekomenduoju šią įmonę, dėl kainų, tvarkingo transporto ir orientacija į klientą.</p>
-                        </div>
-                    </div>
-                    <!-- SECOND TIER - 8. RMI muzikos servisas -->
-                    <div class="keen-slider__slide">
-                        <div class="review-card">
-                            <div class="review-header">
-                                <div class="review-avatar-wrapper">
-                                    <div class="review-avatar">
-                                        <span>R</span>
-                                    </div>
-                                    <div class="review-name-wrapper">
-                                        <span class="review-name">RMI muzikos servisas</span>
-                                    </div>
-                                </div>
-                                <img class="review-google-logo" src="/assets/svgs/quote.svg" alt="Quote" width="24" height="24" aria-hidden="true">
-                            </div>
-                            <div class="review-stars">
-                                <svg width="20" height="20" viewBox="0 0 24 24" fill="var(--primary)" xmlns="http://www.w3.org/2000/svg">
-                                    <path d="M12 2L15.09 8.26L22 9.27L17 14.14L18.18 21.02L12 17.77L5.82 21.02L7 14.14L2 9.27L8.91 8.26L12 2Z"/>
-                                </svg>
-                                <svg width="20" height="20" viewBox="0 0 24 24" fill="var(--primary)" xmlns="http://www.w3.org/2000/svg">
-                                    <path d="M12 2L15.09 8.26L22 9.27L17 14.14L18.18 21.02L12 17.77L5.82 21.02L7 14.14L2 9.27L8.91 8.26L12 2Z"/>
-                                </svg>
-                                <svg width="20" height="20" viewBox="0 0 24 24" fill="var(--primary)" xmlns="http://www.w3.org/2000/svg">
-                                    <path d="M12 2L15.09 8.26L22 9.27L17 14.14L18.18 21.02L12 17.77L5.82 21.02L7 14.14L2 9.27L8.91 8.26L12 2Z"/>
-                                </svg>
-                                <svg width="20" height="20" viewBox="0 0 24 24" fill="var(--primary)" xmlns="http://www.w3.org/2000/svg">
-                                    <path d="M12 2L15.09 8.26L22 9.27L17 14.14L18.18 21.02L12 17.77L5.82 21.02L7 14.14L2 9.27L8.91 8.26L12 2Z"/>
-                                </svg>
-                                <svg width="20" height="20" viewBox="0 0 24 24" fill="var(--primary)" xmlns="http://www.w3.org/2000/svg">
-                                    <path d="M12 2L15.09 8.26L22 9.27L17 14.14L18.18 21.02L12 17.77L5.82 21.02L7 14.14L2 9.27L8.91 8.26L12 2Z"/>
-                                </svg>
-                            </div>
-                            <p class="review-text">Tik geri atsiliepimai apie šią įmonę, šiltas bendravimas, lanksčios sąlygos ir greitas problemų sprendimas. Rekomenduojame.</p>
-                        </div>
-                    </div>
-                    <!-- SECOND TIER - 9. MB Žiedų planeta -->
-                    <div class="keen-slider__slide">
-                        <div class="review-card">
-                            <div class="review-header">
-                                <div class="review-avatar-wrapper">
-                                    <div class="review-avatar">
-                                        <span>M</span>
-                                    </div>
-                                    <div class="review-name-wrapper">
-                                        <span class="review-name">MB Žiedų planeta</span>
-                                    </div>
-                                </div>
-                                <img class="review-google-logo" src="/assets/svgs/quote.svg" alt="Quote" width="24" height="24" aria-hidden="true">
-                            </div>
-                            <div class="review-stars">
-                                <svg width="20" height="20" viewBox="0 0 24 24" fill="var(--primary)" xmlns="http://www.w3.org/2000/svg">
-                                    <path d="M12 2L15.09 8.26L22 9.27L17 14.14L18.18 21.02L12 17.77L5.82 21.02L7 14.14L2 9.27L8.91 8.26L12 2Z"/>
-                                </svg>
-                                <svg width="20" height="20" viewBox="0 0 24 24" fill="var(--primary)" xmlns="http://www.w3.org/2000/svg">
-                                    <path d="M12 2L15.09 8.26L22 9.27L17 14.14L18.18 21.02L12 17.77L5.82 21.02L7 14.14L2 9.27L8.91 8.26L12 2Z"/>
-                                </svg>
-                                <svg width="20" height="20" viewBox="0 0 24 24" fill="var(--primary)" xmlns="http://www.w3.org/2000/svg">
-                                    <path d="M12 2L15.09 8.26L22 9.27L17 14.14L18.18 21.02L12 17.77L5.82 21.02L7 14.14L2 9.27L8.91 8.26L12 2Z"/>
-                                </svg>
-                                <svg width="20" height="20" viewBox="0 0 24 24" fill="var(--primary)" xmlns="http://www.w3.org/2000/svg">
-                                    <path d="M12 2L15.09 8.26L22 9.27L17 14.14L18.18 21.02L12 17.77L5.82 21.02L7 14.14L2 9.27L8.91 8.26L12 2Z"/>
-                                </svg>
-                                <svg width="20" height="20" viewBox="0 0 24 24" fill="var(--primary)" xmlns="http://www.w3.org/2000/svg">
-                                    <path d="M12 2L15.09 8.26L22 9.27L17 14.14L18.18 21.02L12 17.77L5.82 21.02L7 14.14L2 9.27L8.91 8.26L12 2Z"/>
-                                </svg>
-                            </div>
-                            <p class="review-text">Jau keletą metų jau metų AutoVerus įmonė išvežioja mūsų produkciją klientams, esame labai patenkinti šios įmonės teikiamomis paslaugomis ! Ačiū už bendradarbiavimą !!!</p>
-                        </div>
-                    </div>
-                    <!-- SECOND TIER - 10. Andrius -->
-                    <div class="keen-slider__slide">
-                        <div class="review-card">
-                            <div class="review-header">
-                                <div class="review-avatar-wrapper">
-                                    <div class="review-avatar">
-                                        <span>A</span>
-                                    </div>
-                                    <div class="review-name-wrapper">
-                                        <span class="review-name">Andrius</span>
-                                    </div>
-                                </div>
-                                <img class="review-google-logo" src="/assets/svgs/quote.svg" alt="Quote" width="24" height="24" aria-hidden="true">
-                            </div>
-                            <div class="review-stars">
-                                <svg width="20" height="20" viewBox="0 0 24 24" fill="var(--primary)" xmlns="http://www.w3.org/2000/svg">
-                                    <path d="M12 2L15.09 8.26L22 9.27L17 14.14L18.18 21.02L12 17.77L5.82 21.02L7 14.14L2 9.27L8.91 8.26L12 2Z"/>
-                                </svg>
-                                <svg width="20" height="20" viewBox="0 0 24 24" fill="var(--primary)" xmlns="http://www.w3.org/2000/svg">
-                                    <path d="M12 2L15.09 8.26L22 9.27L17 14.14L18.18 21.02L12 17.77L5.82 21.02L7 14.14L2 9.27L8.91 8.26L12 2Z"/>
-                                </svg>
-                                <svg width="20" height="20" viewBox="0 0 24 24" fill="var(--primary)" xmlns="http://www.w3.org/2000/svg">
-                                    <path d="M12 2L15.09 8.26L22 9.27L17 14.14L18.18 21.02L12 17.77L5.82 21.02L7 14.14L2 9.27L8.91 8.26L12 2Z"/>
-                                </svg>
-                                <svg width="20" height="20" viewBox="0 0 24 24" fill="var(--primary)" xmlns="http://www.w3.org/2000/svg">
-                                    <path d="M12 2L15.09 8.26L22 9.27L17 14.14L18.18 21.02L12 17.77L5.82 21.02L7 14.14L2 9.27L8.91 8.26L12 2Z"/>
-                                </svg>
-                                <svg width="20" height="20" viewBox="0 0 24 24" fill="var(--primary)" xmlns="http://www.w3.org/2000/svg">
-                                    <path d="M12 2L15.09 8.26L22 9.27L17 14.14L18.18 21.02L12 17.77L5.82 21.02L7 14.14L2 9.27L8.91 8.26L12 2Z"/>
-                                </svg>
-                            </div>
-                            <p class="review-text">Kelis metus draugaujame su AutoVerus. Naudojamės auto paslaugomis, nuomojamės automobilius, važiuojame į žygius kalnuose visoje europoje. Esame labai patenkinti ir toliau tęsime bendradarbiavimą. Jokių nesklandumų. Ačiū įmonės vadovui.</p>
-                        </div>
-                    </div>
+
                 </div>
             </div>
             <button class="cs-slider-arrow cs-slider-next" aria-label="Next slide">

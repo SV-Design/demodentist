@@ -4,64 +4,48 @@
 
         <div class="cs-content">
             <h2 class="cs-title">Turite klausimų? Susisiekite</h2>
-            <p class="cs-text">Bendradarbiaujame tiek su įvairių sektorių įmonėmis, tiek su privačiais klientais. Nesvarbu, ar ieškote transporto statybos objektams aptarnauti, ar planuojate tolimą kelionę su kompanija – padėsime išsirinkti tinkamiausią mikroautobusą. Tiesiog susisiekite su mumis, o mes atsakysime į visus klausimus ir rezervuosime jums reikalingą automobilį.</p>
+            <p class="cs-text">Bendradarbiaujame tiek su įvairių sektorių įmonėmis, tiek su privačiais klientais. Nesvarbu, ar ieškote transporto statybos objektams aptarnauti, ar planuojate tolimą kelionę su kompanija – padėsime išsirinkti tinkamiausią mikroautobusą.</p>
             <div class="cs-contact-sections">
-                <!-- Kaunas Section -->
+
                 <div class="cs-contact-section">
-                    <h3 class="cs-city-title">Kaunas</h3>
+<!--                    <h3 class="cs-city-title">Kaunas</h3>-->
                     <ul class="cs-ul">
                         <li class="cs-li">
                             <picture class="cs-icon-wrapper">
                                 <img alt="Phone icon" decoding="async" height="40" src="/assets/svgs/icon-phone.svg" width="40" class="cs-icon" aria-hidden="true">
                             </picture>
                             <div class="cs-flex-group">
-                                <span class="cs-header">Telefonas</span>
-                                <a class="cs-link" href="tel:{{ client.phoneForTel }}">{{ client.phoneFormatted }}</a>
-                            </div>
-                        </li>
-                        <li class="cs-li">
-                            <picture class="cs-icon-wrapper">
-                                <img alt="Email icon" decoding="async" height="40" src="/assets/svgs/icon-mail.svg" width="40" class="cs-icon" aria-hidden="true">
-                            </picture>
-                            <div class="cs-flex-group">
-                                <span class="cs-header">El. paštas</span>
-                                <a class="cs-link" href="mailto:{{ client.email }}">{{ client.email }}</a>
-                            </div>
-                        </li>
-                        <li class="cs-li">
-                            <picture class="cs-icon-wrapper">
-                                <img alt="Location pin icon" decoding="async" height="40" src="/assets/svgs/icon-pin.svg" width="40" class="cs-icon" aria-hidden="true">
-                            </picture>
-                            <div class="cs-flex-group">
-                                <span class="cs-header">Adresas</span>
-                                <div class="cs-link">{{ client.address.lineOne }}, {{ client.address.city }}</div>
+                                <span class="cs-header">Tel. numeris</span>
+                                <a class="cs-link" href="tel:+37067253339">+370 672 53339</a>
                             </div>
                         </li>
                     </ul>
                 </div>
 
-                <!-- Vilnius Section -->
                 <div class="cs-contact-section">
-                    <h3 class="cs-city-title">Vilnius</h3>
                     <ul class="cs-ul">
                         <li class="cs-li">
                             <picture class="cs-icon-wrapper">
                                 <img alt="Phone icon" decoding="async" height="40" src="/assets/svgs/icon-phone.svg" width="40" class="cs-icon" aria-hidden="true">
                             </picture>
                             <div class="cs-flex-group">
-                                <span class="cs-header">Telefonas</span>
-                                <a class="cs-link" href="tel:{{ client.phone2ForTel }}">{{ client.phone2Formatted }}</a>
-                            </div>
-                        </li>
-                        <li class="cs-li">
-                            <picture class="cs-icon-wrapper">
-                                <img alt="Email icon" decoding="async" height="40" src="/assets/svgs/icon-mail.svg" width="40" class="cs-icon" aria-hidden="true">
-                            </picture>
-                            <div class="cs-flex-group">
                                 <span class="cs-header">El. paštas</span>
-                                <a class="cs-link" href="mailto:{{ client.email2 }}">{{ client.email2 }}</a>
+                                <a class="cs-link" href="tel:+37037260659">+370 37 260659</a>
                             </div>
                         </li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="cs-contact-sections">
+                <div class="cs-contact-section">
+                    <ul class="cs-ul">
+                        <li class="cs-li"><picture class="cs-icon-wrapper"><img src="/assets/svgs/business-hours.svg" alt="Adreso ikona" height="40" decoding="async" width="40" class="cs-icon" aria-hidden="true"></picture><div class="cs-flex-group"><span class="cs-header">Darbo laikas</span> <a href="/kontaktai/" class="cs-link">I - V (9:00 - 19:30), VI - VII (nedirbame).</a></div></li>
+                    </ul>
+                </div>
+
+                <div class="cs-contact-section">
+                    <ul class="cs-ul">
                         <li class="cs-li">
                             <picture class="cs-icon-wrapper">
                                 <img alt="Location pin icon" decoding="async" height="40" src="/assets/svgs/icon-pin.svg" width="40" class="cs-icon" aria-hidden="true">
@@ -73,53 +57,19 @@
                         </li>
                     </ul>
                 </div>
+
+
+
             </div>
 
-            <!-- Vadybininkas and Buhalterija Sections -->
-            <div class="cs-contact-sections" style="border-top: 1px solid rgba(0, 0, 0, 0.1); padding-top: 2rem;">
-                <!-- Vadybininkas Section -->
-                <div class="cs-contact-section">
-                    <ul class="cs-ul">
-                        <li class="cs-li">
-                            <picture class="cs-icon-wrapper">
-                                <img alt="Phone icon" decoding="async" height="40" src="/assets/svgs/icon-phone.svg" width="40" class="cs-icon" aria-hidden="true">
-                            </picture>
-                            <div class="cs-flex-group">
-                                <span class="cs-header">Pagr. Vadybininkas</span>
-                                <a class="cs-link" href="tel:+37067253339">+370 672 53339</a>
-                            </div>
-                        </li>
-                    </ul>
-                </div>
-
-                <!-- Buhalterija Section -->
-                <div class="cs-contact-section">
-                    <ul class="cs-ul">
-                        <li class="cs-li">
-                            <picture class="cs-icon-wrapper">
-                                <img alt="Phone icon" decoding="async" height="40" src="/assets/svgs/icon-phone.svg" width="40" class="cs-icon" aria-hidden="true">
-                            </picture>
-                            <div class="cs-flex-group">
-                                <span class="cs-header">Buhalterija</span>
-                                <a class="cs-link" href="tel:+37037260659">+370 37 260659</a>
-                            </div>
-                        </li>
-                    </ul>
-                </div>
+            <div class="cta-map" aria-label="Map">
+                <iframe
+                        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2292.6064603557743!2d23.970226315905975!3d54.927377662813846!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x46e718f8616eaeb1%3A0x245206284cecfd72!2sPramon%C4%97s%20pr.%20103%2C%20Kaunas%2049281!5e0!3m2!1sen!2slt!4v1611087958811!5m2!1sen!2slt"
+                        loading="lazy"
+                        referrerpolicy="no-referrer-when-downgrade"
+                        allowfullscreen="">
+                </iframe>
             </div>
-
-            <!-- Business Hours Section (Full Width) -->
-<!--            <ul class="cs-ul cs-business-hours">-->
-<!--                <li class="cs-li">-->
-<!--                    <picture class="cs-icon-wrapper">-->
-<!--                        <img alt="Clock icon" decoding="async" height="40" src="/assets/svgs/business-hours.svg" width="40" class="cs-icon" aria-hidden="true">-->
-<!--                    </picture>-->
-<!--                    <div class="cs-flex-group">-->
-<!--                        <span class="cs-header">Darbo laikas</span>-->
-<!--                        <a href="/kontaktai/" class="cs-link">Pagal susitarimą</a>-->
-<!--                    </div>-->
-<!--                </li>-->
-<!--            </ul>-->
         </div>
 
         <!-- Success Message -->
