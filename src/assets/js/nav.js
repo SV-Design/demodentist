@@ -68,6 +68,7 @@ for (const link of thirdLevelLinks) {
 // after scrolling down 100px, add .scroll class to the #cs-navigation
 // Cache DOM element to avoid repeated queries
 const navigation = document.querySelector('#cs-navigation');
+const backToTopButton = document.querySelector('.back-to-top');
 let isScrolled = false;
 
 // Throttled scroll handler to prevent forced reflows
@@ -81,9 +82,15 @@ function handleScroll() {
         if (isScrolled) {
             navigation.classList.add('scroll');
             navigation.classList.remove('top');
+            if (backToTopButton) {
+                backToTopButton.classList.add('show');
+            }
         } else {
             navigation.classList.remove('scroll');
             navigation.classList.add('top');
+            if (backToTopButton) {
+                backToTopButton.classList.remove('show');
+            }
         }
     }
 }
@@ -96,6 +103,16 @@ document.addEventListener('scroll', () => {
     }
     scrollTimeout = requestAnimationFrame(handleScroll);
 }, { passive: true });
+
+// Back to top button click handler
+if (backToTopButton) {
+    backToTopButton.addEventListener('click', () => {
+        window.scrollTo({
+            top: 0,
+            behavior: 'smooth'
+        });
+    });
+}
 
 /* Contact form JS */
 
