@@ -890,6 +890,15 @@
     }
 }
 
+/* Below 768px - Adjust .cs-logos width and positioning */
+@media only screen and (max-width: 47.9375rem) {
+    .cs-logos {
+        width: calc(100% + 2rem);
+        margin-left: -1rem;
+        opacity: 1;
+    }
+}
+
 /* Map FAQ Section */
 @media only screen and (min-width: 0rem) {
     #map-faq-2251 {
@@ -1083,6 +1092,57 @@
     }
 }
 
+/* Team and Reviews Unified Wrapper */
+.team-reviews-wrapper {
+    position: relative;
+    background-color: #fff;
+    overflow: hidden;
+}
+
+/* Unified Blue Stripe Background - spans from middle of team cards to middle of review cards */
+.team-reviews-stripe {
+    position: absolute;
+    left: 0;
+    right: 0;
+    width: 100%;
+    background-color: var(--primary);
+    background-image: url(/assets/svgs/stripe.png);
+    background-size: 30px auto;
+    z-index: 0;
+    pointer-events: none;
+    /* Position starts from middle of team section (where middle card is) */
+    /* and ends at middle of reviews section (where middle card is) */
+    top: 50%;
+    bottom: 50%;
+    min-height: 30%;
+}
+
+@media only screen and (min-width: 0rem) {
+    .team-reviews-stripe {
+        /* Mobile: Adjust percentages to align with middle cards */
+        top: 35%;
+        bottom: 35%;
+        min-height: 30%;
+    }
+}
+
+@media only screen and (min-width: 48rem) {
+    .team-reviews-stripe {
+        /* Tablet: Fine-tune positioning */
+        top: 38%;
+        bottom: 38%;
+        min-height: 24%;
+    }
+}
+
+@media only screen and (min-width: 64rem) {
+    .team-reviews-stripe {
+        /* Desktop: Precise alignment with middle cards */
+        top: 36.4%;
+        bottom: 40%;
+        min-height: 693px;
+    }
+}
 
 #reviews-slider-section {
     padding: var(--sectionPadding);
@@ -1092,31 +1152,14 @@
     padding-top: 0;
 }
 
+/* Reviews section white background handled by wrapper */
 #reviews-slider-section::after {
-    content: '';
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    width: 100%;
-    height: 47%;
-    background-color: #fff;
-    z-index: 0;
-    pointer-events: none;
+    display: none;
 }
 
+/* Removed individual .cs-waves - using unified .team-reviews-stripe instead */
 #reviews-slider-section .cs-waves {
-    width: 100%;
-    height: 58%;
-    background-color: var(--primary);
-    background-image: url(/assets/svgs/stripe.png);
-    background-size: 30px auto;
-    display: block;
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    z-index: 0;
-    pointer-events: none;
+    display: none;
 }
 
 #reviews-slider-section .cs-container {
@@ -2020,32 +2063,14 @@
         pointer-events: none;
     }
 
+    /* Team section white background handled by wrapper */
     #team-section::after {
-        content: '';
-        position: absolute;
-        top: 0;
-        left: 0;
-        width: 100%;
-        height: 61%;
-        background-color: #fff;
-        z-index: 0;
-        pointer-events: none;
+        display: none;
     }
 
+    /* Removed individual .cs-waves - using unified .team-reviews-stripe instead */
     #team-section .cs-waves {
-        width: 100%;
-        height: 50%;
-        background-color: var(--primary);
-        background-image: url(/assets/svgs/stripe.png);
-        background-size: 30px auto;
-        display: block;
-        position: absolute;
-        bottom: 0;
-        left: 0;
-        right: 0;
-        z-index: 0;
-        pointer-events: none;
-        min-height: 200px;
+        display: none;
     }
 
     #team-section .cs-container {
@@ -2577,7 +2602,7 @@
 @media only screen and (min-width: 64rem) {
   #sbs-945 .cs-container {
     align-items:center;
-    flex-direction: row;
+    flex-direction: row-reverse;
     justify-content: space-between;
     max-width: 80rem
   }

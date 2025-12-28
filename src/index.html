@@ -259,24 +259,6 @@ tags: "sitemap" # content/content.json will make sure that all pages in content/
             <span class="cs-topper">Apie mus</span>
             <h2 class="cs-title">Dirbame taip, lyg <span style="color: var(--primary);">pirktume</span> ar <span style="color: var(--primary);">parduotume</span> sau</h2>
             <p class="cs-text">Esame automobilių entuziastų komanda, todėl puikiai suprantame, su kokiais rūpesčiais susiduriate. Jei norite parduoti automobilį, pamirškite varginančius skelbimus ir derybas. Kadangi neturime didelių biurų ir gausybės vadybininkų, galime pasiūlyti sąžiningą kainą už bet kokios būklės transporto priemonę. Pasirūpinsime visais dokumentais ir atsiskaitysime iš karto. Ieškote automobilio? Galime padėti ir čia. Taupydami jūsų laiką surasime lūkesčius atitinkantį variantą. O jei jau turite nusižiūrėję automobilį, atliksime nuodugnią patikrą, kad būtumėte ramūs dėl savo pirkinio. Atvykstame į bet kurią Lietuvos vietą.</p>
-            <div class="cs-contact-group">
-                <a href="mailto:{{ client.email }}" class="cs-link">
-                    <picture class="cs-wrapper"><img src="assets/svgs/icon-mail.svg" alt="icon" decoding="async" height="24" width="24" class="cs-icon" loading="lazy"></picture>
-                    <div class="cs-info"><span class="cs-header">El. paštas</span> <span class="cs-link-content">{{ client.email }}</span></div>
-                </a>
-                <a href="tel:{{ client.phoneForTel }}" class="cs-link">
-                    <picture class="cs-wrapper"><img src="assets/svgs/icon-phone.svg" alt="icon" decoding="async" height="24" width="24" class="cs-icon" loading="lazy"></picture>
-                    <div class="cs-info"><span class="cs-header">Telefonas</span> <span class="cs-link-content">{{ client.phoneFormatted }}</span></div>
-                </a>
-                <a href="tel:{{ client.phone2ForTel }}" class="cs-link">
-                    <picture class="cs-wrapper"><img src="assets/svgs/icon-phone.svg" alt="icon" decoding="async" height="24" width="24" class="cs-icon" loading="lazy"></picture>
-                    <div class="cs-info"><span class="cs-header">Telefonas</span> <span class="cs-link-content">{{ client.phone2Formatted }}</span></div>
-                </a>
-                <a href="#" class="cs-link">
-                    <picture class="cs-wrapper"><img src="assets/svgs/icon-pin.svg" alt="icon" decoding="async" height="24" width="24" class="cs-icon" loading="lazy"></picture>
-                    <div class="cs-info"><span class="cs-header">Dirbame</span> <span class="cs-link-content">Visoje Lietuvoje</span></div>
-                </a>
-            </div>
             <a href="/apie-mus/" class="cs-button-solid" aria-label="Plačiau apie mus">Plačiau apie mus</a>
         </div>
     </div>
@@ -294,6 +276,7 @@ tags: "sitemap" # content/content.json will make sure that all pages in content/
 <!--           Hero Journey Section               -->
 <!-- ============================================ -->
 
+<div class="team-reviews-wrapper">
 <section id="team-section">
     <div class="cs-container">
         <div class="team-content">
@@ -371,7 +354,6 @@ tags: "sitemap" # content/content.json will make sure that all pages in content/
             <!-- <div class="cs-slider-dots" id="team-slider-dots"></div> -->
         </div>
     </div>
-    <div class="cs-waves"></div>
 </section>
 
 <script defer src="/assets/js/team-slider.js"></script>
@@ -494,8 +476,9 @@ tags: "sitemap" # content/content.json will make sure that all pages in content/
             Daugiau atsiliepimų
         </a>
     </div>
-    <div class="cs-waves"></div>
 </section>
+<div class="team-reviews-stripe"></div>
+</div>
 
 
 

@@ -245,10 +245,50 @@
 @media only screen and (max-width: 63.9375rem) {
   #hero-288 .cs-stats-group {
     margin-bottom: clamp(1.75rem, 3.92vw, 2.5rem);
+    text-align: left;
+    margin-right: auto;
   }
 
   #hero-288 .cs-waves {
     border-radius: 0;
+  }
+
+  #hero-288 .cs-title,
+  #hero-288 .cs-text {
+    max-width: 36.5625rem;
+  }
+}
+
+/* Below 450px - Adjust button spacing and padding */
+@media only screen and (max-width: 768px) {
+  #hero-288 .cs-button-group {
+    gap: 0.5rem;
+  }
+
+  #hero-288 .cs-button-solid {
+    gap: 6px;
+    padding: 0 1rem;
+  }
+
+  #hero-288 .cs-button-phone {
+    gap: 2px;
+  }
+}
+
+/* Below 410px - Change phone button text to "Skambinti" */
+@media only screen and (max-width: 25.625rem) {
+  #hero-288 .cs-button-phone p {
+    font-size: 0;
+    line-height: 0;
+    visibility: hidden;
+  }
+
+  #hero-288 .cs-button-phone p::before {
+    content: "Skambinti";
+    font-size: 1rem;
+    line-height: 3.125em;
+    visibility: visible;
+    display: block;
   }
 }
 
