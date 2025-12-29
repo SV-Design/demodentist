@@ -1,0 +1,440 @@
+/* Modal Content Details Styling */
+#modal-img {
+  display: block;
+  width: 130px; /* Slightly larger image */
+  height: 130px;
+  border-radius: 1rem; /* Circular image */
+  object-fit: cover;
+  margin: 0 auto 25px auto; /* More space below image */
+  border: 5px solid #fff; /* White border */
+  box-shadow: 0 3px 8px rgba(0,0,0,0.2); /* Clearer shadow */
+}
+#modal-details {
+  text-align: center;
+}
+#modal-name {
+  margin-top: 0;
+  margin-bottom: 8px; /* Increased space */
+  font-size: 2em; /* Larger name */
+  color: #222;
+  font-weight: 600;
+}
+#modal-title {
+  margin-top: 0;
+  margin-bottom: 25px; /* Increased space */
+  font-size: 1.3em; /* Larger title */
+  color: var(--primary); /* Example primary color */
+  font-weight: bold;
+}
+#modal-details hr {
+  border: 0;
+  border-top: 1px solid #eee;
+  margin: 30px 0; /* More space around HR */
+}
+#modal-extra-info {
+  text-align: left;
+  font-size: 1em; /* Slightly larger base text */
+  color: #444;
+  line-height: 1.7; /* Better readability */
+}
+.modal-section {
+  margin-bottom: 25px; /* More space between sections */
+}
+.modal-section strong {
+  display: block;
+  margin-bottom: 12px; /* More space below heading */
+  font-size: 1.2em; /* Larger section heading */
+  color: #333;
+  border-bottom: 2px solid #eee; /* Thicker border */
+  padding-bottom: 8px;
+  font-weight: 600;
+}
+.modal-section p,
+.modal-section ul,
+.modal-section li {
+  margin-bottom: 10px; /* Consistent spacing */
+  color: #555; /* Slightly lighter text */
+}
+.modal-section ul {
+  padding-left: 25px;
+  list-style: disc;
+}
+/* Ensure raw HTML content flows well */
+#modal-bio p, #modal-bio ul, #modal-bio li {
+  margin-bottom: 0.8em;
+  line-height: 1.7;
+}
+#modal-bio h5 { /* Style headings coming from bioHtml */
+  font-size: 1.1em;
+  margin-top: 1.5em;
+  margin-bottom: 0.6em;
+  color: #333;
+  font-weight: bold;
+}
+
+@keyframes fadeInScale {
+  from { opacity: 0; transform: translateY(10px) scale(0.98); }
+  to { opacity: 1; transform: translateY(0) scale(1); }
+}
+
+/* --- START: Essential Modal Styles --- */
+#modal {
+  /* Visibility & Positioning */
+  display: none; /* Crucial: Hidden by default, JS sets to flex */
+  position: fixed; /* Stick to viewport */
+  inset: 0; /* Replaces top:0, left:0, right:0, bottom:0 */
+  width: 100%;
+  height: 100%;
+  z-index: 1000; /* High z-index */
+
+  /* Centering Content */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  /* Background Overlay */
+  background-color: rgba(0, 0, 0, 0.7); /* Slightly darker overlay */
+  top: 40px;
+  box-sizing: border-box; /* Include padding in width/height */
+}
+
+.modal-content {
+  /* Appearance */
+  background-color: #fefefe;
+  padding: 30px 35px; /* More padding */
+  border-radius: 10px;
+  box-shadow: 0 5px 20px rgba(0, 0, 0, 0.25);
+
+  /* Sizing & Scrolling */
+  width: 90%; /* Relative width */
+  max-width: 750px; /* Max width */
+  max-height: 75%; /* Max height (85% of viewport height) */
+  overflow-y: auto; /* Enable vertical scroll *within* the content box */
+
+  /* Positioning & Stacking */
+  position: relative; /* For close button positioning */
+  z-index: 1001; /* Above the overlay */
+  margin: auto; /* Helps centering but flex on parent is primary */
+
+  /* Animation */
+  animation: fadeInScale 0.3s ease-out;
+}
+
+.close-button {
+  position: absolute;
+  top: 10px;
+  right: 15px;
+  font-size: 2.5rem; /* Larger close button */
+  font-weight: bold;
+  line-height: 1;
+  color: #888;
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 5px; /* Easier to click */
+  transition: color 0.2s ease;
+}
+.close-button:hover {
+  color: #333;
+}
+
+@keyframes fadeInScale {
+  from {
+    opacity: 0;
+    transform: scale(0.95);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+#meet-team-2080 .cs-item{
+  cursor: pointer;
+  transition: transform 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
+}
+#meet-team-2080 .cs-item:hover {
+  transform: scale(1.03);
+  box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+}
+
+#meet-team-2080 .cs-item::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: #2054A4;
+  opacity: 0; /* Initially transparent */
+  transition: opacity 0.3s ease-in-out;
+  z-index: 1;
+}
+
+#meet-team-2080 .cs-item:hover::before {
+  opacity: 0.22; /* Adjust the dimming effect */
+}
+
+#meet-team-2080 .cs-info {
+  z-index: 2;
+  display: flex;
+  align-items: center;
+}
+
+.click-icon{
+  height: 34px;
+  width: 34px;
+  z-index: 22;
+  cursor: pointer;
+}
+
+#meet-team-2080 .cs-info {
+  width: 90%;
+  margin: 1rem;
+  padding: 0.8rem 0.8rem;
+  background-color: #fff;
+  overflow: hidden;
+  border-radius: 0.5rem;
+  position: relative;
+  justify-content: space-between;
+}
+
+body.modal-open {
+  overflow: hidden;
+}
+
+@media only screen and (min-width: 0rem) {
+  #meet-team-2080 {
+    padding: var(--sectionPadding);
+    overflow: hidden;
+    position: relative;
+    z-index: 1;
+    background: #f7f7f7;
+  }
+
+  #meet-team-2080 .cs-container {
+    width: 100%;
+    max-width: 36.5rem;
+    margin: auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: clamp(3rem, 6vw, 4rem);
+  }
+
+  #meet-team-2080 .cs-content {
+    text-align: left;
+    width: 100%;
+    margin-bottom: 3rem;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    grid-column: span 12;
+  }
+
+  #meet-team-2080 .cs-card-group {
+    list-style: none;
+    width: 100%;
+    margin: 0;
+    padding: 0;
+    display: grid;
+    grid-template-columns: repeat(12, 1fr);
+    gap: clamp(1rem, 1.5vw, 1.25rem);
+    position: relative;
+  }
+
+  #meet-team-2080 .cs-item {
+    min-height: 22.5rem;
+    overflow: hidden;
+    border-radius: 1rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    align-items: center;
+    grid-column: span 12;
+    position: relative;
+  }
+
+  #meet-team-2080 .cs-item:last-of-type::before {
+    content: "";
+    width: 100%;
+    height: 100%;
+    background: var(--primary);
+    opacity: 0.1;
+    position: absolute;
+    top: 0;
+    left: 0;
+  }
+
+  #meet-team-2080 .cs-picture {
+    width: 100%;
+    height: 100%;
+    display: block;
+    position: absolute;
+  }
+
+  #meet-team-2080 .cs-picture img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: top;
+    position: absolute;
+    top: 0;
+    left: 0;
+  }
+
+  #meet-team-2080 .cs-info {
+    width: 90%;
+    margin: 1rem;
+    padding: 1rem 1.5rem;
+    background-color: #fff;
+    overflow: hidden;
+    border-radius: 0.5rem;
+    position: relative;
+  }
+
+  #meet-team-2080 .cs-info:before {
+    content: "";
+    width: 100%;
+    height: 100%;
+    background: #fff;
+    opacity: 0.1;
+    position: absolute;
+    top: 0;
+    left: 0;
+  }
+
+  #meet-team-2080 .cs-h3 {
+    font-size: 1.25rem;
+    font-weight: 700;
+    line-height: 1.2em;
+    margin: 0 0 0.25rem;
+    color: var(--headerColor);
+  }
+
+  #meet-team-2080 .cs-cta {
+    text-align: left;
+    width: 100%;
+    height: 100%;
+    max-height: 25.375rem;
+    min-height: 22.5rem;
+    margin-bottom: auto;
+    padding: 1.5rem;
+    overflow: hidden;
+    border: 1px solid var(--primary);
+    border-radius: 1rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: flex-start;
+    grid-column: span 12;
+    position: relative;
+  }
+
+  #meet-team-2080 .cs-cta:before {
+    content: "";
+    width: 100%;
+    height: 100%;
+    background: var(--primary);
+    opacity: 0.1;
+    position: absolute;
+    top: 0;
+    left: 0;
+  }
+
+  #meet-team-2080 .cs-h2 {
+    font-size: 1.9375rem;
+    font-weight: 900;
+    line-height: 1.2em;
+    margin: 0 0 1rem 0;
+    color: var(--headerColor);
+  }
+
+  #meet-team-2080 .cs-job {
+    font-size: 1rem;
+    font-weight: 700;
+    line-height: 1.2em;
+    color: var(--bodyTextColor);
+  }
+}
+
+@media only screen and (min-width: 48rem) {
+  #meet-team-2080 .cs-container {
+    max-width: 90rem;
+  }
+
+  #meet-team-2080 .cs-content {
+    min-height: 22.5rem;
+    margin-bottom: auto;
+    grid-column: span 6;
+  }
+
+  #meet-team-2080 .cs-item, #meet-team-2080 .cs-cta {
+    grid-column: span 6;
+  }
+}
+
+@media only screen and (min-width: 64rem) {
+  #meet-team-2080 .cs-content, #meet-team-2080 .cs-item, #meet-team-2080 .cs-cta {
+    min-height: 25.375rem;
+    grid-column: span 4;
+  }
+}
+
+@media only screen and (min-width: 81.25rem) {
+  #meet-team-2080 .cs-content, #meet-team-2080 .cs-item, #meet-team-2080 .cs-cta {
+    grid-column: span 3;
+  }
+}
+
+#meet-team-2080 .cs-phone {
+  text-decoration: none;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 0.75rem;
+}
+
+#meet-team-2080 .cs-card-pic {
+  width: clamp(2.875rem, 5vw, 3.5rem);
+  height: clamp(2.875rem, 5vw, 3.5rem);
+  margin: 0;
+  background: linear-gradient(to right, #2054A4, #563517);
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  z-index: 1;
+  flex: none;
+}
+
+#meet-team-2080 .cs-card-icon {
+  width: 1.5rem;
+  height: auto;
+  display: block;
+}
+
+#meet-team-2080 .cs-phone-wrapper {
+  display: flex;
+  flex-direction: column;
+}
+
+#meet-team-2080 .cs-link-content {
+  font-size: 0.875rem;
+  font-weight: 400;
+  line-height: 1.2em;
+  margin: 0;
+  color: var(--bodyTextColor);
+  display: block;
+}
+
+#meet-team-2080 .cs-phone-number {
+  font-size: clamp(1rem, 2vw, 1.25rem);
+  font-weight: 700;
+  line-height: 1.2em;
+  margin: 0;
+  color: var(--headerColor);
+  display: block;
+}

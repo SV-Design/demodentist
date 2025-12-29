@@ -1,0 +1,673 @@
+---
+title: 'Kainos | Odontologijos Klinika Adadenta Vilniuje | Skaidrus Kainodaros'
+description: 'Kainos - Odontologijos klinika Adadenta Vilniuje. Skaidrus kainodaros, konkurencingos kainos. Dantų gydymo, implantų, burnos higienos kainos.'
+permalink: '/kainos/'
+eleventyNavigation:
+    key: Kainos
+    order: 1000
+---
+
+    {% extends "layouts/base.html" %}
+
+    {% block head %}
+
+<style>
+    /* Mobile - 360px */
+
+    @media only screen and (min-width: 0rem) {
+        #banner-559 {
+            padding: var(--sectionPadding);
+            /* 137px - 212px */
+            padding-top: clamp(8.5625rem, 25vw, 17.25rem);
+            /* clips the line from causing overflow issues for going off screen */
+            overflow: hidden;
+            position: relative;
+            z-index: 1;
+            background-color: #DDE2D9;
+            background-image: url('/assets/images/Gradient.png');
+            background-size: cover;
+            background-position: center;
+        }
+        #banner-559 .cs-container {
+            text-align: center;
+            width: 100%;
+            max-width: 80rem;
+            margin: auto;
+            display: flex;
+            justify-content: center;
+            align-items: flex-start;
+            flex-direction: column;
+            gap: 1rem;
+        }
+        #banner-559 .cs-int-topper {
+            font-family: 'Nunito', Arial, monospace;
+            letter-spacing: .1em;
+            text-align: left;
+            font-size: var(--topperFontSize);
+            text-transform: uppercase;
+            font-weight: 700;
+            margin: 0;
+            padding: 0 0 0 1.25rem;
+            color: var(--primary);
+            display: block;
+            position: relative;
+        }
+        #banner-559 .cs-int-title:before {
+            /* yellow line */
+            content: '';
+            width: 50vw;
+            height: 4px;
+            background: #fff;
+            opacity: 0.2;
+            position: absolute;
+            display: block;
+            top: 50%;
+            right: 100%;
+            transform: translateY(-50%);
+            filter: brightness(1);
+        }
+        #banner-559 .cs-int-title:after {
+            content: '';
+            width: 90vw;
+            height: 4px;
+            background: #fff;
+            opacity: 0.2;
+            position: absolute;
+            display: block;
+            z-index: 1;
+            top: 50%;
+            left: 100%;
+            transform: translateY(-60%);
+            filter: brightness(1);
+        }
+        #banner-559 .cs-int-title {
+            font-family: 'Nunito', Arial, monospace;
+            letter-spacing: .1em;
+            font-size: clamp(2rem, 6.4vw, 3.8125rem);
+            font-weight: 900;
+            line-height: 1.2em;
+            text-align: left;
+            margin: 0;
+            color: var(--primary);
+            position: relative;
+        }
+        #banner-559 .cs-breadcrumbs {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        #banner-559 .cs-link {
+            /* 16px - 20px */
+            font-size: clamp(1rem, 1.5vw, 1.25rem);
+            line-height: 1.2em;
+            text-decoration: none;
+            color: var(--primary);
+            position: relative;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        #banner-559 .cs-link:last-of-type {
+            /* remove the chevron on the last list item */
+        }
+        #banner-559 .cs-link:last-of-type::after {
+            display: none;
+        }
+        #banner-559 .cs-link:after {
+            /* chevron - added as pseudo to make adding and removing them easier */
+            content: '';
+            width: 1.875rem;
+            height: 0.125rem;
+            /* 12px - 24px */
+            margin: 0 clamp(0.75rem, 2vw, 1.5rem);
+            background-color: var(--primary);
+        }
+        #banner-559 .cs-link.cs-active {
+            color: var(--primary);
+        }
+        #banner-559 .cs-background {
+            display: none;
+        }
+    }
+
+    @media only screen and (min-width: 0rem) {
+        #hero-288 {
+            padding: var(--sectionPadding);
+            background-color: var(--LightBG);
+            position: relative;
+            z-index: 1;
+        }
+        
+        #hero-288 .cs-container {
+            width: 100%;
+            max-width: 80rem;
+            margin: auto;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+            gap: 1rem;
+        }
+        
+        #hero-288 .cs-content {
+            text-align: center;
+            width: 100%;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 1rem;
+        }
+        
+        #hero-288 .cs-topper {
+            font-family: 'Nunito', Arial, monospace;
+            letter-spacing: .1em;
+            text-align: center;
+            font-size: var(--topperFontSize);
+            text-transform: uppercase;
+            font-weight: 700;
+            margin: 0;
+            color: var(--primary);
+            display: block;
+        }
+        
+        #hero-288 .cs-title {
+            font-family: 'Nunito', Arial, monospace;
+            letter-spacing: .1em;
+            font-size: clamp(2rem, 6.4vw, 3.8125rem);
+            font-weight: 900;
+            line-height: 1.2em;
+            text-align: center;
+            margin: 0;
+            color: var(--headerColor);
+        }
+        
+        #hero-288 .cs-text {
+            font-size: clamp(1rem, 1.5vw, 1.25rem);
+            line-height: 1.5em;
+            text-align: center;
+            margin: 0;
+            color: var(--bodyTextColor);
+            max-width: 50rem;
+        }
+
+        #pricing {
+            padding: var(--sectionPadding);
+        }
+
+        #pricing .cs-container {
+            width: 100%;
+            max-width: 80rem;
+            margin: auto;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: clamp(3rem, 6vw, 4rem);
+        }
+
+        #pricing .cs-content {
+            text-align: center;
+            width: 100%;
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+        }
+
+        #pricing .cs-text {
+            text-align: left;
+        }
+
+        #pricing .cs-pricing-sections {
+            width: 100%;
+            display: flex;
+            flex-direction: column;
+            gap: 3rem;
+        }
+
+        #pricing .cs-pricing-section {
+            width: 100%;
+            background: #fff;
+            border-radius: 1rem;
+            overflow: hidden;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+        }
+
+        #pricing .cs-section-header {
+            background: var(--LightBG);
+            color: var(--primary);
+            padding: 2rem;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        #pricing .cs-section-circle {
+            width: 1.5rem;
+            height: 1.5rem;
+            background: var(--primary);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-shrink: 0;
+            margin: 0;
+            position: relative;
+        }
+
+        #pricing .cs-section-circle::before {
+            content: '';
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 0.75rem;
+            height: 0.75rem;
+            background: var(--LightBG);
+            border-radius: 50%;
+        }
+
+        #pricing .cs-section-title {
+            font-size: clamp(1.5rem, 3vw, 2rem);
+            font-weight: 700;
+            margin: 0;
+            line-height: 1.2;
+        }
+
+        #pricing .cs-pricing-list {
+            margin: 0;
+            list-style: none;
+        }
+
+        #pricing .cs-pricing-item {
+            border-bottom: 1px solid #e8e8e8;
+            padding: 1rem 2rem;
+        }
+
+        /* Below 768px: reduce horizontal padding */
+        @media only screen and (max-width: 48rem) {
+            #pricing .cs-pricing-item {
+                padding: 1rem 1rem;
+            }
+        }
+
+        #pricing .cs-pricing-item:last-child {
+            border-bottom: none;
+        }
+
+        #pricing .cs-pricing-item:nth-child(even) {
+            background: var(--LightBG);
+        }
+
+        #pricing .cs-item-p {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            position: relative;
+            margin: 0;
+            padding: 0;
+            font-size: 16px;
+        }
+
+        #pricing .cs-item-p::after {
+            content: "";
+            position: absolute;
+            left: 0;
+            right: 0;
+            top: 50%;
+            height: 0.5px;
+            background-color: var(--primary);
+            transform: translateY(-50%);
+            z-index: 1;
+        }
+
+        #pricing .cs-item-p span {
+            background-color: inherit;
+            padding: 0 0.5em;
+            position: relative;
+            z-index: 2;
+            font-size: clamp(1rem, 2vw, 1.25rem);
+            line-height: 1.2em;
+            text-align: left;
+            font-weight: 500;
+        }
+
+        #pricing .cs-pricing-item:nth-child(odd) .cs-item-p span {
+            background-color: #fff;
+        }
+
+        #pricing .cs-pricing-item:nth-child(even) .cs-item-p span {
+            background-color: var(--LightBG);
+        }
+
+        #pricing .cs-item-p span:last-child {
+            font-weight: 700;
+            white-space: nowrap;
+            color: var(--primary);
+        }
+
+        #pricing .cs-cta {
+            width: 100%;
+            display: flex;
+            flex-direction: column;
+            margin: 0;
+            gap: 2rem;
+            padding: 2.5rem;
+            align-items: center;
+            text-align: center;
+            border-radius: 1rem;
+            border: 1px solid var(--primary);
+            background: #fff;
+        }
+
+        #pricing .cs-flex {
+            display: flex;
+            flex-direction: column;
+            gap: 1rem;
+        }
+
+        #pricing .cs-cta-title {
+            font-size: 1.9375rem;
+            line-height: 1.2em;
+            font-weight: 900;
+            color: var(--headerColor);
+        }
+
+        #pricing .cs-cta-text {
+            font-size: 1rem;
+            line-height: 1.5em;
+            color: var(--bodyTextColor);
+        }
+    }
+
+    @media only screen and (min-width: 64rem) {
+        #pricing .cs-cta {
+            flex-direction: row;
+            align-items: center;
+            text-align: left;
+            gap: 4rem;
+        }
+    }
+</style>
+
+    {% endblock %}
+
+    {% block body %}
+
+<div id="banner-559">
+    <div class="cs-container">
+        <span class="cs-int-title">Kainoraštis</span>
+    </div>
+</div>
+
+<section id="pricing">
+    <div class="cs-container">
+        <div class="cs-content">
+            <p class="cs-text">Pastaba: administracija pasilieka teisę keisti gydymo įkainius. Gydymo planas sudaromas individualiai, kainos gali keistis nuo protezo konstrukcijos ir sudėtingumo, dantų laboratorijos įkainių bei suteikiamos nuolaidos.</p>
+        </div>
+        
+        <div class="cs-pricing-sections">
+            <!-- Konsultacijos ir tyrimai -->
+            <div class="cs-pricing-section">
+                <div class="cs-section-header">
+                    <div class="cs-section-circle"></div>
+                    <h3 class="cs-section-title">Konsultacijos ir tyrimai</h3>
+                </div>
+                <ul class="cs-pricing-list">
+                    <li class="cs-pricing-item">
+                        <p class="cs-item-p"><span>Konsultacija, pažyma</span><span>20-30 eur</span></p>
+                    </li>
+                    <li class="cs-pricing-item">
+                        <p class="cs-item-p"><span>Pirmoji pagalba</span><span>nuo 50 eur</span></p>
+                    </li>
+                    <li class="cs-pricing-item">
+                        <p class="cs-item-p"><span>Nuskausminimas</span><span>nuo 5-10 eur</span></p>
+                    </li>
+                    <li class="cs-pricing-item">
+                        <p class="cs-item-p"><span>Rentgeno nuotrauka</span><span>10 eur</span></p>
+                    </li>
+                </ul>
+            </div>
+
+            <!-- Endodontija -->
+            <div class="cs-pricing-section">
+                <div class="cs-section-header">
+                    <div class="cs-section-circle"></div>
+                    <h3 class="cs-section-title">Endodontija</h3>
+                </div>
+                <ul class="cs-pricing-list">
+                    <li class="cs-pricing-item">
+                        <p class="cs-item-p"><span>Vieno kanalo mechaninis ir medikamentinis paruošimas</span><span>50 eur</span></p>
+                    </li>
+                    <li class="cs-pricing-item">
+                        <p class="cs-item-p"><span>Vieno kanalo pergydymas</span><span>nuo 100 eur</span></p>
+                    </li>
+                    <li class="cs-pricing-item">
+                        <p class="cs-item-p"><span>Kalcio hidroksidas (į 1 kanal.)</span><span>30 eur</span></p>
+                    </li>
+                    <li class="cs-pricing-item">
+                        <p class="cs-item-p"><span>Incizija (pūlinio atvėrimas)</span><span>55 eur</span></p>
+                    </li>
+                    <li class="cs-pricing-item">
+                        <p class="cs-item-p"><span>Vieno kanalo plombavimas su gutaperča</span><span>55 eur</span></p>
+                    </li>
+                    <li class="cs-pricing-item">
+                        <p class="cs-item-p"><span>Vieno kanalo plombavimas su MTA</span><span>80 eur</span></p>
+                    </li>
+                </ul>
+            </div>
+
+            <!-- Protezavimas -->
+            <div class="cs-pricing-section">
+                <div class="cs-section-header">
+                    <div class="cs-section-circle"></div>
+                    <h3 class="cs-section-title">Protezavimas</h3>
+                </div>
+                <ul class="cs-pricing-list">
+                    <li class="cs-pricing-item">
+                        <p class="cs-item-p"><span>Vainikėlio nuėmimas</span><span>30 eur</span></p>
+                    </li>
+                    <li class="cs-pricing-item">
+                        <p class="cs-item-p"><span>Diagnostinis modelis</span><span>50 eur</span></p>
+                    </li>
+                    <li class="cs-pricing-item">
+                        <p class="cs-item-p"><span>Individualus šaukštas</span><span>40 eur</span></p>
+                    </li>
+                    <li class="cs-pricing-item">
+                        <p class="cs-item-p"><span>Alginatinis atspaudas</span><span>25 eur</span></p>
+                    </li>
+                    <li class="cs-pricing-item">
+                        <p class="cs-item-p"><span>Silikoninis atspaudas</span><span>30 eur</span></p>
+                    </li>
+                    <li class="cs-pricing-item">
+                        <p class="cs-item-p"><span>Laikinas vainikėlis</span><span>35 eur</span></p>
+                    </li>
+                    <li class="cs-pricing-item">
+                        <p class="cs-item-p"><span>Laikinas vainikėlis ilgam nešiojimui (frezuotas)</span><span>100 eur</span></p>
+                    </li>
+                    <li class="cs-pricing-item">
+                        <p class="cs-item-p"><span>Laikinas vainikėlis ant implanto</span><span>nuo 150 eur</span></p>
+                    </li>
+                    <li class="cs-pricing-item">
+                        <p class="cs-item-p"><span>Keramikinis įklotas</span><span>230 eur</span></p>
+                    </li>
+                    <li class="cs-pricing-item">
+                        <p class="cs-item-p"><span>Danties vainiko kulties atstatymas stiklo pluošto kaiščiais ir Rebilda DC</span><span>100-130 eur</span></p>
+                    </li>
+                    <li class="cs-pricing-item">
+                        <p class="cs-item-p"><span>Lietas vainikėlis</span><span>200 eur</span></p>
+                    </li>
+                    <li class="cs-pricing-item">
+                        <p class="cs-item-p"><span>Metalo keramikos vainikėlis</span><span>300 eur</span></p>
+                    </li>
+                    <li class="cs-pricing-item">
+                        <p class="cs-item-p"><span>Cirkonio keramikos vainikėlis, protezuojant ant implanto</span><span>570-650 eur</span></p>
+                    </li>
+                    <li class="cs-pricing-item">
+                        <p class="cs-item-p"><span>Cirkonio keramika</span><span>420-450 eur</span></p>
+                    </li>
+                    <li class="cs-pricing-item">
+                        <p class="cs-item-p"><span>Vieno vainikėlio cementavimas</span><span>20 eur</span></p>
+                    </li>
+                    <li class="cs-pricing-item">
+                        <p class="cs-item-p"><span>Išimamas dantų protezas (plokštelė)</span><span>nuo 400 iki 450 eur</span></p>
+                    </li>
+                    <li class="cs-pricing-item">
+                        <p class="cs-item-p"><span>Kosmetinė plokštelė (laikinas išimamas protezas)</span><span>nuo 200 iki 300 eur</span></p>
+                    </li>
+                    <li class="cs-pricing-item">
+                        <p class="cs-item-p"><span>Minkštos plastmasės plokštelė</span><span>nuo 600 iki 700 eur</span></p>
+                    </li>
+                    <li class="cs-pricing-item">
+                        <p class="cs-item-p"><span>Plokštelės pataisa</span><span>nuo 50 - 120 eur</span></p>
+                    </li>
+                    <li class="cs-pricing-item">
+                        <p class="cs-item-p"><span>Bruksizmo kapa</span><span>nuo 160-200 eur</span></p>
+                    </li>
+                    <li class="cs-pricing-item">
+                        <p class="cs-item-p"><span>Biugelis be užrakto (LAP)</span><span>600 eur</span></p>
+                    </li>
+                    <li class="cs-pricing-item">
+                        <p class="cs-item-p"><span>Perbazavimas plokšteles, biugelio</span><span>80 eur</span></p>
+                    </li>
+                    <li class="cs-pricing-item">
+                        <p class="cs-item-p"><span>Dantų protezas (plokštelė) fiksuojami ant implantų (2-jų lokatorių sistema)</span><span>1300-1500 eur</span></p>
+                    </li>
+                </ul>
+            </div>
+
+            <!-- Burnos higiena ir profilaktika -->
+            <div class="cs-pricing-section">
+                <div class="cs-section-header">
+                    <div class="cs-section-circle"></div>
+                    <h3 class="cs-section-title">Burnos higiena ir profilaktika</h3>
+                </div>
+                <ul class="cs-pricing-list">
+                    <li class="cs-pricing-item">
+                        <p class="cs-item-p"><span>Danties papuošalo uždėjimas</span><span>nuo 60 iki 80 eur</span></p>
+                    </li>
+                    <li class="cs-pricing-item">
+                        <p class="cs-item-p"><span>Balinimas (dvi balinimo kapos)</span><span>180 eur</span></p>
+                    </li>
+                    <li class="cs-pricing-item">
+                        <p class="cs-item-p"><span>Negyvo danties balinimas (2 vizitai)</span><span>50 eur</span></p>
+                    </li>
+                    <li class="cs-pricing-item">
+                        <p class="cs-item-p"><span>Senos plombos poliravimas</span><span>20 eur</span></p>
+                    </li>
+                    <li class="cs-pricing-item">
+                        <p class="cs-item-p"><span>Dantų apnašų valymas skaleriu ir sodos aparatu</span><span>nuo 50-80 eur</span></p>
+                    </li>
+                </ul>
+            </div>
+
+            <!-- Vaikų odontologija -->
+            <div class="cs-pricing-section">
+                <div class="cs-section-header">
+                    <div class="cs-section-circle"></div>
+                    <h3 class="cs-section-title">Vaikų odontologija</h3>
+                </div>
+                <ul class="cs-pricing-list">
+                    <li class="cs-pricing-item">
+                        <p class="cs-item-p"><span>Žaidimo terapija</span><span>20 eur</span></p>
+                    </li>
+                    <li class="cs-pricing-item">
+                        <p class="cs-item-p"><span>Fluoro aplikacija (1 danties)</span><span>nuo 7 eur</span></p>
+                    </li>
+                    <li class="cs-pricing-item">
+                        <p class="cs-item-p"><span>Nuolatinio danties hermetizavimas silantu</span><span>20 eur</span></p>
+                    </li>
+                    <li class="cs-pricing-item">
+                        <p class="cs-item-p"><span>Pulpito gydymas ir plombavimas (1 kanalo)</span><span>30 eur</span></p>
+                    </li>
+                </ul>
+            </div>
+
+            <!-- Terapinis gydymas -->
+            <div class="cs-pricing-section">
+                <div class="cs-section-header">
+                    <div class="cs-section-circle"></div>
+                    <h3 class="cs-section-title">Terapinis gydymas</h3>
+                </div>
+                <ul class="cs-pricing-list">
+                    <li class="cs-pricing-item">
+                        <p class="cs-item-p"><span>Koferdamo sistemos naudojimas</span><span>10 eur</span></p>
+                    </li>
+                    <li class="cs-pricing-item">
+                        <p class="cs-item-p"><span>Plombos išėmimas</span><span>10 eur</span></p>
+                    </li>
+                    <li class="cs-pricing-item">
+                        <p class="cs-item-p"><span>Laikina plomba</span><span>20 eur</span></p>
+                    </li>
+                    <li class="cs-pricing-item">
+                        <p class="cs-item-p"><span>Stiklo jonomerinė plomba</span><span>40 eur</span></p>
+                    </li>
+                    <li class="cs-pricing-item">
+                        <p class="cs-item-p"><span>Šviesoje kietėjanti plomba (helio)</span><span>70-100 eur</span></p>
+                    </li>
+                    <li class="cs-pricing-item">
+                        <p class="cs-item-p"><span>Vainiko atstatymas helio plomba</span><span>80-130 eur</span></p>
+                    </li>
+                    <li class="cs-pricing-item">
+                        <p class="cs-item-p"><span>Priekinio danties plombavimas</span><span>60-90 eur</span></p>
+                    </li>
+                    <li class="cs-pricing-item">
+                        <p class="cs-item-p"><span>Estetinis plombavimas</span><span>nuo 100-150 eur</span></p>
+                    </li>
+                    <li class="cs-pricing-item">
+                        <p class="cs-item-p"><span>Dantų surišimas stiklo pluošto siūlu</span><span>90-150 eur</span></p>
+                    </li>
+                </ul>
+            </div>
+
+            <!-- Chirurgija -->
+            <div class="cs-pricing-section">
+                <div class="cs-section-header">
+                    <div class="cs-section-circle"></div>
+                    <h3 class="cs-section-title">Chirurgija</h3>
+                </div>
+                <ul class="cs-pricing-list">
+                    <li class="cs-pricing-item">
+                        <p class="cs-item-p"><span>Pieninio dantuko rovimas</span><span>30 eur</span></p>
+                    </li>
+                    <li class="cs-pricing-item">
+                        <p class="cs-item-p"><span>Danties šalinimas</span><span>60-80 eur</span></p>
+                    </li>
+                    <li class="cs-pricing-item">
+                        <p class="cs-item-p"><span>Danties šaknies šalinimas</span><span>40 eur</span></p>
+                    </li>
+                    <li class="cs-pricing-item">
+                        <p class="cs-item-p"><span>Komplikuotas danties šalinimas</span><span>100-150 eur</span></p>
+                    </li>
+                    <li class="cs-pricing-item">
+                        <p class="cs-item-p"><span>Danties šaknies prailginimas</span><span>60 eur</span></p>
+                    </li>
+                    <li class="cs-pricing-item">
+                        <p class="cs-item-p"><span>Pasaitėlio plastika</span><span>50 eur</span></p>
+                    </li>
+                    <li class="cs-pricing-item">
+                        <p class="cs-item-p"><span>Kurietazas</span><span>nuo 30 eur</span></p>
+                    </li>
+                    <li class="cs-pricing-item">
+                        <p class="cs-item-p"><span>Lopo operacija (1d.)</span><span>nuo 60 eur</span></p>
+                    </li>
+                    <li class="cs-pricing-item">
+                        <p class="cs-item-p"><span>Drenas arba dreno pakeitimas</span><span>10 eur</span></p>
+                    </li>
+                    <li class="cs-pricing-item">
+                        <p class="cs-item-p"><span>Susiuvimas</span><span>10 eur</span></p>
+                    </li>
+                    <li class="cs-pricing-item">
+                        <p class="cs-item-p"><span>Implanto įsodinimas</span><span>nuo 550 iki 900 eur</span></p>
+                    </li>
+                    <li class="cs-pricing-item">
+                        <p class="cs-item-p"><span>Gijimo galvutė ant implanto</span><span>60-80 eur</span></p>
+                    </li>
+                </ul>
+            </div>
+        </div>
+
+
+    </div>
+</section>
+
+
+    {% endblock %}

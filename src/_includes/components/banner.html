@@ -124,15 +124,26 @@
         }
 
         #banner-559 .cs-background:after {
-            content: "";
+            /*content: "";*/
+            /*position: absolute;*/
+            /*top: 0;*/
+            /*left: 0;*/
+            /*width: 100%;*/
+            /*height: 100%;*/
+            /*background: var(--blueOverlay);*/
+            /*z-index: 1;*/
+            /*pointer-events: none;*/
+
+            content: '';
             position: absolute;
+            display: block;
+            height: 100%;
+            width: 100%;
+            background: #000;
+            opacity: .66;
             top: 0;
             left: 0;
-            width: 100%;
-            height: 100%;
-            background: var(--blueOverlay);
             z-index: 1;
-            pointer-events: none;
         }
 
         #banner-559 .cs-background img {
@@ -155,8 +166,8 @@
         </div>
     </div>
     <picture class="cs-background">
-        <source media="(max-width: 600px)" srcset="{{ bannerImageMobile | default(bannerImage) | default('/assets/images/smile.jpg') }}">
-        <source media="(min-width: 601px)" srcset="{{ bannerImage | default('/assets/images/smile.jpg') }}">
-        <img src="{{ bannerImage | default('/assets/images/smile.jpg') }}" alt="{{ bannerImageAlt | default('') }}" decoding="async" height="568" width="1280" aria-hidden="true" loading="lazy">
+        <source media="(max-width: 600px)" srcset="{{ bannerImageMobile | default(bannerImage) | default('/assets/images/smile.webp') }}">
+        <source media="(min-width: 601px)" srcset="{{ bannerImage | default('/assets/images/smile.webp') }}">
+        <img src="{{ bannerImage | default('/assets/images/smile.webp') }}" alt="{{ bannerImageAlt | default('') }}" decoding="async" height="568" width="1280" aria-hidden="true" loading="eager">
     </picture>
 </div>

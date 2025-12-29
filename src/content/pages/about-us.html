@@ -10,48 +10,51 @@ permalink: '/apie-mus/'
 <!--<link rel="stylesheet" href="/assets/css/services.css"/>-->
 
 <style>
+    /*-- -------------------------- -->
+<---   Side By Side Reverse     -->
+<--- -------------------------- -*/
+
+    /* Mobile - 360px */
     @media only screen and (min-width: 0rem) {
         #sbsr-298 {
-            padding:var(--sectionPadding);
-            padding-bottom: 0;
+            padding: var(--sectionPadding);
         }
-
         #sbsr-298 .cs-container {
             width: 100%;
+            /* changes to 1280px at desktop */
             max-width: 34.375rem;
             margin: auto;
             display: flex;
             justify-content: center;
             align-items: center;
-            flex-direction: column
+            flex-direction: column;
         }
-
         #sbsr-298 .cs-content {
+            /* set text align to left if content needs to be left aligned */
             text-align: left;
             width: 100%;
-            max-width: 39.625rem;
+            max-width: 32.625rem;
             display: flex;
-            flex-direction: column
+            flex-direction: column;
+            /* centers content horizontally, set to flex-start to left align */
         }
 
         #sbsr-298 .cs-text {
-            margin-bottom: 1rem
+            margin-bottom: 1rem;
         }
-
         #sbsr-298 .cs-text:last-of-type {
-            margin-bottom: 2rem
+            margin-bottom: 2rem;
         }
-
         #sbsr-298 .cs-link {
             font-size: 1.25rem;
             font-weight: 700;
             text-decoration: none;
-            color: var(--primary)
+            color: var(--primary);
         }
-
         #sbsr-298 .cs-button-solid {
             font-size: 1rem;
-            line-height: clamp(2.875rem,5.5vw,3.5rem);
+            /* 46px - 56px */
+            line-height: clamp(2.875rem, 5.5vw, 3.5rem);
             text-decoration: none;
             font-weight: 700;
             text-align: center;
@@ -60,13 +63,13 @@ permalink: '/apie-mus/'
             min-width: 9.375rem;
             padding: 0 1.5rem;
             background-color: var(--primary);
-            border-radius: 6px;
+            border-radius: 0.25rem;
             display: inline-block;
             position: relative;
             z-index: 1;
-            box-sizing: border-box
+            /* prevents padding from adding to the width */
+            box-sizing: border-box;
         }
-
         #sbsr-298 .cs-button-solid:before {
             content: "";
             position: absolute;
@@ -77,49 +80,46 @@ permalink: '/apie-mus/'
             top: 0;
             left: 0;
             z-index: -1;
-            border-radius: 6px;
-            transition: width .3s
+            border-radius: 0.25rem;
+            transition: width 0.3s;
         }
-
         #sbsr-298 .cs-button-solid:hover:before {
-            width: 100%
+            width: 100%;
         }
-
         #sbsr-298 .cs-image-group {
             width: 100%;
             max-width: 34.375rem;
-            margin: 0 auto clamp(4.875rem,16.5vw,6.75rem);
+            /* 78px - 108px */
+            margin: 0 auto clamp(4.875rem, 16.5vw, 6.75rem);
             position: relative;
             display: block;
-            aspect-ratio: .90358127;
-            border-radius: 6px;
-            overflow: visible
-        }
+            /* width divided by height */
+            aspect-ratio: 0.90358127;
 
+        }
         #sbsr-298 .cs-picture {
+            /* big background image */
             width: 100%;
             height: 100%;
             position: absolute;
             top: 0;
             left: 0;
             display: block;
-            border-radius: 6px;
-            overflow: hidden
         }
-
         #sbsr-298 .cs-picture img {
             position: absolute;
             top: 0;
             left: 0;
             height: 100%;
             width: 100%;
+            border-radius: 0.625rem;
             object-fit: cover;
-            border-radius: 6px
         }
-
         #sbsr-298 .cs-box {
-            width: clamp(12.75rem,50vw,20.375rem);
-            height: clamp(12.75rem,50vw,20.375rem);
+            /* 204px - 326px & changes at desktop */
+            width: clamp(12.75rem, 50vw, 20.375rem);
+            height: clamp(12.75rem, 50vw, 20.375rem);
+            border-radius: 0.625rem;
             overflow: hidden;
             display: flex;
             justify-content: center;
@@ -127,64 +127,71 @@ permalink: '/apie-mus/'
             flex-direction: column;
             position: absolute;
             left: 50%;
-            bottom: calc(clamp(2.375rem,7.9vw,3.75rem) * -1);
+            /* 38px - 60px - wrapped in a calc function to make clamp values negative */
+            bottom: calc(clamp(2.375rem, 7.9vw, 3.75rem) * -1);
             transform: translateX(-50%);
             z-index: 10;
-            border-radius: 6px
         }
-
         #sbsr-298 .cs-box-picture {
+            /* Background image for cs-box */
             width: 100%;
             height: 100%;
             background-color: #000;
+            border-radius: 0.625rem;
+            /* clips img corners and bg corners */
             overflow: hidden;
             position: absolute;
             top: 0;
             left: 0;
             display: block;
             z-index: -1;
-            border-radius: 6px
         }
-
         #sbsr-298 .cs-box-picture img {
             position: absolute;
             top: 0;
             left: 0;
-            opacity: .65;
+            opacity: 0.65;
             height: 100%;
             width: 100%;
             object-fit: cover;
-            border-radius: 6px
         }
-
         #sbsr-298 .cs-number {
-            font-size: 5rem;
+            /* 75px - 100px */
+            font-size: clamp(4.6875rem, 8vw, 6.25rem);
             line-height: 1em;
-            font-weight: 700;
-            margin-bottom: .5rem;
+            font-weight: 900;
+            margin-bottom: 0.5rem;
             color: var(--headerColor);
+            /* creates the transparent clipping text */
             mix-blend-mode: screen;
             display: block;
-            z-index: 10
+            z-index: 10;
         }
-
         #sbsr-298 .cs-number:before {
+            /* opaque white box - For mix-blend-mode to work, we need the
+                       white box inside the .cs-number, so we use a pseudo element.
+                       We DON'T add a position to the cs-number so the pseudo positions
+                       itself relative to the .cs-box, which has position relative. This
+                       allows us to center to .cs-number pseudo inside the .cs-box */
             content: "";
-            width: clamp(11.5rem,45vw,18.375rem);
-            height: clamp(11.5rem,45vw,18.375rem);
+            /* 184px - 294px & changes at desktop */
+            width: clamp(11.5rem, 45vw, 18.375rem);
+            height: clamp(11.5rem, 45vw, 18.375rem);
             opacity: 1;
             background-color: #fff;
+            border-radius: 0.4375rem;
             position: absolute;
             display: block;
+            /* these next 3 properties are an old school way to center an absolutely
+                       positioned element inside a relative position parent */
             top: 50%;
             left: 50%;
-            transform: translate(-50%,-50%);
+            transform: translate(-50%, -50%);
             z-index: -1;
-            border-radius: 6px
         }
-
         #sbsr-298 .cs-desc {
-            font-size: clamp(1rem,4vw,1.5625rem);
+            /* 16px - 25px */
+            font-size: clamp(1rem, 4vw, 1.5625rem);
             font-weight: 700;
             line-height: 1.2em;
             text-transform: lowercase;
@@ -192,111 +199,185 @@ permalink: '/apie-mus/'
             width: 80%;
             color: var(--headerColor);
             position: relative;
-            z-index: 10
+            z-index: 10;
         }
     }
-
+    /* Desktop - 1024px */
     @media only screen and (min-width: 64rem) {
         #sbsr-298 {
-            text-align:left;
-            padding-bottom: 0;
+            /* aligns the button */
+            text-align: left;
         }
-
         #sbsr-298 .cs-container {
             max-width: 80rem;
+            /* set to horizontal arrangement */
             flex-direction: row;
             justify-content: space-between;
-            gap: 8rem;
-            align-items: flex-start
+            gap: 10rem;
+            align-items: flex-start;
         }
-
         #sbsr-298 .cs-content {
             text-align: left;
-            align-items: flex-start
+            align-items: flex-start;
         }
-
         #sbsr-298 .cs-image-group {
             width: 40vw;
             max-width: 32.5625rem;
-            height: clamp(32.5rem,51.9vw,42rem);
+            /* 520px - 672px */
+            height: clamp(32.5rem, 51.9vw, 42rem);
             margin: 0;
+            /* sends it to the right in the 2nd position */
             order: 2;
             position: sticky;
             top: 136px;
-            overflow: visible
         }
-
         #sbsr-298 .cs-box {
-            width: clamp(15.6875rem,24.5vw,20.3125rem);
-            height: clamp(15.6875rem,24.5vw,20.3125rem);
+            /* 251px - 325px */
+            width: clamp(15.6875rem, 24.5vw, 20.3125rem);
+            height: clamp(15.6875rem, 24.5vw, 20.3125rem);
             left: auto;
             transform: none;
-            left: calc(clamp(3.25rem,5.5vw + 1.6rem,6.375rem) * -1);
-            bottom: clamp(3.875rem,6.2vw,5rem)
+            /* -52px to -102px */
+            left: calc(clamp(3.25rem, 5.5vw + 1.6rem, 6.375rem) * -1);
+            /* 62px - 80px */
+            bottom: clamp(3.875rem, 6.2vw, 5rem);
         }
-
         #sbsr-298 .cs-number:before {
-            width: clamp(14.125rem,22.7vw,18.3125rem);
-            height: clamp(14.125rem,22.7vw,18.3125rem);
-            border-radius: 6px
+            /* 226px - 293px */
+            width: clamp(14.125rem, 22.7vw, 18.3125rem);
+            height: clamp(14.125rem, 22.7vw, 18.3125rem);
+        }
+    }
+    /* Dark Mode */
+    @media only screen and (min-width: 0rem) {
+        body.dark-mode #sbsr-298 .cs-topper {
+            color: var(--primary);
+        }
+        body.dark-mode #sbsr-298 .cs-title,
+        body.dark-mode #sbsr-298 .cs-text {
+            color: var(--bodyTextColorWhite);
+        }
+        body.dark-mode #sbsr-298 .cs-link {
+            color: var(--secondaryLight);
+        }
+        body.dark-mode #sbsr-298 .cs-text {
+            opacity: 0.8;
+        }
+        body.dark-mode #sbsr-298 .cs-button-solid {
+            background-color: var(--secondaryLight);
+            color: #1a1a1a;
         }
     }
 
-    @media only screen and (min-width: 0rem) {
-    }
 
+
+    /*-- -------------------------- -->
+<---           Stats            -->
+<--- -------------------------- -*/
+
+    /* Mobile - 360px */
     @media only screen and (min-width: 0rem) {
         #stats-1229 {
-            padding:var(--sectionPadding);
+            padding: var(--sectionPadding);
             position: relative;
-            z-index: 1
+            z-index: 1;
         }
-
         #stats-1229:before {
             content: "";
             position: absolute;
             display: block;
             height: 100%;
             width: 100%;
-            background: url(/assets/svgs/chevron-pattern-light3.svg);
+            background: url("https://csimg.nyc3.cdn.digitaloceanspaces.com/Icons/chevron-pattern-light3.svg");
             background-position: center;
             background-size: auto;
             background-repeat: repeat;
-            opacity: .3;
+            opacity: 0.3;
             top: 0;
             left: 0;
-            z-index: -1
+            z-index: -1;
         }
-
         #stats-1229 .cs-container {
+            /* changes to 1280px at desktop */
             max-width: 36.5rem;
             width: 100%;
             margin: auto;
             display: flex;
             flex-direction: column;
             align-items: center;
-            gap: clamp(3rem,6vw,4rem)
+            /* 48px - 64px */
+            gap: clamp(3rem, 6vw, 4rem);
         }
-
         #stats-1229 .cs-content {
             display: flex;
             flex-direction: column;
-            align-items: center;
-            gap: 2rem
+            align-items: flex-start;
+            gap: 2rem;
         }
-
         #stats-1229 .cs-flex {
-            text-align: center;
+            /* set text align to left if content needs to be left aligned */
+            text-align: left;
             width: 100%;
             display: flex;
             flex-direction: column;
-            align-items: center
+            /* centers content horizontally, set to flex-start to left align */
+            align-items: flex-start;
         }
 
         #stats-1229 .cs-title {
-            max-width: 20ch
+            max-width: 20ch;
+        }
+        #stats-1229 .cs-card-group {
+            width: 100%;
+            margin: 0;
+            padding: 0;
+            display: grid;
+            grid-template-columns: repeat(12, 1fr);
+            /* 16px - 20px */
+            gap: clamp(1rem, 2vw, 1.25rem);
+        }
+        #stats-1229 .cs-item {
+            list-style: none;
+            width: 100%;
+            /* prevents padding and border from affecting height and width */
+            /* 16px - 40px top & bottom */
+            /* 16px - 32px left & right */
+            padding: clamp(1rem, 3vw, 2.5rem) clamp(1rem, 2.5vw, 2rem);
+            box-sizing: border-box;
+            background: #f7f7f7;
+            border: 1px solid rgba(0, 0, 0, 0.1);
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+            position: relative;
+            gap: 0.75rem;
+            /* clips cs-icon overflowing */
+            overflow: hidden;
+            grid-column: span 6;
+            border-radius: 24px;
+        }
+        #stats-1229 .cs-icon {
+            /* 32px - 40px */
+            width: 40px;
+            height: auto;
+            margin: 0;
+            flex: none;
         }
 
+        #stats-1229 .cs-icon.modern {
+            width: 44px;
+        }
+        #stats-1229 .cs-h3 {
+            /* 16px - 25px */
+            font-size: clamp(1rem, 2vw, 1.5625rem);
+            line-height: 1.2em;
+            font-weight: 900;
+            width: 100%;
+            margin: 0;
+            color: var(--headerColor);
+            /* wraps longer words on the smallest screen sizes */
+            overflow-wrap: break-word;
+        }
         #stats-1229 .cs-stat-group {
             width: 100%;
             margin: auto;
@@ -304,114 +385,128 @@ permalink: '/apie-mus/'
             display: grid;
             justify-content: center;
             align-items: center;
-            grid-template-columns: repeat(6,1fr)
+            grid-template-columns: repeat(6, 1fr);
         }
-
         #stats-1229 .cs-stat {
             list-style: none;
             margin: 0;
-            padding: clamp(1rem,3vw,2.5rem) 1rem;
+            /* 16px - 40px */
+            padding: clamp(1rem, 3vw, 2.5rem) 1rem;
             box-sizing: border-box;
             display: flex;
             flex-direction: column;
             align-items: center;
             position: relative;
             grid-column: span 2;
-            border-radius: 6px
+            /* border code */
+            /* remove the border on the far-right elements */
+            /* makes the last two items span across multiple columns. changes at desktop to one line */
         }
-
         #stats-1229 .cs-stat:before {
             content: "";
             width: 2px;
             height: 100%;
-            background: linear-gradient(0deg,rgba(72,72,72,0) 0,#484848 50%,rgba(72,72,72,0) 100%);
+            background: linear-gradient(
+                    0deg,
+                    rgba(72, 72, 72, 0) 0%,
+                    #484848 50%,
+                    rgba(72, 72, 72, 0) 100%
+            );
             position: absolute;
             top: 0;
-            right: 0
+            right: 0;
         }
-
-        #stats-1229 .cs-stat:nth-of-type(3):before,#stats-1229 .cs-stat:nth-of-type(5):before {
-            content: none
+        #stats-1229 .cs-stat:nth-of-type(3):before,
+        #stats-1229 .cs-stat:nth-of-type(5):before {
+            content: none;
         }
-
-        #stats-1229 .cs-stat:nth-of-type(4),#stats-1229 .cs-stat:nth-of-type(5) {
-            grid-column: span 3
+        #stats-1229 .cs-stat:nth-of-type(4),
+        #stats-1229 .cs-stat:nth-of-type(5) {
+            grid-column: span 3;
         }
-
         #stats-1229 .cs-desc {
             font-size: var(--bodyFontSize);
             line-height: 1.5em;
             text-align: center;
-            width: clamp(5.5rem,20vw,11rem);
-            margin-bottom: .5rem;
+            /* keeps the width of the stat description from overflowing onto the border */
+            /* 88px - 176px */
+            width: clamp(5.5rem, 20vw, 11rem);
+            margin-bottom: 0.5rem;
             color: #858585;
-            display: block
+            display: block;
         }
-
         #stats-1229 .cs-number {
-            font-size: clamp(1.5625rem,3vw,3.0625rem);
+            /* 25px - 49px */
+            font-size: clamp(1.5625rem, 3vw, 3.0625rem);
             line-height: 1.2em;
-            font-weight: 700;
+            font-weight: 900;
             margin: 0;
             color: var(--headerColor);
-            display: block
+            display: block;
         }
     }
-
+    /* Tablet - 650px */
     @media only screen and (min-width: 40.625rem) {
         #stats-1229 .cs-container {
-            flex-direction:row;
-            flex-wrap: wrap
+            flex-direction: row;
+            flex-wrap: wrap;
         }
-
-
+        #stats-1229 .cs-card-group {
+            display: grid;
+            /* makes all grid items stretch to have the same height if their content isn't all the same height */
+            align-items: stretch;
+            grid-template-columns: repeat(2, 1fr);
+        }
+        #stats-1229 .cs-item {
+            grid-column: span 1;
+            flex-direction: row;
+            align-items: center;
+        }
         #stats-1229 .cs-stat-group {
             flex-direction: row;
-            flex-wrap: wrap
+            flex-wrap: wrap;
         }
     }
-
+    /* Small Desktop - 1024px */
     @media only screen and (min-width: 64rem) {
         #stats-1229 .cs-container {
-            max-width:80rem;
+            max-width: 80rem;
             flex-direction: row;
             justify-content: space-between;
-            align-items: center
+            align-items: center;
         }
-
         #stats-1229 .cs-content {
-            flex-direction: column;
-            align-items: center
+            flex-direction: row;
+            align-items: center;
         }
-
-        #stats-1229 .cs-text,#stats-1229 .cs-title {
-            max-width: none
+        #stats-1229 .cs-title,
+        #stats-1229 .cs-text {
+            max-width: none;
         }
-
+        #stats-1229 .cs-card-group {
+            width: 50%;
+            /* prevents flexbox from squishing it */
+            flex: none;
+        }
         #stats-1229 .cs-stat-group {
             max-width: 80rem;
-            grid-template-columns: repeat(5,1fr)
+            grid-template-columns: repeat(5, 1fr);
         }
-
         #stats-1229 .cs-stat {
-            grid-column: span 1
+            grid-column: span 1;
         }
-
-        #stats-1229 .cs-stat:nth-of-type(4),#stats-1229 .cs-stat:nth-of-type(5) {
-            grid-column: span 1
+        #stats-1229 .cs-stat:nth-of-type(4),
+        #stats-1229 .cs-stat:nth-of-type(5) {
+            grid-column: span 1;
         }
-
         #stats-1229 .cs-stat:nth-of-type(3):before {
-            content: ""
+            content: "";
         }
     }
 
-    @media only screen and (min-width: 0rem) {
-    }
-
-    .cs-content ul {
+    .cs-content ul{
         margin-left: 20px;
-        margin-bottom: 20px
+        margin-bottom: 20px;
     }
 
     @media only screen and (min-width: 0rem) {
@@ -671,20 +766,39 @@ permalink: '/apie-mus/'
     <div class="cs-container">
         <div class="cs-content">
             <div class="cs-flex">
-                <span class="cs-topper">Kodėl verta?</span>
-                <h2 class="cs-title">Sklandi nuoma be rūpesčių</h2>
-                <p class="cs-text">Siūlome techniškai tvarkingus automobilius ir aiškias sąlygas. Mūsų tikslas yra užtikrinti, kad jūsų kelionė ar darbas vyktų sklandžiai, be jokių techninių nesklandumų ar paslėptų mokesčių.</p>
+                <span class="cs-topper">KODĖL VERTA RINKTIS MDENTA?</span>
+                <h2 class="cs-title">Kokybė, patirtis ir nuoširdus rūpestis jūsų šypsena</h2>
+                <p class="cs-text">Džiaugiamės ir didžiuojamės galėdami rūpintis Jūsų ir Jūsų šeimos narių šypsenomis jau daugiau nei 15 metų. Esame dėkingi už Jūsų ilgalaikį pasitikėjimą. Kiekvienas šiltas žodis – mums ne tik geriausias įvertinimas, bet ir įkvėpimas kasdien stengtis bei tobulėti Jūsų labui.</p>
             </div>
+            <ul class="cs-card-group">
+                <li class="cs-item">
+                    <img alt="Asmeninio dėmesio ikona" height="60" src="/assets/svgs/icon-heart.svg" width="60" aria-hidden="true" class="cs-icon">
+                    <h3 class="cs-h3">Asmeninis Dėmesys</h3>
+                </li>
+                <li class="cs-item">
+                    <img alt="Profesionalumo ikona" height="60" src="/assets/svgs/icon-medal.svg" width="60" aria-hidden="true" class="cs-icon">
+                    <h3 class="cs-h3">Kompetencija</h3>
+                </li>
+                <li class="cs-item">
+                    <img alt="Modernumo ikona" height="60" src="/assets/svgs/icon-modern.svg" width="60" aria-hidden="true" class="cs-icon modern">
+                    <h3 class="cs-h3">Šiuolaikinė Įranga</h3>
+                </li>
+                <li class="cs-item">
+                    <img alt="Saugumo ikona" height="60" src="/assets/svgs/icon-shield.svg" width="60" aria-hidden="true" class="cs-icon">
+                    <h3 class="cs-h3">Saugumas ir Jaukumas</h3>
+                </li>
+            </ul>
         </div>
         <ul class="cs-stat-group">
-            <li class="cs-stat"><span class="cs-desc">Metų rinkoje</span> <span class="cs-number">12+</span></li>
-            <li class="cs-stat"><span class="cs-desc">Automobilių parke</span><span class="cs-number">40+</span></li>
-            <li class="cs-stat"><span class="cs-desc">Pristatymas</span> <span class="cs-number">Visa LT</span></li>
-            <li class="cs-stat"><span class="cs-desc">Ridos limitas</span> <span class="cs-number">500 km</span></li>
-            <li class="cs-stat"><span class="cs-desc">Padaliniai</span> <span class="cs-number">2</span></li>
+            <li class="cs-stat"><span class="cs-desc">Metai Rinkoje</span> <span class="cs-number">15+</span></li>
+            <li class="cs-stat"><span class="cs-desc">Specialistų Komanda</span><span class="cs-number">10+</span></li>
+            <li class="cs-stat"><span class="cs-desc">Sveikos Šypsenos</span> <span class="cs-number">2000+</span></li>
+            <li class="cs-stat"><span class="cs-desc">Suteiktų Paslaugų Įvairovė</span> <span class="cs-number">50+</span></li>
+            <li class="cs-stat"><span class="cs-desc">Patogios darbo valandos</span> <span class="cs-number">8-20:00</span></li>
         </ul>
     </div>
 </section>
+
 {% include 'sections/cta2.html' %}
 
 {% endblock %}
