@@ -112,7 +112,7 @@ eleventyNavigation:
             background: #fff;
             border-radius: 1rem;
             overflow: hidden;
-            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
         }
 
         #pricing .cs-section-header {
@@ -125,28 +125,18 @@ eleventyNavigation:
         }
 
         #pricing .cs-section-circle {
-            width: 1.5rem;
-            height: 1.5rem;
-            background: var(--primary);
-            border-radius: 50%;
+            width: 2rem;
+            height: 2rem;
+            background-image: url('/assets/svgs/tooth.svg');
+            background-size: contain;
+            background-position: center;
+            background-repeat: no-repeat;
             display: flex;
             align-items: center;
             justify-content: center;
             flex-shrink: 0;
             margin: 0;
             position: relative;
-        }
-
-        #pricing .cs-section-circle::before {
-            content: '';
-            position: absolute;
-            top: 50%;
-            left: 50%;
-            transform: translate(-50%, -50%);
-            width: 0.75rem;
-            height: 0.75rem;
-            background: var(--LightBG);
-            border-radius: 50%;
         }
 
         #pricing .cs-section-title {
@@ -554,6 +544,10 @@ eleventyNavigation:
 
     </div>
 </section>
+
+<div class="wrapper-line">
+    <div class="cs-container"></div>
+</div>
 
 {% include 'sections/cta.html' %}
 

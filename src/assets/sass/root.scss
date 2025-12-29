@@ -1908,6 +1908,7 @@
         border: 1px solid #dadada;
         border-top: 4px solid var(--primary);
         max-height: 176px;
+        border-radius: 0.5rem;
     }
 
     #footer .cs-table tr {
@@ -2535,9 +2536,11 @@ fieldset.slider-wrapper {
         padding: 0;
         padding-left: 1.5rem;
         color: var(--headerColor);
-        background-color: #F5FBFF;
+        background-color: #fff;
         border: none;
         box-sizing: border-box;
+        border: 1px solid rgba(0, 0, 0, 0.1);
+        border-radius: 0.25rem;
     }
 
     #registruotis .cs-input::placeholder {
@@ -2757,7 +2760,7 @@ label {
     flex-direction: column;
     justify-content: flex-start;
     align-items: flex-start;
-    border-top: 8px solid var(--primary);
+    border-top: 6px solid var(--primary);
     border-radius: 1.5rem;
     background-color: #fff;
     width: 100%;
@@ -3228,7 +3231,7 @@ label {
 
 @media only screen and (min-width: 81.25rem) {
     #cta-1612 {
-        background: url("/assets/images/bottombanner.jpg");
+        background: url("/assets/images/bottombanner.jpeg");
         background-position: center 20%;
         background-size: cover;
         background-repeat: no-repeat;
@@ -3238,6 +3241,20 @@ label {
     #cta-1612 .cs-background img {
         display: none;
     }
+}
+
+/* Wrapper Line Separator */
+.wrapper-line {
+    padding-top: 0;
+    padding-bottom: 0;
+    padding-left: 1rem;
+    padding-right: 1rem;
+}
+
+.wrapper-line .cs-container {
+    max-width: 80rem;
+    margin: 0 auto;
+    border-top: 1px solid rgba(0, 0, 0, .1);
 }
 
 /*Call button*/
@@ -3250,6 +3267,8 @@ label {
 
 .call-button {
     background-color: var(--primary);
+    background-image: url(/assets/svgs/stripe.png);
+    background-size: 30px auto;
     align-items: center;
     border-radius: 100px;
     display: flex;
@@ -3259,6 +3278,7 @@ label {
     position: absolute;
     right: 0px;
     box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.40);
+    overflow: hidden;
 }
 
 .call-button-img {

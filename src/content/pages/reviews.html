@@ -55,121 +55,84 @@ permalink: '/atsiliepimai/'
         }
     }
 
-    @media only screen and (min-width: 64rem) {
-        #reviews-page-section .reviews-grid {
-            grid-template-columns: repeat(4, 1fr);
-        }
-    }
-
-    /* Review Card Styling - Exact match from index page */
-    .review-card {
+    /* Review Card Styling - Match index page */
+    #reviews-page-section .cs-item {
+        width: 100%;
+        padding: clamp(1.25rem, 3.15vw, 2.5rem);
         background-color: #fff;
-        border-radius: 0.75rem;
-        padding: 1.75rem;
-        height: 100%;
-        display: flex;
-        flex-direction: column;
         box-sizing: border-box;
-        transition: border-color 0.3s;
+        display: flex;
+        justify-content: flex-start;
+        align-items: flex-start;
+        flex-direction: column;
+        position: relative;
+        gap: clamp(1.5rem, 1vw, 3rem);
+        border-radius: 0.75rem;
+        box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+        transition: box-shadow 0.3s;
+        height: 100%;
         overflow: hidden;
-        border: 1px solid rgba(0, 0, 0, 0.2);
     }
 
-    .review-header {
+    #reviews-page-section .cs-flex-group {
         display: flex;
-        justify-content: space-between;
-        align-items: center;
-        margin-bottom: 0.5rem;
-    }
-
-    .review-avatar-wrapper {
-        display: flex;
-        align-items: center;
+        align-items: flex-start;
         gap: 0.75rem;
-        flex: 1;
     }
 
-    .review-avatar {
-        width: 3.5rem;
-        height: 3.5rem;
+    #reviews-page-section .cs-picture {
+        width: 3.25rem;
+        height: 3.25rem;
         border-radius: 50%;
-        background-color: #e0e0e0;
         display: flex;
         align-items: center;
         justify-content: center;
         flex-shrink: 0;
+        background-color: var(--LightBG);
     }
 
-    .review-avatar span {
+    #reviews-page-section .cs-profile {
+        width: 1.75rem;
+        height: 1.75rem;
+        display: block;
+    }
+
+    #reviews-page-section .cs-name {
         font-size: 1.25rem;
-        font-weight: 600;
-        color: #333;
+        line-height: 1.2em;
+        font-weight: 700;
+        margin: auto 0;
+        color: var(--headerColor);
+        display: block;
     }
 
-    .review-name-wrapper {
+    #reviews-page-section .wrapper {
         display: flex;
-        align-items: center;
+        flex-direction: column;
+        gap: 1rem;
     }
 
-    .review-name {
-        font-size: 1.125rem;
-        font-weight: 600;
-        color: #1a1a1a;
-        line-height: 1.2;
+    #reviews-page-section .cs-item-stars {
+        width: 6.75rem;
+        height: auto;
     }
 
-    .review-google-logo {
-        width: 1.5rem;
-        height: 1.5rem;
-        flex-shrink: 0;
-    }
-
-    .review-stars {
-        display: flex;
-        gap: 0.25rem;
-        margin-top: 0.5rem;
-        margin-bottom: 0.75rem;
-    }
-
-    .review-stars img {
-        width: 5.625rem;
-        height: 1.125rem;
-        flex-shrink: 0;
-    }
-
-    .review-text {
-        font-size: 0.9375rem;
-        line-height: 1.5;
-        color: #555;
+    #reviews-page-section .cs-review {
+        font-size: clamp(0.875rem, 1.6vw, 1.25rem);
+        line-height: 1.5em;
         margin: 0;
-        flex: 1;
+        color: var(--bodyTextColor);
+        z-index: 1;
     }
 
-    /* Tablet adjustments */
-    @media only screen and (min-width: 26.25rem) and (max-width: 47.9375rem) {
-        .review-card {
-            padding: 1.5rem;
-        }
-        
-        .review-avatar {
-            width: 3rem;
-            height: 3rem;
-        }
-        
-        .review-avatar span {
-            font-size: 1.125rem;
-        }
-        
-        .review-name {
-            font-size: 1rem;
-        }
-    }
-
-    /* Desktop adjustments */
-    @media only screen and (min-width: 64rem) {
-        .review-card {
-            padding: 1.75rem;
-        }
+    #reviews-page-section .cs-quote {
+        width: 5.375rem;
+        height: auto;
+        position: absolute;
+        right: 0;
+        bottom: 0;
+        z-index: 0;
+        opacity: 0.2;
     }
 </style>
 {% endblock %}
@@ -197,654 +160,89 @@ permalink: '/atsiliepimai/'
             </div>
         </div>
         <div class="reviews-grid">
-            <!-- MEDIUM REVIEWS (16-50 words) - First -->
-            <div class="review-card">
-                <div class="review-header">
-                    <div class="review-avatar-wrapper">
-                        <div class="review-avatar">
-                            <span>A</span>
-                        </div>
-                        <div class="review-name-wrapper">
-                            <span class="review-name">Algimantas</span>
-                        </div>
-                    </div>
-                    <img class="review-google-logo" src="/assets/svgs/quote.svg" alt="Quote" width="24" height="24" aria-hidden="true">
+            <!-- Review 1 -->
+            <div class="cs-item">
+                <div class="cs-flex-group">
+                    <picture class="cs-picture">
+                        <img src="/assets/svgs/user.svg" alt="" height="50" decoding="async" width="50" class="cs-profile" loading="lazy" aria-hidden="true">
+                    </picture>
+                    <span class="cs-name">Itella Logistics Lietuva</span>
                 </div>
-                <div class="review-stars">
-                    <img src="/assets/svgs/stars-5.svg" alt="5 Stars" width="90" height="18">
+                <div class="wrapper">
+                    <img src="/assets/svgs/stars-5.svg" alt="" height="16" decoding="async" width="96" class="cs-item-stars" loading="lazy" aria-hidden="true">
+                    <p class="cs-review">Norint užtikrinti kokybišką siuntų pristatymą reikalingas patikimas partneris. Todėl mes renkamės AutoVerus. Patikimas, greitas ir labai kokybiškas aptarnavimas. Rekomenduoju!</p>
                 </div>
-                <p class="review-text">Patys geriausi atsiliepimai apie šią įmonę, pastoviai nuomojamės autobusiukus žvejybai Norvegijoje. Tvarkingi, nauji, prižiūrėti autobusiukai !</p>
+                <img src="/assets/svgs/quote.svg" alt="" height="99" decoding="async" width="120" class="cs-quote" loading="lazy" aria-hidden="true">
             </div>
-            <div class="review-card">
-                <div class="review-header">
-                    <div class="review-avatar-wrapper">
-                        <div class="review-avatar">
-                            <span>S</span>
-                        </div>
-                        <div class="review-name-wrapper">
-                            <span class="review-name">Statina</span>
-                        </div>
-                    </div>
-                    <img class="review-google-logo" src="/assets/svgs/quote.svg" alt="Quote" width="24" height="24" aria-hidden="true">
+            <!-- Review 2 -->
+            <div class="cs-item">
+                <div class="cs-flex-group">
+                    <picture class="cs-picture">
+                        <img src="/assets/svgs/user.svg" alt="" height="50" decoding="async" width="50" class="cs-profile" loading="lazy" aria-hidden="true">
+                    </picture>
+                    <span class="cs-name">UAB Doriteksas, ibis Kaunas centre</span>
                 </div>
-                <div class="review-stars">
-                    <img src="/assets/svgs/stars-5.svg" alt="5 Stars" width="90" height="18">
+                <div class="wrapper">
+                    <img src="/assets/svgs/stars-5.svg" alt="" height="16" decoding="async" width="96" class="cs-item-stars" loading="lazy" aria-hidden="true">
+                    <p class="cs-review">Norime padėkoti įmonei UAB "AutoVerus" už operatyvų, profesionalų, draugišką bendradarbiavimą. Iškilus nesklandumui - sureaguojama ir išsprendžiama iš karto. Esame labai patenkinti ir jaučiamės saugūs, kad bus išpildyti visi mūsų lūkesčiai. Rekomenduojame.</p>
                 </div>
-                <p class="review-text">Patikimas partneris trūkstant krovininio transporto ir ne tik! Visada pagelbės papuolus į bėda. Įmonė, kurią galima visiems rekomenduoti.</p>
+                <img src="/assets/svgs/quote.svg" alt="" height="99" decoding="async" width="120" class="cs-quote" loading="lazy" aria-hidden="true">
             </div>
-            <div class="review-card">
-                <div class="review-header">
-                    <div class="review-avatar-wrapper">
-                        <div class="review-avatar">
-                            <span>O</span>
-                        </div>
-                        <div class="review-name-wrapper">
-                            <span class="review-name">O DURYS</span>
-                        </div>
-                    </div>
-                    <img class="review-google-logo" src="/assets/svgs/quote.svg" alt="Quote" width="24" height="24" aria-hidden="true">
+            <!-- Review 3 -->
+            <div class="cs-item">
+                <div class="cs-flex-group">
+                    <picture class="cs-picture">
+                        <img src="/assets/svgs/user.svg" alt="" height="50" decoding="async" width="50" class="cs-profile" loading="lazy" aria-hidden="true">
+                    </picture>
+                    <span class="cs-name">Povilas A.</span>
                 </div>
-                <div class="review-stars">
-                    <img src="/assets/svgs/stars-5.svg" alt="5 Stars" width="90" height="18">
+                <div class="wrapper">
+                    <img src="/assets/svgs/stars-5.svg" alt="" height="16" decoding="async" width="96" class="cs-item-stars" loading="lazy" aria-hidden="true">
+                    <p class="cs-review">Dirba lanksčiai ir patikimai. Jeigu "dega" krovinys, nesvarbu kada ar 5ryto ar 22val vakaro pirmas skambutis AutoVerus. Rekomenduoju 100%</p>
                 </div>
-                <p class="review-text">Ačiū vadybininkui Mantui, už supratingumą ir greita komunikaciją. Rekomenduoju šią įmonę, dėl kainų, tvarkingo transporto ir orientacija į klientą.</p>
+                <img src="/assets/svgs/quote.svg" alt="" height="99" decoding="async" width="120" class="cs-quote" loading="lazy" aria-hidden="true">
             </div>
-            <div class="review-card">
-                <div class="review-header">
-                    <div class="review-avatar-wrapper">
-                        <div class="review-avatar">
-                            <span>M</span>
-                        </div>
-                        <div class="review-name-wrapper">
-                            <span class="review-name">MB Žiedų planeta</span>
-                        </div>
-                    </div>
-                    <img class="review-google-logo" src="/assets/svgs/quote.svg" alt="Quote" width="24" height="24" aria-hidden="true">
+            <!-- Review 4 -->
+            <div class="cs-item">
+                <div class="cs-flex-group">
+                    <picture class="cs-picture">
+                        <img src="/assets/svgs/user.svg" alt="" height="50" decoding="async" width="50" class="cs-profile" loading="lazy" aria-hidden="true">
+                    </picture>
+                    <span class="cs-name">Adomas Baltic Transline</span>
                 </div>
-                <div class="review-stars">
-                    <img src="/assets/svgs/stars-5.svg" alt="5 Stars" width="90" height="18">
+                <div class="wrapper">
+                    <img src="/assets/svgs/stars-5.svg" alt="" height="16" decoding="async" width="96" class="cs-item-stars" loading="lazy" aria-hidden="true">
+                    <p class="cs-review">Su šia kompanija jau dirbam keletą metų, visada randam bendram kalbą, problemas sprendžia čia ir dabar. Esame labai patenkinti turėdami tokį partnerį.</p>
                 </div>
-                <p class="review-text">Jau keletą metų jau metų AutoVerus įmonė išvežioja mūsų produkciją klientams, esame labai patenkinti šios įmonės teikiamomis paslaugomis ! Ačiū už bendradarbiavimą !!!</p>
+                <img src="/assets/svgs/quote.svg" alt="" height="99" decoding="async" width="120" class="cs-quote" loading="lazy" aria-hidden="true">
             </div>
-            <div class="review-card">
-                <div class="review-header">
-                    <div class="review-avatar-wrapper">
-                        <div class="review-avatar">
-                            <span>G</span>
-                        </div>
-                        <div class="review-name-wrapper">
-                            <span class="review-name">Gabija K.</span>
-                        </div>
-                    </div>
-                    <img class="review-google-logo" src="/assets/svgs/quote.svg" alt="Quote" width="24" height="24" aria-hidden="true">
+            <!-- Review 5 -->
+            <div class="cs-item">
+                <div class="cs-flex-group">
+                    <picture class="cs-picture">
+                        <img src="/assets/svgs/user.svg" alt="" height="50" decoding="async" width="50" class="cs-profile" loading="lazy" aria-hidden="true">
+                    </picture>
+                    <span class="cs-name">UAB "Viržis"</span>
                 </div>
-                <div class="review-stars">
-                    <img src="/assets/svgs/stars-5.svg" alt="5 Stars" width="90" height="18">
+                <div class="wrapper">
+                    <img src="/assets/svgs/stars-5.svg" alt="" height="16" decoding="async" width="96" class="cs-item-stars" loading="lazy" aria-hidden="true">
+                    <p class="cs-review">Penkis metus dirbame su "AutoVerus". Džiaugiamės Jūsų paslaugų kokybe, lankstumu, noru visada padėti ir siekiu tobulėti. Profesionalus požiūris į klientą, greitas prisitaikymas prie poreikių ir atsakingumas yra kokybės ir patikimumo garantas.</p>
                 </div>
-                <p class="review-text">Nuomavome busiuką kartu su kompanija, džiaugiamės, kad viskas įvyko labai sklandžiai ir greitai. Busiukas buvo švarus, labai rekomenduojame!! Ačiū!</p>
+                <img src="/assets/svgs/quote.svg" alt="" height="99" decoding="async" width="120" class="cs-quote" loading="lazy" aria-hidden="true">
             </div>
-            <div class="review-card">
-                <div class="review-header">
-                    <div class="review-avatar-wrapper">
-                        <div class="review-avatar">
-                            <span>D</span>
-                        </div>
-                        <div class="review-name-wrapper">
-                            <span class="review-name">Deividas</span>
-                        </div>
-                    </div>
-                    <img class="review-google-logo" src="/assets/svgs/quote.svg" alt="Quote" width="24" height="24" aria-hidden="true">
-                </div>
-                <div class="review-stars">
-                    <img src="/assets/svgs/stars-5.svg" alt="5 Stars" width="90" height="18">
-                </div>
-                <p class="review-text">Rimta ir patikima įmonė. Dažnai nuomojam krovininį transportą ir niekad nebuvo problemų. Visuomet išsprendžia visus klausimus. Geriausi atsiliepimai!</p>
-            </div>
-            <div class="review-card">
-                <div class="review-header">
-                    <div class="review-avatar-wrapper">
-                        <div class="review-avatar">
-                            <span>R</span>
-                        </div>
-                        <div class="review-name-wrapper">
-                            <span class="review-name">RMI muzikos servisas</span>
-                        </div>
-                    </div>
-                    <img class="review-google-logo" src="/assets/svgs/quote.svg" alt="Quote" width="24" height="24" aria-hidden="true">
-                </div>
-                <div class="review-stars">
-                    <img src="/assets/svgs/stars-5.svg" alt="5 Stars" width="90" height="18">
-                </div>
-                <p class="review-text">Tik geri atsiliepimai apie šią įmonę, šiltas bendravimas, lanksčios sąlygos ir greitas problemų sprendimas. Rekomenduojame.</p>
-            </div>
-            <div class="review-card">
-                <div class="review-header">
-                    <div class="review-avatar-wrapper">
-                        <div class="review-avatar">
-                            <span>P</span>
-                        </div>
-                        <div class="review-name-wrapper">
-                            <span class="review-name">Povilas A.</span>
-                        </div>
-                    </div>
-                    <img class="review-google-logo" src="/assets/svgs/quote.svg" alt="Quote" width="24" height="24" aria-hidden="true">
-                </div>
-                <div class="review-stars">
-                    <img src="/assets/svgs/stars-5.svg" alt="5 Stars" width="90" height="18">
-                </div>
-                <p class="review-text">Dirba lanksčiai ir patikimai. Jeigu "dega" krovinys, nesvarbu kada ar 5ryto ar 22val vakaro pirmas skambutis AutoVerus. Rekomenduoju 100%</p>
-            </div>
-            <div class="review-card">
-                <div class="review-header">
-                    <div class="review-avatar-wrapper">
-                        <div class="review-avatar">
-                            <span>A</span>
-                        </div>
-                        <div class="review-name-wrapper">
-                            <span class="review-name">Adomas Baltic Transline</span>
-                        </div>
-                    </div>
-                    <img class="review-google-logo" src="/assets/svgs/quote.svg" alt="Quote" width="24" height="24" aria-hidden="true">
-                </div>
-                <div class="review-stars">
-                    <img src="/assets/svgs/stars-5.svg" alt="5 Stars" width="90" height="18">
-                </div>
-                <p class="review-text">Su šia kompanija jau dirbam keletą metų, visada randam bendram kalbą, problemas sprendžia čia ir dabar. Esame labai patenkinti turėdami tokį partnerį.</p>
-            </div>
-            <div class="review-card">
-                <div class="review-header">
-                    <div class="review-avatar-wrapper">
-                        <div class="review-avatar">
-                            <span>I</span>
-                        </div>
-                        <div class="review-name-wrapper">
-                            <span class="review-name">Itella logistics lietuva</span>
-                        </div>
-                    </div>
-                    <img class="review-google-logo" src="/assets/svgs/quote.svg" alt="Quote" width="24" height="24" aria-hidden="true">
-                </div>
-                <div class="review-stars">
-                    <img src="/assets/svgs/stars-5.svg" alt="5 Stars" width="90" height="18">
-                </div>
-                <p class="review-text">Norint užtikrinti kokybišką siuntų pristatymą reikalingas patikimas partneris. Todėl mes renkamės AutoVerus. Patikimas, greitas ir labai kokybiškas aptarnavimas. Rekomenduoju!</p>
-            </div>
-            <div class="review-card">
-                <div class="review-header">
-                    <div class="review-avatar-wrapper">
-                        <div class="review-avatar">
-                            <span>M</span>
-                        </div>
-                        <div class="review-name-wrapper">
-                            <span class="review-name">Minijus</span>
-                        </div>
-                    </div>
-                    <img class="review-google-logo" src="/assets/svgs/quote.svg" alt="Quote" width="24" height="24" aria-hidden="true">
-                </div>
-                <div class="review-stars">
-                    <img src="/assets/svgs/stars-5.svg" alt="5 Stars" width="90" height="18">
-                </div>
-                <p class="review-text">Bendradarbiaujam jau keli metai, labai patenkintas musu draugyste, rekomenduoju sia kompanija ir draugams. Visada paslaugus ir atsakingi, tiesiog malonu dirbti su jais!</p>
-            </div>
-            <div class="review-card">
-                <div class="review-header">
-                    <div class="review-avatar-wrapper">
-                        <div class="review-avatar">
-                            <span>J</span>
-                        </div>
-                        <div class="review-name-wrapper">
-                            <span class="review-name">Judo club "Budoka"</span>
-                        </div>
-                    </div>
-                    <img class="review-google-logo" src="/assets/svgs/quote.svg" alt="Quote" width="24" height="24" aria-hidden="true">
-                </div>
-                <div class="review-stars">
-                    <img src="/assets/svgs/stars-5.svg" alt="5 Stars" width="90" height="18">
-                </div>
-                <p class="review-text">Ne kartą naudojomės šios įmonės teikiamomis paslaugomis. Niekada nenuvylė, viskas laiku ir labai kokybiška. Mandagus aptarnavimas. Neabejoju, naudosimės jūsų paslaugomis dar ir dar!!!!</p>
-            </div>
-            <div class="review-card">
-                <div class="review-header">
-                    <div class="review-avatar-wrapper">
-                        <div class="review-avatar">
-                            <span>H</span>
-                        </div>
-                        <div class="review-name-wrapper">
-                            <span class="review-name">HAB "Daigelis"</span>
-                        </div>
-                    </div>
-                    <img class="review-google-logo" src="/assets/svgs/quote.svg" alt="Quote" width="24" height="24" aria-hidden="true">
-                </div>
-                <div class="review-stars">
-                    <img src="/assets/svgs/stars-5.svg" alt="5 Stars" width="90" height="18">
-                </div>
-                <p class="review-text">Keletą metų dirbame su "AutoVerus". Padėjo išspręsti transportavimo problemas. Patinka požiūris į klientą, lankstumas ir žodžio laikymasis. Daug nekalbant-patikima įmonė.</p>
-            </div>
-            <div class="review-card">
-                <div class="review-header">
-                    <div class="review-avatar-wrapper">
-                        <div class="review-avatar">
-                            <span>A</span>
-                        </div>
-                        <div class="review-name-wrapper">
-                            <span class="review-name">Andrius</span>
-                        </div>
-                    </div>
-                    <img class="review-google-logo" src="/assets/svgs/quote.svg" alt="Quote" width="24" height="24" aria-hidden="true">
-                </div>
-                <div class="review-stars">
-                    <img src="/assets/svgs/stars-5.svg" alt="5 Stars" width="90" height="18">
-                </div>
-                <p class="review-text">Kelis metus draugaujame su AutoVerus. Naudojamės auto paslaugomis, nuomojamės automobilius, važiuojame į žygius kalnuose visoje europoje. Esame labai patenkinti ir toliau tęsime bendradarbiavimą. Jokių nesklandumų. Ačiū įmonės vadovui.</p>
-            </div>
-            <div class="review-card">
-                <div class="review-header">
-                    <div class="review-avatar-wrapper">
-                        <div class="review-avatar">
-                            <span>K</span>
-                        </div>
-                        <div class="review-name-wrapper">
-                            <span class="review-name">Kauno kolegijos studentų atstovybė</span>
-                        </div>
-                    </div>
-                    <img class="review-google-logo" src="/assets/svgs/quote.svg" alt="Quote" width="24" height="24" aria-hidden="true">
-                </div>
-                <div class="review-stars">
-                    <img src="/assets/svgs/stars-5.svg" alt="5 Stars" width="90" height="18">
-                </div>
-                <p class="review-text">Malonus bendradarbiavimas, lengva surasti bendrą kalbą ir labai puikus aptarnavimas! Padėjo išspręsti transportavimo problemas. Labai džiaugiamės turėję bendrų reikalų ir tikimės tolimesnio malonaus bendradarbiavimo.</p>
-            </div>
-            <div class="review-card">
-                <div class="review-header">
-                    <div class="review-avatar-wrapper">
-                        <div class="review-avatar">
-                            <span>U</span>
-                        </div>
-                        <div class="review-name-wrapper">
-                            <span class="review-name">UAB Doriteksas, ibis Kaunas centre viešbutis</span>
-                        </div>
-                    </div>
-                    <img class="review-google-logo" src="/assets/svgs/quote.svg" alt="Quote" width="24" height="24" aria-hidden="true">
-                </div>
-                <div class="review-stars">
-                    <img src="/assets/svgs/stars-5.svg" alt="5 Stars" width="90" height="18">
-                </div>
-                <p class="review-text">Norime padėkoti įmonei UAB "AutoVerus" už operatyvų, profesionalų, draugišką bendradarbiavimą. Iškilus nesklandumui - sureaguojama ir išsprendžiama iš karto. Esame labai patenkinti ir jaučiamės saugūs, kad bus išpildyti visi mūsų lūkesčiai. Rekomenduojame.</p>
-            </div>
-            <div class="review-card">
-                <div class="review-header">
-                    <div class="review-avatar-wrapper">
-                        <div class="review-avatar">
-                            <span>P</span>
-                        </div>
-                        <div class="review-name-wrapper">
-                            <span class="review-name">Privatus asmuo</span>
-                        </div>
-                    </div>
-                    <img class="review-google-logo" src="/assets/svgs/quote.svg" alt="Quote" width="24" height="24" aria-hidden="true">
-                </div>
-                <div class="review-stars">
-                    <img src="/assets/svgs/stars-5.svg" alt="5 Stars" width="90" height="18">
-                </div>
-                <p class="review-text">Komentaru rasyti, bei girti imoniu nemegstu, bet įmonės AutoVerus atsakingas, pagarbus poziuris į kiekvieną klientą, bei greitas sprendimo būdas, negali likti nepastebetas. :) Man rekomendavo draugas, as rekomenduoju jums !!!</p>
-            </div>
-            <div class="review-card">
-                <div class="review-header">
-                    <div class="review-avatar-wrapper">
-                        <div class="review-avatar">
-                            <span>U</span>
-                        </div>
-                        <div class="review-name-wrapper">
-                            <span class="review-name">UAB "Viržis"</span>
-                        </div>
-                    </div>
-                    <img class="review-google-logo" src="/assets/svgs/quote.svg" alt="Quote" width="24" height="24" aria-hidden="true">
-                </div>
-                <div class="review-stars">
-                    <img src="/assets/svgs/stars-5.svg" alt="5 Stars" width="90" height="18">
-                </div>
-                <p class="review-text">Penkis metus dirbame su "AutoVerus". Džiaugiamės Jūsų paslaugų kokybe, lankstumu, noru visada padėti ir siekiu tobulėti. Profesionalus požiūris į klientą, greitas prisitaikymas prie poreikių ir atsakingumas yra kokybės ir patikimumo garantas.</p>
-            </div>
-            <div class="review-card">
-                <div class="review-header">
-                    <div class="review-avatar-wrapper">
-                        <div class="review-avatar">
-                            <span>S</span>
-                        </div>
-                        <div class="review-name-wrapper">
-                            <span class="review-name">Svajūnas</span>
-                        </div>
-                    </div>
-                    <img class="review-google-logo" src="/assets/svgs/quote.svg" alt="Quote" width="24" height="24" aria-hidden="true">
-                </div>
-                <div class="review-stars">
-                    <img src="/assets/svgs/stars-5.svg" alt="5 Stars" width="90" height="18">
-                </div>
-                <p class="review-text">Išsinuomavome autobusiuką kelionei į Norvegiją, auto tvarkingas, prižiūrėtas, malonu su tokiu ir važiuoti į tolimas keliones. Įmonės vadovas ir personalas mandagūs, viskas suderinta nuo iki be jokių nesklandumų. Kainos tikrai priimtinos. Kitą met vėl draugausim su, , AutoVerus, ,</p>
-            </div>
-            <div class="review-card">
-                <div class="review-header">
-                    <div class="review-avatar-wrapper">
-                        <div class="review-avatar">
-                            <span>Ž</span>
-                        </div>
-                        <div class="review-name-wrapper">
-                            <span class="review-name">Žydrūnas</span>
-                        </div>
-                    </div>
-                    <img class="review-google-logo" src="/assets/svgs/quote.svg" alt="Quote" width="24" height="24" aria-hidden="true">
-                </div>
-                <div class="review-stars">
-                    <img src="/assets/svgs/stars-5.svg" alt="5 Stars" width="90" height="18">
-                </div>
-                <p class="review-text">Laba diena, noriu rekomenduoti šią įmonę ir jos vadovą kaippatikimą partnerį savo verslui ir ne tik. Su šia įmone dirbame jau 3 metus ir per šį laikotarpį neturėjome jokių problemų. Rekomenduoju šią įmonę visu 100% kaip patikimą partnerį.</p>
-            </div>
-            <div class="review-card">
-                <div class="review-header">
-                    <div class="review-avatar-wrapper">
-                        <div class="review-avatar">
-                            <span>A</span>
-                        </div>
-                        <div class="review-name-wrapper">
-                            <span class="review-name">ASTIJUS</span>
-                        </div>
-                    </div>
-                    <img class="review-google-logo" src="/assets/svgs/quote.svg" alt="Quote" width="24" height="24" aria-hidden="true">
-                </div>
-                <div class="review-stars">
-                    <img src="/assets/svgs/stars-5.svg" alt="5 Stars" width="90" height="18">
-                </div>
-                <p class="review-text">Daug metų dirbu su AutoVerus, pagelbėja mums tiek su keleiviniu, tiek su krovininiu transportu. Smagu, kad turi didelį auto parką ir pasirinkimą. Kainos ir kokybės santykis irgi labai geras, neturėjome jokių neišsprestų situacijų. Rekomenduoju !!!</p>
-            </div>
-            <div class="review-card">
-                <div class="review-header">
-                    <div class="review-avatar-wrapper">
-                        <div class="review-avatar">
-                            <span>M</span>
-                        </div>
-                        <div class="review-name-wrapper">
-                            <span class="review-name">MB Goball</span>
-                        </div>
-                    </div>
-                    <img class="review-google-logo" src="/assets/svgs/quote.svg" alt="Quote" width="24" height="24" aria-hidden="true">
-                </div>
-                <div class="review-stars">
-                    <img src="/assets/svgs/stars-5.svg" alt="5 Stars" width="90" height="18">
-                </div>
-                <p class="review-text">Nuomojomės mikroautobusiuką iš AutoVerus - likome labai patenkinti! Transporto priemonė buvo švari, tvarkinga ir techniškai tvarkinga. Kaina - tikrai konkurencinga, o aptarnavimas malonus ir profesionalus. Visa nuomos eiga buvo sklandi - nuo rezervacijos iki grąžinimo. Rekomenduoju visiems, ieškantiems patikimo ir patogaus sprendimo kelionėms ar darbui!</p>
-            </div>
-            <!-- LONGEST REVIEWS (50+ words) - Second -->
-            <div class="review-card">
-                <div class="review-header">
-                    <div class="review-avatar-wrapper">
-                        <div class="review-avatar">
-                            <span>G</span>
-                        </div>
-                        <div class="review-name-wrapper">
-                            <span class="review-name">Gediminas</span>
-                        </div>
-                    </div>
-                    <img class="review-google-logo" src="/assets/svgs/quote.svg" alt="Quote" width="24" height="24" aria-hidden="true">
-                </div>
-                <div class="review-stars">
-                    <img src="/assets/svgs/stars-5.svg" alt="5 Stars" width="90" height="18">
-                </div>
-                <p class="review-text">Kai nuomoji standartinėm sąlygom: išanksto susitaręs, rezarvavęs - natūralu, aptarnavimas ir susikalbėjimas - viskas ok. Tačiau, kaip draugus, taip paslaugų tiekėjus, pažinsi bėdoje. Tokią apturėjom, važiuojant į Rygos aerouostą, kai "nusprogo" busikas tarp Kryžkalnio ir Šiaulių. O turėjom 2.45 val nakties. Didžiausias dėkui dir. Darijui už pagalbą, įsiklausymą, įmonės vairuotojui už operatyvumą !!! Ačiū !!!</p>
-            </div>
-            <div class="review-card">
-                <div class="review-header">
-                    <div class="review-avatar-wrapper">
-                        <div class="review-avatar">
-                            <span>U</span>
-                        </div>
-                        <div class="review-name-wrapper">
-                            <span class="review-name">UAB Baltic Travel Service</span>
-                        </div>
-                    </div>
-                    <img class="review-google-logo" src="/assets/svgs/quote.svg" alt="Quote" width="24" height="24" aria-hidden="true">
-                </div>
-                <div class="review-stars">
-                    <img src="/assets/svgs/stars-5.svg" alt="5 Stars" width="90" height="18">
-                </div>
-                <p class="review-text">"AutoVerus " patikimiausias mūsų agentūros partneris, užsakant individualius pervežimus. Šia pervežimų paslauga naudojasi labai specifiniai mūsų klientai - lėktuvų pilotai. Jų užsakymai būna skubūs ir su dažnais pasikeitimais, tačiau visada ramu, kai kreipiesi į "AutoVerus " kompaniją. Visada sureaguoja į užsakymą skubiai, kantriai ir tiksliai prisitaiko prie pilotų poreikių. Patikima ir malonu bendradarbiauti.</p>
-            </div>
-            <div class="review-card">
-                <div class="review-header">
-                    <div class="review-avatar-wrapper">
-                        <div class="review-avatar">
-                            <span>D</span>
-                        </div>
-                        <div class="review-name-wrapper">
-                            <span class="review-name">Donatas</span>
-                        </div>
-                    </div>
-                    <img class="review-google-logo" src="/assets/svgs/quote.svg" alt="Quote" width="24" height="24" aria-hidden="true">
-                </div>
-                <div class="review-stars">
-                    <img src="/assets/svgs/stars-5.svg" alt="5 Stars" width="90" height="18">
-                </div>
-                <p class="review-text">Kelionei į Kroatiją pasirinkome mikroautobusą iš įmonės AutoVerus - ir tai buvo puikus sprendimas! Transporto priemonė buvo tvarkinga, švari, techniškai puikios būklės ir visiškai pasiruošta ilgai kelionei. Kelionė vyko sklandžiai, be jokių nesklandumų - jautėmės saugiai ir komfortiškai visos kelionės metu. Taip pat labai nudžiugino profesionalus ir draugiškas įmonės darbuotojų aptarnavimas - tiek rezervacijos, tiek paėmimo ir grąžinimo procesai buvo aiškūs, greiti ir be jokių paslėptų mokesčių. Jautėsi, kad klientu yra rūpinamasi !</p>
-            </div>
-            <div class="review-card">
-                <div class="review-header">
-                    <div class="review-avatar-wrapper">
-                        <div class="review-avatar">
-                            <span>V</span>
-                        </div>
-                        <div class="review-name-wrapper">
-                            <span class="review-name">Vladas</span>
-                        </div>
-                    </div>
-                    <img class="review-google-logo" src="/assets/svgs/quote.svg" alt="Quote" width="24" height="24" aria-hidden="true">
-                </div>
-                <div class="review-stars">
-                    <img src="/assets/svgs/stars-5.svg" alt="5 Stars" width="90" height="18">
-                </div>
-                <p class="review-text">Tai yra pirma mano sutikta įmonė kuri šitaip rūpinosi savo klientais...Atvykus į Lietuvą lėktuvu vidurnaktį (su mažamečiu vaiku) mašina buvo palikta oro uoste mums, kad galėtume iškart važiuoti be jokių laukimo, dokumentų pildymo, ar kitų nesklandumų kurių visuomet turėjome su kitomis nuomos agentūromis. Mašina buvo tiesiog tobula mūsų reikmėms. Atidavimas automobilio taip pat buvo nepriekaištingas. Vairuotojas pats nuvežė mus iki oro uosto ir net padėjo iškrauti lagaminus. Žodžiu, buvome sužavėti Jūsų paslauga ir rūpestingumu. Tikrai, 100% grįžę naudosimės Jūsų paslaugomis. Ačiū Jums!</p>
-            </div>
-            <div class="review-card">
-                <div class="review-header">
-                    <div class="review-avatar-wrapper">
-                        <div class="review-avatar">
-                            <span>T</span>
-                        </div>
-                        <div class="review-name-wrapper">
-                            <span class="review-name">Tomas E.</span>
-                        </div>
-                    </div>
-                    <img class="review-google-logo" src="/assets/svgs/quote.svg" alt="Quote" width="24" height="24" aria-hidden="true">
-                </div>
-                <div class="review-stars">
-                    <img src="/assets/svgs/stars-5.svg" alt="5 Stars" width="90" height="18">
-                </div>
-                <p class="review-text">Likome labai patenkinti įmonė. Issinuomavome automobilį su šeima, 9 vietų caravelle. Dėl šeimyniniu problemu, turėjome atšaukti užsakymą. Galvojome, kad praradome visus pinigus, bet mes klydome! Su mumis bendravo labai maloni mergina, kuri patvirtino, kad visos problemos yra issprendziamos! Taip ir buvo! Įmones vadovas (kaip supratau) bendravo labai maloniai. Jis nesuskaičiavo visos pinigu sumos, bet logiškai aisku, kad turejo nusirašyti depozitą (bet tai maža suma palyginus, ką sumokejom už visa nuomos laikotarpį), tad mūsų nuostoliai dėl mūsų apsisprendimo buvo minimalus. Palyginus ką patyrė įmonė, nes ji automobilį galejo išnuomuoti kitiems. Labai rekomenduojam, žiauriai faina komanda! Ačiū jums labai, labai. Tomas Eide su šeima;)</p>
-            </div>
-            <!-- SHORTEST REVIEWS (1-15 words) - Last -->
-            <div class="review-card">
-                <div class="review-header">
-                    <div class="review-avatar-wrapper">
-                        <div class="review-avatar">
-                            <span>G</span>
-                        </div>
-                        <div class="review-name-wrapper">
-                            <span class="review-name">Gabriele</span>
-                        </div>
-                    </div>
-                    <img class="review-google-logo" src="/assets/svgs/quote.svg" alt="Quote" width="24" height="24" aria-hidden="true">
-                </div>
-                <div class="review-stars">
-                    <img src="/assets/svgs/stars-5.svg" alt="5 Stars" width="90" height="18">
-                </div>
-                <p class="review-text">Viskas labai sklandu !</p>
-            </div>
-            <div class="review-card">
-                <div class="review-header">
-                    <div class="review-avatar-wrapper">
-                        <div class="review-avatar">
-                            <span>A</span>
-                        </div>
-                        <div class="review-name-wrapper">
-                            <span class="review-name">Audrius</span>
-                        </div>
-                    </div>
-                    <img class="review-google-logo" src="/assets/svgs/quote.svg" alt="Quote" width="24" height="24" aria-hidden="true">
-                </div>
-                <div class="review-stars">
-                    <img src="/assets/svgs/stars-5.svg" alt="5 Stars" width="90" height="18">
-                </div>
-                <p class="review-text">Geri automobiliai ir profesionalus aptarnavimas</p>
-            </div>
-            <div class="review-card">
-                <div class="review-header">
-                    <div class="review-avatar-wrapper">
-                        <div class="review-avatar">
-                            <span>U</span>
-                        </div>
-                        <div class="review-name-wrapper">
-                            <span class="review-name">UAB MB+</span>
-                        </div>
-                    </div>
-                    <img class="review-google-logo" src="/assets/svgs/quote.svg" alt="Quote" width="24" height="24" aria-hidden="true">
-                </div>
-                <div class="review-stars">
-                    <img src="/assets/svgs/stars-5.svg" alt="5 Stars" width="90" height="18">
-                </div>
-                <p class="review-text">Tvarkingi autobusiukai, mandagūs darbuotojai, lanksčios nuomos sąlygos!</p>
-            </div>
-            <div class="review-card">
-                <div class="review-header">
-                    <div class="review-avatar-wrapper">
-                        <div class="review-avatar">
-                            <span>E</span>
-                        </div>
-                        <div class="review-name-wrapper">
-                            <span class="review-name">Ernestas</span>
-                        </div>
-                    </div>
-                    <img class="review-google-logo" src="/assets/svgs/quote.svg" alt="Quote" width="24" height="24" aria-hidden="true">
-                </div>
-                <div class="review-stars">
-                    <img src="/assets/svgs/stars-5.svg" alt="5 Stars" width="90" height="18">
-                </div>
-                <p class="review-text">Rekomenduoju !!! Noriu padėkoti už profesionalų bei draugišką bendradarbiavimą.</p>
-            </div>
-            <div class="review-card">
-                <div class="review-header">
-                    <div class="review-avatar-wrapper">
-                        <div class="review-avatar">
-                            <span>E</span>
-                        </div>
-                        <div class="review-name-wrapper">
-                            <span class="review-name">Elena</span>
-                        </div>
-                    </div>
-                    <img class="review-google-logo" src="/assets/svgs/quote.svg" alt="Quote" width="24" height="24" aria-hidden="true">
-                </div>
-                <div class="review-stars">
-                    <img src="/assets/svgs/stars-5.svg" alt="5 Stars" width="90" height="18">
-                </div>
-                <p class="review-text">Labai geros paslaugos, malonūs darbuotojai, automobilis buvo patogus ir tvarkingas. Ačiū! :)</p>
-            </div>
-            <div class="review-card">
-                <div class="review-header">
-                    <div class="review-avatar-wrapper">
-                        <div class="review-avatar">
-                            <span>R</span>
-                        </div>
-                        <div class="review-name-wrapper">
-                            <span class="review-name">Rokas G.</span>
-                        </div>
-                    </div>
-                    <img class="review-google-logo" src="/assets/svgs/quote.svg" alt="Quote" width="24" height="24" aria-hidden="true">
-                </div>
-                <div class="review-stars">
-                    <img src="/assets/svgs/stars-5.svg" alt="5 Stars" width="90" height="18">
-                </div>
-                <p class="review-text">Nuostabu, autobusiukai tikrai nuostabus kiek teko pasinomuoti kelionėmis! Rekomenduoju</p>
-            </div>
-            <div class="review-card">
-                <div class="review-header">
-                    <div class="review-avatar-wrapper">
-                        <div class="review-avatar">
-                            <span>I</span>
-                        </div>
-                        <div class="review-name-wrapper">
-                            <span class="review-name">Irma C.</span>
-                        </div>
-                    </div>
-                    <img class="review-google-logo" src="/assets/svgs/quote.svg" alt="Quote" width="24" height="24" aria-hidden="true">
-                </div>
-                <div class="review-stars">
-                    <img src="/assets/svgs/stars-5.svg" alt="5 Stars" width="90" height="18">
-                </div>
-                <p class="review-text">Puiki, greitai ir profesionaliai suteikta paslauga. Autobusiukai, švarūs, tvarkingi. Rekomenduoju</p>
-            </div>
-            <div class="review-card">
-                <div class="review-header">
-                    <div class="review-avatar-wrapper">
-                        <div class="review-avatar">
-                            <span>U</span>
-                        </div>
-                        <div class="review-name-wrapper">
-                            <span class="review-name">UAB Premiumstore</span>
-                        </div>
-                    </div>
-                    <img class="review-google-logo" src="/assets/svgs/quote.svg" alt="Quote" width="24" height="24" aria-hidden="true">
-                </div>
-                <div class="review-stars">
-                    <img src="/assets/svgs/stars-5.svg" alt="5 Stars" width="90" height="18">
-                </div>
-                <p class="review-text">Operatyvu, greita, saugu ir patikima! rekomenduoju dėl pervežimų nuo dėžutės iki paletės!</p>
-            </div>
-            <div class="review-card">
-                <div class="review-header">
-                    <div class="review-avatar-wrapper">
-                        <div class="review-avatar">
-                            <span>U</span>
-                        </div>
-                        <div class="review-name-wrapper">
-                            <span class="review-name">Uab Transveža</span>
-                        </div>
-                    </div>
-                    <img class="review-google-logo" src="/assets/svgs/quote.svg" alt="Quote" width="24" height="24" aria-hidden="true">
-                </div>
-                <div class="review-stars">
-                    <img src="/assets/svgs/stars-5.svg" alt="5 Stars" width="90" height="18">
-                </div>
-                <p class="review-text">Įmonė su kuria malonu turėti reikalą ! Lankstūs, mandagūs, konkretūs ! Ačiū už puikų bendradarbiavimą !!!</p>
-            </div>
-            <div class="review-card">
-                <div class="review-header">
-                    <div class="review-avatar-wrapper">
-                        <div class="review-avatar">
-                            <span>U</span>
-                        </div>
-                        <div class="review-name-wrapper">
-                            <span class="review-name">UAB "Mbrush"</span>
-                        </div>
-                    </div>
-                    <img class="review-google-logo" src="/assets/svgs/quote.svg" alt="Quote" width="24" height="24" aria-hidden="true">
-                </div>
-                <div class="review-stars">
-                    <img src="/assets/svgs/stars-5.svg" alt="5 Stars" width="90" height="18">
-                </div>
-                <p class="review-text">krovinio pristatymas nuo mažos dėžutės iki nestandartinio baldo! Lankstumas, patikimumas 100%</p>
-            </div>
-            <div class="review-card">
-                <div class="review-header">
-                    <div class="review-avatar-wrapper">
-                        <div class="review-avatar">
-                            <span>I</span>
-                        </div>
-                        <div class="review-name-wrapper">
-                            <span class="review-name">ITAB Shop concept Lithuania</span>
-                        </div>
-                    </div>
-                    <img class="review-google-logo" src="/assets/svgs/quote.svg" alt="Quote" width="24" height="24" aria-hidden="true">
-                </div>
-                <div class="review-stars">
-                    <img src="/assets/svgs/stars-5.svg" alt="5 Stars" width="90" height="18">
-                </div>
-                <p class="review-text">Įmonė kuria galima pasitikėti ir skirti įvairias užduotis. Ačiū jiems už sklandų darbą.</p>
+            <!-- Review 6 -->
+            <div class="cs-item">
+                <div class="cs-flex-group">
+                    <picture class="cs-picture">
+                        <img src="/assets/svgs/user.svg" alt="" height="50" decoding="async" width="50" class="cs-profile" loading="lazy" aria-hidden="true">
+                    </picture>
+                    <span class="cs-name">UAB Baltic Travel Service</span>
+                </div>
+                <div class="wrapper">
+                    <img src="/assets/svgs/stars-5.svg" alt="" height="16" decoding="async" width="96" class="cs-item-stars" loading="lazy" aria-hidden="true">
+                    <p class="cs-review">"AutoVerus " patikimiausias mūsų agentūros partneris, užsakant individualius pervežimus. Šia pervežimų paslauga naudojasi labai specifiniai mūsų klientai - lėktuvų pilotai. Jų užsakymai būna skubūs ir su dažnais pasikeitimais, tačiau visada ramu, kai kreipiesi į "AutoVerus " kompaniją. Visada sureaguoja į užsakymą skubiai, kantriai ir tiksliai prisitaiko prie pilotų poreikių. Patikima ir malonu bendradarbiauti.</p>
+                </div>
+                <img src="/assets/svgs/quote.svg" alt="" height="99" decoding="async" width="120" class="cs-quote" loading="lazy" aria-hidden="true">
             </div>
         </div>
     </div>
