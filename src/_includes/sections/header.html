@@ -62,28 +62,17 @@
                         Peržiūrėti
                     </div>
                 </a>
+                <a href="{{ client.socials.instagram }}" class="cs-top-link cs-instagram-link" target="_blank" aria-label="Visit Instagram Profile">
+                    <div class="cs-link-wrapper">
+                        <img alt="Instagram logo" decoding="async" height="16" src="/assets/svgs/instagramred.svg" width="16"
+                            aria-hidden="true" class="cs-link-icon">
+                    </div>
+                    <div class="cs-link-content">
+                        <span class="cs-city-label">Instagram</span>
+                        Peržiūrėti
+                    </div>
+                </a>
             </div>
-            <!--            <div class="cs-top-social">-->
-            <!--                <div class="cs-link-wrapper">  <a href="https://www.instagram.com/" class="cs-social-link"-->
-            <!--                                                  aria-label="Visit Instagram Profile" target="_blank"><img alt="Instagram Logo" decoding="async"-->
-            <!--                                                                                                            height="12"-->
-            <!--                                                                                                            src="/assets/svgs/instagram-h2.svg"-->
-            <!--                                                                                                            width="12" aria-hidden="true"-->
-            <!--                                                                                                            class="cs-social-icon"> </a></div>-->
-            <!--                <div class="cs-link-wrapper">-->
-            <!--                    <a-->
-            <!--                            href="https://www.linkedin.com/"-->
-            <!--                            class="cs-social-link" aria-label="Visit LinkedIn Profile" target="_blank"><img alt="LinkedIn Logo"-->
-            <!--                                                                                                            decoding="async"-->
-            <!--                                                                                                            height="12"-->
-            <!--                                                                                                            src="/assets/svgs/linkedin-h2.svg"-->
-            <!--                                                                                                            width="12"-->
-            <!--                                                                                                            aria-hidden="true"-->
-            <!--                                                                                                            class="cs-social-icon">-->
-            <!--                    </a>-->
-            <!--                </div>-->
-
-            <!--            </div>-->
         </div>
     </div>
     <div class="cs-container">
@@ -139,76 +128,36 @@
 
 
                     <li class="cs-li cs-dropdown">
-                        <button class="cs-li-link cs-dropdown-button" aria-label="dropdown-Paslaugos"
-                            aria-controls="dropdown-Paslaugos" aria-expanded="false">
+                        <span class="cs-li-link">
                             Paslaugos
-                            <img class="cs-drop-icon" src="/assets/svgs/down-arrow.svg" alt="dropdown icon" width="15"
-                                height="15" decoding="async" aria-hidden="true">
-                        </button>
-                        <ul class="cs-drop-ul" id="dropdown-Paslaugos">
-<!--                            <li class="cs-drop-li cs-drop3-main">-->
-<!--                                <button class="cs-li-link cs-drop-link">Mikroautobusų nuoma-->
-<!--                                    <img class="cs-drop-icon" src="/assets/svgs/down-arrow.svg" alt="dropdown icon"-->
-<!--                                         width="15" height="15" decoding="async" aria-hidden="true">-->
-<!--                                </button>-->
-<!--                                <ul class="cs-drop3 cs3">-->
-<!--                                    <li class="cs-drop-li3">-->
-<!--                                        <a href="/mikroautobusu-nuoma-kaune/"-->
-<!--                                           class="cs-li-link cs-drop-link cs-drop-link3">Kaune</a>-->
-<!--                                    </li>-->
-<!--                                    <li class="cs-drop-li3">-->
-<!--                                        <a href="/mikroautobusu-nuoma-vilniuje/"-->
-<!--                                           class="cs-li-link cs-drop-link cs-drop-link3">Vilniuje</a>-->
-<!--                                    </li>-->
-<!--                                </ul>-->
-<!--                            </li>-->
-<!--                            <li class="cs-drop-li cs-drop3-main">-->
-<!--                                <button class="cs-li-link cs-drop-link">Automobilių nuoma-->
-<!--                                    <img class="cs-drop-icon" src="/assets/svgs/down-arrow.svg" alt="dropdown icon"-->
-<!--                                        width="15" height="15" decoding="async" aria-hidden="true">-->
-<!--                                </button>-->
-<!--                                <ul class="cs-drop3 cs3">-->
-<!--                                    <li class="cs-drop-li3">-->
-<!--                                        <a href="/automobiliu-nuoma-kaune/"-->
-<!--                                           class="cs-li-link cs-drop-link cs-drop-link3">Kaune</a>-->
-<!--                                    </li>-->
-<!--                                    <li class="cs-drop-li3">-->
-<!--                                        <a href="/automobiliu-nuoma-vilniuje/"-->
-<!--                                           class="cs-li-link cs-drop-link cs-drop-link3">Vilniuje</a>-->
-<!--                                    </li>-->
-<!--                                </ul>-->
-<!--                            </li>-->
+                            <img class="cs-drop-icon" src="/assets/svgs/down-arrow.svg" alt="dropdown icon" width="15" height="15" decoding="async" aria-hidden="true">
+                        </span>
 
+                        <ul class="cs-drop-ul">
                             <li class="cs-drop-li">
-                                <a href="/mikroautobusu-nuoma-kaune/" class="cs-li-link cs-drop-link">
-                                    Mikroautobusų nuoma Kaune
-                                </a>
+                                <a href="/burnos-higiena/" class="cs-li-link cs-drop-link {% if page.url == '/burnos-higiena/' %} cs-active {% endif %}">Profesionali burnos higiena</a>
                             </li>
-
                             <li class="cs-drop-li">
-                                <a href="/mikroautobusu-pristatymas-nuomai-lietuvoje/" class="cs-li-link cs-drop-link">
-                                    Mikroautobusų pristatymas nuomai Lietuvoje
-                                </a>
+                                <a href="/vilnius/estetinis-plombavimas/" class="cs-li-link cs-drop-link {% if page.url == '/vilnius/estetinis-plombavimas/' %} cs-active {% endif %}">Estetinis plombavimas</a>
                             </li>
-
                             <li class="cs-drop-li">
-                                <a href="/automobiliu-nuoma-kaune/" class="cs-li-link cs-drop-link">
-                                    Automobilių nuoma Kaune
-                                </a>
+                                <a href="/vilnius/dantu-ir-implantu-protezavimas/" class="cs-li-link cs-drop-link {% if page.url == '/vilnius/dantu-ir-implantu-protezavimas/' %} cs-active {% endif %}">Protezavimas</a>
                             </li>
-
                             <li class="cs-drop-li">
-                                <a href="/ilgalaike-automobiliu-nuoma/" class="cs-li-link cs-drop-link">
-                                    Ilgalaikė automobilių nuoma
-                                </a>
+                                <a href="/vilnius/dantu-kanalu-gydymas/" class="cs-li-link cs-drop-link {% if page.url == '/vilnius/dantu-kanalu-gydymas/' %} cs-active {% endif %}">Endodontija</a>
                             </li>
-
                             <li class="cs-drop-li">
-                                <a href="/automobilio-nuoma-su-vairuotoju/" class="cs-li-link cs-drop-link">
-                                    Automobilio nuoma su vairuotoju
-                                </a>
+                                <a href="/vilnius/vaiku-dantu-gydymas/" class="cs-li-link cs-drop-link {% if page.url == '/vilnius/vaiku-dantu-gydymas/' %} cs-active {% endif %}">Vaikų ir suaugusiųjų terapinis gydymas</a>
                             </li>
-
+                            <li class="cs-drop-li">
+                                <a href="/vilnius/dantu-implantai/" class="cs-li-link cs-drop-link {% if page.url == '/vilnius/dantu-implantai/' %} cs-active {% endif %}">Dantų implantacija</a>
+                            </li>
+                            <li class="cs-drop-li">
+                                <a href="/vilnius/periodontologija/" class="cs-li-link cs-drop-link {% if page.url == '/vilnius/periodontologija/' %} cs-active {% endif %}">Periodontologija</a>
+                            </li>
+                            <li class="cs-drop-li">
+                                <a href="/vilnius/dantu-rentgenas/" class="cs-li-link cs-drop-link {% if page.url == '/vilnius/dantu-rentgenas/' %} cs-active {% endif %}">Tyrimai ir konsultacijos</a>
+                            </li>
                         </ul>
                     </li>
                     <!-- About Us Dropdown -->
@@ -256,6 +205,29 @@
                             Kainos
                         </a>
                     </li>
+
+                    <li class="cs-li">
+                        <a href="/apie-mus/"
+                           class="cs-li-link {% if page.url == '/apie-mus/' %} cs-active {% endif %}">
+                            Apie kliniką
+                        </a>
+                    </li>
+
+                    <li class="cs-li">
+                        <a href="/komanda/"
+                           class="cs-li-link {% if page.url == '/komanda/' %} cs-active {% endif %}">
+                            Gydytojai
+                        </a>
+                    </li>
+
+                    <li class="cs-li">
+                        <a href="/atsiliepimai/"
+                           class="cs-li-link {% if page.url == '/atsiliepimai/' %} cs-active {% endif %}">
+                            Gydytojai
+                        </a>
+                    </li>
+
+
 
 
                     <!--                    <li class="cs-li desk-hidden">-->

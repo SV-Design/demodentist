@@ -402,6 +402,7 @@
         flex-shrink: 0;
         min-width: 2.4rem;
         min-height: 2.4rem;
+        background-color: var(--LightBG);
     }
 
     #cs-navigation .cs-link-icon {
@@ -1455,7 +1456,6 @@
     #cs-navigation .cs-li-link {
         background-color: transparent;
         border: none;
-        text-transform: uppercase;
         font-size: clamp(0.875rem, 1.3vw, 1rem);
         line-height: 1.5em;
         text-decoration: none;

@@ -15,122 +15,6 @@ eleventyNavigation:
     /* Mobile - 360px */
 
     @media only screen and (min-width: 0rem) {
-        #banner-559 {
-            padding: var(--sectionPadding);
-            /* 137px - 212px */
-            padding-top: clamp(8.5625rem, 25vw, 17.25rem);
-            /* clips the line from causing overflow issues for going off screen */
-            overflow: hidden;
-            position: relative;
-            z-index: 1;
-            background-color: #DDE2D9;
-            background-image: url('/assets/images/Gradient.png');
-            background-size: cover;
-            background-position: center;
-        }
-        #banner-559 .cs-container {
-            text-align: center;
-            width: 100%;
-            max-width: 80rem;
-            margin: auto;
-            display: flex;
-            justify-content: center;
-            align-items: flex-start;
-            flex-direction: column;
-            gap: 1rem;
-        }
-        #banner-559 .cs-int-topper {
-            font-family: 'Nunito', Arial, monospace;
-            letter-spacing: .1em;
-            text-align: left;
-            font-size: var(--topperFontSize);
-            text-transform: uppercase;
-            font-weight: 700;
-            margin: 0;
-            padding: 0 0 0 1.25rem;
-            color: var(--primary);
-            display: block;
-            position: relative;
-        }
-        #banner-559 .cs-int-title:before {
-            /* yellow line */
-            content: '';
-            width: 50vw;
-            height: 4px;
-            background: #fff;
-            opacity: 0.2;
-            position: absolute;
-            display: block;
-            top: 50%;
-            right: 100%;
-            transform: translateY(-50%);
-            filter: brightness(1);
-        }
-        #banner-559 .cs-int-title:after {
-            content: '';
-            width: 90vw;
-            height: 4px;
-            background: #fff;
-            opacity: 0.2;
-            position: absolute;
-            display: block;
-            z-index: 1;
-            top: 50%;
-            left: 100%;
-            transform: translateY(-60%);
-            filter: brightness(1);
-        }
-        #banner-559 .cs-int-title {
-            font-family: 'Nunito', Arial, monospace;
-            letter-spacing: .1em;
-            font-size: clamp(2rem, 6.4vw, 3.8125rem);
-            font-weight: 900;
-            line-height: 1.2em;
-            text-align: left;
-            margin: 0;
-            color: var(--primary);
-            position: relative;
-        }
-        #banner-559 .cs-breadcrumbs {
-            display: flex;
-            justify-content: center;
-            align-items: center;
-        }
-        #banner-559 .cs-link {
-            /* 16px - 20px */
-            font-size: clamp(1rem, 1.5vw, 1.25rem);
-            line-height: 1.2em;
-            text-decoration: none;
-            color: var(--primary);
-            position: relative;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-        }
-        #banner-559 .cs-link:last-of-type {
-            /* remove the chevron on the last list item */
-        }
-        #banner-559 .cs-link:last-of-type::after {
-            display: none;
-        }
-        #banner-559 .cs-link:after {
-            /* chevron - added as pseudo to make adding and removing them easier */
-            content: '';
-            width: 1.875rem;
-            height: 0.125rem;
-            /* 12px - 24px */
-            margin: 0 clamp(0.75rem, 2vw, 1.5rem);
-            background-color: var(--primary);
-        }
-        #banner-559 .cs-link.cs-active {
-            color: var(--primary);
-        }
-        #banner-559 .cs-background {
-            display: none;
-        }
-    }
-
-    @media only screen and (min-width: 0rem) {
         #hero-288 {
             padding: var(--sectionPadding);
             background-color: var(--LightBG);
@@ -392,11 +276,13 @@ eleventyNavigation:
 
     {% block body %}
 
-<div id="banner-559">
-    <div class="cs-container">
-        <span class="cs-int-title">Kainoraštis</span>
-    </div>
-</div>
+    <!-- ============================================ -->
+    <!--                   Banner                     -->
+    <!-- ============================================ -->
+    {% set bannerTitle = "Kainoraštis" %}
+    {% set breadcrumbsHome = "Pradžia" %}
+    {% set breadcrumbsCurrent = "Kainoraštis" %}
+    {% include "components/banner.html" %}
 
 <section id="pricing">
     <div class="cs-container">
@@ -669,5 +555,6 @@ eleventyNavigation:
     </div>
 </section>
 
+{% include 'sections/cta.html' %}
 
     {% endblock %}

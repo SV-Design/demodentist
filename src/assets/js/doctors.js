@@ -205,6 +205,15 @@ document.addEventListener('DOMContentLoaded', () => {
         }
         console.log("Doctor data found:", doctor);
 
+        // Store current scroll position and prevent body scroll
+        const scrollY = window.pageYOffset || document.documentElement.scrollTop;
+        document.body.dataset.scrollY = scrollY.toString();
+        document.body.style.position = 'fixed';
+        document.body.style.top = `-${scrollY}px`;
+        document.body.style.left = '0';
+        document.body.style.right = '0';
+        document.body.style.width = '100%';
+
         // --- Scrollbar compensation ---
         const bodyHasScrollbar = window.innerWidth > document.documentElement.clientWidth;
         let scrollbarWidth = 0; // Initialize width
@@ -235,6 +244,7 @@ document.addEventListener('DOMContentLoaded', () => {
         console.log("Opening modal by adding 'modal-open' class");
         modal.style.display = 'flex'; // Still use flex for centering
         document.body.classList.add('modal-open'); // Add class to body for potential overflow handling
+        document.body.style.overflow = 'hidden'; // Prevent scrolling
         // Scroll modal content to top
         modal.querySelector('.modal-content').scrollTop = 0;
     }
@@ -247,7 +257,27 @@ document.addEventListener('DOMContentLoaded', () => {
             document.body.classList.remove('modal-open'); // Remove class from body
         }
 
+        // Restore scroll position - get it before removing styles
+        const scrollY = document.body.dataset.scrollY ? parseInt(document.body.dataset.scrollY, 10) : 0;
+        
+        // Remove fixed positioning and restore scroll in one synchronous operation
+        document.body.style.position = '';
+        document.body.style.top = '';
+        document.body.style.left = '';
+        document.body.style.right = '';
+        document.body.style.width = '';
+        document.body.style.overflow = '';
         document.body.style.paddingRight = '';
+        
+        // Restore scroll position immediately and synchronously
+        if (scrollY) {
+            // Use both methods to ensure compatibility
+            document.documentElement.scrollTop = scrollY;
+            document.body.scrollTop = scrollY;
+        }
+        
+        delete document.body.dataset.scrollY;
+
         elementsToCompensate.forEach(el => {
             el.style.paddingRight = '';
 
