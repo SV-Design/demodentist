@@ -110,7 +110,7 @@ eleventyNavigation:
         #pricing .cs-pricing-section {
             width: 100%;
             background: #fff;
-            border-radius: 1rem;
+            border-radius: 0.75rem;
             overflow: hidden;
             box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
         }
@@ -140,7 +140,7 @@ eleventyNavigation:
         }
 
         #pricing .cs-section-title {
-            font-size: clamp(1.5rem, 3vw, 2rem);
+            font-size: clamp(1.1rem, 3vw, 2rem);
             font-weight: 700;
             margin: 0;
             line-height: 1.2;
@@ -152,14 +152,18 @@ eleventyNavigation:
         }
 
         #pricing .cs-pricing-item {
-            border-bottom: 1px solid #e8e8e8;
+            /*border-bottom: 1px solid #e8e8e8;*/
             padding: 1rem 2rem;
         }
 
         /* Below 768px: reduce horizontal padding */
         @media only screen and (max-width: 48rem) {
             #pricing .cs-pricing-item {
-                padding: 1rem 1rem;
+                padding: 1rem 0.5rem;
+            }
+
+            #pricing .cs-section-header {
+                padding: 1.5rem 1rem;
             }
         }
 
