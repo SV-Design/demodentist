@@ -5,7 +5,9 @@
         <div class="cs-content">
             <span class="cs-topper">Kontaktai</span>
             <h2 class="cs-title">Turite klausimų? Susisiekite</h2>
-            <p class="cs-text">Bendradarbiaujame tiek su įvairių sektorių įmonėmis, tiek su privačiais klientais. Nesvarbu, ar ieškote transporto statybos objektams aptarnauti, ar planuojate tolimą kelionę su kompanija – padėsime išsirinkti tinkamiausią mikroautobusą.</p>
+            <p class="cs-text">Darbo metu geriausia mums tiesiog paskambinti – taip greičiau suderinsime vizito laiką. Jei šiuo metu klinika uždaryta, užpildykite žemiau esančią formą. Mes patys su jumis susisieksime artimiausią darbo dieną.</p>
+
+
             <div class="cs-contact-sections">
 
                 <div class="cs-contact-section">
@@ -17,7 +19,7 @@
                             </picture>
                             <div class="cs-flex-group">
                                 <span class="cs-header">Tel. numeris</span>
-                                <a class="cs-link" href="tel:+37067253339">+370 672 53339</a>
+                                <a class="cs-link" href="tel:{{ client.phoneForTel }}">{{ client.phoneFormatted }}</a>
                             </div>
                         </li>
                     </ul>
@@ -27,11 +29,11 @@
                     <ul class="cs-ul">
                         <li class="cs-li">
                             <picture class="cs-icon-wrapper">
-                                <img alt="Phone icon" decoding="async" height="40" src="/assets/svgs/icon-mail.svg" width="40" class="cs-icon" aria-hidden="true">
+                                <img alt="Email icon" decoding="async" height="40" src="/assets/svgs/icon-mail.svg" width="40" class="cs-icon" aria-hidden="true">
                             </picture>
                             <div class="cs-flex-group">
                                 <span class="cs-header">El. paštas</span>
-                                <a class="cs-link" href="tel:+37037260659">+370 37 260659</a>
+                                <a class="cs-link" href="mailto:{{ client.email }}">{{ client.email }}</a>
                             </div>
                         </li>
                     </ul>
@@ -41,7 +43,7 @@
             <div class="cs-contact-sections">
                 <div class="cs-contact-section">
                     <ul class="cs-ul">
-                        <li class="cs-li"><picture class="cs-icon-wrapper"><img src="/assets/svgs/business-hours.svg" alt="Adreso ikona" height="40" decoding="async" width="40" class="cs-icon" aria-hidden="true"></picture><div class="cs-flex-group"><span class="cs-header">Darbo laikas</span> <a href="/kontaktai/" class="cs-link">I - V (9:00 - 19:30), VI - VII (nedirbame).</a></div></li>
+                        <li class="cs-li"><picture class="cs-icon-wrapper"><img src="/assets/svgs/business-hours.svg" alt="Adreso ikona" height="40" decoding="async" width="40" class="cs-icon" aria-hidden="true"></picture><div class="cs-flex-group"><span class="cs-header">Darbo laikas</span> <a href="/kontaktai/" class="cs-link">I - V (7:00 - 20:00), VI - VII (nedirbame).</a></div></li>
                     </ul>
                 </div>
 
@@ -64,12 +66,7 @@
             </div>
 
             <div class="cta-map" aria-label="Map">
-                <iframe
-                        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2292.6064603557743!2d23.970226315905975!3d54.927377662813846!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x46e718f8616eaeb1%3A0x245206284cecfd72!2sPramon%C4%97s%20pr.%20103%2C%20Kaunas%2049281!5e0!3m2!1sen!2slt!4v1611087958811!5m2!1sen!2slt"
-                        loading="lazy"
-                        referrerpolicy="no-referrer-when-downgrade"
-                        allowfullscreen="">
-                </iframe>
+                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d31982.475897782984!2d25.297950900000004!3d54.7088612!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x46dd96adb6a5bab7%3A0x2c8e5366cf65140!2sBelomeda%2C%20odontologijos%20klinika!5e1!3m2!1sen!2slt!4v1767100360583!5m2!1sen!2slt" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
             </div>
         </div>
 
@@ -77,13 +74,13 @@
         <div class="container-email cs-form" id="success-message" style="display: none;">
             <h1>Dėkojame!</h1>
             <p>Jūsų užklausa gauta.</p>
-            <p>Susisieksime su jumis artimiausiu metu ir suderinsime nuomos detales.</p>
+            <p>Susisieksime su jumis artimiausią darbo dieną ir atsakysime į rūpimus klausimus.</p>
         </div>
 
         <!-- Contact Form -->
         <form class="cs-form contact-page" id="cs-form-1392" method="POST" data-netlify="true" netlify-honeypot="bot-field" name="Contact Form">
             <input type="hidden" name="form-name" value="Contact Form">
-            <h3 class="cs-h3">Parašykite mums</h3>
+            <h3 class="cs-h3">Palikite žinutę</h3>
 
             <label class="cs-label" for="name-1392">
                 Jūsų vardas*
@@ -106,7 +103,7 @@
             <label class="cs-label" for="message-1392">
                 Jūsų žinutė*
             </label>
-            <textarea autocomplete="off" class="cs-input cs-textarea" id="message-1392" name="Žinutė" required placeholder="Nurodykite, koks automobilis domina (krovininis, keleivinis, lengvasis), planuojamas datas ir kitus svarbius klausimus." minlength="10"></textarea>
+            <textarea autocomplete="off" class="cs-input cs-textarea" id="message-1392" name="Žinutė" required placeholder="Trumpai parašykite, kokios procedūros ieškote ar kas neramina. Jei skauda dantį, būtinai tai paminėkite." minlength="10"></textarea>
             <div class="error-message" id="message-error-cta"></div>
 
             <div class="hidden-form">

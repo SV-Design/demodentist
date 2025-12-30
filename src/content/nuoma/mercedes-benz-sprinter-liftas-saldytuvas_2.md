@@ -1,6 +1,6 @@
 ---
 title: "Mercedes Benz Sprinter – liftas – šaldytuvas"
-metaTitle: "MB Sprinter šaldytuvas su liftu nuoma | AutoVerus"
+metaTitle: "MB Sprinter šaldytuvas su liftu nuoma | Belomeda"
 metaDescription: "Mercedes Benz Sprinter su šaldymo įranga ir krovinių kėlimo liftu. Profesionalus sprendimas logistikai ir prekių pristatymui."
 category:
   - "Krovininiai"

@@ -1,6 +1,6 @@
 ---
 title: "Krovininiai"
-metaTitle: "Krovininių mikroautobusų nuoma | AutoVerus"
+metaTitle: "Krovininių mikroautobusų nuoma | Belomeda"
 metaDescription: "Erdvūs krovininiai mikroautobusai jūsų darbams ir perkraustymui. Nuoma Kaune ir Vilniuje, vairavimas su B kategorijos pažymėjimu."
 url: "krovininiai"
 bannerText: "Krovininių mikroautobusų nuoma"
@@ -8,7 +8,7 @@ description: "Erdvūs ir techniškai tvarkingi krovininiai mikroautobusai jūsų
 longDescription: |
   ## Krovininių mikroautobusų nuoma darbui ir logistikai
 
-  Versle transporto patikimumas yra vienas svarbiausių rodiklių. Sugedęs automobilis statybų bendrovei ar logistikos įmonei reiškia sustojusius darbus ir finansinius nuostolius. „AutoVerus“ siūlo techniškai tvarkingų krovininių mikroautobusų nuomą Kaune su galimybe pristatyti transportą į bet kurią Lietuvos vietą. Mūsų paslaugomis naudojasi įmonės, kurioms reikia užtikrinti nenutrūkstamą medžiagų, įrankių ar prekių judėjimą.
+  Versle transporto patikimumas yra vienas svarbiausių rodiklių. Sugedęs automobilis statybų bendrovei ar logistikos įmonei reiškia sustojusius darbus ir finansinius nuostolius. „Belomeda“ siūlo techniškai tvarkingų krovininių mikroautobusų nuomą Kaune su galimybe pristatyti transportą į bet kurią Lietuvos vietą. Mūsų paslaugomis naudojasi įmonės, kurioms reikia užtikrinti nenutrūkstamą medžiagų, įrankių ar prekių judėjimą.
 
   ### Pritaikyta specifiniams verslo sektoriams
 
@@ -20,7 +20,7 @@ longDescription: |
 
   ### Vairavimas su B kategorija
 
-  Visi „AutoVerus“ nuomojami krovininiai mikroautobusai neviršija 3,5 tonos bendrosios masės. Tai reiškia, kad juos vairuoti galima turint standartinį B kategorijos vairuotojo pažymėjimą. Jūsų darbuotojams nereikia turėti C kategorijos, kodų 95 ar tachografo kortelių. Tai palengvina vairuotojų rotaciją įmonės viduje ir leidžia lanksčiai planuoti darbus.
+  Visi „Belomeda“ nuomojami krovininiai mikroautobusai neviršija 3,5 tonos bendrosios masės. Tai reiškia, kad juos vairuoti galima turint standartinį B kategorijos vairuotojo pažymėjimą. Jūsų darbuotojams nereikia turėti C kategorijos, kodų 95 ar tachografo kortelių. Tai palengvina vairuotojų rotaciją įmonės viduje ir leidžia lanksčiai planuoti darbus.
 
   ### Techninė būklė – prioritetas
 

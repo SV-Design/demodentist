@@ -1,6 +1,6 @@
 ---
 title: "Opel Movano"
-metaTitle: "Opel Movano automatas nuoma | Krovininis | AutoVerus"
+metaTitle: "Opel Movano automatas nuoma | Krovininis | Belomeda"
 metaDescription: "Krovininis mikroautobusas su automatine pavarų dėže. Patogus vairavimas mieste ir užmiestyje. Tinka įvairiems pervežimams."
 category:
   - "Krovininiai"

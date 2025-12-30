@@ -1,0 +1,70 @@
+<section class="cs-logos-section">
+    <div class="cs-container">
+        <div class="cs-logos-content">
+            <div class="cs-logos-text-left">
+                <h2 class="cs-logos-title">
+                    {% if title %}
+                        {{ title | safe }}
+                    {% else %}
+                        Mūsų <span class="cs-partneriai">partneriai</span>
+                    {% endif %}
+                </h2>
+            </div>
+            {% if description %}
+            <div class="cs-logos-text-right">
+                <p class="cs-logos-description">{{ description }}</p>
+            </div>
+            {% endif %}
+        </div>
+    </div>
+    <div class="cs-logos">
+        <div class="cs-logos-slide">
+            {% if logoType == 'brands' %}
+                <img src="/assets/images/brands/logo1.svg" alt="Logo 1" />
+                <img src="/assets/images/brands/logo2.svg" alt="Logo 2" />
+                <img src="/assets/images/brands/logo3.svg" alt="Logo 3" />
+                <img src="/assets/images/brands/logo4.svg" alt="Logo 4" />
+                <img src="/assets/images/brands/logo5.svg" alt="Logo 5" />
+            {% elif logoType == 'partners' %}
+                <img src="/assets/images/partners/autokraitis.png" alt="Autokraitis partneris" />
+                <img src="/assets/images/partners/Bonus-draudimas.jpg" alt="Bonus draudimas partneris" />
+                <img src="/assets/images/partners/Detalita.png" alt="Detalita partneris" />
+                <img src="/assets/images/partners/Fin-glass.jpg" alt="Fin glass partneris" />
+                <img src="/assets/images/partners/Hovus.jpg" alt="Hovus partneris" />
+                <img src="/assets/images/partners/Inschcape.jpg" alt="Inschcape partneris" />
+                <img src="/assets/images/partners/itab.jpg" alt="Itab partneris" />
+                <img src="/assets/images/partners/itella.jpg" alt="Itella partneris" />
+                <img src="/assets/images/partners/Krasta-auto-1.jpg" alt="Krasta auto partneris" />
+                <img src="/assets/images/partners/ML-Auto-logo-mazas.jpg" alt="ML Auto partneris" />
+                <img src="/assets/images/partners/omniva.jpg" alt="Omniva partneris" />
+                <img src="/assets/images/partners/Ratai-visiems.jpg" alt="Ratai visiems partneris" />
+                <img src="/assets/images/partners/TVG.png" alt="TVG partneris" />
+            {% endif %}
+        </div>
+    </div>
+</section>
+
+<script>
+    // Initialize logo carousel infinite scroll
+    (function() {
+        function initLogoCarousel() {
+            const logosSlides = document.querySelectorAll('.cs-logos-slide:not([data-initialized])');
+            logosSlides.forEach(function(logosSlide) {
+                const copy = logosSlide.cloneNode(true);
+                const logosContainer = logosSlide.closest('.cs-logos');
+                if (logosContainer) {
+                    logosContainer.appendChild(copy);
+                    logosSlide.setAttribute('data-initialized', 'true');
+                }
+            });
+        }
+
+        // Initialize logo carousel when DOM is ready
+        if (document.readyState === 'loading') {
+            document.addEventListener('DOMContentLoaded', initLogoCarousel);
+        } else {
+            initLogoCarousel();
+        }
+    })();
+</script>
+

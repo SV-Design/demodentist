@@ -1352,7 +1352,7 @@
 }
 
 #reviews-slider-section .cs-review {
-    font-size: clamp(0.875rem, 1.6vw, 1.25rem);
+    font-size: var(--bodyFontSize);
     line-height: 1.5em;
     margin: 0;
     color: var(--bodyTextColor);
@@ -2127,7 +2127,7 @@
     }
 
     #team-section .team-description {
-        font-size: clamp(1rem, 1.5vw, 1.125rem);
+        font-size: var(--bodyFontSize);
         line-height: 1.6em;
         color: var(--bodyTextColor);
         margin: 0;

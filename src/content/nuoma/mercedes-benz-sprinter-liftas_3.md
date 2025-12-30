@@ -1,6 +1,6 @@
 ---
 title: "Mercedes Benz Sprinter – liftas"
-metaTitle: "MB Sprinter su liftu nuoma | Krovininis | AutoVerus"
+metaTitle: "MB Sprinter su liftu nuoma | Krovininis | Belomeda"
 metaDescription: "Krovininis mikroautobusas su hidrauliniu liftu patogiam pakrovimui. Erdvus krovinių skyrius, tinka sunkesniems kroviniams."
 category:
   - "Krovininiai"

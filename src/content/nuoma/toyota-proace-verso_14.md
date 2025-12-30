@@ -1,6 +1,6 @@
 ---
 title: "Toyota Proace Verso"
-metaTitle: "Toyota Proace Verso nuoma | Keleivinis | AutoVerus"
+metaTitle: "Toyota Proace Verso nuoma | Keleivinis | Belomeda"
 metaDescription: "Toyota Proace Verso nuoma. Patogus keleivinis mikroautobusas su durimis iš abiejų pusių. Erdvus salonas jūsų kelionėms."
 category:
   - "Keleiviniai"

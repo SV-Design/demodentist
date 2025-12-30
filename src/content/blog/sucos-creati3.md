@@ -5,7 +5,7 @@ url: paslepti-mokesciai-nuomos-sutartyse
 description: Maža nuomos kaina internete ne visada reiškia mažą galutinę
   sąskaitą. Sužinokite, kokie papildomi mokesčiai dažniausiai slepiasi nuomos
   sutartyse ir į ką atkreipti dėmesį.
-author: AutoVerus
+author: Belomeda
 date: 2025-10-15T10:00:00.000Z
 tags:
   - post
@@ -17,7 +17,7 @@ imageAlt: Asmuo su didinamuoju stiklu skaito sutartį
 
 <h3>Draudimas ir franšizė. Didžiausias kabliukas</h3>
 <p>Tai pati dažniausia vieta, kur klientai sumoka daugiau nei planavo. Standartinėje nuomos kainoje paprastai yra įskaičiuotas tik bazinis draudimas su didele franšize (atsakomybės mokesčiu). Tai reiškia, kad įvykus avarijai ar apgadinus automobilį, jūs rizikuojate prarasti užstatą, kuris gali siekti ir tūkstantį eurų.</p>
-<p>Prieš atiduodant raktelius, nuomos kompanijos dažnai siūlo įsigyti "pilną draudimą" ar "super kasko", kuris sumažina atsakomybę iki nulio. Šio draudimo kaina parai gali būti didesnė nei paties automobilio nuomos kaina. "AutoVerus" laikosi kitokios politikos. Mūsų užstatai yra fiksuoti ir aiškūs. Lengviesiems automobiliams tai vos 150 eurų, o mikroautobusams 300 eurų. Mes nereikalaujame pirkti brangių papildomų draudimų, kad sumažintumėte užstatą iki protingos ribos.</p>
+<p>Prieš atiduodant raktelius, nuomos kompanijos dažnai siūlo įsigyti "pilną draudimą" ar "super kasko", kuris sumažina atsakomybę iki nulio. Šio draudimo kaina parai gali būti didesnė nei paties automobilio nuomos kaina. "Belomeda" laikosi kitokios politikos. Mūsų užstatai yra fiksuoti ir aiškūs. Lengviesiems automobiliams tai vos 150 eurų, o mikroautobusams 300 eurų. Mes nereikalaujame pirkti brangių papildomų draudimų, kad sumažintumėte užstatą iki protingos ribos.</p>
 
 <h3>Kuro politika. Pilnas ar tuščias?</h3>
 <p>Atkreipkite dėmesį į kuro politiką sutartyje. Sąžiningiausia sistema yra "pilnas-pilnas". Pasiimate automobilį pilnu baku ir tokį patį grąžinate. Mokate tik už tai, ką sunaudojote.</p>

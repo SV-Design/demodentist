@@ -31,9 +31,8 @@
         <link rel="manifest" href="/assets/favicons/site.webmanifest"/>
 
         <!-- Preloads -->
-        <link rel="preload" as="font" type="font/woff2" href="/assets/fonts/montserrat-v25-latin-regular.woff2" crossorigin>
-        <link rel="preload" as="font" type="font/woff2" href="/assets/fonts/montserrat-v30-latin_latin-ext-700.woff2" crossorigin>
-        <link rel="preload" as="font" type="font/woff2" href="/assets/fonts/montserrat-v30-latin_latin-ext-900.woff2" crossorigin>
+        <link rel="preload" as="font" type="font/woff" href="/assets/fonts/articulatlight.woff" crossorigin>
+        <link rel="preload" as="font" type="font/woff" href="/assets/fonts/articulatbold.woff" crossorigin>
 
         <!-- Google Tag Manager Consent Mode (Commented out - will be called when user accepts cookies) -->
         <!--
@@ -87,7 +86,7 @@
         {% include "sections/footer.html" %}
 
         <div id="call-button-container">
-            <a href="tel:+37067707070" class="call-button tippyContent" data-tippy-content="Pasiteiraukite su mumis! +37067707070"><div class="call-button-img"></div></a>
+            <a href="tel:{{ client.phoneForTel }}" class="call-button tippyContent" data-tippy-content="Pasiteiraukite su mumis! {{ client.phoneFormatted }}"><div class="call-button-img"></div></a>
         </div>
 
         <div id="popup">

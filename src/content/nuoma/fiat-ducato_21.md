@@ -1,6 +1,6 @@
 ---
 title: "Fiat Ducato"
-metaTitle: "Fiat Ducato nuoma | Talpus krovininis | AutoVerus"
+metaTitle: "Fiat Ducato nuoma | Talpus krovininis | Belomeda"
 metaDescription: "Patikimas Fiat Ducato krovininis mikroautobusas. Erdvus krovinių skyrius, tinka perkraustymui. Vairavimas su B kategorija."
 category:
   - "Krovininiai"

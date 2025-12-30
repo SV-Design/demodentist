@@ -1,6 +1,6 @@
 ---
 title: "Keleiviniai"
-metaTitle: "Keleivinių mikroautobusų nuoma | 9 vietų | AutoVerus"
+metaTitle: "Keleivinių mikroautobusų nuoma | 9 vietų | Belomeda"
 metaDescription: "Patogūs 9 vietų mikroautobusai kelionėms po Lietuvą ir Europą. Nuomokitės su vairuotoju arba be jo Kaune ir Vilniuje."
 url: "keleiviniai"
 bannerText: "Keleivinių mikroautobusų nuoma"
@@ -8,7 +8,7 @@ description: "Patogūs ir erdvūs 9 vietų mikroautobusai jūsų kelionėms po L
 longDescription: |
   ## Keleivinių mikroautobusų nuoma darbui ir kelionėms
 
-  Planuojant darbuotojų komandiruotę, vilkikų vairuotojų pasikeitimą Vakarų Europoje ar draugų išvyką į kalnus, logistika yra svarbiausia. Vykti keliais lengvaisiais automobiliais yra brangu ir nepatogu. Tai reiškia didesnes kuro sąnaudas, kelių mokesčius ir nuovargį vairuotojams. Geriausia išeitis yra 9 vietų mikroautobuso nuoma. Tai leidžia visai komandai ar kompanijai keliauti kartu vienoje transporto priemonėje. „AutoVerus“ siūlo techniškai paruoštus mikroautobusus Kaune su galimybe pristatyti juos į bet kurią Lietuvos vietą.
+  Planuojant darbuotojų komandiruotę, vilkikų vairuotojų pasikeitimą Vakarų Europoje ar draugų išvyką į kalnus, logistika yra svarbiausia. Vykti keliais lengvaisiais automobiliais yra brangu ir nepatogu. Tai reiškia didesnes kuro sąnaudas, kelių mokesčius ir nuovargį vairuotojams. Geriausia išeitis yra 9 vietų mikroautobuso nuoma. Tai leidžia visai komandai ar kompanijai keliauti kartu vienoje transporto priemonėje. „Belomeda“ siūlo techniškai paruoštus mikroautobusus Kaune su galimybe pristatyti juos į bet kurią Lietuvos vietą.
 
   ### Pritaikyta verslo poreikiams ir hobiui
 
@@ -20,7 +20,7 @@ longDescription: |
 
   ### Techninis patikimumas ilgose kelionėse
 
-  Kai kelionė trunka tūkstančius kilometrų, automobilio būklė negali kelti abejonių. Visi „AutoVerus“ mikroautobusai yra reguliariai tikrinami ir prižiūrimi „Bosch Car Service“ autocentruose. Mes suprantame, kad verslui prastova kainuoja pinigus, o atostogautojams – sugadintą laiką. Todėl į kelionę išleidžiame tik patikrintą transportą. Jei visgi kelyje nutiktų gedimas, mūsų klientai gali susisiekti su mumis ir stengiamės suteikti pagalbą kuo greičiau.
+  Kai kelionė trunka tūkstančius kilometrų, automobilio būklė negali kelti abejonių. Visi „Belomeda“ mikroautobusai yra reguliariai tikrinami ir prižiūrimi „Bosch Car Service“ autocentruose. Mes suprantame, kad verslui prastova kainuoja pinigus, o atostogautojams – sugadintą laiką. Todėl į kelionę išleidžiame tik patikrintą transportą. Jei visgi kelyje nutiktų gedimas, mūsų klientai gali susisiekti su mumis ir stengiamės suteikti pagalbą kuo greičiau.
 
   ### Aiški kainodara ir sąlygos
 

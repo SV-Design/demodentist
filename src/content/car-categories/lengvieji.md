@@ -1,6 +1,6 @@
 ---
 title: "Lengvieji"
-metaTitle: "Lengvųjų automobilių nuoma | Ekonomiški modeliai | AutoVerus"
+metaTitle: "Lengvųjų automobilių nuoma | Ekonomiški modeliai | Belomeda"
 metaDescription: "Ekonomiški ir manevringi lengvieji automobiliai miestui bei kelionėms. Techniškai tvarkingas transportas su pagalba kelyje."
 url: "lengvieji"
 bannerText: "Lengvųjų automobilių nuoma"
@@ -8,7 +8,7 @@ description: "Ekonomiški ir manevringi lengvieji automobiliai. Nuoma Kaune."
 longDescription: |
   ## Ekonomiški lengvieji automobiliai jūsų kelionėms
 
-  Kartais automobilio prireikia čia ir dabar. Dažniausiai taip nutinka netikėtai sugedus nuosavai transporto priemonei, atskridus trumpam vizitui į Lietuvą ar tiesiog prireikus pigaus transporto mieste. Tokiose situacijose svarbiausia yra greitis ir kaina. „AutoVerus“ siūlo tvarkingus lengvuosius automobilius Kaune ir Vilniuje, kurie padės išlikti mobiliems be didelių išlaidų.
+  Kartais automobilio prireikia čia ir dabar. Dažniausiai taip nutinka netikėtai sugedus nuosavai transporto priemonei, atskridus trumpam vizitui į Lietuvą ar tiesiog prireikus pigaus transporto mieste. Tokiose situacijose svarbiausia yra greitis ir kaina. „Belomeda“ siūlo tvarkingus lengvuosius automobilius Kaune ir Vilniuje, kurie padės išlikti mobiliems be didelių išlaidų.
 
   ### Mažos kuro sąnaudos ir patogumas mieste
 

@@ -1,6 +1,6 @@
 ---
 title: "Citroen C 3"
-metaTitle: "Citroen C3 nuoma | Automatas | AutoVerus"
+metaTitle: "Citroen C3 nuoma | Automatas | Belomeda"
 metaDescription: "Manevringas Citroen C3 su automatine pavarų dėže. Ekonomiškas benzininis variklis, idealus pasirinkimas miestui."
 category:
   - "Lengvieji"

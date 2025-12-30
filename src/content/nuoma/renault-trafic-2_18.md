@@ -1,6 +1,6 @@
 ---
 title: "Renault Trafic"
-metaTitle: "Renault Trafic nuoma | Prailginta bazė | AutoVerus"
+metaTitle: "Renault Trafic nuoma | Prailginta bazė | Belomeda"
 metaDescription: "Erdvus keleivinis mikroautobusas su didele bagažine. Puikus pasirinkimas slidinėjimo kelionėms ar atostogoms."
 category:
   - "Keleiviniai"

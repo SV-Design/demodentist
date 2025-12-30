@@ -71,7 +71,7 @@
         --topperFontSize: clamp(0.8125rem, 1.6vw, 1rem);
         /* 31px - 49px */
         --headerFontSize: clamp(1.9375rem, 3.9vw, 2.9625rem);
-        --bodyFontSize: 1rem;
+        --bodyFontSize: 1.2rem;
         /* 60px - 100px top and bottom */
         --sectionPadding: clamp(3.75rem, 7.82vw, 6.25rem) 1rem;
     }
@@ -83,7 +83,7 @@
     body {
         margin: 0;
         padding: 0;
-        font-family: "Montserrat", Arial, sans-serif;
+        font-family: "Articulat", Arial, sans-serif;
         overflow-x: hidden;
     }
 
@@ -198,6 +198,12 @@
     }
 }
 
+@media only screen and (max-width: 47.9375rem) {
+    :root {
+        --bodyFontSize: 1.1rem;
+    }
+}
+
 @media only screen and (max-width: 1023px) {}
 
 @media only screen and (min-width: 64rem) {}
@@ -221,7 +227,7 @@
         margin: 0;
         overflow-x: hidden;
         padding: 0;
-        font-family: "Montserrat", Arial, sans-serif;
+        font-family: "Articulat", Arial, sans-serif;
         font-size: 100%;
         color: var(--bodyTextColor);
     }
@@ -319,27 +325,19 @@
 
 
     @font-face {
-        font-family: "Montserrat";
+        font-family: "Articulat";
         font-style: normal;
-        font-weight: 400;
+        font-weight: 300;
         font-display: swap;
-        src: url("/assets/fonts/montserrat-v25-latin-regular.woff2") format("woff2");
+        src: url("/assets/fonts/articulatlight.woff") format("woff");
     }
 
     @font-face {
-        font-family: "Montserrat";
+        font-family: "Articulat";
         font-style: normal;
         font-weight: 700;
         font-display: swap;
-        src: url("/assets/fonts/montserrat-v30-latin_latin-ext-700.woff2") format("woff2");
-    }
-
-    @font-face {
-        font-family: "Montserrat";
-        font-style: normal;
-        font-weight: 900;
-        font-display: swap;
-        src: url("/assets/fonts/montserrat-v30-latin_latin-ext-900.woff2") format("woff2");
+        src: url("/assets/fonts/articulatbold.woff") format("woff");
     }
 }
 
@@ -1458,7 +1456,7 @@
     #cs-navigation .cs-li-link {
         background-color: transparent;
         border: none;
-        font-size: clamp(0.875rem, 1.3vw, 1rem);
+        font-size: clamp(0.875rem, 1.3vw, 1.1rem);
         line-height: 1.5em;
         text-decoration: none;
         margin: 0;

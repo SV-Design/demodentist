@@ -1,6 +1,6 @@
 ---
 title: "Volkswagen Golf Plus"
-metaTitle: "VW Golf Plus nuoma | Ekonomiškas automobilis | AutoVerus"
+metaTitle: "VW Golf Plus nuoma | Ekonomiškas automobilis | Belomeda"
 metaDescription: "Kompaktiškas ir patogus Volkswagen Golf Plus nuomai. Ekonomiškas pasirinkimas kasdienėms kelionėms mieste."
 category:
   - "Lengvieji"

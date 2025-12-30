@@ -1,6 +1,6 @@
 ---
 title: "Volkswagen Touran"
-metaTitle: "VW Touran nuoma | Šeimos automobilis | AutoVerus"
+metaTitle: "VW Touran nuoma | Šeimos automobilis | Belomeda"
 metaDescription: "Nuomojamas Volkswagen Touran. Erdvus salonas, puikiai tinka šeimos kelionėms ar kai reikia daugiau vietos nei paprastame automobilyje."
 category:
   - "Lengvieji"

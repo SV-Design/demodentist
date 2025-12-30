@@ -5,7 +5,7 @@ url: kelione-mikroautobusu-po-europa
 description: Planuojate atostogas su kompanija? Sužinokite, kokie dokumentai
   reikalingi, kaip veikia kelių mokesčiai ir kodėl 9 vietų mikroautobusas yra
   geriausias pasirinkimas kelionei.
-author: AutoVerus
+author: Belomeda
 date: 2025-10-03T10:00:00.000Z
 tags:
   - post
@@ -18,7 +18,7 @@ imageAlt: Mikroautobusas važiuojantis kalnų keliu
 <h3>Dokumentai. Ne tik pasas ir teisės</h3>
 <p>Nusprendus keliauti nuomotu transportu į užsienį, pasiruošimas prasideda ne nuo lagamino krovimo, o nuo dokumentų. Vairuoti Lietuvoje ir kirsti valstybės sieną yra du skirtingi dalykai.</p>
 <h4>Nuomotojo leidimas</h4>
-<p>Pirmiausia, rezervuodami automobilį "AutoVerus", būtinai informuokite mus apie planuojamą maršrutą. Išvykimui į Europos Sąjungos šalis reikalingas mūsų raštiškas sutikimas. Be jo, įvykus draudiminiam įvykiui užsienyje, gali kilti rimtų problemų su žalos atlyginimu.</p>
+<p>Pirmiausia, rezervuodami automobilį "Belomeda", būtinai informuokite mus apie planuojamą maršrutą. Išvykimui į Europos Sąjungos šalis reikalingas mūsų raštiškas sutikimas. Be jo, įvykus draudiminiam įvykiui užsienyje, gali kilti rimtų problemų su žalos atlyginimu.</p>
 <h4>Žalioji korta ir draudimas</h4>
 <p>Patikrinsime, ar automobilyje yra galiojanti žalioji korta. Tai tarptautinis automobilio draudimo liudijimas. Taip pat aptarsime Kasko draudimo sąlygas užsienyje bei techninės pagalbos galimybes kelyje. Juk nenorite likti be pagalbos sugedus automobiliui Vokietijos greitkelyje.</p>
 

@@ -1,6 +1,6 @@
 ---
 title: "Opel Movano"
-metaTitle: "Opel Movano L3H2 nuoma | Su kabliu | AutoVerus"
+metaTitle: "Opel Movano L3H2 nuoma | Su kabliu | Belomeda"
 metaDescription: "Erdvus krovininis mikroautobusas su tempimo kabliu. Tinka priekabos tempimui ir didelių krovinių gabenimui."
 category:
   - "Krovininiai"

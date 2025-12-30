@@ -1,6 +1,6 @@
 ---
 title: "Ford Transit Custom"
-metaTitle: "Ford Transit Custom nuoma | Krovininis | AutoVerus"
+metaTitle: "Ford Transit Custom nuoma | Krovininis | Belomeda"
 metaDescription: "Universalus Ford Transit Custom mikroautobusas darbui. Patogus pakrovimas ir manevringumas mieste. Susisiekite dėl rezervacijos."
 category:
   - "Keleiviniai"

@@ -1,6 +1,6 @@
 ---
 title: "Ford Tourneo Custom"
-metaTitle: "Ford Tourneo Custom nuoma | 9 vietų | AutoVerus"
+metaTitle: "Ford Tourneo Custom nuoma | 9 vietų | Belomeda"
 metaDescription: "Erdvus keleivinis mikroautobusas su prailginta baze. Atskiros sėdynės keleivių patogumui. Puikiai tinka tolimoms kelionėms."
 category:
   - "Keleiviniai"

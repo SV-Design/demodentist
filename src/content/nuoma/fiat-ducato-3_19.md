@@ -1,6 +1,6 @@
 ---
 title: "Fiat Ducato Šaldytuvas"
-metaTitle: "Fiat Ducato šaldytuvas nuoma | Refrižeratorius | AutoVerus"
+metaTitle: "Fiat Ducato šaldytuvas nuoma | Refrižeratorius | Belomeda"
 metaDescription: "Mikroautobusas su šaldymo ir šildymo įranga maisto produktų gabenimui. Palaikoma reikiama temperatūra. Galima nuoma su vairuotoju."
 category:
   - "Krovininiai"

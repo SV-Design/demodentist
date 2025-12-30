@@ -1,6 +1,6 @@
 ---
 title: "Mercedes Benz Sprinter"
-metaTitle: "Mercedes Benz Sprinter nuoma | L3H2 | AutoVerus"
+metaTitle: "Mercedes Benz Sprinter nuoma | L3H2 | Belomeda"
 metaDescription: "Aukštas ir ilgas (L3H2) krovininis mikroautobusas. Didelis tūris pervežimams. Galima ilgalaikė nuoma verslui."
 category:
   - "Krovininiai"

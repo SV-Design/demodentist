@@ -1,6 +1,6 @@
 ---
 title: "Fiat Ducato"
-metaTitle: "Fiat Ducato nuoma | Krovininis mikroautobusas | AutoVerus"
+metaTitle: "Fiat Ducato nuoma | Krovininis mikroautobusas | Belomeda"
 metaDescription: "Nuomojamas talpus Fiat Ducato kroviniams pervežti. Puikus pasirinkimas perkraustymui ar logistikai. Galima ilgalaikė nuoma ir vairuotojo paslauga."
 category:
   - "Krovininiai"

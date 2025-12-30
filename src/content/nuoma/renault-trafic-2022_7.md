@@ -1,6 +1,6 @@
 ---
 title: "Renault Trafic"
-metaTitle: "Renault Trafic 2022 nuoma | Keleivinis | AutoVerus"
+metaTitle: "Renault Trafic 2022 nuoma | Keleivinis | Belomeda"
 metaDescription: "Naujo modelio Renault Trafic keleivinis mikroautobusas. Prailginta bazė, moderni įranga ir komfortas 9 keleiviams."
 category:
   - "Keleiviniai"

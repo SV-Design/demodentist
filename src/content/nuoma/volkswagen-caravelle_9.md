@@ -1,6 +1,6 @@
 ---
 title: "Volkswagen Caravelle"
-metaTitle: "Volkswagen Caravelle nuoma | Keleivinis | AutoVerus"
+metaTitle: "Volkswagen Caravelle nuoma | Keleivinis | Belomeda"
 metaDescription: "Prestižinis Volkswagen Caravelle keleivinis mikroautobusas. Aukščiausias komforto lygis ir patikimumas kelyje."
 category:
   - "Keleiviniai"

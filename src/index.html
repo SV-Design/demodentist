@@ -1,5 +1,5 @@
 ---
-title: 'Mikroautobusų nuoma | AutoVerus'
+title: 'Mikroautobusų nuoma | Belomeda'
 description: 'Automobilių ir mikroautobusų nuoma jūsų kelionėms ar darbams. Siūlome techniškai tvarkingus lengvuosius, krovininius ir keleivinius automobilius su aiškia kaina.'
 permalink: '/'
 tags: "sitemap" # content/content.json will make sure that all pages in content/ are marked with a "sitemap" tag, for automatic sitemap generation. As index.html is not in content/, we need to add it here to ensure the root page is included in the sitemap generation
@@ -54,14 +54,14 @@ tags: "sitemap" # content/content.json will make sure that all pages in content/
     <div class="cs-container">
         <div class="cs-content">
             <h1 class="cs-title">Dirbame tam, kad jus puoštų <span style="color: var(--primary);">sveika</span> ir <span style="color: var(--primary);">graži šypsena</span>!</h1>
-            <p class="cs-text">Jauki ir moderni klinika, kurioje teikiamos aukštos kokybės odontologinės paslaugos visai šeimai. Naudojame pažangias technologijas, kokybiškas medžiagas ir rūpinamės kiekvienu pacientu nuoširdžiai bei profesionaliai.</p>
+            <p class="cs-text">Esame nedidelė, jauki odontologijos klinika, kurioje vertiname šeimynines vertybes. Gydymui naudojame modernias technologijas ir kokybiškas medžiagas. Mums svarbiausia išlaikyti paprastą ir nuoširdų ryšį su kiekvienu pacientu. Kviečiame apsilankyti.</p>
             <div class="cs-button-group">
                 <a href="/kontaktai/" class="cs-button-solid"><span></span><img src="/assets/svgs/calendar.svg" alt="" class="cs-button-icon" aria-hidden="true"><p>Registruotis</p></a>
                 <a href="tel:+37060328333" class="cs-button-solid cs-button-phone"><span></span><img src="/assets/svgs/icon-phone.svg" alt="" class="cs-button-icon" aria-hidden="true"><p>+370 603 28333</p></a>
             </div>
             <ul class="cs-stats-group">
                 <li class="cs-item"><span class="cs-number">1000+</span> <span class="cs-desc">Puošnių šypsenų</span></li>
-                <li class="cs-item"><span class="cs-number">10+</span> <span class="cs-desc">Metų patirtis</span></li>
+                <li class="cs-item"><span class="cs-number">20+</span> <span class="cs-desc">Metų patirtis</span></li>
                 <li class="cs-item"><span class="cs-number">5/5</span> <span class="cs-desc">Klientų atsiliepimai</span></li>
             </ul>
         </div>
@@ -81,27 +81,10 @@ tags: "sitemap" # content/content.json will make sure that all pages in content/
 <!--           Logo Carousel Section              -->
 <!-- ============================================ -->
 
-<section class="cs-logos-section">
-    <div class="cs-container">
-        <div class="cs-logos-content">
-            <div class="cs-logos-text-left">
-                <h2 class="cs-logos-title">Patikimas transportas <span style="color: var(--primary);">darbui</span> ir <span style="color: var(--primary);">kelionėms</span></h2>
-            </div>
-            <div class="cs-logos-text-right">
-                <p class="cs-logos-description">Statybos, gamybos ir prekybos įmonėms siūlome talpius krovininius mikroautobusus įrangai bei produkcijai. Transporto sektoriui ir keliautojams paruošėme keleivinius modelius, tinkančius vilkikų vairuotojų rotacijai, komandiruotėms ar tolimoms išvykoms į kalnus bei žvejybą.</p>
-            </div>
-        </div>
-    </div>
-    <div class="cs-logos">
-        <div class="cs-logos-slide">
-            <img src="/assets/images/brands/logo1.svg" alt="Logo 1" />
-            <img src="/assets/images/brands/logo2.svg" alt="Logo 2" />
-            <img src="/assets/images/brands/logo3.svg" alt="Logo 3" />
-            <img src="/assets/images/brands/logo4.svg" alt="Logo 4" />
-            <img src="/assets/images/brands/logo5.svg" alt="Logo 5" />
-        </div>
-    </div>
-</section>
+{% set title = 'Sveikatos <span style="color: var(--primary);">draudimas</span> ir <span style="color: var(--primary);">partneriai</span>' %}
+{% set description = 'Teikiame TLK kompensuojamas dantų protezavimo paslaugas. Už gydymą taip pat galite atsiskaityti sveikatos draudimu, nes bendradarbiaujame su „Lietuvos draudimu“, BTA, „Compensa“, ERGO ir „Gjensidige“.' %}
+{% set logoType = 'brands' %}
+{% include 'sections/logos-section.html' %}
 
 <section id="services1">
     <div class="cs-container">
@@ -110,7 +93,8 @@ tags: "sitemap" # content/content.json will make sure that all pages in content/
                 <span class="cs-topper">Mūsų Paslaugos</span>
                 <h2 class="cs-title"><span class="cs-color">Platus odontologijos paslaugų</span> pasirinkimas</h2>
             </div>
-            <p class="cs-text">Siūlome platų odontologijos paslaugų spektrą, pritaikytą individualiems Jūsų poreikiams – nuo profilaktinės apžiūros ir burnos higienos iki sudėtingo chirurginio gydymo, implantacijos bei ortodontijos. Mūsų tikslas – Jūsų sveika ir graži šypsena.</p>
+
+            <p class="cs-text">Klinikoje rasite visas reikalingas procedūras nuo profilaktikos iki sudėtingo gydymo. Atliekame burnos higieną, tiesiname ir implantuojame dantis bei rūpinamės chirurginėmis operacijomis. Visada siekiame, kad jūsų šypsena būtų ne tik graži, bet ir sveika.</p>
         </div>
         <div class="cs-slider-container">
             <button class="cs-slider-arrow cs-slider-prev" aria-label="Previous slide">
@@ -257,8 +241,8 @@ tags: "sitemap" # content/content.json will make sure that all pages in content/
         </div>
         <div class="cs-content">
             <span class="cs-topper">Apie mus</span>
-            <h2 class="cs-title">Dirbame taip, lyg <span style="color: var(--primary);">pirktume</span> ar <span style="color: var(--primary);">parduotume</span> sau</h2>
-            <p class="cs-text">Esame automobilių entuziastų komanda, todėl puikiai suprantame, su kokiais rūpesčiais susiduriate. Jei norite parduoti automobilį, pamirškite varginančius skelbimus ir derybas. Kadangi neturime didelių biurų ir gausybės vadybininkų, galime pasiūlyti sąžiningą kainą už bet kokios būklės transporto priemonę. Pasirūpinsime visais dokumentais ir atsiskaitysime iš karto. Ieškote automobilio? Galime padėti ir čia. Taupydami jūsų laiką surasime lūkesčius atitinkantį variantą. O jei jau turite nusižiūrėję automobilį, atliksime nuodugnią patikrą, kad būtumėte ramūs dėl savo pirkinio. Atvykstame į bet kurią Lietuvos vietą.</p>
+            <h2 class="cs-title">Gydome taip, kaip norėtume, kad <span style="color: var(--primary);">gydytų</span> mus</h2>
+            <p class="cs-text">Esame nedidelė klinika, kurioje nėra konvejerio jausmo ar nuolatinės skubos. Jau daugiau nei 20 metų čia deriname sukauptą patirtį su nuoširdžiu rūpesčiu, nes norime, kad kėdėje jaustumėtės ramiai. Mums svarbu ne tik sutaisyti dantis, bet ir paaiškinti situaciją paprastais žodžiais, kad nekiltų nereikalingų klausimų. Kviečiame užsukti ir įsitikinti, kad vizitas pas odontologą gali būti jaukus.</p>
             <a href="/apie-mus/" class="cs-button-solid" aria-label="Plačiau apie mus">Plačiau apie mus</a>
         </div>
     </div>
@@ -286,9 +270,9 @@ tags: "sitemap" # content/content.json will make sure that all pages in content/
         <div class="team-content">
             <div class="cs-flex-group">
                 <span class="cs-topper">Komanda</span>
-                <h2 class="cs-title">Mūsų <span style="color: var(--primary);">profesionalūs specialistai</span> komanda</h2>
+                <h2 class="cs-title">Mūsų <span style="color: var(--primary);">specialistų</span> komanda</h2>
             </div>
-            <p class="team-description">SĀNA klinikoje visa komanda, pasitelkusi geriausią praktiką, asmeninę kvalifikaciją bei meistriškumą, klientų situacijas analizuoja kartu ir ieško geriausio gydymo sprendimo</p>
+            <p class="team-description">Čia dirba gydytojai, kuriems svarbi ne tik atlikto darbo kokybė, bet ir jūsų ramybė vizito metu. Esame nedidelis kolektyvas, todėl dažnai tariamės tarpusavyje ieškodami tinkamiausio sprendimo. Vertiname pastovumą ir nuoširdų bendravimą su kiekvienu atėjusiu.</p>
         </div>
 
         <div class="cs-slider-container">
@@ -385,21 +369,7 @@ tags: "sitemap" # content/content.json will make sure that all pages in content/
             <div class="cs-slider-wrapper">
                 <div id="reviews-slider-overlay" class="cs-slider-overlay"></div>
                 <div id="reviews-slider" class="keen-slider">
-                    <div class="keen-slider__slide">
-                        <div class="cs-item">
-                            <div class="cs-flex-group">
-                                <picture class="cs-picture">
-                                    <img src="/assets/svgs/user.svg" alt="" height="50" decoding="async" width="50" class="cs-profile" loading="lazy" aria-hidden="true">
-                                </picture>
-                                <span class="cs-name">Rašelė Š.</span>
-                            </div>
-                            <div class="wrapper">
-                                <img src="/assets/svgs/stars-5.svg" alt="" height="16" decoding="async" width="96" class="cs-item-stars" loading="lazy" aria-hidden="true">
-                                <p class="cs-review">Gydytojas Petras Beleckas- tikras savo srities profesionalas, atsakingas, rūpestingas, atsargus, kruopštus ir malonus. Su pacientais bendrauja maloniai ir aiškiai, informuodamas apie visus savo veiksmus, jų pasekmes, galimas alternatyvas. Paslaugų kokybė- 10 balų. Neabejotinai- rekomenduoju!</p>
-                            </div>
-                            <img src="/assets/svgs/quote.svg" alt="" height="99" decoding="async" width="120" class="cs-quote" loading="lazy" aria-hidden="true">
-                        </div>
-                    </div>
+
 
                     <div class="keen-slider__slide">
                         <div class="cs-item">
@@ -460,6 +430,22 @@ tags: "sitemap" # content/content.json will make sure that all pages in content/
                             <div class="wrapper">
                                 <img src="/assets/svgs/stars-5.svg" alt="" height="16" decoding="async" width="96" class="cs-item-stars" loading="lazy" aria-hidden="true">
                                 <p class="cs-review">Labai dėkinga gydytojui Petrui Beleckui, už išsaugotą šypseną 🙂. Puikios paslaugos, adekvati kaina.</p>
+                            </div>
+                            <img src="/assets/svgs/quote.svg" alt="" height="99" decoding="async" width="120" class="cs-quote" loading="lazy" aria-hidden="true">
+                        </div>
+                    </div>
+
+                    <div class="keen-slider__slide">
+                        <div class="cs-item">
+                            <div class="cs-flex-group">
+                                <picture class="cs-picture">
+                                    <img src="/assets/svgs/user.svg" alt="" height="50" decoding="async" width="50" class="cs-profile" loading="lazy" aria-hidden="true">
+                                </picture>
+                                <span class="cs-name">Justina K.</span>
+                            </div>
+                            <div class="wrapper">
+                                <img src="/assets/svgs/stars-5.svg" alt="" height="16" decoding="async" width="96" class="cs-item-stars" loading="lazy" aria-hidden="true">
+                                <p class="cs-review">Labai gera odontologija, aplinka labai jauki, pasitinka su šypsena 🙂 rekomenduoju 100%</p>
                             </div>
                             <img src="/assets/svgs/quote.svg" alt="" height="99" decoding="async" width="120" class="cs-quote" loading="lazy" aria-hidden="true">
                         </div>
@@ -603,62 +589,62 @@ tags: "sitemap" # content/content.json will make sure that all pages in content/
             <ul class="cs-faq-group">
                 <li class="cs-faq-item">
                     <button class="cs-button">
-                        <span class="cs-button-text">
-                            Kokie yra ridos apribojimai ir mokesčiai?
-                        </span>
+                <span class="cs-button-text">
+                    Ką daryti, jei staiga pradėjo skaudėti dantį?
+                </span>
                     </button>
                     <p class="cs-item-p">
-                        Nuomojantis mikroautobusą taikomas 500 kilometrų paros limitas. Jei viršijate šį atstumą, už kiekvieną papildomai nuvažiuotą kilometrą skaičiuojamas nuo 0,12 euro plius PVM mokestis.
+                        Jei pajutote aštrų skausmą ar ištino žandas, skambinkite mums nieko nelaukdami. Visada stengiamės rasti laiko „ūmiems“ atvejams tą pačią dieną, kad jums nereikėtų kęsti skausmo.
                     </p>
                 </li>
                 <li class="cs-faq-item">
                     <button class="cs-button">
-                        <span class="cs-button-text">
-                            Koks užstatas ir kada jis grąžinamas?
-                        </span>
+                <span class="cs-button-text">
+                    Ar klinikoje gydote vaikus?
+                </span>
                     </button>
                     <p class="cs-item-p">
-                        Užstatas lengviesiems automobiliams yra 150 eurų, o keleiviniams bei krovininiams mikroautobusams 300 eurų. Užstatą grąžiname apžiūrėję automobilį. Jei grąžinate transporto priemonę tamsiu paros metu, užstatą grąžinsime tik kitą dieną po apžiūros šviesiu metu. Jei automobilis grąžinamas neplautas ar nepilnu baku, išlaidos išskaičiuojamos iš užstato.
+                        Tikrai taip. Esame šeimos klinika, todėl mažieji pacientai pas mus labai laukiami. Stengiamės, kad pirmasis vizitas būtų drąsus, be ašarų ir paliktų tik gerus įspūdžius.
                     </p>
                 </li>
                 <li class="cs-faq-item">
                     <button class="cs-button">
-                        <span class="cs-button-text">
-                            Kaip veikia draudimas ir kokia yra franšizė?
-                        </span>
+                <span class="cs-button-text">
+                    Ar paslaugos kompensuojamos ligonių kasų?
+                </span>
                     </button>
                     <p class="cs-item-p">
-                        Visi automobiliai turi privalomąjį civilinį draudimą. Dėl Kasko draudimo konkrečiam modeliui reikia teirautis rezervacijos metu. Įvykus avarijai ar vagystei taikoma besąlyginė franšizė. Lengviesiems automobiliams ji siekia 150 eurų, o mikroautobusams 300 eurų. Vagystės atveju draudimas galioja tik pristačius dokumentus ir raktelius.
+                        Taip, turime sutartį su Teritorine ligonių kasa (TLK). Senjorai, vaikai ir kiti teisę turintys pacientai gali gauti kompensaciją dantų protezavimui. Taip pat priimame pacientus su privačiu sveikatos draudimu.
                     </p>
                 </li>
                 <li class="cs-faq-item">
                     <button class="cs-button">
-                        <span class="cs-button-text">
-                            Ar galima vykti į užsienį?
-                        </span>
+                <span class="cs-button-text">
+                    Labai bijau odontologų. Ar skaudės?
+                </span>
                     </button>
                     <p class="cs-item-p">
-                        Išvykti iš Lietuvos galima tik gavus raštišką mūsų leidimą. Už savavališką išvykimą be leidimo taikoma 1200 eurų bauda. Planuojant kelionę į užsienį gali keistis ir nuomos kaina.
+                        Suprantame jūsų nerimą, bet šiuolaikinė odontologija jau seniai nebėra baisi. Visada išklausome, niekur neskubame ir taikome vietinę nejautrą, tad procedūros metu diskomforto nejausite.
                     </p>
                 </li>
                 <li class="cs-faq-item">
                     <button class="cs-button">
-                        <span class="cs-button-text">
-                            Kokie reikalavimai vairuotojams?
-                        </span>
+                <span class="cs-button-text">
+                    Kada ir kaip reikia atsiskaityti už paslaugas?
+                </span>
                     </button>
                     <p class="cs-item-p">
-                        Minimalus vairavimo stažas turi būti vieneri metai. Vairuotojams nuo 18 iki 23 metų taikomas papildomas 5 eurų paros mokestis. Sutarčiai būtina pateikti asmens dokumentą ir galiojantį vairuotojo pažymėjimą.
+                        Atsiskaityti galima po vizito grynaisiais arba banko kortele. Jei planuojamas didesnis gydymas, gydytojas iš anksto sudarys planą ir aptars numatomas išlaidas, kad nebūtų staigmenų.
                     </p>
                 </li>
                 <li class="cs-faq-item">
                     <button class="cs-button">
-                        <span class="cs-button-text">
-                            Kaip skaičiuojamas nuomos laikas?
-                        </span>
+                <span class="cs-button-text">
+                    Kas nutiks, jei negalėsiu atvykti sutartu laiku?
+                </span>
                     </button>
                     <p class="cs-item-p">
-                        Minimalus terminas yra 24 valandos. Laikas skaičiuojamas nuo 08.00 iki 08.00 valandos arba nuo 20.00 iki 20.00 valandos, o ne nuo faktinio pasiėmimo momento. Grąžinus automobilį anksčiau laiko pinigai už nepanaudotas dienas nėra grąžinami.
+                        Gyvenime visko pasitaiko, tad jei matote, kad vėluosite ar negalėsite atvykti, prašome pranešti bent prieš 24 valandas. Taip galėsime pasiūlyti jūsų laiką kitam laukiančiam pacientui.
                     </p>
                 </li>
             </ul>
