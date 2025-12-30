@@ -2240,6 +2240,7 @@
         display: block;
         transition: transform 0.3s;
         aspect-ratio: 750 / 955;
+        min-height: 240px;
     }
 
     #team-section .team-card:hover .team-image {
