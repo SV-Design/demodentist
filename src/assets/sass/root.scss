@@ -1116,6 +1116,8 @@
         transform: scaleY(0);
         transform-origin: top;
         transition: transform 0.3s, visibility 0.3s, opacity 0.3s;
+        border-bottom-left-radius: 8px;
+        border-bottom-right-radius: 8px;
     }
 
     body#index #cs-navigation.top .cs-drop-ul {
@@ -1487,6 +1489,11 @@
 
     #cs-navigation .cs-li-link.cs-active {
         font-weight: 700;
+        color: var(--headerColor);
+    }
+
+    #cs-navigation .cs-drop-li .cs-li-link.cs-active {
+        font-weight: 400;
         color: var(--headerColor);
     }
 

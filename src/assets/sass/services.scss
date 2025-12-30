@@ -397,10 +397,6 @@ body .cs-category-slider
     font-size: 1.25rem;
   }
 
-  #content-page-1398 .cs-button-solid {
-    margin-bottom: 2rem;
-  }
-
   #content-page-1398 .cs-no-margin {
     margin: 0;
   }
@@ -466,7 +462,7 @@ body .cs-category-slider
 
   #content-page-1398 .cs-image-group {
     width: 100%;
-    display: none;
+    display: flex;
     flex-direction: column;
     gap: clamp(1rem, 2.6vw, 1.25rem);
     position: relative;
@@ -625,6 +621,19 @@ body .cs-category-slider
   height: 100%;
   overflow: visible;
   top: 100px;
+}
+
+@media only screen and (max-width: 47.9375rem) {
+  #content-page-1398 .cs-content {
+    order: 1;
+  }
+
+  #content-page-1398 .cs-image-group {
+    position: relative;
+    top: auto;
+    height: auto;
+    order: 2;
+  }
 }
 
 @media only screen and (min-width: 75rem) {
